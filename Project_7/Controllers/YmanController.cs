@@ -10,16 +10,18 @@ namespace Project_7.Controllers
     {
         //comment this is new controller 
         [HttpGet("test")]
-        public IActionResult Get([FromForm] IFormFile image)
+        public IActionResult Get([FromForm] TestDto image)
         {
-            var imageName = SaveImage(image);
+            var imageName = SaveImage(image.Image);
             return Ok(new { imageName });
         }
-
-
-
     }
 
+
+    public class TestDto()
+    {
+        public IFormFile Image { get; set; }
+    }
 
 
 
