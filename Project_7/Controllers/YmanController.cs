@@ -9,7 +9,7 @@ namespace Project_7.Controllers
     public class YmanController : ControllerBase
     {
         //comment this is new controller 
-        [HttpGet("test")]
+        [HttpPost("test")]
         public IActionResult Get([FromForm] TestDto image)
         {
             var imageName = SaveImage(image.Image);
