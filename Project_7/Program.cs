@@ -26,15 +26,12 @@ builder.Services.AddDbContext<MyDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("YourConnectionString")));
 var app = builder.Build();
 
-// Serve static files from wwwroot by default (if present)
-app.UseStaticFiles();
-
-// Configure serving media files from "wwwroot/media" or any other folder
+app.UseStaticFiles(); // Serve wwwroot
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
-        Path.Combine(builder.Environment.WebRootPath, "images")),
-    RequestPath = "/images" 
+        Path.Combine(builder.Environment.ContentRootPath, "images")),
+    RequestPath = "/images"
 });
 
 

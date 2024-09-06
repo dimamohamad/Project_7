@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using static Project_7.Shared.ImageSaver;
 
 namespace Project_7.Controllers
 {
@@ -9,15 +10,17 @@ namespace Project_7.Controllers
     {
         //comment this is new controller 
         [HttpGet("test")]
-        public IActionResult Get()
+        public IActionResult Get([FromForm] IFormFile image)
         {
-            return Ok(new { messAGE = "This is the message" });
+            var imageName = SaveImage(image);
+            return Ok(new { imageName });
         }
+
 
 
     }
 
 
 
-    
+
 }
