@@ -7,6 +7,13 @@ namespace Project_7.Controllers
     [ApiController]
     public class YmanController : ControllerBase
     {
-        //coment this is new controller 
+        //comment this is new controller 
+        [HttpGet("test")]
+        public IActionResult Get()
+        {
+            return Ok(new { messAGE = "This is the message" });
+        }
+
+
     }
 }
