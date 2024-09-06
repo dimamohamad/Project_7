@@ -7,5 +7,6 @@ namespace Project_7.Controllers
     [ApiController]
     public class YmanController : ControllerBase
     {
+        //coment this is new controller 
     }
 }
