@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Azure.Core;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Project_7.DTOs;
 using Project_7.Models;
+using static Project_7.Shared.ImageSaver;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Project_7.Controllers
 {
@@ -71,10 +75,48 @@ namespace Project_7.Controllers
 
         }
 
+        [HttpPost]
+
+        public IActionResult CreateCategory([FromForm] CategoryRequestDTO request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+
+            }
+            var category = new Category
+            {
 
 
+                CategoryImage = SaveImage(request.CategoryImage),
+                CategoryName = request.CategoryName,
+                Description = request.Description
+            };
+
+          _db.Categories.Add(category);
+            _db.SaveChanges();
+            return Ok(category);
+
+        }
 
 
+        [HttpPut("/Api/Categories/UpdateCategory/{id}")]
+        public IActionResult UpdateCategory([FromForm] CategoryRequestDTO response ,int id) { 
+        
+           var category = _db.Categories.FirstOrDefault(c => c.CategoryId == id);
+            if (category != null) {
+
+
+                category.CategoryImage = SaveImage(response.CategoryImage);
+                category.CategoryName = response.CategoryName;
+                category.Description = response.Description;
+
+                _db.Categories.Update(category);
+                _db.SaveChanges();
+                return Ok(category);
+            }
+            return NotFound();
+        }
 
 
     }
