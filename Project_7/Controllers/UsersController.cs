@@ -11,9 +11,11 @@ namespace Project_7.Controllers
     public class UsersController : ControllerBase
     {
         private readonly MyDbContext _db;
-        public UsersController(MyDbContext db)
+        private readonly TokenGenerator _tokenGenerator;
+        public UsersController(MyDbContext db, TokenGenerator tokenGenerator) 
         {
             _db = db;
+            _tokenGenerator = tokenGenerator;
         }
         [HttpPost("RegisterUsers")]
         public IActionResult Register([FromForm] UserRegisterDTO user)
@@ -25,6 +27,7 @@ namespace Project_7.Controllers
             {
                 FirstName = user.FirstName,
                 LastName = user.LastName,
+                UserName = user.UserName,
                 Email = user.Email,
                 Passwword = user.Passwword,
                 PasswordHash = hash,
@@ -33,6 +36,18 @@ namespace Project_7.Controllers
             _db.Users.Add(data);
             _db.SaveChanges();
             return Ok(data);
+        }
+        [HttpPost("LoginUsers")]
+        public IActionResult Login([FromForm] UserLoginDTO user) 
+        {
+            var data = _db.Users.FirstOrDefault(x => x.Email == user.Email);
+            if (data == null || !PasswordHash.verifyPassword(user.Passwword, data.PasswordHash , data.PasswordSalt)) 
+            {
+                return Unauthorized();
+            }
+            var token = _tokenGenerator.GenerateToken(data.UserName);
+
+            return Ok(new { Token = token });
         }
     }
 }
