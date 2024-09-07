@@ -24,8 +24,8 @@ namespace Project_7.Controllers
             var users = _db.Users.ToList();
             return Ok(users);
         }
-        [HttpGet("ShowUserByID")]
-        public IActionResult GetUser(int id)
+        [HttpGet("ShowUserByID/{id:int}")]
+        public IActionResult GetUser(int id) 
         {
             var user = _db.Users.Find(id);
             return Ok(user);
@@ -63,5 +63,41 @@ namespace Project_7.Controllers
 
             return Ok(new { Token = token });
         }
+        [HttpPut("UpdateUser/{id:int}")]
+        public IActionResult UpdateUser(int id, [FromForm]UpdateUserDTO user)
+        {
+            var uploadedFolder = Path.Combine(Directory.GetCurrentDirectory(), "UsersImage");
+            if (!Directory.Exists(uploadedFolder))
+            {
+                Directory.CreateDirectory(uploadedFolder);
+            }
+            var fileImage = Path.Combine(uploadedFolder, user.UserImage.FileName);
+            using (var stream = new FileStream(fileImage, FileMode.Create))
+            {
+                user.UserImage.CopyToAsync(stream);
+            }
+            var data = _db.Users.Find(id);
+
+            data.FirstName = user.FirstName;
+            data.LastName = user.LastName;
+            data.UserName = user.UserName;
+            data.Email = user.Email;
+            data.Passwword = user.Passwword;
+            data.PhoneNumber = user.PhoneNumber;
+            data.UserImage = user.UserImage.FileName;
+          
+            _db.Users.Update(data);
+            _db.SaveChanges();  
+            return Ok(user);
+        }
+        [HttpDelete("DeleteUser/{id:int}")]
+        public IActionResult DeleteUser(int id) 
+        {
+            var user = _db.Users.Find(id);
+            _db.Users.Remove(user);
+            _db.SaveChanges();
+            return Ok(user);
+        }
+
     }
 }

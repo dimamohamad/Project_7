@@ -57,5 +57,26 @@ namespace Project_7.Controllers
 
 
 
+        [HttpDelete("DeleteMessage/{id}")]
+        public IActionResult DeleteMessage(int id)
+        {
+           
+            var message = _db.ContactUs.FirstOrDefault(m => m.MessageId == id);
+
+          
+            if (message == null)
+            {
+                return NotFound();
+            }
+
+           
+            _db.ContactUs.Remove(message);
+            _db.SaveChanges();  
+
+          
+            return Ok(new { message = "Message deleted successfully." });
+        }
+
+
     }
 }
