@@ -11,7 +11,7 @@ namespace Project_7.Controllers
     [ApiController]
     public class CartController(MyDbContext db) : ControllerBase
     {
-        [HttpGet]
+        [HttpGet("getCartItems")]
         public IActionResult GetCartItems()
         {
             // This user should be taken from the Token.
