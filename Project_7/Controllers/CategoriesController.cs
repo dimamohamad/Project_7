@@ -100,22 +100,18 @@ namespace Project_7.Controllers
         }
 
 
-        [HttpPut("/Api/Categories/UpdateCategory/{id}")]
+        [HttpPut("/Api/Categories/UpdateCategory/{id:int}")]
         public IActionResult UpdateCategory([FromForm] CategoryRequestDTO response ,int id) { 
         
            var category = _db.Categories.FirstOrDefault(c => c.CategoryId == id);
-            if (category != null) {
+           if (category == null) return NotFound();
+           category.CategoryImage = SaveImage(response.CategoryImage);
+            category.CategoryName = response.CategoryName;
+            category.Description = response.Description;
 
-
-                category.CategoryImage = SaveImage(response.CategoryImage);
-                category.CategoryName = response.CategoryName;
-                category.Description = response.Description;
-
-                _db.Categories.Update(category);
-                _db.SaveChanges();
-                return Ok(category);
-            }
-            return NotFound();
+            _db.Categories.Update(category);
+            _db.SaveChanges();
+            return Ok(category);
         }
 
 
