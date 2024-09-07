@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Project_7.DTOs;
 using Project_7.Models;
 
 namespace Project_7.Controllers
@@ -31,6 +32,32 @@ namespace Project_7.Controllers
             }
             var cartItems = db.CartItems.Where(cItem => cItem.CartId == cart.CartId);
             return Ok(cartItems);
+        }
+        [HttpPost("addToCart")]
+        public IActionResult AddToCart(CartItemDto cartItem)
+        {
+            // 
+            // This user should be taken from the Token.
+            //
+
+            var user = db.Users.FirstOrDefault();
+            if (user == null) return BadRequest("There were a problem while trying to get the user info");
+
+            var cart = db.Carts.FirstOrDefault(c => c.UserId == user.UserId);
+            if (cart == null)
+            {
+                cart = new Cart
+                {
+                    UserId = user.UserId,
+                    CreatedAt = DateTime.Now,
+                    UpdatedAt = DateTime.Now,
+                };
+                db.Carts.Add(cart);
+                db.SaveChanges();
+            }
+
+            var updatedCartItem = cartItem.CreateCartItem(db, cart);
+            return Ok(updatedCartItem);
         }
     }
 }
