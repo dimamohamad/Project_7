@@ -796,88 +796,90 @@
 
     <section class="container mx-auto my-10 px-4 sm:px-8 xl:px-4">
       <div class="my-16 grid grid-cols-12 gap-8">
-        <div class="col-span-12 lg:col-span-7">
-          <div class="mb-8 flex items-center justify-between border-b-[3px] pb-2">
-            <h2
-              class="relative text-2xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
-            >
-              Do you have any questions?
-            </h2>
+              <div class="col-span-12 lg:col-span-7">
+                  <div class="mb-8 flex items-center justify-between border-b-[3px] pb-2">
+                      <h2
+                          class="relative text-2xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
+                      >
+                          Do you have any questions?
+                      </h2>
+                  </div>
+                  <form class="grid grid-cols-4 gap-5" id="contact-form">
+                    <div class="relative col-span-2">
+                      <input
+                        type="text"
+                        id="contact-name"
+                        name="Name"
+                        class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                        placeholder=" "
+                        required
+                      />
+                      <label
+                        for="contact-name"
+                        class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
+                      >
+                        Name
+                      </label>
+                    </div>
+                    <div class="relative col-span-2">
+                      <input
+                        type="text"
+                        id="contact-email"
+                        name="Email"
+                        class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                        placeholder=" "
+                        required
+                      />
+                      <label
+                        for="contact-email"
+                        class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
+                      >
+                        Email
+                      </label>
+                    </div>
+                    <div class="relative col-span-4">
+                      <input
+                        type="text"
+                        id="select-state"
+                        name="Subject"
+                        class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                        placeholder=" "
+                        required
+                      />
+                      <label
+                        for="select-state"
+                        class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
+                      >
+                        Subject
+                      </label>
+                    </div>
+                    <div class="relative col-span-4 mb-5 w-full overflow-hidden rounded-lg bg-white pr-4 shadow">
+                      <textarea
+                        id="message"
+                        name="Message"
+                        class="form-content peer mx-2.5 mb-2.5 mt-5 block max-h-[200px] min-h-[130px] w-full resize-none appearance-none border-0 text-sm text-default-500 focus:outline-none focus:ring-0"
+                        placeholder=" "
+                        required
+                      ></textarea>
+                      <label
+                        for="message"
+                        class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
+                      >
+                        Message
+                      </label>
+                    </div>
+                    <div class="col-span-2">
+                      <input
+                        type="submit"
+                        value="Send message"
+                        onclick="sendMessage()"
+                        class="flex items-center gap-2 whitespace-nowrap rounded-lg bg-primary-500 p-[14px] font-semibold text-white transition-all duration-300 hover:bg-primary-600"
+                      />
+                    </div>
+                  </form>
+              </div>
           </div>
-          <form class="grid grid-cols-4 gap-5" id="contact-form">
-            <div class="relative col-span-2">
-              <input
-                type="text"
-                id="contact-name"
-                name="from_name"
-                class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
-                placeholder=" "
-                required
-              />
-              <label
-                for="contact-name"
-                class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
-              >
-                Name
-              </label>
-            </div>
-            <div class="relative col-span-2">
-              <input
-                type="text"
-                id="contact-email"
-                name="email_id"
-                class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
-                placeholder=" "
-                required
-              />
-              <label
-                for="contact-email"
-                class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
-              >
-                Email
-              </label>
-            </div>
-            <div class="col-span-4">
-              <select
-                class="h-[50px] w-full rounded-lg border-transparent shadow focus:border-transparent focus:ring-0 sm:col-span-1"
-                id="select-state"
-              >
-                <option value="-">Subject</option>
-                <option value="1">Refund</option>
-                <option value="2">Technical problem</option>
-                <option value="2">Close account</option>
-                <option value="2">Other</option>
-              </select>
-            </div>
-            <div
-              class="relative col-span-4 mb-5 w-full overflow-hidden rounded-lg bg-white pr-4 shadow"
-            >
-              <textarea
-                id="message"
-                name="message"
-                class="form-content peer mx-2.5 mb-2.5 mt-5 block max-h-[200px] min-h-[130px] w-full resize-none appearance-none border-0 text-sm text-default-500 focus:outline-none focus:ring-0"
-                placeholder=" "
-                required
-              ></textarea>
-
-              <label
-                for="message"
-                class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
-              >
-                Message
-              </label>
-            </div>
-            <div class="col-span-2">
-              <button
-                class="flex items-center gap-2 whitespace-nowrap rounded-lg bg-primary-500 p-[14px] font-semibold text-white transition-all duration-300 hover:bg-primary-600"
-                type="submit"
-                id="submit-button"
-              >
-                Send message
-              </button>
-            </div>
-          </form>
-        </div>
+      </section>
         <div class="col-span-12 lg:col-span-5">
           <div class="mb-8 flex items-center justify-between border-b-[3px] pb-2">
             <h2
@@ -1721,6 +1723,7 @@
       </svg>
     </div>
 
+    <script src="contact.js"></script>
     <script src="../cdn.jsdelivr.net/npm/%40emailjs/browser%403/dist/email.min.js"></script>
     <script>
       emailjs.init("oEwg6h16GWQDjT-5A");
