@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Project_7.DTOs.CartDtos;
 using Project_7.Models;
+using Project_7.TokenReaderNS;
 
 namespace Project_7.Controllers
 {
     //[Authorize]  // This should be uncommented after conferencing the authentication 
     [Route("api/[controller]")]
     [ApiController]
-    public class CartController(MyDbContext db) : ControllerBase
+    public class CartController(MyDbContext db, IConfiguration config) : ControllerBase
     {
         [HttpGet("getCartItems")]
         public IActionResult GetCartItems()
@@ -81,10 +82,10 @@ namespace Project_7.Controllers
 
         private User? GetUser()
         {
-            // 
-            // This user should be taken from the Token.
-            //
-            return db.Users.FirstOrDefault();
+            var tokenReader = new TokenReader(config);
+            var x = Request.Headers["Authorization"].ToString().Split(' ')[1];
+            var principal = tokenReader.ValidateToken(x);
+            return db.Users.FirstOrDefault(u => u.UserName == principal.Identity.Name);
         }
     }
 }
