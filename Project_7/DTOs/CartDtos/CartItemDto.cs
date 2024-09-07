@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Project_7.Models;
 
-namespace Project_7.DTOs
+namespace Project_7.DTOs.CartDtos
 {
     public class CartItemDto
     {
