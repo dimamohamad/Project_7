@@ -17,7 +17,7 @@ namespace Project_7.Controllers
             _db = db;
             _tokenGenerator = tokenGenerator;
         }
-        [HttpPost ("RegisterUsers")]
+        [HttpPost("RegisterUsers")]
         public IActionResult Register([FromForm] UserRegisterDTO user)
         {
             byte[] hash;
