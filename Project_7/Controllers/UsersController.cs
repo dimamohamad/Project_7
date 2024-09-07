@@ -12,14 +12,14 @@ namespace Project_7.Controllers
     {
         private readonly MyDbContext _db;
         private readonly TokenGenerator _tokenGenerator;
-        public UsersController(MyDbContext db, TokenGenerator tokenGenerator) 
+        public UsersController(MyDbContext db, TokenGenerator tokenGenerator)
         {
             _db = db;
             _tokenGenerator = tokenGenerator;
         }
 
         [HttpGet("ShowAllUsers")]
-        public IActionResult GetAllUser() 
+        public IActionResult GetAllUser()
         {
             var users = _db.Users.ToList();
             return Ok(users);
@@ -52,10 +52,10 @@ namespace Project_7.Controllers
             return Ok(data);
         }
         [HttpPost("LoginUsers")]
-        public IActionResult Login([FromForm] UserLoginDTO user) 
+        public IActionResult Login([FromForm] UserLoginDTO user)
         {
             var data = _db.Users.FirstOrDefault(x => x.Email == user.Email);
-            if (data == null || !PasswordHash.verifyPassword(user.Passwword, data.PasswordHash , data.PasswordSalt)) 
+            if (data == null || !PasswordHash.verifyPassword(user.Passwword, data.PasswordHash, data.PasswordSalt))
             {
                 return Unauthorized();
             }
