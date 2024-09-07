@@ -31,7 +31,7 @@ namespace Project_7.DTOs
             if (voucher != null)
                 discount = voucher.DiscountPercentage;
 
-            // Create a cart item if not exist and add the quality 
+            // Create a cart item if not exist and add the quantity
             if (cartItem == null)
             {
                 cartItem = new CartItem
