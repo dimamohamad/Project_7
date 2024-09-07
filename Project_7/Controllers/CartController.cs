@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Project_7.DTOs.CartDtos;
 using Project_7.Models;
 using Project_7.TokenReaderNS;
 
 namespace Project_7.Controllers
 {
-    //[Authorize]  // This should be uncommented after conferencing the authentication 
+    [Authorize]  // This should be uncommented after conferencing the authentication 
     [Route("api/[controller]")]
     [ApiController]
     public class CartController(MyDbContext db, IConfiguration config) : ControllerBase
