@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Project_7.DTOs;
+﻿using Microsoft.AspNetCore.Mvc;
+using Project_7.DTOs.CartDtos;
 using Project_7.Models;
 
 namespace Project_7.Controllers
@@ -15,8 +12,7 @@ namespace Project_7.Controllers
         [HttpGet("getCartItems")]
         public IActionResult GetCartItems()
         {
-            // This user should be taken from the Token.
-            var user = db.Users.FirstOrDefault();
+            var user = GetUser();
             if (user == null) return BadRequest("There were a problem while trying to get the user info");
             var cart = db.Carts.FirstOrDefault(c => c.UserId == user.UserId);
             if (cart == null)
@@ -33,14 +29,11 @@ namespace Project_7.Controllers
             var cartItems = db.CartItems.Where(cItem => cItem.CartId == cart.CartId);
             return Ok(cartItems);
         }
+
         [HttpPost("addToCart")]
         public IActionResult AddToCart(CartItemDto cartItem)
         {
-            // 
-            // This user should be taken from the Token.
-            //
-
-            var user = db.Users.FirstOrDefault();
+            var user = GetUser();
             if (user == null) return BadRequest("There were a problem while trying to get the user info");
 
             var cart = db.Carts.FirstOrDefault(c => c.UserId == user.UserId);
@@ -58,6 +51,40 @@ namespace Project_7.Controllers
 
             var updatedCartItem = cartItem.CreateCartItem(db, cart);
             return Ok(updatedCartItem);
+        }
+
+
+        [HttpDelete("addToCart/{id:int}")]
+        public IActionResult DeleteCartItem(int id)
+        {
+
+            var user = GetUser();
+            var cartItem = db.CartItems.Find(id);
+            if (cartItem == null)
+                return NotFound();
+            db.CartItems.Remove(cartItem);
+            db.SaveChanges();
+            return NoContent();
+        }
+        [HttpPut("addToCart/{id:int}")]
+        public IActionResult UpdateCartItem(int id, UpdateCartItemDto update)
+        {
+
+            var user = GetUser();
+            var cartItem = db.CartItems.Find(id);
+            if (cartItem == null)
+                return NotFound();
+            cartItem.Quantity = update.Quantity;
+            db.SaveChanges();
+            return NoContent();
+        }
+
+        private User? GetUser()
+        {
+            // 
+            // This user should be taken from the Token.
+            //
+            return db.Users.FirstOrDefault();
         }
     }
 }

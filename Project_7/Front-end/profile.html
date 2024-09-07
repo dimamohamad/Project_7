@@ -1,0 +1,2741 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from infinite.andevfrontend.site/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2024 09:49:40 GMT -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="lib/metisMenu/metismenujs.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Infinite</title>
+  </head>
+  <body
+    class="bg-[#f5f7fe] font-montserrat font-medium text-default-500 lg:text-sm">
+    <div class="header sticky top-0 -z-[1]"></div>
+
+    <header
+      class="relative z-10 bg-[#f5f7fe] shadow-md transition-all duration-300">
+      <div class="container mx-auto px-4 sm:px-8 xl:px-4">
+        <div class="flex w-full items-center py-5 lg:justify-between">
+          <div
+            class="mr-5 cursor-pointer text-default-600 lg:hidden"
+            data-target=".modal-menu">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="pointer-events-none h-6 w-6">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </div>
+          <a href="index.html" class="mr-auto flex items-center gap-2 lg:mr-0">
+            <img class="h-7" src="img/logo.png" alt="logo" />
+            <span class="text-2xl font-semibold text-primary-500">
+              Infinite
+            </span>
+          </a>
+          <form class="hidden w-[590px] lg:flex">
+            <div class="relative w-full">
+              <input
+                type="search"
+                id="search"
+                class="peer block w-full appearance-none rounded-l-lg border border-r-0 border-primary-500 bg-white px-2 pb-2 pt-4 text-sm focus:outline-none focus:ring-0"
+                placeholder=" " />
+              <label
+                for="search"
+                class="z-1 pointer-events-none absolute left-2.5 top-[13px] origin-[0] -translate-y-3 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-3 peer-focus:scale-75 peer-focus:text-primary-500">
+                Search
+              </label>
+            </div>
+            <button
+              class="rounded-r-lg bg-primary-500 p-[9px] text-white"
+              type="submit">
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-6 w-6">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </form>
+          <div class="flex items-center gap-5">
+            <div
+              class="cursor-pointer text-default-600 hover:text-primary-500 lg:hidden"
+              data-target=".modal-search">
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="pointer-events-none h-6 w-6">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <button
+              class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex">
+              <svg
+                class="h-5 w-5"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                height="200px"
+                width="200px"
+                xmlns="http://www.w3.org/2000/svg">
+                <g id="Logout">
+                  <g>
+                    <path
+                      d="M20.968,18.448a2.577,2.577,0,0,1-2.73,2.5c-2.153.012-4.306,0-6.459,0a.5.5,0,0,1,0-1c2.2,0,4.4.032,6.6,0,1.107-.016,1.589-.848,1.589-1.838V5.647A1.546,1.546,0,0,0,19,4.175a3.023,3.023,0,0,0-1.061-.095H11.779a.5.5,0,0,1,0-1c2.224,0,4.465-.085,6.687,0a2.567,2.567,0,0,1,2.5,2.67Z"></path>
+                    <path
+                      d="M3.176,11.663a.455.455,0,0,0-.138.311c0,.015,0,.028-.006.043s0,.027.006.041a.457.457,0,0,0,.138.312l3.669,3.669a.5.5,0,0,0,.707-.707L4.737,12.516H15.479a.5.5,0,0,0,0-1H4.737L7.552,8.7a.5.5,0,0,0-.707-.707Z"></path>
+                  </g>
+                </g>
+              </svg>
+              <span class="font-semibold">Sign Out</span>
+            </button>
+            <a
+              href="wishlist.html"
+              class="relative hidden cursor-pointer select-none text-default-600 hover:text-primary-500 lg:block">
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-6 w-6">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+              <span
+                class="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary-500 text-xs text-white">
+                0
+              </span>
+            </a>
+            <div
+              class="relative cursor-pointer select-none text-default-600 hover:text-primary-500"
+              data-target=".modal-cart">
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="pointer-events-none h-6 w-6">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path
+                  d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              <span
+                class="pointer-events-none absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary-500 text-xs text-white">
+                0
+              </span>
+            </div>
+          </div>
+        </div>
+        <nav class="nav-main hidden items-center border-t-2 lg:flex">
+          <div
+            class="relative mr-5 flex items-center pr-5 font-semibold after:absolute after:right-0 after:my-auto after:h-6 after:w-px after:bg-slate-300 after:content-['']">
+            <ul class="metismenu">
+              <li>
+                <div
+                  class="sub-metismenu has-arrow flex cursor-pointer select-none items-center">
+                  <svg
+                    class="mr-4 h-6 w-6"
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 16 16"
+                    height="200px"
+                    width="200px"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      fill-rule="evenodd"
+                      d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+                  </svg>
+                  <span class="mr-8 py-3 font-semibold">
+                    Browser All Category
+                  </span>
+                </div>
+                <ul
+                  class="metismenu-content z-[5] w-full rounded bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]"
+                  style="position: absolute">
+                  <li class="group">
+                    <span
+                      class="flex cursor-pointer items-center justify-between px-6 py-2 transition-all duration-300 hover:text-primary-500">
+                      Electronics
+                      <svg
+                        class="h-3 w-3"
+                        stroke="currentColor"
+                        fill="currentColor"
+                        viewBox="0 0 320 512"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
+                      </svg>
+                    </span>
+                    <div
+                      class="invisible absolute left-full top-0 h-full w-0 overflow-hidden whitespace-nowrap opacity-0 duration-300 group-hover:visible group-hover:w-[735px] group-hover:opacity-100">
+                      <div
+                        class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]">
+                        <div class="p-5">
+                          <ul class="grid grid-cols-9 gap-5">
+                            <li class="col-span-3">
+                              <div
+                                class="mb-2 flex items-center justify-between border-b-[3px] pb-2">
+                                <h2
+                                  class="relative text-base font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']">
+                                  Computers & Laptop
+                                </h2>
+                              </div>
+                              <ul>
+                                <li>
+                                  <a
+                                    class="block pt-2 transition-all duration-300 hover:text-primary-500"
+                                    href="shop-mixed.html">
+                                    Laptops
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    class="block pt-2 transition-all duration-300 hover:text-primary-500"
+                                    href="shop-mixed.html">
+                                    Desktops
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    class="block pt-2 transition-all duration-300 hover:text-primary-500"
+                                    href="shop-mixed.html">
+                                    Monitors
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    class="block pt-2 transition-all duration-300 hover:text-primary-500"
+                                    href="shop-mixed.html">
+                                    Computer Accessories
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="col-span-3">
+                              <div
+                                class="mb-2 flex items-center justify-between border-b-[3px] pb-2">
+                                <h2
+                                  class="relative text-base font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']">
+                                  Mobile Devices
+                                </h2>
+                              </div>
+                              <ul>
+                                <li>
+                                  <a
+                                    class="block pt-2 transition-all duration-300 hover:text-primary-500"
+                                    href="shop-mixed.html">
+                                    Smartphones
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    class="block pt-2 transition-all duration-300 hover:text-primary-500"
+                                    href="shop-mixed.html">
+                                    Tablets
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    class="block pt-2 transition-all duration-300 hover:text-primary-500"
+                                    href="shop-mixed.html">
+                                    Smartwatches
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    class="block pt-2 transition-all duration-300 hover:text-primary-500"
+                                    href="shop-mixed.html">
+                                    Mobile Device Accessories
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="col-span-3">
+                              <div
+                                class="mb-2 flex items-center justify-between border-b-[3px] pb-2">
+                                <h2
+                                  class="relative text-base font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']">
+                                  Consumer Electronics
+                                </h2>
+                              </div>
+                              <ul>
+                                <li>
+                                  <a
+                                    class="block pt-2 transition-all duration-300 hover:text-primary-500"
+                                    href="shop-mixed.html">
+                                    Televisions
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    class="block pt-2 transition-all duration-300 hover:text-primary-500"
+                                    href="shop-mixed.html">
+                                    Audio & Speakers
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    class="block pt-2 transition-all duration-300 hover:text-primary-500"
+                                    href="shop-mixed.html">
+                                    Cameras
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    class="block pt-2 transition-all duration-300 hover:text-primary-500"
+                                    href="shop-mixed.html">
+                                    Smart Home Devices
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                          <figure class="mt-4 w-full">
+                            <img
+                              class="w-full"
+                              src="img/banner/banner-4.jpg"
+                              alt="" />
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                      href="shop-mixed.html">
+                      Compute Accessories
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                      href="shop-mixed.html">
+                      Smart Watchs
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                      href="shop-mixed.html">
+                      Smart Mobiles
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                      href="shop-mixed.html">
+                      Smart TV
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                      href="shop-mixed.html">
+                      Camera
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                      href="shop-mixed.html">
+                      Tablet
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                      href="shop-mixed.html">
+                      Headphone
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                      href="shop-mixed.html">
+                      Laptop
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                      href="shop-mixed.html">
+                      Speaker
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <ul class="flex gap-10 font-semibold">
+            <li>
+              <a
+                class="relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
+                href="index.html">
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                class="relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
+                href="about.html">
+                About Us
+              </a>
+            </li>
+            <li class="group relative">
+              <span
+                class="relative block cursor-pointer py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full">
+                Pages
+              </span>
+              <ul
+                class="invisible absolute -left-5 top-14 w-52 rounded border bg-[#f5f7fe] opacity-0 shadow-[0_2px_10px_rgba(131,125,125,.12)] transition-all duration-300 group-hover:visible group-hover:top-11 group-hover:opacity-100">
+                <li class="group/item">
+                  <span
+                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500">
+                    Main Pages
+                  </span>
+                  <div
+                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100">
+                    <ul
+                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]">
+                      <li>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="blog-details.html">
+                          Blog Details
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="checkout.html">
+                          Checkout
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="product-details.html">
+                          Product Details
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="shop-grid.html">
+                          Shop Grid
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="shop-list.html">
+                          Shop List
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="shop-mixed.html">
+                          Shop Mixed
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="shopping-cart.html">
+                          Shopping Cart
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="wishlist.html">
+                          Wishlist
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="group/item">
+                  <span
+                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500">
+                    Account Pages
+                  </span>
+                  <div
+                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100">
+                    <ul
+                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]">
+                      <li>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="profile.html">
+                          Profile
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="sign-in.html">
+                          Sign In
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="sign-up.html">
+                          Sign Up
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="pin.html">
+                          PIN
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="group/item">
+                  <span
+                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500">
+                    Recover Password
+                  </span>
+                  <div
+                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100">
+                    <ul
+                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]">
+                      <li>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="recover-password.html">
+                          Step 1
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="how-to-recover-password.html">
+                          Step 2
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="mail-confirmation.html">
+                          Step 3 (Mail)
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="code-phone-password.html">
+                          Step 3 (Phone)
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="reset-password.html">
+                          Step 4
+                        </a>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="password-changed.html">
+                          Step 5
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="group/item">
+                  <span
+                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500">
+                    Change Password
+                  </span>
+                  <div
+                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100">
+                    <ul
+                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]">
+                      <li>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="current-password.html">
+                          Step 1
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="new-password.html">
+                          Step 2
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="password-changed-successfully.html">
+                          Step 3
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="group/item">
+                  <span
+                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500">
+                    Change PIN
+                  </span>
+                  <div
+                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100">
+                    <ul
+                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]">
+                      <li>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="current-pin.html">
+                          Step 1
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="new-pin.html">
+                          Step 2
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="pin-changed-successfully.html">
+                          Step 3
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="group/item">
+                  <span
+                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500">
+                    Support
+                  </span>
+                  <div
+                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100">
+                    <ul
+                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]">
+                      <li>
+                        <a
+                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                          href="error404.html">
+                          Error 404
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                class="relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
+                href="contact.html">
+                Contact Us
+              </a>
+            </li>
+            <li>
+              <a
+                class="relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
+                href="blog.html">
+                Blog
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="container mx-auto px-4 sm:px-8 xl:px-4">
+      <div class="tab-container tab-profile grid grid-cols-8 gap-10 py-10">
+        <div class="col-span-8 lg:col-span-2">
+          <ul>
+            <li
+              class="tab-item active relative flex cursor-pointer items-center gap-2 py-4 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full">
+              <svg
+                class="h-6 w-6"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 448 512"
+                height="200px"
+                width="200px"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+              </svg>
+              Profile
+            </li>
+            <li
+              class="tab-item relative flex cursor-pointer items-center gap-2 py-4 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full">
+              <svg
+                class="h-6 w-6"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 16 16"
+                height="200px"
+                width="200px"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003zM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461z"></path>
+              </svg>
+              My Orders
+            </li>
+            <li
+              class="tab-item relative flex cursor-pointer items-center gap-2 py-4 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full">
+              <svg
+                class="h-6 w-6"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 16 16"
+                height="200px"
+                width="200px"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"></path>
+              </svg>
+              Address
+            </li>
+            <li
+              class="tab-item relative flex cursor-pointer items-center gap-2 py-4 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full">
+              <svg
+                class="h-6 w-6"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 576 512"
+                height="200px"
+                width="200px"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M528 32H48C21.5 32 0 53.5 0 80v16h576V80c0-26.5-21.5-48-48-48zM0 432c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V128H0v304zm352-232c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zm0 64c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H360c-4.4 0-8-3.6-8-8v-16zM176 192c35.3 0 64 28.7 64 64s-28.7 64-64 64-64-28.7-64-64 28.7-64 64-64zM67.1 396.2C75.5 370.5 99.6 352 128 352h8.2c12.3 5.1 25.7 8 39.8 8s27.6-2.9 39.8-8h8.2c28.4 0 52.5 18.5 60.9 44.2 3.2 9.9-5.2 19.8-15.6 19.8H82.7c-10.4 0-18.8-10-15.6-19.8z"></path>
+              </svg>
+              Identification
+            </li>
+            <li
+              class="tab-item relative flex cursor-pointer items-center gap-2 py-4 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full">
+              <svg
+                class="h-6 w-6"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 640 512"
+                height="200px"
+                width="200px"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M608 32H32C14.33 32 0 46.33 0 64v384c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V64c0-17.67-14.33-32-32-32zM176 327.88V344c0 4.42-3.58 8-8 8h-16c-4.42 0-8-3.58-8-8v-16.29c-11.29-.58-22.27-4.52-31.37-11.35-3.9-2.93-4.1-8.77-.57-12.14l11.75-11.21c2.77-2.64 6.89-2.76 10.13-.73 3.87 2.42 8.26 3.72 12.82 3.72h28.11c6.5 0 11.8-5.92 11.8-13.19 0-5.95-3.61-11.19-8.77-12.73l-45-13.5c-18.59-5.58-31.58-23.42-31.58-43.39 0-24.52 19.05-44.44 42.67-45.07V152c0-4.42 3.58-8 8-8h16c4.42 0 8 3.58 8 8v16.29c11.29.58 22.27 4.51 31.37 11.35 3.9 2.93 4.1 8.77.57 12.14l-11.75 11.21c-2.77 2.64-6.89 2.76-10.13.73-3.87-2.43-8.26-3.72-12.82-3.72h-28.11c-6.5 0-11.8 5.92-11.8 13.19 0 5.95 3.61 11.19 8.77 12.73l45 13.5c18.59 5.58 31.58 23.42 31.58 43.39 0 24.53-19.05 44.44-42.67 45.07zM416 312c0 4.42-3.58 8-8 8H296c-4.42 0-8-3.58-8-8v-16c0-4.42 3.58-8 8-8h112c4.42 0 8 3.58 8 8v16zm160 0c0 4.42-3.58 8-8 8h-80c-4.42 0-8-3.58-8-8v-16c0-4.42 3.58-8 8-8h80c4.42 0 8 3.58 8 8v16zm0-96c0 4.42-3.58 8-8 8H296c-4.42 0-8-3.58-8-8v-16c0-4.42 3.58-8 8-8h272c4.42 0 8 3.58 8 8v16z"></path>
+              </svg>
+              Payment Methods
+            </li>
+            <li
+              class="tab-item relative flex cursor-pointer items-center gap-2 py-4 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full">
+              <svg
+                class="h-6 w-6"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 448 512"
+                height="200px"
+                width="200px"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"></path>
+              </svg>
+              Security
+            </li>
+            <li
+              class="relative flex cursor-pointer items-center gap-2 py-4 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full">
+              <svg
+                class="h-6 w-6"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                height="200px"
+                width="200px"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5 2H19C19.5523 2 20 2.44772 20 3V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V3C4 2.44772 4.44772 2 5 2ZM9 11V8L4 12L9 16V13H15V11H9Z"></path>
+              </svg>
+              Sign Out
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content col-span-8 lg:col-span-6">
+          <div class="tab-content-item active">
+            <h2 class="mb-5 text-xl font-bold text-default-600">
+              Personal Information
+            </h2>
+            <form>
+              <div class="grid grid-cols-8 gap-x-5 gap-y-7">
+                <div class="relative col-span-8 sm:col-span-4">
+                  <input
+                    type="text"
+                    id="input-name"
+                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                    placeholder=" "
+                    value="John"
+                    required />
+                  <label
+                    for="input-name"
+                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                    Full Name
+                  </label>
+                </div>
+                <div class="relative col-span-8 sm:col-span-4">
+                  <input
+                    type="text"
+                    id="input-surname"
+                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                    placeholder=" "
+                    value="Doe"
+                    required />
+                  <label
+                    for="input-surname"
+                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                    Surname
+                  </label>
+                </div>
+                <div class="relative col-span-8 sm:col-span-4">
+                  <input
+                    type="text"
+                    id="input-user"
+                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                    placeholder=" "
+                    value="@JOHNDOE96"
+                    required />
+                  <label
+                    for="input-user"
+                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                    User name
+                  </label>
+                </div>
+                <div class="relative col-span-8 sm:col-span-4">
+                  <input
+                    type="date"
+                    id="input-date"
+                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                    value="1996-11-14"
+                    required />
+                  <label
+                    for="input-date"
+                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                    User name
+                  </label>
+                  <small class="absolute pl-2.5 text-default-400">
+                    Example: YYYY-MM-DD
+                  </small>
+                </div>
+                <div class="col-span-8 sm:col-span-4">
+                  <ul class="flex h-[50px] rounded-3xl bg-white shadow">
+                    <li class="relative w-1/2">
+                      <input
+                        class="peer sr-only"
+                        type="radio"
+                        value=""
+                        name="gender"
+                        id="male"
+                        checked="" />
+                      <label
+                        class="flex h-full w-full cursor-pointer select-none items-center justify-center gap-1 rounded-3xl border-none px-3 py-1 focus:outline-none peer-checked:border-transparent peer-checked:bg-primary-500 peer-checked:text-white"
+                        for="male">
+                        <svg
+                          class="hidden h-4 w-4 min-w-[16px] md:flex"
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 512 512"
+                          height="200px"
+                          width="200px"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M416 48H288v48h94.1L275.4 202.6C251.9 185.9 223.1 176 192 176c-79.5 0-144 64.5-144 144s64.5 144 144 144 144-64.5 144-144c0-31.1-9.9-59.9-26.6-83.4L416 129.9V224h48V48h-48zM192 416c-52.9 0-96-43.1-96-96s43.1-96 96-96 96 43.1 96 96-43.1 96-96 96z"></path>
+                        </svg>
+                        Male
+                      </label>
+                    </li>
+                    <li class="relative w-1/2">
+                      <input
+                        class="peer sr-only"
+                        type="radio"
+                        value=""
+                        name="gender"
+                        id="female" />
+                      <label
+                        class="flex h-full w-full cursor-pointer select-none items-center justify-center gap-1 rounded-3xl border-none px-3 py-1 focus:outline-none peer-checked:border-transparent peer-checked:bg-primary-500 peer-checked:text-white"
+                        for="female">
+                        <svg
+                          class="hidden h-4 w-4 min-w-[16px] md:flex"
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 512 512"
+                          height="200px"
+                          width="200px"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M400 176c0-79.5-64.5-144-144-144S112 96.5 112 176c0 71.4 51.9 130.6 120 142v50h-72v48h72v64h48v-64h72v-48h-72v-50c68.1-11.4 120-70.6 120-142zm-240 0c0-52.9 43.1-96 96-96s96 43.1 96 96-43.1 96-96 96-96-43.1-96-96z"></path>
+                        </svg>
+                        Female
+                      </label>
+                    </li>
+                    <li class="relative w-1/4">
+                      <input
+                        class="peer sr-only"
+                        type="radio"
+                        value=""
+                        name="gender"
+                        id="other" />
+                      <label
+                        class="flex h-full w-full cursor-pointer select-none items-center justify-center gap-1 rounded-3xl border-none px-3 py-1 focus:outline-none peer-checked:border-transparent peer-checked:bg-primary-500 peer-checked:text-white"
+                        for="other">
+                        <svg
+                          class="hidden h-4 w-4 min-w-[16px] md:flex"
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 24 24"
+                          height="200px"
+                          width="200px"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M13 7.06609C16.6694 7.55498 19.5 10.6969 19.5 14.5C19.5 18.6421 16.1421 22 12 22C7.85786 22 4.5 18.6421 4.5 14.5C4.5 10.6969 7.33064 7.55498 11 7.06609V1H13V7.06609ZM12 20C15.0376 20 17.5 17.5376 17.5 14.5C17.5 11.4624 15.0376 9 12 9C8.96243 9 6.5 11.4624 6.5 14.5C6.5 17.5376 8.96243 20 12 20Z"></path>
+                        </svg>
+                        Other
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="relative col-span-8 sm:col-span-4">
+                  <input
+                    type="email"
+                    id="input-email"
+                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                    placeholder=" "
+                    value="johndoe@example.com"
+                    required />
+                  <label
+                    for="input-email"
+                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                    User name
+                  </label>
+                </div>
+                <div class="col-span-4 sm:col-span-2">
+                  <div
+                    class="flex items-center overflow-hidden rounded-lg bg-white shadow">
+                    <figure
+                      class="ml-2 h-5 w-5 min-w-[20px] overflow-hidden rounded-full">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="img/profile/Flag_of_Argentina.png"
+                        alt="" />
+                    </figure>
+                    <div class="relative">
+                      <input
+                        type="number"
+                        id="input-code"
+                        class="peer block w-full appearance-none border-0 px-2.5 pb-2.5 pt-5 text-sm text-default-500 focus:outline-none focus:ring-0"
+                        placeholder=" "
+                        value="54"
+                        required />
+                      <label
+                        for="input-code"
+                        class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                        Area Code
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative col-span-4 sm:col-span-2">
+                  <input
+                    type="number"
+                    id="input-phone"
+                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                    placeholder=" "
+                    value="123456789"
+                    required />
+                  <label
+                    for="input-phone"
+                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                    Phone Number
+                  </label>
+                </div>
+              </div>
+              <div class="mt-7 flex justify-end gap-6">
+                <button
+                  class="font-bold text-primary-500 transition-all duration-300 hover:text-primary-600"
+                  type="button">
+                  Cancel
+                </button>
+                <button
+                  class="rounded-lg bg-primary-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-primary-600"
+                  type="submit">
+                  Save changes
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="tab-content-item">
+            <h2 class="mb-5 text-xl font-bold text-default-600">My Orders</h2>
+            <div class="mb-6 flex flex-wrap justify-between gap-5">
+              <form
+                class="flex flex-auto overflow-hidden rounded-lg bg-white shadow">
+                <div class="relative w-full">
+                  <input
+                    type="search"
+                    id="search-orders"
+                    class="peer block w-full appearance-none border-transparent px-2 pb-2 pt-4 text-sm text-default-500 focus:border-transparent focus:outline-none focus:ring-0"
+                    placeholder=" " />
+                  <label
+                    for="search-orders"
+                    class="z-1 pointer-events-none absolute left-2.5 top-[13px] origin-[0] -translate-y-3 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-3 peer-focus:scale-75 peer-focus:text-primary-500">
+                    Search
+                  </label>
+                </div>
+                <button class="bg-transparent p-[9px]" type="submit">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-6 w-6">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                </button>
+              </form>
+              <ul class="mix-orders flex flex-wrap items-center gap-5">
+                <li class="cursor-pointer" data-filter=".mix-all">All</li>
+                <li
+                  class="flex cursor-pointer items-center gap-1"
+                  data-filter=".mix-processing">
+                  <svg
+                    class="h-5 w-5"
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="200px"
+                    width="200px"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12Zm11.575-4.75a.825.825 0 1 0-1.65 0v5.5c0 .296.159.57.416.716l3.5 2a.825.825 0 0 0 .818-1.432l-3.084-1.763Z"></path>
+                  </svg>
+                  Processing
+                </li>
+                <li
+                  class="flex cursor-pointer items-center gap-1"
+                  data-filter=".mix-completed">
+                  <svg
+                    class="h-5 w-5"
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 512 512"
+                    height="200px"
+                    width="200px"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48zm106.5 150.5L228.8 332.8h-.1c-1.7 1.7-6.3 5.5-11.6 5.5-3.8 0-8.1-2.1-11.7-5.7l-56-56c-1.6-1.6-1.6-4.1 0-5.7l17.8-17.8c.8-.8 1.8-1.2 2.8-1.2 1 0 2 .4 2.8 1.2l44.4 44.4 122-122.9c.8-.8 1.8-1.2 2.8-1.2 1.1 0 2.1.4 2.8 1.2l17.5 18.1c1.8 1.7 1.8 4.2.2 5.8z"></path>
+                  </svg>
+                  Completed
+                </li>
+                <li
+                  class="flex cursor-pointer items-center gap-1"
+                  data-filter=".mix-cancelled">
+                  <svg
+                    class="h-5 w-5"
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="200px"
+                    width="200px"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"></path>
+                  </svg>
+                  Cancelled
+                </li>
+              </ul>
+            </div>
+            <div class="mix-container flex flex-col gap-5">
+              <a
+                class="mix mix-all mix-processing relative block rounded-lg bg-white p-4 shadow"
+                href="javascript:void(0)"
+                data-target=".modal-order">
+                <div
+                  class="pointer-events-none flex flex-col gap-5 sm:flex-row">
+                  <div class="relative h-[80px] w-[80px] min-w-[80px]">
+                    <figure
+                      class="h-full w-full overflow-hidden rounded-lg border bg-white">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="img/products/product-2.jpg"
+                        alt="product" />
+                    </figure>
+                    <figure
+                      class="absolute -right-2 -top-2 h-[30px] w-[30px] min-w-[30px] overflow-hidden rounded-lg border bg-white">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="img/products/product-3.jpg"
+                        alt="product" />
+                    </figure>
+                  </div>
+                  <div class="flex flex-col justify-between">
+                    <h2
+                      class="line-clamp-2 break-all text-lg font-semibold text-default-600">
+                      Amazon Echo Dot 5th Gen, Logitech G733 Wireless
+                      Headphones, Moto E6s Special Edition 64 GB 4 GB RAM
+                    </h2>
+                    <div class="my-2 flex items-center gap-1 text-xs">
+                      <svg
+                        class="h-4 w-4"
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 512 512"
+                        height="200px"
+                        width="200px"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect
+                          width="416"
+                          height="384"
+                          x="48"
+                          y="80"
+                          fill="none"
+                          stroke-linejoin="round"
+                          stroke-width="32"
+                          rx="48"></rect>
+                        <circle cx="296" cy="232" r="24"></circle>
+                        <circle cx="376" cy="232" r="24"></circle>
+                        <circle cx="296" cy="312" r="24"></circle>
+                        <circle cx="376" cy="312" r="24"></circle>
+                        <circle cx="136" cy="312" r="24"></circle>
+                        <circle cx="216" cy="312" r="24"></circle>
+                        <circle cx="136" cy="392" r="24"></circle>
+                        <circle cx="216" cy="392" r="24"></circle>
+                        <circle cx="296" cy="392" r="24"></circle>
+                        <path
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="32"
+                          d="M128 48v32m256-32v32"></path>
+                        <path
+                          fill="none"
+                          stroke-linejoin="round"
+                          stroke-width="32"
+                          d="M464 160H48"></path>
+                      </svg>
+                      <span>14/11/2024</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="text-xs font-light">Transaction. ID</span>
+                      <span class="text-sm font-semibold text-default-600">
+                        #1196SD2F
+                      </span>
+                    </div>
+                  </div>
+                  <div class="mt-auto flex flex-col sm:ml-auto">
+                    <span class="whitespace-nowrap text-xs font-light">
+                      Total Payment
+                    </span>
+                    <span class="text-sm font-semibold text-default-600">
+                      $120.00
+                    </span>
+                  </div>
+                  <span
+                    class="absolute right-0 top-0 m-2 rounded-xl bg-yellow-200 px-2 py-px text-yellow-500">
+                    Processing
+                  </span>
+                </div>
+              </a>
+              <a
+                class="mix mix-all mix-completed relative block rounded-lg bg-white p-4 shadow"
+                href="javascript:void(0)"
+                data-target=".modal-order">
+                <div
+                  class="pointer-events-none flex flex-col gap-5 sm:flex-row">
+                  <div class="relative h-[80px] w-[80px] min-w-[80px]">
+                    <figure
+                      class="h-full w-full overflow-hidden rounded-lg border bg-white">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="img/products/product-13.jpg"
+                        alt="product" />
+                    </figure>
+                  </div>
+                  <div class="flex flex-col justify-between">
+                    <h2
+                      class="line-clamp-2 break-all text-lg font-semibold text-default-600">
+                      Oculus Meta Quest 2 128 Gb Virtual Reality Glasses
+                    </h2>
+                    <div class="my-2 flex items-center gap-1 text-xs">
+                      <svg
+                        class="h-4 w-4"
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 512 512"
+                        height="200px"
+                        width="200px"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect
+                          width="416"
+                          height="384"
+                          x="48"
+                          y="80"
+                          fill="none"
+                          stroke-linejoin="round"
+                          stroke-width="32"
+                          rx="48"></rect>
+                        <circle cx="296" cy="232" r="24"></circle>
+                        <circle cx="376" cy="232" r="24"></circle>
+                        <circle cx="296" cy="312" r="24"></circle>
+                        <circle cx="376" cy="312" r="24"></circle>
+                        <circle cx="136" cy="312" r="24"></circle>
+                        <circle cx="216" cy="312" r="24"></circle>
+                        <circle cx="136" cy="392" r="24"></circle>
+                        <circle cx="216" cy="392" r="24"></circle>
+                        <circle cx="296" cy="392" r="24"></circle>
+                        <path
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="32"
+                          d="M128 48v32m256-32v32"></path>
+                        <path
+                          fill="none"
+                          stroke-linejoin="round"
+                          stroke-width="32"
+                          d="M464 160H48"></path>
+                      </svg>
+                      <span>14/11/2024</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="text-xs font-light">Transaction. ID</span>
+                      <span class="text-sm font-semibold text-default-600">
+                        #1196SD2F
+                      </span>
+                    </div>
+                  </div>
+                  <div class="mt-auto flex flex-col sm:ml-auto">
+                    <span class="whitespace-nowrap text-xs font-light">
+                      Total Payment
+                    </span>
+                    <span class="text-sm font-semibold text-default-600">
+                      $120.00
+                    </span>
+                  </div>
+                  <span
+                    class="absolute right-0 top-0 m-2 rounded-xl bg-green-200 px-2 py-px text-green-400">
+                    Completed
+                  </span>
+                </div>
+              </a>
+              <a
+                class="mix mix-all mix-cancelled relative block rounded-lg bg-white p-4 shadow"
+                href="javascript:void(0)"
+                data-target=".modal-order">
+                <div
+                  class="pointer-events-none flex flex-col gap-5 sm:flex-row">
+                  <div class="relative h-[80px] w-[80px] min-w-[80px]">
+                    <figure
+                      class="h-full w-full overflow-hidden rounded-lg border bg-white">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="img/products/product-5.jpg"
+                        alt="product" />
+                    </figure>
+                  </div>
+                  <div class="flex flex-col justify-between">
+                    <h2
+                      class="line-clamp-2 break-all text-lg font-semibold text-default-600">
+                      Microphone HyperX QuadCast Multipattern
+                    </h2>
+                    <div class="my-2 flex items-center gap-1 text-xs">
+                      <svg
+                        class="h-4 w-4"
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 512 512"
+                        height="200px"
+                        width="200px"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect
+                          width="416"
+                          height="384"
+                          x="48"
+                          y="80"
+                          fill="none"
+                          stroke-linejoin="round"
+                          stroke-width="32"
+                          rx="48"></rect>
+                        <circle cx="296" cy="232" r="24"></circle>
+                        <circle cx="376" cy="232" r="24"></circle>
+                        <circle cx="296" cy="312" r="24"></circle>
+                        <circle cx="376" cy="312" r="24"></circle>
+                        <circle cx="136" cy="312" r="24"></circle>
+                        <circle cx="216" cy="312" r="24"></circle>
+                        <circle cx="136" cy="392" r="24"></circle>
+                        <circle cx="216" cy="392" r="24"></circle>
+                        <circle cx="296" cy="392" r="24"></circle>
+                        <path
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="32"
+                          d="M128 48v32m256-32v32"></path>
+                        <path
+                          fill="none"
+                          stroke-linejoin="round"
+                          stroke-width="32"
+                          d="M464 160H48"></path>
+                      </svg>
+                      <span>14/11/2024</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span class="text-xs font-light">Transaction. ID</span>
+                      <span class="text-sm font-semibold text-default-600">
+                        #1196SD2F
+                      </span>
+                    </div>
+                  </div>
+                  <div class="mt-auto flex flex-col sm:ml-auto">
+                    <span class="whitespace-nowrap text-xs font-light">
+                      Total Payment
+                    </span>
+                    <span class="text-sm font-semibold text-default-600">
+                      $120.00
+                    </span>
+                  </div>
+                  <span
+                    class="absolute right-0 top-0 m-2 rounded-xl bg-red-200 px-2 py-px text-red-400">
+                    Cancelled
+                  </span>
+                </div>
+              </a>
+            </div>
+            <button
+              class="mx-auto mt-8 block rounded-lg bg-primary-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-primary-600"
+              type="submit">
+              Load more
+            </button>
+          </div>
+          <div class="tab-content-item">
+            <h2 class="mb-5 text-xl font-bold text-default-600">
+              Residential Information
+            </h2>
+            <form>
+              <div class="grid grid-cols-8 gap-x-5 gap-y-7">
+                <div class="col-span-8 sm:col-span-4">
+                  <div
+                    class="flex items-center overflow-hidden rounded-lg bg-white shadow">
+                    <figure
+                      class="ml-2 h-5 w-5 min-w-[20px] overflow-hidden rounded-full">
+                      <img
+                        class="h-full w-full object-cover"
+                        src="img/profile/Flag_of_Argentina.png"
+                        alt="" />
+                    </figure>
+                    <div class="relative">
+                      <input
+                        type="text"
+                        id="input-countryresidence"
+                        class="peer block w-full appearance-none border-0 px-2.5 pb-2.5 pt-5 text-sm text-default-500 focus:outline-none focus:ring-0"
+                        placeholder=" "
+                        value="Argentina"
+                        required />
+                      <label
+                        for="input-countryresidence"
+                        class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                        Country of Residence
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative col-span-8 sm:col-span-4">
+                  <input
+                    type="text"
+                    id="input-city"
+                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                    placeholder=" "
+                    value="Buenos Aires"
+                    required />
+                  <label
+                    for="input-city"
+                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                    City
+                  </label>
+                </div>
+                <div class="col-span-8 sm:col-span-4">
+                  <select
+                    class="h-full w-full rounded-lg border-transparent shadow focus:border-transparent focus:ring-0"
+                    id="select-state">
+                    <option value="-">State</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                  </select>
+                </div>
+                <div class="relative col-span-8 sm:col-span-4">
+                  <input
+                    type="number"
+                    id="input-zip"
+                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                    placeholder=" "
+                    value="7400"
+                    required />
+                  <label
+                    for="input-zip"
+                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                    Zip
+                  </label>
+                </div>
+                <div class="relative col-span-8 sm:col-span-4">
+                  <input
+                    type="text"
+                    id="input-address"
+                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                    placeholder=" "
+                    value="1234"
+                    required />
+                  <label
+                    for="input-address"
+                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                    Address
+                  </label>
+                </div>
+                <div class="relative col-span-8 sm:col-span-4">
+                  <input
+                    type="text"
+                    id="input-apt"
+                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                    placeholder=" "
+                    required />
+                  <label
+                    for="input-apt"
+                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                    Apt, Suite, etc (optional)
+                  </label>
+                </div>
+              </div>
+              <div class="mt-7 flex justify-end gap-6">
+                <button
+                  class="font-bold text-primary-500 transition-all duration-300 hover:text-primary-600"
+                  type="button">
+                  Cancel
+                </button>
+                <button
+                  class="rounded-lg bg-primary-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-primary-600"
+                  type="submit">
+                  Save changes
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="tab-content-item">
+            <h2 class="mb-5 text-xl font-bold text-default-600">
+              Identification Information
+            </h2>
+            <form>
+              <div class="grid grid-cols-8 gap-x-5 gap-y-7">
+                <div class="relative col-span-8 sm:col-span-4">
+                  <input
+                    type="text"
+                    id="input-document"
+                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                    placeholder=" "
+                    value="ID"
+                    required />
+                  <label
+                    for="input-document"
+                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                    Document Type
+                  </label>
+                </div>
+                <div class="relative col-span-8 sm:col-span-4">
+                  <input
+                    type="number"
+                    id="input-id"
+                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                    placeholder=" "
+                    value="123456789"
+                    required />
+                  <label
+                    for="input-id"
+                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                    Identification Number
+                  </label>
+                </div>
+              </div>
+              <div class="mt-7 flex justify-end gap-6">
+                <button
+                  class="font-bold text-primary-500 transition-all duration-300 hover:text-primary-600"
+                  type="button">
+                  Cancel
+                </button>
+                <button
+                  class="rounded-lg bg-primary-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-primary-600"
+                  type="submit">
+                  Save changes
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="tab-content-item">
+            <h2 class="mb-5 text-xl font-bold text-default-600">
+              Banking Information
+            </h2>
+            <form>
+              <div class="grid grid-cols-8 gap-x-5 gap-y-7">
+                <div class="col-span-8 sm:col-span-4">
+                  <div
+                    class="flex items-center overflow-hidden rounded-lg bg-white shadow">
+                    <figure class="ml-2 h-5 w-5 min-w-[20px] overflow-hidden">
+                      <img
+                        class="h-full w-full object-contain"
+                        src="img/profile/mastercard.png"
+                        alt="" />
+                    </figure>
+                    <div class="relative">
+                      <input
+                        type="number"
+                        id="input-cardnumber"
+                        class="peer block w-full appearance-none border-0 px-2.5 pb-2.5 pt-5 text-sm text-default-500 focus:outline-none focus:ring-0"
+                        placeholder=" "
+                        value="123456789"
+                        required />
+                      <label
+                        for="input-cardnumber"
+                        class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                        Card Number
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="relative col-span-8 sm:col-span-4">
+                  <input
+                    type="month"
+                    id="input-expiry"
+                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                    value="2028-08"
+                    required />
+                  <label
+                    for="input-expiry"
+                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                    Expiry Date
+                  </label>
+                  <small class="absolute pl-2.5 text-default-400">
+                    Example: MM-YYYY
+                  </small>
+                </div>
+                <div class="relative col-span-8 sm:col-span-4">
+                  <input
+                    type="number"
+                    id="input-cvv"
+                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
+                    placeholder=" "
+                    value="123"
+                    required />
+                  <label
+                    for="input-cvv"
+                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                    CVV
+                  </label>
+                </div>
+              </div>
+              <div class="mt-7 flex justify-end gap-6">
+                <button
+                  class="font-bold text-primary-500 transition-all duration-300 hover:text-primary-600"
+                  type="button">
+                  Cancel
+                </button>
+                <button
+                  class="rounded-lg bg-primary-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-primary-600"
+                  type="submit">
+                  Save changes
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="tab-content-item">
+            <h2 class="mb-5 text-xl font-bold text-default-600">Security</h2>
+            <a
+              class="flex w-full items-center gap-4 rounded-lg bg-white p-6 shadow-[0_2px_10px_rgba(131,125,125,.12)]"
+              href="current-password.html">
+              <div class="flex items-center gap-4">
+                <svg
+                  class="h-10 w-10 min-w-[40px]"
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  height="200px"
+                  width="200px"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M18 8H20C20.5523 8 21 8.44772 21 9V21C21 21.5523 20.5523 22 20 22H4C3.44772 22 3 21.5523 3 21V9C3 8.44772 3.44772 8 4 8H6V7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7V8ZM16 8V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V8H16ZM11 14V16H13V14H11ZM7 14V16H9V14H7ZM15 14V16H17V14H15Z"></path>
+                </svg>
+                <div class="text-start">
+                  <p class="text-default-400">You need your current password</p>
+                  <p class="text-default-600">Change password</p>
+                </div>
+              </div>
+              <svg
+                class="ml-auto h-7 w-7 min-w-[28px] text-primary-500"
+                stroke="currentColor"
+                fill="none"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                height="200px"
+                width="200px"
+                xmlns="http://www.w3.org/2000/svg">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+            <a
+              class="mt-6 flex w-full items-center gap-4 rounded-lg bg-white p-6 shadow-[0_2px_10px_rgba(131,125,125,.12)]"
+              href="current-pin.html">
+              <div class="flex items-center gap-4">
+                <svg
+                  class="h-10 w-10 min-w-[40px]"
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  height="200px"
+                  width="200px"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill="none" d="M0 0h24v24H0V0z"></path>
+                  <path
+                    d="M2 17h20v2H2v-2zm1.15-4.05L4 11.47l.85 1.48 1.3-.75-.85-1.48H7v-1.5H5.3l.85-1.47L4.85 7 4 8.47 3.15 7l-1.3.75.85 1.47H1v1.5h1.7l-.85 1.48 1.3.75zm6.7-.75 1.3.75.85-1.48.85 1.48 1.3-.75-.85-1.48H15v-1.5h-1.7l.85-1.47-1.3-.75L12 8.47 11.15 7l-1.3.75.85 1.47H9v1.5h1.7l-.85 1.48zM23 9.22h-1.7l.85-1.47-1.3-.75L20 8.47 19.15 7l-1.3.75.85 1.47H17v1.5h1.7l-.85 1.48 1.3.75.85-1.48.85 1.48 1.3-.75-.85-1.48H23v-1.5z"></path>
+                </svg>
+                <div class="text-start">
+                  <p class="text-default-400">You need your current PIN</p>
+                  <p class="text-default-600">Change PIN</p>
+                </div>
+              </div>
+              <svg
+                class="ml-auto h-7 w-7 min-w-[28px] text-primary-500"
+                stroke="currentColor"
+                fill="none"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                height="200px"
+                width="200px"
+                xmlns="http://www.w3.org/2000/svg">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-primary-500 py-10 text-default-200">
+      <div class="container mx-auto px-4 sm:px-8 xl:px-4">
+        <div class="c flex flex-col items-center gap-3 text-center">
+          <h2 class="text-3xl font-bold text-white">
+            Subscribe our newsletter
+          </h2>
+          <p>Subscribe to receive updates on our store and special offers</p>
+          <form class="flex w-full max-w-[590px]">
+            <div class="relative w-full">
+              <input
+                type="text"
+                id="your-email"
+                class="peer block w-full appearance-none rounded-l-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 focus:outline-none focus:ring-0"
+                placeholder=" " />
+              <label
+                for="your-email"
+                class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                Your email
+              </label>
+            </div>
+            <button
+              class="rounded-r-lg bg-white p-[9px] text-default-600 transition-all duration-300 hover:text-primary-500"
+              type="submit">
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="css-i6dzq1">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-primary-500 text-default-200">
+      <div class="container mx-auto px-4 sm:px-8 xl:px-4">
+        <div class="hidden lg:block">
+          <div class="grid grid-cols-12 gap-x-20 gap-y-10 pt-10">
+            <div class="col-span-4">
+              <h1
+                class="relative mb-5 pb-2 text-lg font-semibold text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-16 after:bg-primary-300 after:content-['']">
+                About Information
+              </h1>
+              <p class="leading-6">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui,
+                odit. Quia praesentium doloribus quasi minima.
+              </p>
+              <div class="mt-5 flex gap-3">
+                <a class="h-10" href="#">
+                  <img
+                    class="h-full"
+                    src="img/logo-googleplay.png"
+                    alt="logo google play" />
+                </a>
+                <a class="h-10" href="#">
+                  <img
+                    class="h-full"
+                    src="img/logo-appstore.png"
+                    alt="logo app store" />
+                </a>
+              </div>
+            </div>
+            <div class="col-span-4">
+              <h1
+                class="relative mb-5 pb-2 text-lg font-semibold text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-16 after:bg-primary-300 after:content-['']">
+                Quick Links
+              </h1>
+              <ul>
+                <li class="pb-2">
+                  <a
+                    class="transition-all duration-300 hover:text-white"
+                    href="index.html">
+                    Home
+                  </a>
+                </li>
+                <li class="pb-2">
+                  <a
+                    class="transition-all duration-300 hover:text-white"
+                    href="about.html">
+                    About us
+                  </a>
+                </li>
+                <li class="pb-2">
+                  <a
+                    class="transition-all duration-300 hover:text-white"
+                    href="contact.html">
+                    Contact us
+                  </a>
+                </li>
+                <li class="pb-2">
+                  <a
+                    class="transition-all duration-300 hover:text-white"
+                    href="blog.html">
+                    Blog
+                  </a>
+                </li>
+                <li class="pb-2">
+                  <a
+                    class="transition-all duration-300 hover:text-white"
+                    href="shop-mixed.html">
+                    New products
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-span-4">
+              <h1
+                class="relative mb-5 pb-2 text-lg font-semibold text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-16 after:bg-primary-300 after:content-['']">
+                Contact Us
+              </h1>
+              <ul>
+                <li class="flex items-center gap-2 pb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-6 w-6">
+                    <path
+                      fill-rule="evenodd"
+                      d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span>Av. Colon 1234, Buenos Aires, Argentina</span>
+                </li>
+                <li class="flex items-center gap-2 pb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-6 w-6">
+                    <path
+                      d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                    <path
+                      d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                  </svg>
+
+                  <a
+                    class="transition-all duration-300 hover:text-white"
+                    href="#">
+                    Infinite@example.com
+                  </a>
+                </li>
+                <li class="flex items-center gap-2 pb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-6 w-6">
+                    <path
+                      fill-rule="evenodd"
+                      d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span>(+54) 2284-123456789</span>
+                </li>
+              </ul>
+              <div class="flex items-center gap-5 pt-5">
+                <a
+                  class="transition-all duration-300 hover:text-white"
+                  href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="h-6 w-6"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                  </svg>
+                </a>
+                <a
+                  class="transition-all duration-300 hover:text-white"
+                  href="#">
+                  <svg
+                    class="h-6 w-6"
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 512 512"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path>
+                  </svg>
+                </a>
+                <a
+                  class="transition-all duration-300 hover:text-white"
+                  href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="h-6 w-6"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div
+              class="col-span-12 flex flex-col items-center gap-2 border-t border-slate-400 py-5 text-xs">
+              <span class="text-white">
+                Copyright ©
+                <span class="current-year"></span>
+                Example.
+              </span>
+              <p>
+                <a
+                  class="transition-all duration-300 hover:text-white"
+                  href="#">
+                  Privacy Policy
+                </a>
+                &#183;
+                <a
+                  class="transition-all duration-300 hover:text-white"
+                  href="#">
+                  Terms And Conditions
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:hidden">
+          <ul class="metismenu py-5">
+            <li class="transition-all duration-300">
+              <div
+                class="sub-metismenu has-arrow cursor-pointer py-3 font-bold text-white"
+                aria-expanded="false"
+                role="menu">
+                About Information
+              </div>
+              <div class="metismenu-content">
+                <p class="leading-6">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui,
+                  odit. Quia praesentium doloribus quasi minima.
+                </p>
+                <div class="mt-2 flex gap-3">
+                  <a class="h-10" href="#">
+                    <img
+                      class="h-full"
+                      src="img/logo-googleplay.png"
+                      alt="logo google play" />
+                  </a>
+                  <a class="h-10" href="#">
+                    <img
+                      class="h-full"
+                      src="img/logo-appstore.png"
+                      alt="logo app store" />
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="transition-all duration-300">
+              <div
+                class="sub-metismenu has-arrow cursor-pointer py-3 font-bold text-white"
+                aria-expanded="false"
+                role="menu">
+                Quick Links
+              </div>
+              <div class="metismenu-content">
+                <ul>
+                  <li class="pb-2">
+                    <a
+                      class="transition-all duration-300 hover:text-white"
+                      href="index.html">
+                      Home
+                    </a>
+                  </li>
+                  <li class="pb-2">
+                    <a
+                      class="transition-all duration-300 hover:text-white"
+                      href="about.html">
+                      About us
+                    </a>
+                  </li>
+                  <li class="pb-2">
+                    <a
+                      class="transition-all duration-300 hover:text-white"
+                      href="contact.html">
+                      Contact us
+                    </a>
+                  </li>
+                  <li class="pb-2">
+                    <a
+                      class="transition-all duration-300 hover:text-white"
+                      href="blog.html">
+                      Blog
+                    </a>
+                  </li>
+                  <li class="pb-2">
+                    <a
+                      class="transition-all duration-300 hover:text-white"
+                      href="shop-mixed.html">
+                      New products
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="transition-all duration-300">
+              <div
+                class="sub-metismenu has-arrow cursor-pointer py-3 font-bold text-white"
+                aria-expanded="false"
+                role="menu">
+                Contact Us
+              </div>
+              <div class="metismenu-content">
+                <ul>
+                  <li class="flex items-center gap-2 pb-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="h-6 w-6">
+                      <path
+                        fill-rule="evenodd"
+                        d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
+                        clip-rule="evenodd" />
+                    </svg>
+                    <span>Av. Colon 1234, Buenos Aires, Argentina</span>
+                  </li>
+                  <li class="flex items-center gap-2 pb-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="h-6 w-6">
+                      <path
+                        d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                      <path
+                        d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                    </svg>
+
+                    <a
+                      class="transition-all duration-300 hover:text-white"
+                      href="#">
+                      Infinite@example.com
+                    </a>
+                  </li>
+                  <li class="flex items-center gap-2 pb-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      class="h-6 w-6">
+                      <path
+                        fill-rule="evenodd"
+                        d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                        clip-rule="evenodd" />
+                    </svg>
+                    <span>(+54) 2284-123456789</span>
+                  </li>
+                </ul>
+                <div class="flex items-center gap-5 pt-5">
+                  <a
+                    class="transition-all duration-300 hover:text-white"
+                    href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="h-6 w-6"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                    </svg>
+                  </a>
+                  <a
+                    class="transition-all duration-300 hover:text-white"
+                    href="#">
+                    <svg
+                      class="h-6 w-6"
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 512 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path>
+                    </svg>
+                  </a>
+                  <a
+                    class="transition-all duration-300 hover:text-white"
+                    href="#">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="h-6 w-6"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div
+            class="flex flex-col items-center gap-2 border-t border-slate-400 py-5 text-xs">
+            <span class="text-white">
+              Copyright ©
+              <span class="current-year"></span>
+              Example.
+            </span>
+            <p>
+              <a class="transition-all duration-300 hover:text-white" href="#">
+                Privacy Policy
+              </a>
+              &#183;
+              <a class="transition-all duration-300 hover:text-white" href="#">
+                Terms And Conditions
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal-menu modal-container resize-close modal-overlay">
+      <div
+        class="modal-content modal-left flex h-full w-[288px] min-w-[250px] flex-col bg-[#f5f7fe]">
+        <div class="w-full">
+          <button
+            class="close-modal absolute right-5 top-5 p-[3px] text-default-600">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <a href="#" class="mr-auto flex items-center gap-2 p-5 lg:mr-0">
+          <img class="h-7" src="img/logo.png" alt="logo" />
+          <span class="text-2xl font-semibold text-primary-500">Infinite</span>
+        </a>
+        <div class="overflow-y-auto p-5">
+          <ul class="metismenu">
+            <li>
+              <a
+                href="index.html"
+                class="block py-3 font-bold text-default-600">
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="wishlist.html"
+                class="flex items-center justify-between py-3 font-bold text-default-600">
+                Wishlist
+                <span
+                  class="flex h-5 w-5 items-center justify-center rounded-full bg-primary-500 text-xs text-white">
+                  0
+                </span>
+              </a>
+            </li>
+            <li class="transition-all duration-300">
+              <div
+                class="sub-metismenu has-arrow cursor-pointer py-3 font-bold text-default-600"
+                aria-expanded="false"
+                role="menu">
+                Electronics
+              </div>
+              <div class="metismenu-content">
+                <a href="#" class="block p-2">Laptops</a>
+                <a href="#" class="block p-2">Desktops</a>
+                <a href="#" class="block p-2">Monitors</a>
+                <a href="#" class="block p-2">Computer Accessories</a>
+              </div>
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="block py-3 font-bold text-default-600">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="blog.html" class="block py-3 font-bold text-default-600">
+                Blog
+              </a>
+            </li>
+            <li class="transition-all duration-300">
+              <div
+                class="sub-metismenu has-arrow cursor-pointer py-3 font-bold text-default-600"
+                aria-expanded="false"
+                role="menu">
+                Pages
+              </div>
+              <div class="metismenu-content">
+                <a href="blog-details.html" class="block p-2">Blog Details</a>
+                <a href="checkout.html" class="block p-2">Checkout</a>
+                <a href="product-details.html" class="block p-2">
+                  Product Details
+                </a>
+                <a href="shop-grid.html" class="block p-2">Shop Grid</a>
+                <a href="shop-list.html" class="block p-2">Shop List</a>
+                <a href="shop-mixed.html" class="block p-2">Shop Mixed</a>
+                <a href="shopping-cart.html" class="block p-2">Shopping Cart</a>
+                <a href="profile.html" class="block p-2">Profile</a>
+                <a href="sign-in.html" class="block p-2">Sign In</a>
+                <a href="sign-up.html" class="block p-2">Sign Up</a>
+                <a href="pin.html" class="block p-2">PIN</a>
+                <a href="recover-password.html" class="block p-2">
+                  Recover Password
+                </a>
+                <a href="how-to-recover-password.html" class="block p-2">
+                  How to Recover
+                </a>
+                <a href="mail-confirmation.html" class="block p-2">
+                  Mail Confirmation
+                </a>
+                <a href="code-phone-password.html" class="block p-2">
+                  Code Phone
+                </a>
+                <a href="reset-password.html" class="block p-2">
+                  Reset Password
+                </a>
+                <a href="password-changed.html" class="block p-2">
+                  Password Changed
+                </a>
+                <a href="current-password.html" class="block p-2">
+                  Current Password
+                </a>
+                <a href="new-password.html" class="block p-2">New Password</a>
+                <a href="password-changed-successfully.html" class="block p-2">
+                  Password Changed 2
+                </a>
+                <a href="current-pin.html" class="block p-2">Curent PIN</a>
+                <a href="new-pin.html" class="block p-2">New PIN</a>
+                <a href="pin-changed-successfully.html" class="block p-2">
+                  PIN Changed
+                </a>
+                <a href="error404.html" class="block p-2">Error 404</a>
+              </div>
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="block py-3 font-bold text-default-600">
+                Contact
+              </a>
+            </li>
+          </ul>
+          <div class="mt-5 border-t-2 pt-6">
+            <a
+              class="block w-full rounded-md bg-primary-500 p-3 text-center text-white transition-all duration-300 hover:bg-primary-600"
+              href="#">
+              Sign Out
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-search modal-container resize-close modal-overlay">
+      <div
+        class="modal-content modal-top m-5 flex h-fit w-full items-center gap-2 rounded-lg bg-[#f5f7fe] p-4">
+        <form class="flex w-full">
+          <div class="relative w-full">
+            <input
+              type="search"
+              id="search-mob"
+              class="peer block w-full appearance-none rounded-l-lg border border-r-0 border-primary-500 bg-white px-2 pb-2 pt-4 text-sm focus:outline-none focus:ring-0"
+              placeholder=" " />
+            <label
+              for="search-mob"
+              class="z-1 pointer-events-none absolute left-2.5 top-[13px] origin-[0] -translate-y-3 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-3 peer-focus:scale-75 peer-focus:text-primary-500">
+              Search
+            </label>
+          </div>
+          <button
+            class="rounded-r-lg bg-primary-500 p-[9px] text-white"
+            type="submit">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </form>
+        <button class="close-modal text-default-600">
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-6 w-6">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="modal-cart modal-container modal-overlay">
+      <div
+        class="modal-content modal-right flex h-full w-[400px] min-w-[250px] flex-col bg-[#f5f7fe]">
+        <div class="w-full">
+          <div class="border-b-2 p-5">
+            <h3 class="text-lg font-bold text-default-600">Shopping Cart</h3>
+          </div>
+          <button
+            class="close-modal absolute right-5 top-5 p-[3px] text-default-600">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="h-full overflow-auto">
+          <div class="flex flex-col items-center p-10">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="h-20 w-20"
+              viewBox="0 0 16 16">
+              <path
+                d="M7.354 5.646a.5.5 0 1 0-.708.708L7.793 7.5 6.646 8.646a.5.5 0 1 0 .708.708L8.5 8.207l1.146 1.147a.5.5 0 0 0 .708-.708L9.207 7.5l1.147-1.146a.5.5 0 0 0-.708-.708L8.5 6.793 7.354 5.646z" />
+              <path
+                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+            </svg>
+            <span class="my-5">Your shopping cart is empty!</span>
+            <a
+              class="block rounded-md bg-primary-500 px-4 py-3 text-center font-bold text-white transition-all duration-300 hover:bg-primary-600"
+              href="#">
+              Continue Shopping
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal-order modal-container modal-overlay modal-overlay overflow-y-auto">
+      <div
+        class="modal-content modal-center-top flex w-[700px] min-w-[250px] flex-col rounded-lg bg-[#f5f7fe] p-5">
+        <button
+          class="close-modal absolute right-0 top-0 p-2 transition-all duration-300 sm:right-[-10px] sm:top-[-10px] sm:rounded-lg sm:bg-primary-500 sm:text-white sm:hover:bg-primary-400">
+          <svg
+            class="h-5 w-5"
+            stroke="currentColor"
+            fill="none"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            height="200px"
+            width="200px"
+            xmlns="http://www.w3.org/2000/svg">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div>
+          <div
+            class="mb-4 flex items-center gap-2 text-xl font-semibold text-default-600">
+            <h1 class="text-default-600">Order details</h1>
+            &#183;
+            <small class="text-sm">(#1196SD2F)</small>
+          </div>
+          <div class="rounded-lg bg-white p-5">
+            <div
+              class="mb-8 flex items-center justify-between border-b-[3px] pb-2">
+              <h2
+                class="relative text-xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']">
+                Order Status
+              </h2>
+            </div>
+            <div
+              class="progressbar-container mx-auto my-10 flex w-4/5 items-center gap-1">
+              <div class="progressbar-step relative flex justify-center">
+                <div
+                  class="flex h-2 w-2 items-center justify-center rounded-full bg-primary-500 text-white"></div>
+                <small
+                  class="absolute bottom-[-25px] hidden whitespace-nowrap text-xs sm:block">
+                  Order Received
+                </small>
+              </div>
+              <div
+                class="progressbar relative h-[5px] w-full overflow-hidden rounded-full bg-gray-200">
+                <div
+                  class="absolute h-full w-full rounded-full bg-primary-500"></div>
+              </div>
+              <div class="progressbar-step relative flex justify-center">
+                <div
+                  class="flex h-2 w-2 items-center justify-center rounded-full bg-primary-500 text-white"></div>
+                <small
+                  class="absolute bottom-[-25px] hidden whitespace-nowrap text-xs sm:block">
+                  Preparing order
+                </small>
+              </div>
+              <div
+                class="progressbar relative h-[5px] w-full overflow-hidden rounded-full bg-gray-200">
+                <div
+                  class="absolute h-full w-full rounded-full bg-primary-500"></div>
+              </div>
+              <div class="progressbar-step relative flex justify-center">
+                <div
+                  class="flex h-2 w-2 items-center justify-center rounded-full bg-primary-500 text-current">
+                  <small
+                    class="absolute bottom-[-25px] hidden whitespace-nowrap text-xs sm:block">
+                    On the way
+                  </small>
+                </div>
+              </div>
+              <div
+                class="progressbar relative h-[5px] w-full overflow-hidden rounded-full bg-gray-200">
+                <div
+                  class="absolute h-full w-0 rounded-full bg-primary-500"></div>
+              </div>
+              <div class="progressbar-step relative flex justify-center">
+                <div
+                  class="flex h-2 w-2 items-center justify-center rounded-full bg-gray-200 text-current">
+                  <small
+                    class="absolute bottom-[-25px] hidden whitespace-nowrap text-xs sm:block">
+                    Delivered Order
+                  </small>
+                </div>
+              </div>
+            </div>
+            <h3 class="mb-3 pt-5 text-base font-semibold text-default-600">
+              Order History
+            </h3>
+            <ul class="flex flex-col gap-2">
+              <li
+                class="relative flex items-center gap-2 pl-4 text-default-600 after:absolute after:left-0 after:top-2 after:h-2 after:w-2 after:rounded-full after:bg-primary-500">
+                Order Received
+                <span>&#183;</span>
+                <small class="text-xs text-default-400">
+                  23/01/2024 11:28am
+                </small>
+              </li>
+              <li
+                class="relative flex items-center gap-2 pl-4 text-default-600 after:absolute after:left-0 after:top-2 after:h-2 after:w-2 after:rounded-full after:bg-primary-500">
+                Preparing order
+                <span>&#183;</span>
+                <small class="text-xs text-default-400">
+                  23/01/2024 03:00pm
+                </small>
+              </li>
+              <li
+                class="relative flex items-center gap-2 pl-4 text-default-600 after:absolute after:left-0 after:top-2 after:h-2 after:w-2 after:rounded-full after:bg-primary-500">
+                On the way
+                <span>&#183;</span>
+                <small class="text-xs text-default-400">
+                  23/01/2024 09:30pm
+                </small>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-6 rounded-lg bg-white p-5">
+            <div
+              class="mb-8 flex items-center justify-between border-b-[3px] pb-2">
+              <h2
+                class="relative text-xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']">
+                Destination
+              </h2>
+            </div>
+            <div class="flex items-center gap-4">
+              <svg
+                class="hidden h-8 w-8 sm:block"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 448 512"
+                height="200px"
+                width="200px"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M436 480h-20V24c0-13.255-10.745-24-24-24H56C42.745 0 32 10.745 32 24v456H12c-6.627 0-12 5.373-12 12v20h448v-20c0-6.627-5.373-12-12-12zM128 76c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12V76zm0 96c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40zm52 148h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12zm76 160h-64v-84c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v84zm64-172c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40zm0-96c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40zm0-96c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12V76c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40z"></path>
+              </svg>
+              <div class="text-start">
+                <h4 class="text-base font-semibold text-default-600">
+                  Jhon Doe
+                </h4>
+                <span>
+                  1234 Corrientes Avenue
+                  <br />
+                  Floor 7, Apartment 42
+                  <br />
+                  CABA (Autonomous City of Buenos Aires)
+                  <br />
+                  Argentina
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 rounded-lg bg-white p-5">
+            <div
+              class="mb-8 flex items-center justify-between border-b-[3px] pb-2">
+              <h2
+                class="relative text-xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']">
+                Products
+              </h2>
+            </div>
+            <div class="max-h-[280px] overflow-y-auto">
+              <div class="flex gap-3 p-2">
+                <a href="#">
+                  <figure
+                    class="h-[100px] w-[100px] overflow-hidden rounded-lg border">
+                    <img
+                      class="h-full w-full object-contain"
+                      src="img/product/color1.png"
+                      alt="img" />
+                  </figure>
+                </a>
+                <div>
+                  <a
+                    class="mb-2 line-clamp-2 font-semibold text-default-600 transition-all duration-300 hover:text-primary-500"
+                    href="#">
+                    Amazon Echo Dot 5th Gen - Deep sea blue
+                  </a>
+                  <div
+                    class="flex flex-col flex-wrap gap-2 sm:flex-row sm:items-center lg:flex-col lg:items-start xl:flex-row xl:items-center">
+                    <span class="flex gap-1 text-xs">
+                      <b>Size:</b>
+                      XL
+                    </span>
+                    <svg
+                      class="hidden h-2 w-2 sm:flex lg:hidden xl:flex"
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      height="200px"
+                      width="200px"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+                    </svg>
+                    <span class="flex gap-1 text-xs">
+                      <b>Color:</b>
+                      <span class="h-4 w-4 rounded border bg-blue-400"></span>
+                    </span>
+                    <svg
+                      class="hidden h-2 w-2 sm:flex lg:hidden xl:flex"
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      height="200px"
+                      width="200px"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+                    </svg>
+                    <span class="flex gap-1 text-xs">
+                      <b>Quantity:</b>
+                      1
+                    </span>
+                  </div>
+                  <div class="mt-2">
+                    <b class="font-bold uppercase text-default-600">TOTAL:</b>
+                    <span class="font-bold text-primary-500">$120.00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex gap-3 p-2">
+                <a href="#">
+                  <figure
+                    class="h-[100px] w-[100px] overflow-hidden rounded-lg border">
+                    <img
+                      class="h-full w-full object-contain"
+                      src="img/products/product-3.jpg"
+                      alt="img" />
+                  </figure>
+                </a>
+                <div>
+                  <a
+                    class="mb-2 line-clamp-2 font-semibold text-default-600 transition-all duration-300 hover:text-primary-500"
+                    href="#">
+                    Logitech G733 Wireless Headphones
+                  </a>
+                  <div
+                    class="flex flex-col flex-wrap gap-2 sm:flex-row sm:items-center lg:flex-col lg:items-start xl:flex-row xl:items-center">
+                    <span class="flex gap-1 text-xs">
+                      <b>Size:</b>
+                      XL
+                    </span>
+                    <svg
+                      class="hidden h-2 w-2 sm:flex lg:hidden xl:flex"
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      height="200px"
+                      width="200px"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+                    </svg>
+                    <span class="flex gap-1 text-xs">
+                      <b>Color:</b>
+                      <span class="h-4 w-4 rounded border bg-white"></span>
+                    </span>
+                    <svg
+                      class="hidden h-2 w-2 sm:flex lg:hidden xl:flex"
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      height="200px"
+                      width="200px"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+                    </svg>
+                    <span class="flex gap-1 text-xs">
+                      <b>Quantity:</b>
+                      1
+                    </span>
+                  </div>
+                  <div class="mt-2">
+                    <b class="font-bold uppercase text-default-600">TOTAL:</b>
+                    <span class="font-bold text-primary-500">$120.00</span>
+                  </div>
+                </div>
+              </div>
+              <div class="flex gap-3 p-2">
+                <a href="#">
+                  <figure
+                    class="h-[100px] w-[100px] overflow-hidden rounded-lg border">
+                    <img
+                      class="h-full w-full object-contain"
+                      src="img/products/product-9.jpg"
+                      alt="img" />
+                  </figure>
+                </a>
+                <div>
+                  <a
+                    class="mb-2 line-clamp-2 font-semibold text-default-600 transition-all duration-300 hover:text-primary-500"
+                    href="#">
+                    Moto E6s Special Edition 64 GB 4 GB RAM
+                  </a>
+                  <div
+                    class="flex flex-col flex-wrap gap-2 sm:flex-row sm:items-center lg:flex-col lg:items-start xl:flex-row xl:items-center">
+                    <span class="flex gap-1 text-xs">
+                      <b>Size:</b>
+                      XL
+                    </span>
+                    <svg
+                      class="hidden h-2 w-2 sm:flex lg:hidden xl:flex"
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      height="200px"
+                      width="200px"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+                    </svg>
+                    <span class="flex gap-1 text-xs">
+                      <b>Color:</b>
+                      <span class="h-4 w-4 rounded border bg-red-400"></span>
+                    </span>
+                    <svg
+                      class="hidden h-2 w-2 sm:flex lg:hidden xl:flex"
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      height="200px"
+                      width="200px"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
+                    </svg>
+                    <span class="flex gap-1 text-xs">
+                      <b>Quantity:</b>
+                      1
+                    </span>
+                  </div>
+                  <div class="mt-2">
+                    <b class="font-bold uppercase text-default-600">TOTAL:</b>
+                    <span class="font-bold text-primary-500">$120.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 rounded-lg bg-white p-5">
+            <div
+              class="mb-8 flex items-center justify-between border-b-[3px] pb-2">
+              <h2
+                class="relative text-xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']">
+                Total Summary
+              </h2>
+            </div>
+            <ul>
+              <li class="flex justify-between">
+                Items
+                <span class="text-default-600">$690.00</span>
+              </li>
+              <li class="mt-2 flex justify-between">
+                Discount
+                <span class="text-red-400">-$330.00</span>
+              </li>
+              <li class="mt-2 flex justify-between">
+                Shipping
+                <span class="text-default-600">$8.00</span>
+              </li>
+              <li
+                class="mt-4 flex justify-between font-bold uppercase text-default-600">
+                Total cost
+                <span>$368.00</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="scroll-up invisible fixed bottom-10 right-[50px] z-30 cursor-pointer select-none rounded-xl bg-black/50 p-2 text-white opacity-0 shadow-lg transition-all duration-300 hover:bg-primary-500">
+      <svg
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+        stroke="currentColor"
+        stroke-width="2"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </div>
+
+    <script src="lib/mixitup/mixitup.min.js"></script>
+    <script src="lib/metisMenu/metismenujs.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+
+<!-- Mirrored from infinite.andevfrontend.site/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2024 09:49:41 GMT -->
+</html>
