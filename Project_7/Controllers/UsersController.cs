@@ -17,6 +17,20 @@ namespace Project_7.Controllers
             _db = db;
             _tokenGenerator = tokenGenerator;
         }
+
+        [HttpGet("ShowAllUsers")]
+        public IActionResult GetAllUser() 
+        {
+            var users = _db.Users.ToList();
+            return Ok(users);
+        }
+        [HttpGet("ShowUserByID")]
+        public IActionResult GetUser(int id) 
+        {
+            var user = _db.Users.Find(id);
+            return Ok(user);
+        }
+
         [HttpPost("RegisterUsers")]
         public IActionResult Register([FromForm] UserRegisterDTO user)
         {
