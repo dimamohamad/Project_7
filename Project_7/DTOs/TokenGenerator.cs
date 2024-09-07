@@ -14,7 +14,7 @@ public class TokenGenerator
         _configuration = configuration;
     }
 
-    public string GenerateToken(string username, IList<string> roles)
+    public string GenerateToken(string username)
     {
         var jwtSettings = _configuration.GetSection("Jwt");
         var key = jwtSettings.GetValue<string>("Key");
@@ -23,7 +23,6 @@ public class TokenGenerator
             new Claim(ClaimTypes.Name, username)
         };
 
-        claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
 
         var keyBytes = Encoding.UTF8.GetBytes(key);
         var signingKey = new SymmetricSecurityKey(keyBytes);
