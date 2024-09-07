@@ -11,11 +11,11 @@ namespace Project_7.Controllers
     public class UsersController : ControllerBase
     {
         private readonly MyDbContext _db;
-        public UsersController(MyDbContext db) 
+        public UsersController(MyDbContext db)
         {
             _db = db;
         }
-        [HttpPost ("RegisterUsers")]
+        [HttpPost("RegisterUsers")]
         public IActionResult Register([FromForm] UserRegisterDTO user)
         {
             byte[] hash;
@@ -30,6 +30,8 @@ namespace Project_7.Controllers
                 PasswordHash = hash,
                 PasswordSalt = salt,
             };
+            _db.Users.Add(data);
+            _db.SaveChanges();
             return Ok(data);
         }
     }
