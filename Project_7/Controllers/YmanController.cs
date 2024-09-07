@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static Project_7.Shared.ImageSaver;
 
@@ -14,6 +15,14 @@ namespace Project_7.Controllers
         {
             var imageName = SaveImage(image.Image);
             return Ok(new { imageName });
+        }
+
+        [Authorize]
+        [HttpGet("getDataFromUser")]
+        public IActionResult GetDataFromToken()
+        {
+
+            return Ok();
         }
     }
 
