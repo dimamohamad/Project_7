@@ -84,9 +84,12 @@ namespace Project_7.Controllers
 
             var user = GetUser();
             var cartItem = db.CartItems.Find(id);
+            var product = db.Products.Find(cartItem.ProductId);
+            //var cart = 
             if (cartItem == null)
                 return NotFound();
             cartItem.Quantity = update.Quantity;
+            
             db.CartItems.Update(cartItem);
             db.SaveChanges();
             return Ok(DisplayCartItemDto.createFromCartItem(cartItem));

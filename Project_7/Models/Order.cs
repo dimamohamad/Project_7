@@ -11,8 +11,6 @@ public partial class Order
 
     public int? UserId { get; set; }
 
-    public int? CartId { get; set; }
-
     public decimal TotalAmount { get; set; }
 
     public DateTime? OrderDate { get; set; }
@@ -22,8 +20,6 @@ public partial class Order
     public string? ShippingStatus { get; set; }
 
     public DateTime? CreatedAt { get; set; }
-
-    public virtual Cart? Cart { get; set; }
 
     public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 
