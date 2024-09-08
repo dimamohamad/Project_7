@@ -19,7 +19,7 @@ namespace Project_7.Services
             return new APIContext(oauthToken);
         }
 
-        public Payment CreatePayment(string redirectUrl)
+        public Payment CreatePayment(string redirectUrl, decimal total, string? message)
         {
             var apiContext = GetAPIContext();
 
@@ -35,9 +35,9 @@ namespace Project_7.Services
                         amount = new Amount
                         {
                             currency = "USD",
-                            total = "20.00" // amount to charge
+                            total = $"{total}" // amount to charge
                         },
-                        description = "Product description"
+                        description = message?? "Product description"
                     }
                 },
                 redirect_urls = new RedirectUrls
