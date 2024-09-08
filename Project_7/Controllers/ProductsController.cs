@@ -75,8 +75,11 @@ namespace Project_7.Controllers
                 return BadRequest();
 
             }
-            var category = _db.Categories.Find(id);
-            if (category == null) { return NotFound(); }
+            //var category = _db.Categories.Find(id);
+            //if (category == null) 
+            //{ return NotFound();
+
+            //}
             var products = _db.Products.Where(p => p.CategoryId == id).ToList();
 
             if (products != null)
@@ -103,12 +106,12 @@ namespace Project_7.Controllers
             {
 
                 CategoryId = request.CategoryId,
-                ProductImage1 = SaveImage(request.ProductImage1),
-                ProductImage2 = SaveImage(request.ProductImage2),
-                ProductImage3 = SaveImage(request.ProductImage3),
-                ProductImage4 = SaveImage(request.ProductImage4),
-                ProductImage5 = SaveImage(request.ProductImage5),
-                ProductImage6 = SaveImage(request.ProductImage6),
+                ProductImage1 = request.ProductImage1 == null ? null : SaveImage(request.ProductImage1),
+                ProductImage2 = request.ProductImage2 == null ? null : SaveImage(request.ProductImage2),
+                ProductImage3 = request.ProductImage3 == null ? null : SaveImage(request.ProductImage3),
+                ProductImage4 = request.ProductImage4 == null ? null : SaveImage(request.ProductImage4),
+                ProductImage5 = request.ProductImage5 == null ? null : SaveImage(request.ProductImage5),
+                ProductImage6 = request.ProductImage6 == null ? null : SaveImage(request.ProductImage6),
                 ProductName = request.ProductName,
                 Description = request.Description,
                 Visiblity = request.Visiblity,
