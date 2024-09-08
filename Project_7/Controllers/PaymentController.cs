@@ -20,7 +20,10 @@ namespace Project_7.Controllers
         [HttpPost("create")]
         public IActionResult CreatePayment()
         {
-            var payment = _payPalService.CreatePayment(_redirectUrl);
+            if (string.IsNullOrEmpty(_redirectUrl))
+                throw new Exception("The redirect link for the paypal should be set correctly on the sitting app.");
+
+            var payment = _payPalService.CreatePayment(_redirectUrl ?? " ", 20.0m, null);
             var approvalUrl = payment.links.FirstOrDefault(l => l.rel.Equals("approval_url", StringComparison.OrdinalIgnoreCase))?.href;
 
             return Ok(new { approvalUrl });

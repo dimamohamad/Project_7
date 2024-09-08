@@ -1,4 +1,4 @@
-const url = "https://localhost:7035/api/Contact/AddMessage";
+const url = "https://localhost:44339/api/Contact/AddMessage";
 var form = document.getElementById("contact-form");
 async function sendMessage() {
   var formData = new FormData(form);

@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="lib/metisMenu/metismenujs.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <title>Infinite</title>
+    <style>
+      #CategoryHedarText{
+        
+    margin-left: 100px;
+    margin-right: 100px;
+}
+      
+    </style>
   </head>
   <body
     class="bg-[#f5f7fe] font-montserrat font-medium text-default-500 lg:text-sm"
@@ -434,10 +442,11 @@
         <div
           class="swiper swiper-hero group relative flex items-center rounded-lg"
         >
+      
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="block">
-                <img src="img/hero/hero-1.jpg" alt="" />
+                <img src="../images/smartphones-on-display-stockcake.jpg" style="width: 50rem; height: 27rem;" alt="" />
               </div>
             </div>
             <div class="swiper-slide">
@@ -461,166 +470,40 @@
       </div>
     </div>
 
-    <div class="container mx-auto px-4 sm:px-8 xl:px-4">
-      <div class="my-5 grid grid-cols-12 gap-5">
+
+
+    <div class="mb-8 flex items-center justify-between border-b-[3px] pb-2" id="CategoryHedarText">
+      <h2
+        class="relative text-2xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
+      >
+        Category
+      </h2>
+      
+    </div>
+    <div
+    class="relative w-full overflow-hidden after:absolute after:inset-0 after:z-[2] after:h-full after:w-full after:bg-black/50"
+  > 
+    <div
+      class="container absolute inset-0 z-[4] mx-auto my-10 px-4 sm:px-8 xl:px-4"
+    >
+      <div class="flex h-full items-center">
         <div
-          class="col-span-12 overflow-hidden rounded-lg shadow-md md:col-span-4"
+          class="swiper swiper-categories group relative flex w-full items-center"
         >
-          <img
-            class="h-full w-full"
-            src="img/banner/banner-1.jpg"
-            alt="banner"
-          />
-        </div>
-        <div
-          class="col-span-12 overflow-hidden rounded-lg shadow-md md:col-span-4"
-        >
-          <img
-            class="h-full w-full"
-            src="img/banner/banner-2.jpg"
-            alt="banner"
-          />
-        </div>
-        <div
-          class="col-span-12 overflow-hidden rounded-lg shadow-md md:col-span-4"
-        >
-          <img
-            class="h-full w-full"
-            src="img/banner/banner-3.jpg"
-            alt="banner"
-          />
+          <div
+            class="swiper-wrapper select-none py-12"
+            id="categoryContainer"
+          ></div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </div>
-
-    <section class="container mx-auto px-4 sm:px-8 xl:px-4">
-      <div class="my-10 grid grid-cols-12 rounded-lg bg-white p-10">
-        <div class="col-span-12 sm:col-span-6 lg:col-span-3">
-          <a
-            class="group relative flex items-center gap-5 py-5 after:absolute after:right-[50px] after:hidden after:h-8 after:w-[2px] after:bg-slate-200 after:content-[''] lg:p-0 xl:after:block"
-            href="#"
-          >
-            <svg
-              class="h-12 w-12 text-default-600 transition-all duration-300 group-hover:-translate-y-4 group-hover:text-primary-500"
-              stroke="currentColor"
-              fill="none"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              height="200px"
-              width="200px"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-              <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
-              <path
-                d="M5 17h-2v-4m-1 -8h11v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5"
-              ></path>
-              <path d="M3 9l4 0"></path>
-            </svg>
-            <div>
-              <h2 class="text-base font-semibold text-default-600">
-                Free Shipping
-              </h2>
-              <p class="text-default-400">Orders over $100</p>
-            </div>
-          </a>
-        </div>
-        <div class="col-span-12 sm:col-span-6 lg:col-span-3">
-          <a
-            class="group relative flex items-center gap-5 py-5 after:absolute after:right-[50px] after:hidden after:h-8 after:w-[2px] after:bg-slate-200 after:content-[''] lg:p-0 xl:after:block"
-            href="#"
-          >
-            <svg
-              class="h-12 w-12 text-default-600 transition-all duration-300 group-hover:-translate-y-4 group-hover:text-primary-500"
-              stroke="currentColor"
-              fill="none"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              height="200px"
-              width="200px"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M15 11v.01"></path>
-              <path d="M5.173 8.378a3 3 0 1 1 4.656 -1.377"></path>
-              <path
-                d="M16 4v3.803a6.019 6.019 0 0 1 2.658 3.197h1.341a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-1.342c-.336 .95 -.907 1.8 -1.658 2.473v2.027a1.5 1.5 0 0 1 -3 0v-.583a6.04 6.04 0 0 1 -1 .083h-4a6.04 6.04 0 0 1 -1 -.083v.583a1.5 1.5 0 0 1 -3 0v-2l0 -.027a6 6 0 0 1 4 -10.473h2.5l4.5 -3h0z"
-              ></path>
-            </svg>
-            <div>
-              <h2 class="text-base font-semibold text-default-600">
-                Money Back
-              </h2>
-              <p class="text-default-400">With a 30 day</p>
-            </div>
-          </a>
-        </div>
-        <div class="col-span-12 sm:col-span-6 lg:col-span-3">
-          <a
-            class="group relative flex items-center gap-5 py-5 after:absolute after:right-[50px] after:hidden after:h-8 after:w-[2px] after:bg-slate-200 after:content-[''] lg:p-0 xl:after:block"
-            href="#"
-          >
-            <svg
-              class="h-12 w-12 text-default-600 transition-all duration-300 group-hover:-translate-y-4 group-hover:text-primary-500"
-              stroke="currentColor"
-              fill="currentColor"
-              stroke-width="0"
-              viewBox="0 0 24 24"
-              height="200px"
-              width="200px"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.0049 2L18.3032 4.28071C18.7206 4.41117 19.0049 4.79781 19.0049 5.23519V7H21.0049C21.5572 7 22.0049 7.44772 22.0049 8V10H9.00488V8C9.00488 7.44772 9.4526 7 10.0049 7H17.0049V5.97L11.0049 4.094L5.00488 5.97V13.3744C5.00488 14.6193 5.58406 15.7884 6.56329 16.5428L6.75154 16.6793L11.0049 19.579L14.7869 17H10.0049C9.4526 17 9.00488 16.5523 9.00488 16V12H22.0049V16C22.0049 16.5523 21.5572 17 21.0049 17L17.7848 17.0011C17.3982 17.5108 16.9276 17.9618 16.3849 18.3318L11.0049 22L5.62486 18.3318C3.98563 17.2141 3.00488 15.3584 3.00488 13.3744V5.23519C3.00488 4.79781 3.28913 4.41117 3.70661 4.28071L11.0049 2Z"
-              ></path>
-            </svg>
-            <div>
-              <h2 class="text-base font-semibold text-default-600">
-                Secure Payment
-              </h2>
-              <p class="text-default-400">Secured payment</p>
-            </div>
-          </a>
-        </div>
-        <div class="col-span-12 sm:col-span-6 lg:col-span-3">
-          <a
-            class="group relative flex items-center gap-5 py-5 lg:p-0"
-            href="#"
-          >
-            <svg
-              class="h-12 w-12 text-default-600 transition-all duration-300 group-hover:-translate-y-4 group-hover:text-primary-500"
-              stroke="currentColor"
-              fill="currentColor"
-              stroke-width="0"
-              viewBox="0 0 24 24"
-              height="200px"
-              width="200px"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path fill="none" d="M0 0h24v24H0z"></path>
-              <path
-                d="M21 12.22C21 6.73 16.74 3 12 3c-4.69 0-9 3.65-9 9.28-.6.34-1 .98-1 1.72v2c0 1.1.9 2 2 2h1v-6.1c0-3.87 3.13-7 7-7s7 3.13 7 7V19h-8v2h8c1.1 0 2-.9 2-2v-1.22c.59-.31 1-.92 1-1.64v-2.3c0-.7-.41-1.31-1-1.62z"
-              ></path>
-              <circle cx="9" cy="13" r="1"></circle>
-              <circle cx="15" cy="13" r="1"></circle>
-              <path
-                d="M18 11.03A6.04 6.04 0 0 0 12.05 6c-3.03 0-6.29 2.51-6.03 6.45a8.075 8.075 0 0 0 4.86-5.89c1.31 2.63 4 4.44 7.12 4.47z"
-              ></path>
-            </svg>
-            <div>
-              <h2 class="text-base font-semibold text-default-600">
-                Online Support
-              </h2>
-              <p class="text-default-400">Support 24/7</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
+    <img
+      class="parallax h-full max-h-[410px] w-full object-cover"
+      src="img/banner/banner-5.png"
+      alt="img"
+    />
+  </div>
     <section class="container mx-auto px-4 sm:px-8 xl:px-4">
       <div class="swiper swiper-cards relative my-10 overflow-hidden">
         <div class="mb-8 flex items-center justify-between border-b-[3px] pb-2">
@@ -642,8 +525,8 @@
             </div>
           </div>
         </div>
-        <div class="swiper-wrapper">
-          <div class="swiper-slide h-auto">
+        <div class="swiper-wrapper" id="LatestProducts">
+           <!-- <div class="swiper-slide h-auto">
             <div
               class="relative flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-lg hover:shadow-xl"
             >
@@ -733,10 +616,10 @@
                 class="pointer-events-none absolute left-4 top-4 rounded-md bg-primary-500 px-2 text-white"
               >
                 New
-              </span>
-            </div>
+              </span> 
+            </div> -->
           </div>
-          <div class="swiper-slide h-auto">
+          <!-- <div class="swiper-slide h-auto">
             <div
               class="relative flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-lg hover:shadow-xl"
             >
@@ -746,7 +629,7 @@
                   src="img/products/product-3.jpg"
                   alt="img"
                 />
-              </a>
+              </a> 
               <div class="mt-2 flex gap-1 px-5">
                 <a
                   href="#"
@@ -1343,9 +1226,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <div class="container mx-auto my-10 px-4 sm:px-8 xl:px-4">
+    <!-- <div class="container mx-auto my-10 px-4 sm:px-8 xl:px-4">
       <div
         class="flex flex-col items-center justify-center gap-5 rounded-lg bg-primary-500 px-4 py-10 text-white lg:flex-row lg:gap-0"
       >
@@ -1372,32 +1255,9 @@
           Free delivery now on your first order and over $100
         </p>
       </div>
-    </div>
+    </div> -->
 
-    <div
-      class="relative w-full overflow-hidden after:absolute after:inset-0 after:z-[2] after:h-full after:w-full after:bg-black/50"
-    >
-      <div
-        class="container absolute inset-0 z-[4] mx-auto my-10 px-4 sm:px-8 xl:px-4"
-      >
-        <div class="flex h-full items-center">
-          <div
-            class="swiper swiper-categories group relative flex w-full items-center"
-          >
-            <div
-              class="swiper-wrapper select-none py-12"
-              id="categoryContainer"
-            ></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </div>
-      <img
-        class="parallax h-full max-h-[410px] w-full object-cover"
-        src="img/banner/banner-5.png"
-        alt="img"
-      />
-    </div>
+  
 
     <section class="container mx-auto my-10 px-4 sm:px-8 xl:px-4">
       <div class="swiper swiper-gridcard relative my-10 overflow-hidden">
@@ -1405,8 +1265,8 @@
           <h2
             class="relative text-2xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
           >
-            Featured Products
-          </h2>
+          Most Review          </h2>
+
           <div class="flex items-center gap-1">
             <div
               class="button-prev select-none rounded-md bg-default-400 px-[10px] py-1 text-white transition-all duration-300 hover:bg-primary-500"
@@ -1420,229 +1280,10 @@
             </div>
           </div>
         </div>
-        <div class="swiper-wrapper">
-          <div class="swiper-slide grid grid-cols-6 gap-5">
-            <div
-              class="relative col-span-6 flex rounded-lg bg-white p-4 shadow"
-            >
-              <a href="#">
-                <figure
-                  class="h-[80px] w-[80px] min-w-[80px] xl:h-[130px] xl:w-[130px] xl:min-w-[130px]"
-                >
-                  <img
-                    class="h-full w-full object-contain"
-                    src="img/products/product-10.jpg"
-                    alt=""
-                  />
-                </figure>
-              </a>
-              <div class="relative border-l-2 pl-4">
-                <div class="rater" data-rater="5"></div>
-                <a
-                  href="#"
-                  class="my-3 line-clamp-2 text-default-600 transition-all duration-300 hover:text-primary-500"
-                >
-                  Moto G22 4gb 128gb 50mp/16mp 6.5
-                </a>
-                <span
-                  class="mb-2 inline-block text-base font-bold text-primary-500"
-                >
-                  $230.00
-                </span>
-              </div>
-              <span
-                class="pointer-events-none absolute left-4 top-4 rounded-md bg-primary-500 px-2 text-white"
-              >
-                New
-              </span>
-            </div>
-            <div class="col-span-6 flex rounded-lg bg-white p-4 shadow">
-              <a href="#">
-                <figure
-                  class="h-[80px] w-[80px] min-w-[80px] xl:h-[130px] xl:w-[130px] xl:min-w-[130px]"
-                >
-                  <img
-                    class="h-full w-full object-contain"
-                    src="img/products/product-9.jpg"
-                    alt=""
-                  />
-                </figure>
-              </a>
-              <div class="relative border-l-2 pl-4">
-                <div class="rater" data-rater="5"></div>
-                <a
-                  href="#"
-                  class="my-3 line-clamp-2 text-default-600 transition-all duration-300 hover:text-primary-500"
-                >
-                  Moto E6s Special Edition 64 GB 4 GB RAM
-                </a>
-                <span
-                  class="mb-2 inline-block text-base font-bold text-primary-500"
-                >
-                  $230.00
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide grid grid-cols-6 gap-5">
-            <div
-              class="relative col-span-6 flex rounded-lg bg-white p-4 shadow"
-            >
-              <a href="#">
-                <figure
-                  class="h-[80px] w-[80px] min-w-[80px] xl:h-[130px] xl:w-[130px] xl:min-w-[130px]"
-                >
-                  <img
-                    class="h-full w-full object-contain"
-                    src="img/products/product-3.jpg"
-                    alt=""
-                  />
-                </figure>
-              </a>
-              <div class="relative border-l-2 pl-4">
-                <div class="rater" data-rater="4"></div>
-                <a
-                  href="#"
-                  class="my-3 line-clamp-2 text-default-600 transition-all duration-300 hover:text-primary-500"
-                >
-                  Logitech G733 Wireless Headphones
-                </a>
-                <span
-                  class="mb-2 inline-block text-base font-bold text-primary-500"
-                >
-                  $120.00
-                </span>
-                <span class="leading-6 text-default-400 line-through">
-                  $230.00
-                </span>
-              </div>
-              <span
-                class="pointer-events-none absolute left-4 top-4 rounded-md bg-red-400 px-2 text-white"
-              >
-                -47%
-              </span>
-            </div>
-            <div class="col-span-6 flex rounded-lg bg-white p-4 shadow">
-              <a href="#">
-                <figure
-                  class="h-[80px] w-[80px] min-w-[80px] xl:h-[130px] xl:w-[130px] xl:min-w-[130px]"
-                >
-                  <img
-                    class="h-full w-full object-contain"
-                    src="img/products/product-4.jpg"
-                    alt=""
-                  />
-                </figure>
-              </a>
-              <div class="relative border-l-2 pl-4">
-                <div class="rater" data-rater="2"></div>
-                <a
-                  href="#"
-                  class="my-3 line-clamp-2 text-default-600 transition-all duration-300 hover:text-primary-500"
-                >
-                  Google Chromecast 3.ª gen GA00439
-                </a>
-                <span
-                  class="mb-2 inline-block text-base font-bold text-primary-500"
-                >
-                  $230.00
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide grid grid-cols-6 gap-5">
-            <div
-              class="relative col-span-6 flex rounded-lg bg-white p-4 shadow"
-            >
-              <a href="#">
-                <figure
-                  class="h-[80px] w-[80px] min-w-[80px] xl:h-[130px] xl:w-[130px] xl:min-w-[130px]"
-                >
-                  <img
-                    class="h-full w-full object-contain"
-                    src="img/products/product-5.jpg"
-                    alt=""
-                  />
-                </figure>
-              </a>
-              <div class="relative border-l-2 pl-4">
-                <div class="rater" data-rater="5"></div>
-                <a
-                  href="#"
-                  class="my-3 line-clamp-2 text-default-600 transition-all duration-300 hover:text-primary-500"
-                >
-                  Microphone HyperX QuadCast Multipattern
-                </a>
-                <span
-                  class="mb-2 inline-block text-base font-bold text-primary-500"
-                >
-                  $230.00
-                </span>
-              </div>
-              <span
-                class="pointer-events-none absolute left-4 top-4 rounded-md bg-orange-300 px-2 text-white"
-              >
-                Out of stock
-              </span>
-            </div>
-            <div class="col-span-6 flex rounded-lg bg-white p-4 shadow">
-              <a href="#">
-                <figure
-                  class="h-[80px] w-[80px] min-w-[80px] xl:h-[130px] xl:w-[130px] xl:min-w-[130px]"
-                >
-                  <img
-                    class="h-full w-full object-contain"
-                    src="img/products/product-14.jpg"
-                    alt=""
-                  />
-                </figure>
-              </a>
-              <div class="relative border-l-2 pl-4">
-                <div class="rater" data-rater="3"></div>
-                <a
-                  href="#"
-                  class="my-3 line-clamp-2 text-default-600 transition-all duration-300 hover:text-primary-500"
-                >
-                  PlayStation DualSense® Wireless Controller
-                </a>
-                <span
-                  class="mb-2 inline-block text-base font-bold text-primary-500"
-                >
-                  $230.00
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide grid grid-cols-6 gap-5">
-            <div class="col-span-6 flex rounded-lg bg-white p-4 shadow">
-              <a href="#">
-                <figure
-                  class="h-[80px] w-[80px] min-w-[80px] xl:h-[130px] xl:w-[130px] xl:min-w-[130px]"
-                >
-                  <img
-                    class="h-full w-full object-contain"
-                    src="img/products/product-13.jpg"
-                    alt=""
-                  />
-                </figure>
-              </a>
-              <div class="relative border-l-2 pl-4">
-                <div class="rater" data-rater="0"></div>
-                <a
-                  href="#"
-                  class="my-3 line-clamp-2 text-default-600 transition-all duration-300 hover:text-primary-500"
-                >
-                  Oculus Meta Quest 2 128 Gb Virtual Reality Glasses
-                </a>
-                <span
-                  class="mb-2 inline-block text-base font-bold text-primary-500"
-                >
-                  $230.00
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+
+
+          <div class="swiper-wrapper" id="MostReview">
+    </div>
       </div>
     </section>
 
@@ -1796,237 +1437,7 @@
       </div>
     </section>
 
-    <section class="container mx-auto my-10 px-4 sm:px-8 xl:px-4">
-      <div class="mb-8 flex items-center justify-between border-b-[3px] pb-2">
-        <h2
-          class="relative text-2xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
-        >
-          From The Blog
-        </h2>
-      </div>
-      <div class="grid grid-cols-8 gap-5">
-        <div
-          class="group col-span-8 overflow-hidden rounded-lg bg-white shadow-[0_2px_10px_rgba(131,125,125,.12)] sm:col-span-4 lg:col-span-2"
-        >
-          <figure class="relative">
-            <a
-              class="block h-[254px] w-full overflow-hidden"
-              href="blog-details.html"
-            >
-              <img
-                class="h-full w-full object-cover transition-all duration-300 hover:transform group-hover:scale-110"
-                src="img/blogs/blog1.jpg"
-                alt=""
-              />
-            </a>
-            <div
-              class="absolute -bottom-[14px] left-0 ml-5 flex items-center gap-2 rounded bg-primary-500 px-2 py-1 text-white"
-            >
-              <svg
-                class="h-4 w-4"
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 512 512"
-                height="200px"
-                width="200px"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M32 456a24 24 0 0 0 24 24h400a24 24 0 0 0 24-24V176H32zm320-244a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm-80-80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm-80-80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm-80-80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zM456 64h-55.92V32h-48v32H159.92V32h-48v32H56a23.8 23.8 0 0 0-24 23.77V144h448V87.77A23.8 23.8 0 0 0 456 64z"
-                ></path>
-              </svg>
-              <p>Nov 14, 2024</p>
-            </div>
-          </figure>
-          <div class="px-5 pb-5 pt-6">
-            <a
-              href="blog-details.html"
-              class="line-clamp-2 text-base font-bold text-default-600 transition-all duration-300 hover:text-primary-500"
-            >
-              Virtual Reality: Beyond the Senses
-            </a>
-            <p class="my-2 line-clamp-3 break-all">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatem deleniti, quos, ut nam similique sequi est veritatis
-              quam dicta nulla dolorum ratione officia veniam praesentium
-              mollitia! Et tenetur nihil quae.
-            </p>
-            <a
-              class="mt-2 inline-block text-primary-500 underline transition-all duration-300 hover:no-underline"
-              href="blog-details.html"
-            >
-              Read More
-            </a>
-          </div>
-        </div>
-        <div
-          class="group col-span-8 overflow-hidden rounded-lg bg-white shadow-[0_2px_10px_rgba(131,125,125,.12)] sm:col-span-4 lg:col-span-2"
-        >
-          <figure class="relative">
-            <a
-              class="block h-[254px] w-full overflow-hidden"
-              href="blog-details.html"
-            >
-              <img
-                class="h-full w-full object-cover transition-all duration-300 hover:transform group-hover:scale-110"
-                src="img/blogs/blog2.jpg"
-                alt=""
-              />
-            </a>
-            <div
-              class="absolute -bottom-[14px] left-0 ml-5 flex items-center gap-2 rounded bg-primary-500 px-2 py-1 text-white"
-            >
-              <svg
-                class="h-4 w-4"
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 512 512"
-                height="200px"
-                width="200px"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M32 456a24 24 0 0 0 24 24h400a24 24 0 0 0 24-24V176H32zm320-244a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm-80-80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm-80-80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm-80-80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zM456 64h-55.92V32h-48v32H159.92V32h-48v32H56a23.8 23.8 0 0 0-24 23.77V144h448V87.77A23.8 23.8 0 0 0 456 64z"
-                ></path>
-              </svg>
-              <p>Nov 9, 2024</p>
-            </div>
-          </figure>
-          <div class="px-5 pb-5 pt-6">
-            <a
-              href="blog-details.html"
-              class="line-clamp-2 text-base font-bold text-default-600 transition-all duration-300 hover:text-primary-500"
-            >
-              Smart Time: Exploring the World of Smart Watches
-            </a>
-            <p class="my-2 line-clamp-3 break-all">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatem deleniti, quos, ut nam similique sequi est veritatis
-              quam dicta nulla dolorum ratione officia veniam praesentium
-              mollitia! Et tenetur nihil quae.
-            </p>
-            <a
-              class="mt-2 inline-block text-primary-500 underline transition-all duration-300 hover:no-underline"
-              href="blog-details.html"
-            >
-              Read More
-            </a>
-          </div>
-        </div>
-        <div
-          class="group col-span-8 overflow-hidden rounded-lg bg-white shadow-[0_2px_10px_rgba(131,125,125,.12)] sm:col-span-4 lg:col-span-2"
-        >
-          <figure class="relative">
-            <a
-              class="block h-[254px] w-full overflow-hidden"
-              href="blog-details.html"
-            >
-              <img
-                class="h-full w-full object-cover transition-all duration-300 hover:transform group-hover:scale-110"
-                src="img/blogs/blog3.jpg"
-                alt=""
-              />
-            </a>
-            <div
-              class="absolute -bottom-[14px] left-0 ml-5 flex items-center gap-2 rounded bg-primary-500 px-2 py-1 text-white"
-            >
-              <svg
-                class="h-4 w-4"
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 512 512"
-                height="200px"
-                width="200px"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M32 456a24 24 0 0 0 24 24h400a24 24 0 0 0 24-24V176H32zm320-244a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm-80-80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm-80-80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm-80-80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zM456 64h-55.92V32h-48v32H159.92V32h-48v32H56a23.8 23.8 0 0 0-24 23.77V144h448V87.77A23.8 23.8 0 0 0 456 64z"
-                ></path>
-              </svg>
-              <p>Nov 4, 2024</p>
-            </div>
-          </figure>
-          <div class="px-5 pb-5 pt-6">
-            <a
-              href="blog-details.html"
-              class="line-clamp-2 text-base font-bold text-default-600 transition-all duration-300 hover:text-primary-500"
-            >
-              Wireless Sound Waves: Unveiling the World of Wireless Headphones
-            </a>
-            <p class="my-2 line-clamp-3 break-all">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatem deleniti, quos, ut nam similique sequi est veritatis
-              quam dicta nulla dolorum ratione officia veniam praesentium
-              mollitia! Et tenetur nihil quae.
-            </p>
-            <a
-              class="mt-2 inline-block text-primary-500 underline transition-all duration-300 hover:no-underline"
-              href="blog-details.html"
-            >
-              Read More
-            </a>
-          </div>
-        </div>
-        <div
-          class="group col-span-8 overflow-hidden rounded-lg bg-white shadow-[0_2px_10px_rgba(131,125,125,.12)] sm:col-span-4 lg:col-span-2"
-        >
-          <figure class="relative">
-            <a
-              class="block h-[254px] w-full overflow-hidden"
-              href="blog-details.html"
-            >
-              <img
-                class="h-full w-full object-cover transition-all duration-300 hover:transform group-hover:scale-110"
-                src="img/blogs/blog4.jpg"
-                alt=""
-              />
-            </a>
-            <div
-              class="absolute -bottom-[14px] left-0 ml-5 flex items-center gap-2 rounded bg-primary-500 px-2 py-1 text-white"
-            >
-              <svg
-                class="h-4 w-4"
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 512 512"
-                height="200px"
-                width="200px"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M32 456a24 24 0 0 0 24 24h400a24 24 0 0 0 24-24V176H32zm320-244a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm-80-80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm-80-80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm-80-80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zm0 80a4 4 0 0 1 4-4h40a4 4 0 0 1 4 4v40a4 4 0 0 1-4 4h-40a4 4 0 0 1-4-4zM456 64h-55.92V32h-48v32H159.92V32h-48v32H56a23.8 23.8 0 0 0-24 23.77V144h448V87.77A23.8 23.8 0 0 0 456 64z"
-                ></path>
-              </svg>
-              <p>Jan 23, 2024</p>
-            </div>
-          </figure>
-          <div class="px-5 pb-5 pt-6">
-            <a
-              href="blog-details.html"
-              class="line-clamp-2 text-base font-bold text-default-600 transition-all duration-300 hover:text-primary-500"
-            >
-              Watchful Eyes: Navigating the World of Security Cameras
-            </a>
-            <p class="my-2 line-clamp-3 break-all">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatem deleniti, quos, ut nam similique sequi est veritatis
-              quam dicta nulla dolorum ratione officia veniam praesentium
-              mollitia! Et tenetur nihil quae.
-            </p>
-            <a
-              class="mt-2 inline-block text-primary-500 underline transition-all duration-300 hover:no-underline"
-              href="blog-details.html"
-            >
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+   
 
     <section class="container mx-auto my-10 px-4 sm:px-8 xl:px-4">
       <div class="mb-8 flex items-center justify-between border-b-[3px] pb-2">
