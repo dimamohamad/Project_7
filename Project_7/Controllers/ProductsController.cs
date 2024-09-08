@@ -25,7 +25,7 @@ namespace Project_7.Controllers
                 Select(p =>
                 new ProductWithRatingDto
                 {
-                    Rating = (double)p.Reviews.Sum(r => r.Rating) / (double)p.Reviews.Count,
+                    Rating = p.Reviews.Count > 0 ? (double)p.Reviews.Sum(r => r.Rating) / (double)p.Reviews.Count : 0,
                     CategoryId = p.CategoryId,
                     Description = p.Description,
                     DiscountPercentage = p.DiscountPercentage,
@@ -194,8 +194,8 @@ namespace Project_7.Controllers
         public IActionResult GetLatestProducts()
         {
             var products = _db.Products
-                .OrderByDescending(p => p.CreatedAt)  
-                .Take(9)  
+                .OrderByDescending(p => p.CreatedAt)
+                .Take(9)
                 .ToList();
 
             if (products == null || products.Count == 0)
