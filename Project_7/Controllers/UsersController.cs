@@ -47,21 +47,34 @@ namespace Project_7.Controllers
                 PasswordHash = hash,
                 PasswordSalt = salt,
             };
+            var token = _tokenGenerator.GenerateToken(data.UserName);
+            var response = new
+            {
+                Token = token,
+                User = data
+            };
             _db.Users.Add(data);
             _db.SaveChanges();
-            return Ok(data);
+            return Ok(response);
         }
         [HttpPost("LoginUsers")]
         public IActionResult Login([FromForm] UserLoginDTO user)
         {
             var data = _db.Users.FirstOrDefault(x => x.Email == user.Email);
-            if (data == null || !PasswordHash.verifyPassword(user.Passwword, data.PasswordHash, data.PasswordSalt))
+            if (data == null || !PasswordHash.verifyPassword(user.Password, data.PasswordHash, data.PasswordSalt))
             {
                 return Unauthorized();
             }
+
             var token = _tokenGenerator.GenerateToken(data.UserName);
 
-            return Ok(new { Token = token });
+            var response = new
+            {
+                Token = token,
+                User = data
+            };
+
+            return Ok(response);
         }
         [HttpPut("UpdateUser/{id:int}")]
         public IActionResult UpdateUser(int id, [FromForm]UpdateUserDTO user)

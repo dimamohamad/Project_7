@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-<!-- Mirrored from infinite.andevfrontend.site/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2024 09:49:41 GMT -->
-<head>
+  <!-- Mirrored from infinite.andevfrontend.site/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2024 09:49:41 GMT -->
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="lib/metisMenu/metismenujs.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/CustomStyle.css" />
     <title>Infinite</title>
   </head>
   <body
-    class="bg-[#f5f7fe] font-montserrat font-medium text-default-500 lg:text-sm">
+    class="bg-[#f5f7fe] font-montserrat font-medium text-default-500 lg:text-sm"
+  >
     <div class="header sticky top-0 -z-[1]"></div>
 
     <header
-      class="relative z-10 bg-[#f5f7fe] shadow-md transition-all duration-300">
+      class="relative z-10 bg-[#f5f7fe] shadow-md transition-all duration-300"
+    >
       <div class="container mx-auto px-4 sm:px-8 xl:px-4">
         <div class="flex w-full items-center py-5 lg:justify-between">
           <div
             class="mr-5 cursor-pointer text-default-600 lg:hidden"
-            data-target=".modal-menu">
+            data-target=".modal-menu"
+          >
             <svg
               viewBox="0 0 24 24"
               width="24"
@@ -30,7 +33,8 @@
               fill="none"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="pointer-events-none h-6 w-6">
+              class="pointer-events-none h-6 w-6"
+            >
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -48,16 +52,19 @@
                 type="search"
                 id="search"
                 class="peer block w-full appearance-none rounded-l-lg border border-r-0 border-primary-500 bg-white px-2 pb-2 pt-4 text-sm focus:outline-none focus:ring-0"
-                placeholder=" " />
+                placeholder=" "
+              />
               <label
                 for="search"
-                class="z-1 pointer-events-none absolute left-2.5 top-[13px] origin-[0] -translate-y-3 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-3 peer-focus:scale-75 peer-focus:text-primary-500">
+                class="z-1 pointer-events-none absolute left-2.5 top-[13px] origin-[0] -translate-y-3 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-3 peer-focus:scale-75 peer-focus:text-primary-500"
+              >
                 Search
               </label>
             </div>
             <button
               class="rounded-r-lg bg-primary-500 p-[9px] text-white"
-              type="submit">
+              type="submit"
+            >
               <svg
                 viewBox="0 0 24 24"
                 width="24"
@@ -67,7 +74,8 @@
                 fill="none"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="h-6 w-6">
+                class="h-6 w-6"
+              >
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
@@ -76,7 +84,8 @@
           <div class="flex items-center gap-5">
             <div
               class="cursor-pointer text-default-600 hover:text-primary-500 lg:hidden"
-              data-target=".modal-search">
+              data-target=".modal-search"
+            >
               <svg
                 viewBox="0 0 24 24"
                 width="24"
@@ -86,14 +95,16 @@
                 fill="none"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="pointer-events-none h-6 w-6">
+                class="pointer-events-none h-6 w-6"
+              >
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
             </div>
             <a
               class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
-              href="sign-in.html">
+              href="sign-in.html"
+            >
               <svg
                 viewBox="0 0 24 24"
                 width="24"
@@ -103,7 +114,8 @@
                 fill="none"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="h-6 w-6">
+                class="h-6 w-6"
+              >
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
@@ -111,7 +123,8 @@
             </a>
             <a
               href="wishlist.html"
-              class="relative hidden cursor-pointer select-none text-default-600 hover:text-primary-500 lg:block">
+              class="relative hidden cursor-pointer select-none text-default-600 hover:text-primary-500 lg:block"
+            >
               <svg
                 viewBox="0 0 24 24"
                 width="24"
@@ -121,18 +134,22 @@
                 fill="none"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="h-6 w-6">
+                class="h-6 w-6"
+              >
                 <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
               </svg>
               <span
-                class="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary-500 text-xs text-white">
+                class="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary-500 text-xs text-white"
+              >
                 0
               </span>
             </a>
             <div
               class="relative cursor-pointer select-none text-default-600 hover:text-primary-500"
-              data-target=".modal-cart">
+              data-target=".modal-cart"
+            >
               <svg
                 viewBox="0 0 24 24"
                 width="24"
@@ -142,14 +159,17 @@
                 fill="none"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="pointer-events-none h-6 w-6">
+                class="pointer-events-none h-6 w-6"
+              >
                 <circle cx="9" cy="21" r="1"></circle>
                 <circle cx="20" cy="21" r="1"></circle>
                 <path
-                  d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                  d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                ></path>
               </svg>
               <span
-                class="pointer-events-none absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary-500 text-xs text-white">
+                class="pointer-events-none absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary-500 text-xs text-white"
+              >
                 0
               </span>
             </div>
@@ -157,11 +177,13 @@
         </div>
         <nav class="nav-main hidden items-center border-t-2 lg:flex">
           <div
-            class="relative mr-5 flex items-center pr-5 font-semibold after:absolute after:right-0 after:my-auto after:h-6 after:w-px after:bg-slate-300 after:content-['']">
+            class="relative mr-5 flex items-center pr-5 font-semibold after:absolute after:right-0 after:my-auto after:h-6 after:w-px after:bg-slate-300 after:content-['']"
+          >
             <ul class="metismenu">
               <li>
                 <div
-                  class="sub-metismenu has-arrow flex cursor-pointer select-none items-center">
+                  class="sub-metismenu has-arrow flex cursor-pointer select-none items-center"
+                >
                   <svg
                     class="mr-4 h-6 w-6"
                     stroke="currentColor"
@@ -170,10 +192,12 @@
                     viewBox="0 0 16 16"
                     height="200px"
                     width="200px"
-                    xmlns="http://www.w3.org/2000/svg">
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       fill-rule="evenodd"
-                      d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+                      d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
+                    ></path>
                   </svg>
                   <span class="mr-8 py-3 font-semibold">
                     Browser All Category
@@ -181,32 +205,40 @@
                 </div>
                 <ul
                   class="metismenu-content z-[5] w-full rounded bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]"
-                  style="position: absolute">
+                  style="position: absolute"
+                >
                   <li class="group">
                     <span
-                      class="flex cursor-pointer items-center justify-between px-6 py-2 transition-all duration-300 hover:text-primary-500">
+                      class="flex cursor-pointer items-center justify-between px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                    >
                       Electronics
                       <svg
                         class="h-3 w-3"
                         stroke="currentColor"
                         fill="currentColor"
                         viewBox="0 0 320 512"
-                        xmlns="http://www.w3.org/2000/svg">
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
                         <path
-                          d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"></path>
+                          d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+                        ></path>
                       </svg>
                     </span>
                     <div
-                      class="invisible absolute left-full top-0 h-full w-0 overflow-hidden whitespace-nowrap opacity-0 duration-300 group-hover:visible group-hover:w-[735px] group-hover:opacity-100">
+                      class="invisible absolute left-full top-0 h-full w-0 overflow-hidden whitespace-nowrap opacity-0 duration-300 group-hover:visible group-hover:w-[735px] group-hover:opacity-100"
+                    >
                       <div
-                        class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]">
+                        class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]"
+                      >
                         <div class="p-5">
                           <ul class="grid grid-cols-9 gap-5">
                             <li class="col-span-3">
                               <div
-                                class="mb-2 flex items-center justify-between border-b-[3px] pb-2">
+                                class="mb-2 flex items-center justify-between border-b-[3px] pb-2"
+                              >
                                 <h2
-                                  class="relative text-base font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']">
+                                  class="relative text-base font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
+                                >
                                   Computers & Laptop
                                 </h2>
                               </div>
@@ -214,28 +246,32 @@
                                 <li>
                                   <a
                                     class="block pt-2 transition-all duration-300 hover:text-primary-500"
-                                    href="shop-mixed.html">
+                                    href="shop-mixed.html"
+                                  >
                                     Laptops
                                   </a>
                                 </li>
                                 <li>
                                   <a
                                     class="block pt-2 transition-all duration-300 hover:text-primary-500"
-                                    href="shop-mixed.html">
+                                    href="shop-mixed.html"
+                                  >
                                     Desktops
                                   </a>
                                 </li>
                                 <li>
                                   <a
                                     class="block pt-2 transition-all duration-300 hover:text-primary-500"
-                                    href="shop-mixed.html">
+                                    href="shop-mixed.html"
+                                  >
                                     Monitors
                                   </a>
                                 </li>
                                 <li>
                                   <a
                                     class="block pt-2 transition-all duration-300 hover:text-primary-500"
-                                    href="shop-mixed.html">
+                                    href="shop-mixed.html"
+                                  >
                                     Computer Accessories
                                   </a>
                                 </li>
@@ -243,9 +279,11 @@
                             </li>
                             <li class="col-span-3">
                               <div
-                                class="mb-2 flex items-center justify-between border-b-[3px] pb-2">
+                                class="mb-2 flex items-center justify-between border-b-[3px] pb-2"
+                              >
                                 <h2
-                                  class="relative text-base font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']">
+                                  class="relative text-base font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
+                                >
                                   Mobile Devices
                                 </h2>
                               </div>
@@ -253,28 +291,32 @@
                                 <li>
                                   <a
                                     class="block pt-2 transition-all duration-300 hover:text-primary-500"
-                                    href="shop-mixed.html">
+                                    href="shop-mixed.html"
+                                  >
                                     Smartphones
                                   </a>
                                 </li>
                                 <li>
                                   <a
                                     class="block pt-2 transition-all duration-300 hover:text-primary-500"
-                                    href="shop-mixed.html">
+                                    href="shop-mixed.html"
+                                  >
                                     Tablets
                                   </a>
                                 </li>
                                 <li>
                                   <a
                                     class="block pt-2 transition-all duration-300 hover:text-primary-500"
-                                    href="shop-mixed.html">
+                                    href="shop-mixed.html"
+                                  >
                                     Smartwatches
                                   </a>
                                 </li>
                                 <li>
                                   <a
                                     class="block pt-2 transition-all duration-300 hover:text-primary-500"
-                                    href="shop-mixed.html">
+                                    href="shop-mixed.html"
+                                  >
                                     Mobile Device Accessories
                                   </a>
                                 </li>
@@ -282,9 +324,11 @@
                             </li>
                             <li class="col-span-3">
                               <div
-                                class="mb-2 flex items-center justify-between border-b-[3px] pb-2">
+                                class="mb-2 flex items-center justify-between border-b-[3px] pb-2"
+                              >
                                 <h2
-                                  class="relative text-base font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']">
+                                  class="relative text-base font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
+                                >
                                   Consumer Electronics
                                 </h2>
                               </div>
@@ -292,28 +336,32 @@
                                 <li>
                                   <a
                                     class="block pt-2 transition-all duration-300 hover:text-primary-500"
-                                    href="shop-mixed.html">
+                                    href="shop-mixed.html"
+                                  >
                                     Televisions
                                   </a>
                                 </li>
                                 <li>
                                   <a
                                     class="block pt-2 transition-all duration-300 hover:text-primary-500"
-                                    href="shop-mixed.html">
+                                    href="shop-mixed.html"
+                                  >
                                     Audio & Speakers
                                   </a>
                                 </li>
                                 <li>
                                   <a
                                     class="block pt-2 transition-all duration-300 hover:text-primary-500"
-                                    href="shop-mixed.html">
+                                    href="shop-mixed.html"
+                                  >
                                     Cameras
                                   </a>
                                 </li>
                                 <li>
                                   <a
                                     class="block pt-2 transition-all duration-300 hover:text-primary-500"
-                                    href="shop-mixed.html">
+                                    href="shop-mixed.html"
+                                  >
                                     Smart Home Devices
                                   </a>
                                 </li>
@@ -324,7 +372,8 @@
                             <img
                               class="w-full"
                               src="img/banner/banner-4.jpg"
-                              alt="" />
+                              alt=""
+                            />
                           </figure>
                         </div>
                       </div>
@@ -333,63 +382,72 @@
                   <li>
                     <a
                       class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                      href="shop-mixed.html">
+                      href="shop-mixed.html"
+                    >
                       Compute Accessories
                     </a>
                   </li>
                   <li>
                     <a
                       class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                      href="shop-mixed.html">
+                      href="shop-mixed.html"
+                    >
                       Smart Watchs
                     </a>
                   </li>
                   <li>
                     <a
                       class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                      href="shop-mixed.html">
+                      href="shop-mixed.html"
+                    >
                       Smart Mobiles
                     </a>
                   </li>
                   <li>
                     <a
                       class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                      href="shop-mixed.html">
+                      href="shop-mixed.html"
+                    >
                       Smart TV
                     </a>
                   </li>
                   <li>
                     <a
                       class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                      href="shop-mixed.html">
+                      href="shop-mixed.html"
+                    >
                       Camera
                     </a>
                   </li>
                   <li>
                     <a
                       class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                      href="shop-mixed.html">
+                      href="shop-mixed.html"
+                    >
                       Tablet
                     </a>
                   </li>
                   <li>
                     <a
                       class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                      href="shop-mixed.html">
+                      href="shop-mixed.html"
+                    >
                       Headphone
                     </a>
                   </li>
                   <li>
                     <a
                       class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                      href="shop-mixed.html">
+                      href="shop-mixed.html"
+                    >
                       Laptop
                     </a>
                   </li>
                   <li>
                     <a
                       class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                      href="shop-mixed.html">
+                      href="shop-mixed.html"
+                    >
                       Speaker
                     </a>
                   </li>
@@ -401,72 +459,87 @@
             <li>
               <a
                 class="relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
-                href="index.html">
+                href="index.html"
+              >
                 Home
               </a>
             </li>
             <li>
               <a
                 class="relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
-                href="about.html">
+                href="about.html"
+              >
                 About Us
               </a>
             </li>
             <li class="group relative">
               <span
-                class="relative block cursor-pointer py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full">
+                class="relative block cursor-pointer py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
+              >
                 Pages
               </span>
               <ul
-                class="invisible absolute -left-5 top-14 w-52 rounded border bg-[#f5f7fe] opacity-0 shadow-[0_2px_10px_rgba(131,125,125,.12)] transition-all duration-300 group-hover:visible group-hover:top-11 group-hover:opacity-100">
+                class="invisible absolute -left-5 top-14 w-52 rounded border bg-[#f5f7fe] opacity-0 shadow-[0_2px_10px_rgba(131,125,125,.12)] transition-all duration-300 group-hover:visible group-hover:top-11 group-hover:opacity-100"
+              >
                 <li class="group/item">
                   <span
-                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500">
+                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                  >
                     Main Pages
                   </span>
                   <div
-                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100">
+                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100"
+                  >
                     <ul
-                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]">
+                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]"
+                    >
                       <li>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="blog-details.html">
+                          href="blog-details.html"
+                        >
                           Blog Details
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="checkout.html">
+                          href="checkout.html"
+                        >
                           Checkout
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="product-details.html">
+                          href="product-details.html"
+                        >
                           Product Details
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="shop-grid.html">
+                          href="shop-grid.html"
+                        >
                           Shop Grid
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="shop-list.html">
+                          href="shop-list.html"
+                        >
                           Shop List
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="shop-mixed.html">
+                          href="shop-mixed.html"
+                        >
                           Shop Mixed
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="shopping-cart.html">
+                          href="shopping-cart.html"
+                        >
                           Shopping Cart
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="wishlist.html">
+                          href="wishlist.html"
+                        >
                           Wishlist
                         </a>
                       </li>
@@ -475,32 +548,39 @@
                 </li>
                 <li class="group/item">
                   <span
-                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500">
+                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                  >
                     Account Pages
                   </span>
                   <div
-                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100">
+                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100"
+                  >
                     <ul
-                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]">
+                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]"
+                    >
                       <li>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="profile.html">
+                          href="profile.html"
+                        >
                           Profile
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="sign-in.html">
+                          href="sign-in.html"
+                        >
                           Sign In
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="sign-up.html">
+                          href="sign-up.html"
+                        >
                           Sign Up
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="pin.html">
+                          href="pin.html"
+                        >
                           PIN
                         </a>
                       </li>
@@ -509,42 +589,51 @@
                 </li>
                 <li class="group/item">
                   <span
-                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500">
+                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                  >
                     Recover Password
                   </span>
                   <div
-                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100">
+                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100"
+                  >
                     <ul
-                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]">
+                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]"
+                    >
                       <li>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="recover-password.html">
+                          href="recover-password.html"
+                        >
                           Step 1
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="how-to-recover-password.html">
+                          href="how-to-recover-password.html"
+                        >
                           Step 2
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="mail-confirmation.html">
+                          href="mail-confirmation.html"
+                        >
                           Step 3 (Mail)
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="code-phone-password.html">
+                          href="code-phone-password.html"
+                        >
                           Step 3 (Phone)
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="reset-password.html">
+                          href="reset-password.html"
+                        >
                           Step 4
                         </a>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="password-changed.html">
+                          href="password-changed.html"
+                        >
                           Step 5
                         </a>
                       </li>
@@ -553,31 +642,37 @@
                 </li>
                 <li class="group/item">
                   <span
-                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500">
+                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                  >
                     Change Password
                   </span>
                   <div
-                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100">
+                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100"
+                  >
                     <ul
-                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]">
+                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]"
+                    >
                       <li>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="current-password.html">
+                          href="current-password.html"
+                        >
                           Step 1
                         </a>
                       </li>
                       <li>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="new-password.html">
+                          href="new-password.html"
+                        >
                           Step 2
                         </a>
                       </li>
                       <li>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="password-changed-successfully.html">
+                          href="password-changed-successfully.html"
+                        >
                           Step 3
                         </a>
                       </li>
@@ -586,31 +681,37 @@
                 </li>
                 <li class="group/item">
                   <span
-                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500">
+                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                  >
                     Change PIN
                   </span>
                   <div
-                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100">
+                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100"
+                  >
                     <ul
-                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]">
+                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]"
+                    >
                       <li>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="current-pin.html">
+                          href="current-pin.html"
+                        >
                           Step 1
                         </a>
                       </li>
                       <li>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="new-pin.html">
+                          href="new-pin.html"
+                        >
                           Step 2
                         </a>
                       </li>
                       <li>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="pin-changed-successfully.html">
+                          href="pin-changed-successfully.html"
+                        >
                           Step 3
                         </a>
                       </li>
@@ -619,17 +720,21 @@
                 </li>
                 <li class="group/item">
                   <span
-                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500">
+                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                  >
                     Support
                   </span>
                   <div
-                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100">
+                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100"
+                  >
                     <ul
-                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]">
+                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]"
+                    >
                       <li>
                         <a
                           class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="error404.html">
+                          href="error404.html"
+                        >
                           Error 404
                         </a>
                       </li>
@@ -641,14 +746,16 @@
             <li>
               <a
                 class="relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
-                href="contact.html">
+                href="contact.html"
+              >
                 Contact Us
               </a>
             </li>
             <li>
               <a
                 class="relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
-                href="blog.html">
+                href="blog.html"
+              >
                 Blog
               </a>
             </li>
@@ -665,91 +772,147 @@
       <h2 class="mb-8 text-center text-2xl font-semibold text-default-500">
         Sign up to Infinite
       </h2>
-      <form>
-        <div class="relative mb-5 w-full">
-          <input
-            type="text"
-            id="sign-up-email"
-            class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
-            placeholder=" "
-            required />
-          <label
-            for="sign-up-email"
-            class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
-            Email
-          </label>
-        </div>
-        <div class="relative mb-5 w-full">
-          <input
-            type="text"
-            id="sign-up-confirm-email"
-            class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
-            placeholder=" "
-            required />
-          <label
-            for="sign-up-email"
-            class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
-            Confirm email
-          </label>
-        </div>
-        <div class="toggle-input-container relative mb-5 w-full">
-          <input
-            type="password"
-            id="input-password"
-            class="toggle-input peer block w-full appearance-none rounded-lg border-0 bg-white pb-2.5 pl-[10px] pr-[50px] pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
-            placeholder=" "
-            required />
-          <label
-            for="input-password"
-            class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
-            Password
-          </label>
-          <div
-            class="button-toggle absolute inset-y-0 right-0 mr-4 flex cursor-pointer select-none items-center">
-            <svg
-              viewBox="0 0 24 24"
-              width="24"
-              height="24"
-              stroke="currentColor"
-              stroke-width="2"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="css-i6dzq1">
-              <path
-                d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
-              <line x1="1" y1="1" x2="23" y2="23"></line>
-            </svg>
+      <form id="Register" onsubmit="Register()">
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div data-mdb-input-init class="form-outline">
+              <label class="form-label" for="form3Example1">First name</label>
+              <input
+                type="text"
+                id="form3Example1"
+                class="form-control"
+                name="FirstName"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div data-mdb-input-init class="form-outline">
+              <label class="form-label" for="form3Example2">Last name</label>
+              <input
+                type="text"
+                id="form3Example2"
+                class="form-control"
+                name="LastName"
+              />
+            </div>
           </div>
         </div>
-        <p>
-          Your password must be 8 characters long and contain numbers, letters,
-          and a capital letter.
-        </p>
-        <label class="flex select-none items-center gap-2">
+        <!-- UserName input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">User Name</label>
           <input
-            class="rounded text-primary-500 focus:ring-0 focus:ring-offset-0"
-            type="checkbox" />
-          <span class="my-6 text-xs text-slate-400">
-            By registering I accept the
-            <a class="text-primary-500 underline" href="#">privacy policies</a>
-            .
-          </span>
-        </label>
+            type="text"
+            id="form3Example3"
+            class="form-control"
+            name="UserName"
+          />
+        </div>
+        <!-- Email input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example3">Email address</label>
+          <input
+            type="email"
+            id="form3Example3"
+            class="form-control"
+            name="Email"
+          />
+        </div>
+
+        <!-- Password input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example4">Password</label>
+          <input
+            type="password"
+            id="form3Example4"
+            class="form-control"
+            name="Passwword"
+          />
+        </div>
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form3Example4">Repeat Password</label>
+          <input
+            type="password"
+            id="form3Example4"
+            class="form-control"
+            name="repeatpassword"
+          />
+        </div>
+
+        <!-- Checkbox -->
+        <div class="form-check d-flex justify-content-center mb-4">
+          <input
+            class="form-check-input me-2"
+            type="checkbox"
+            value=""
+            id="form2Example33"
+            checked
+          />
+          <label class="form-check-label" for="form2Example33">
+            Subscribe to our newsletter
+          </label>
+        </div>
+
+        <!-- Submit button -->
         <button
-          class="mt-5 w-full rounded-lg bg-primary-500 p-[14px] font-semibold text-white transition-all duration-300 hover:bg-primary-600"
-          type="submit">
-          Create Account
+          type="submit"
+          data-mdb-button-init
+          data-mdb-ripple-init
+          class="btn btn-primary btn-block mb-4"
+        >
+          Sign up
         </button>
+
+        <!-- Register buttons -->
+        <div class="text-center">
+          <p>or sign up with:</p>
+          <button
+            type="button"
+            data-mdb-button-init
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating mx-1"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </button>
+
+          <button
+            type="button"
+            data-mdb-button-init
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating mx-1"
+          >
+            <i class="fab fa-google"></i>
+          </button>
+          <button
+            type="button"
+            data-mdb-button-init
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating mx-1"
+          >
+            <i class="fab fa-twitter"></i>
+          </button>
+
+          <button
+            type="button"
+            data-mdb-button-init
+            data-mdb-ripple-init
+            class="btn btn-link btn-floating mx-1"
+          >
+            <i class="fab fa-github"></i>
+          </button>
+        </div>
       </form>
+
       <div
-        class="my-4 flex items-center py-2 before:my-auto before:h-[2px] before:w-full before:bg-slate-300 before:content-[''] after:my-auto after:h-[2px] after:w-full after:bg-slate-300 after:content-['']">
+        class="my-4 flex items-center py-2 before:my-auto before:h-[2px] before:w-full before:bg-slate-300 before:content-[''] after:my-auto after:h-[2px] after:w-full after:bg-slate-300 after:content-['']"
+      >
         <span class="mx-2 text-sm uppercase">Or</span>
       </div>
       <div class="flex flex-col items-center gap-5 sm:flex-row">
         <a
           href="#"
-          class="flex w-full items-center justify-center rounded-lg bg-white p-3 shadow transition-all duration-300 hover:scale-105">
+          class="flex w-full items-center justify-center rounded-lg bg-white p-3 shadow transition-all duration-300 hover:scale-105"
+        >
           <svg
             class="h-10"
             xmlns="http://www.w3.org/2000/svg"
@@ -757,24 +920,30 @@
             y="0px"
             width="100"
             height="100"
-            viewBox="0 0 48 48">
+            viewBox="0 0 48 48"
+          >
             <path
               fill="#FFC107"
-              d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
+              d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"
+            ></path>
             <path
               fill="#FF3D00"
-              d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path>
+              d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"
+            ></path>
             <path
               fill="#4CAF50"
-              d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path>
+              d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"
+            ></path>
             <path
               fill="#1976D2"
-              d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+              d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
+            ></path>
           </svg>
         </a>
         <a
           href="#"
-          class="flex w-full items-center justify-center rounded-lg bg-white p-3 shadow transition-all duration-300 hover:scale-105">
+          class="flex w-full items-center justify-center rounded-lg bg-white p-3 shadow transition-all duration-300 hover:scale-105"
+        >
           <svg
             class="h-10"
             xmlns="http://www.w3.org/2000/svg"
@@ -782,28 +951,33 @@
             y="0px"
             width="100"
             height="100"
-            viewBox="0 0 48 48">
+            viewBox="0 0 48 48"
+          >
             <linearGradient
               id="Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1"
               x1="9.993"
               x2="40.615"
               y1="9.993"
               y2="40.615"
-              gradientUnits="userSpaceOnUse">
+              gradientUnits="userSpaceOnUse"
+            >
               <stop offset="0" stop-color="#2aa4f4"></stop>
               <stop offset="1" stop-color="#007ad9"></stop>
             </linearGradient>
             <path
               fill="url(#Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1)"
-              d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z"></path>
+              d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z"
+            ></path>
             <path
               fill="#fff"
-              d="M26.707,29.301h5.176l0.813-5.258h-5.989v-2.874c0-2.184,0.714-4.121,2.757-4.121h3.283V12.46 c-0.577-0.078-1.797-0.248-4.102-0.248c-4.814,0-7.636,2.542-7.636,8.334v3.498H16.06v5.258h4.948v14.452 C21.988,43.9,22.981,44,24,44c0.921,0,1.82-0.084,2.707-0.204V29.301z"></path>
+              d="M26.707,29.301h5.176l0.813-5.258h-5.989v-2.874c0-2.184,0.714-4.121,2.757-4.121h3.283V12.46 c-0.577-0.078-1.797-0.248-4.102-0.248c-4.814,0-7.636,2.542-7.636,8.334v3.498H16.06v5.258h4.948v14.452 C21.988,43.9,22.981,44,24,44c0.921,0,1.82-0.084,2.707-0.204V29.301z"
+            ></path>
           </svg>
         </a>
         <a
           href="#"
-          class="flex w-full items-center justify-center rounded-lg bg-white p-3 shadow transition-all duration-300 hover:scale-105">
+          class="flex w-full items-center justify-center rounded-lg bg-white p-3 shadow transition-all duration-300 hover:scale-105"
+        >
           <svg
             class="h-10"
             xmlns="http://www.w3.org/2000/svg"
@@ -811,9 +985,11 @@
             y="0px"
             width="100"
             height="100"
-            viewBox="0 0 50 50">
+            viewBox="0 0 50 50"
+          >
             <path
-              d="M 44.527344 34.75 C 43.449219 37.144531 42.929688 38.214844 41.542969 40.328125 C 39.601563 43.28125 36.863281 46.96875 33.480469 46.992188 C 30.46875 47.019531 29.691406 45.027344 25.601563 45.0625 C 21.515625 45.082031 20.664063 47.03125 17.648438 47 C 14.261719 46.96875 11.671875 43.648438 9.730469 40.699219 C 4.300781 32.429688 3.726563 22.734375 7.082031 17.578125 C 9.457031 13.921875 13.210938 11.773438 16.738281 11.773438 C 20.332031 11.773438 22.589844 13.746094 25.558594 13.746094 C 28.441406 13.746094 30.195313 11.769531 34.351563 11.769531 C 37.492188 11.769531 40.8125 13.480469 43.1875 16.433594 C 35.421875 20.691406 36.683594 31.78125 44.527344 34.75 Z M 31.195313 8.46875 C 32.707031 6.527344 33.855469 3.789063 33.4375 1 C 30.972656 1.167969 28.089844 2.742188 26.40625 4.78125 C 24.878906 6.640625 23.613281 9.398438 24.105469 12.066406 C 26.796875 12.152344 29.582031 10.546875 31.195313 8.46875 Z"></path>
+              d="M 44.527344 34.75 C 43.449219 37.144531 42.929688 38.214844 41.542969 40.328125 C 39.601563 43.28125 36.863281 46.96875 33.480469 46.992188 C 30.46875 47.019531 29.691406 45.027344 25.601563 45.0625 C 21.515625 45.082031 20.664063 47.03125 17.648438 47 C 14.261719 46.96875 11.671875 43.648438 9.730469 40.699219 C 4.300781 32.429688 3.726563 22.734375 7.082031 17.578125 C 9.457031 13.921875 13.210938 11.773438 16.738281 11.773438 C 20.332031 11.773438 22.589844 13.746094 25.558594 13.746094 C 28.441406 13.746094 30.195313 11.769531 34.351563 11.769531 C 37.492188 11.769531 40.8125 13.480469 43.1875 16.433594 C 35.421875 20.691406 36.683594 31.78125 44.527344 34.75 Z M 31.195313 8.46875 C 32.707031 6.527344 33.855469 3.789063 33.4375 1 C 30.972656 1.167969 28.089844 2.742188 26.40625 4.78125 C 24.878906 6.640625 23.613281 9.398438 24.105469 12.066406 C 26.796875 12.152344 29.582031 10.546875 31.195313 8.46875 Z"
+            ></path>
           </svg>
         </a>
       </div>
@@ -836,16 +1012,19 @@
                 type="text"
                 id="your-email"
                 class="peer block w-full appearance-none rounded-l-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 focus:outline-none focus:ring-0"
-                placeholder=" " />
+                placeholder=" "
+              />
               <label
                 for="your-email"
-                class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500">
+                class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
+              >
                 Your email
               </label>
             </div>
             <button
               class="rounded-r-lg bg-white p-[9px] text-default-600 transition-all duration-300 hover:text-primary-500"
-              type="submit">
+              type="submit"
+            >
               <svg
                 viewBox="0 0 24 24"
                 width="24"
@@ -855,7 +1034,8 @@
                 fill="none"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                class="css-i6dzq1">
+                class="css-i6dzq1"
+              >
                 <line x1="22" y1="2" x2="11" y2="13"></line>
                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
               </svg>
@@ -871,7 +1051,8 @@
           <div class="grid grid-cols-12 gap-x-20 gap-y-10 pt-10">
             <div class="col-span-4">
               <h1
-                class="relative mb-5 pb-2 text-lg font-semibold text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-16 after:bg-primary-300 after:content-['']">
+                class="relative mb-5 pb-2 text-lg font-semibold text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-16 after:bg-primary-300 after:content-['']"
+              >
                 About Information
               </h1>
               <p class="leading-6">
@@ -883,54 +1064,62 @@
                   <img
                     class="h-full"
                     src="img/logo-googleplay.png"
-                    alt="logo google play" />
+                    alt="logo google play"
+                  />
                 </a>
                 <a class="h-10" href="#">
                   <img
                     class="h-full"
                     src="img/logo-appstore.png"
-                    alt="logo app store" />
+                    alt="logo app store"
+                  />
                 </a>
               </div>
             </div>
             <div class="col-span-4">
               <h1
-                class="relative mb-5 pb-2 text-lg font-semibold text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-16 after:bg-primary-300 after:content-['']">
+                class="relative mb-5 pb-2 text-lg font-semibold text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-16 after:bg-primary-300 after:content-['']"
+              >
                 Quick Links
               </h1>
               <ul>
                 <li class="pb-2">
                   <a
                     class="transition-all duration-300 hover:text-white"
-                    href="index.html">
+                    href="index.html"
+                  >
                     Home
                   </a>
                 </li>
                 <li class="pb-2">
                   <a
                     class="transition-all duration-300 hover:text-white"
-                    href="about.html">
+                    href="about.html"
+                  >
                     About us
                   </a>
                 </li>
                 <li class="pb-2">
                   <a
                     class="transition-all duration-300 hover:text-white"
-                    href="contact.html">
+                    href="contact.html"
+                  >
                     Contact us
                   </a>
                 </li>
                 <li class="pb-2">
                   <a
                     class="transition-all duration-300 hover:text-white"
-                    href="blog.html">
+                    href="blog.html"
+                  >
                     Blog
                   </a>
                 </li>
                 <li class="pb-2">
                   <a
                     class="transition-all duration-300 hover:text-white"
-                    href="shop-mixed.html">
+                    href="shop-mixed.html"
+                  >
                     New products
                   </a>
                 </li>
@@ -938,7 +1127,8 @@
             </div>
             <div class="col-span-4">
               <h1
-                class="relative mb-5 pb-2 text-lg font-semibold text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-16 after:bg-primary-300 after:content-['']">
+                class="relative mb-5 pb-2 text-lg font-semibold text-white after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-16 after:bg-primary-300 after:content-['']"
+              >
                 Contact Us
               </h1>
               <ul>
@@ -947,11 +1137,13 @@
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    class="h-6 w-6">
+                    class="h-6 w-6"
+                  >
                     <path
                       fill-rule="evenodd"
                       d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-                      clip-rule="evenodd" />
+                      clip-rule="evenodd"
+                    />
                   </svg>
                   <span>Av. Colon 1234, Buenos Aires, Argentina</span>
                 </li>
@@ -960,16 +1152,20 @@
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    class="h-6 w-6">
+                    class="h-6 w-6"
+                  >
                     <path
-                      d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                      d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
+                    />
                     <path
-                      d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                      d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+                    />
                   </svg>
 
                   <a
                     class="transition-all duration-300 hover:text-white"
-                    href="#">
+                    href="#"
+                  >
                     Infinite@example.com
                   </a>
                 </li>
@@ -978,11 +1174,13 @@
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    class="h-6 w-6">
+                    class="h-6 w-6"
+                  >
                     <path
                       fill-rule="evenodd"
                       d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
-                      clip-rule="evenodd" />
+                      clip-rule="evenodd"
+                    />
                   </svg>
                   <span>(+54) 2284-123456789</span>
                 </li>
@@ -990,21 +1188,25 @@
               <div class="flex items-center gap-5 pt-5">
                 <a
                   class="transition-all duration-300 hover:text-white"
-                  href="#">
+                  href="#"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
                     class="h-6 w-6"
-                    viewBox="0 0 16 16">
+                    viewBox="0 0 16 16"
+                  >
                     <path
-                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                    />
                   </svg>
                 </a>
                 <a
                   class="transition-all duration-300 hover:text-white"
-                  href="#">
+                  href="#"
+                >
                   <svg
                     class="h-6 w-6"
                     stroke="currentColor"
@@ -1013,29 +1215,35 @@
                     viewBox="0 0 512 512"
                     height="1em"
                     width="1em"
-                    xmlns="http://www.w3.org/2000/svg">
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
-                      d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path>
+                      d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                    ></path>
                   </svg>
                 </a>
                 <a
                   class="transition-all duration-300 hover:text-white"
-                  href="#">
+                  href="#"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
                     fill="currentColor"
                     class="h-6 w-6"
-                    viewBox="0 0 16 16">
+                    viewBox="0 0 16 16"
+                  >
                     <path
-                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                    />
                   </svg>
                 </a>
               </div>
             </div>
             <div
-              class="col-span-12 flex flex-col items-center gap-2 border-t border-slate-400 py-5 text-xs">
+              class="col-span-12 flex flex-col items-center gap-2 border-t border-slate-400 py-5 text-xs"
+            >
               <span class="text-white">
                 Copyright ©
                 <span class="current-year"></span>
@@ -1044,13 +1252,15 @@
               <p>
                 <a
                   class="transition-all duration-300 hover:text-white"
-                  href="#">
+                  href="#"
+                >
                   Privacy Policy
                 </a>
                 &#183;
                 <a
                   class="transition-all duration-300 hover:text-white"
-                  href="#">
+                  href="#"
+                >
                   Terms And Conditions
                 </a>
               </p>
@@ -1063,7 +1273,8 @@
               <div
                 class="sub-metismenu has-arrow cursor-pointer py-3 font-bold text-white"
                 aria-expanded="false"
-                role="menu">
+                role="menu"
+              >
                 About Information
               </div>
               <div class="metismenu-content">
@@ -1076,13 +1287,15 @@
                     <img
                       class="h-full"
                       src="img/logo-googleplay.png"
-                      alt="logo google play" />
+                      alt="logo google play"
+                    />
                   </a>
                   <a class="h-10" href="#">
                     <img
                       class="h-full"
                       src="img/logo-appstore.png"
-                      alt="logo app store" />
+                      alt="logo app store"
+                    />
                   </a>
                 </div>
               </div>
@@ -1091,7 +1304,8 @@
               <div
                 class="sub-metismenu has-arrow cursor-pointer py-3 font-bold text-white"
                 aria-expanded="false"
-                role="menu">
+                role="menu"
+              >
                 Quick Links
               </div>
               <div class="metismenu-content">
@@ -1099,35 +1313,40 @@
                   <li class="pb-2">
                     <a
                       class="transition-all duration-300 hover:text-white"
-                      href="index.html">
+                      href="index.html"
+                    >
                       Home
                     </a>
                   </li>
                   <li class="pb-2">
                     <a
                       class="transition-all duration-300 hover:text-white"
-                      href="about.html">
+                      href="about.html"
+                    >
                       About us
                     </a>
                   </li>
                   <li class="pb-2">
                     <a
                       class="transition-all duration-300 hover:text-white"
-                      href="contact.html">
+                      href="contact.html"
+                    >
                       Contact us
                     </a>
                   </li>
                   <li class="pb-2">
                     <a
                       class="transition-all duration-300 hover:text-white"
-                      href="blog.html">
+                      href="blog.html"
+                    >
                       Blog
                     </a>
                   </li>
                   <li class="pb-2">
                     <a
                       class="transition-all duration-300 hover:text-white"
-                      href="shop-mixed.html">
+                      href="shop-mixed.html"
+                    >
                       New products
                     </a>
                   </li>
@@ -1138,7 +1357,8 @@
               <div
                 class="sub-metismenu has-arrow cursor-pointer py-3 font-bold text-white"
                 aria-expanded="false"
-                role="menu">
+                role="menu"
+              >
                 Contact Us
               </div>
               <div class="metismenu-content">
@@ -1148,11 +1368,13 @@
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="h-6 w-6">
+                      class="h-6 w-6"
+                    >
                       <path
                         fill-rule="evenodd"
                         d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
-                        clip-rule="evenodd" />
+                        clip-rule="evenodd"
+                      />
                     </svg>
                     <span>Av. Colon 1234, Buenos Aires, Argentina</span>
                   </li>
@@ -1161,16 +1383,20 @@
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="h-6 w-6">
+                      class="h-6 w-6"
+                    >
                       <path
-                        d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                        d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
+                      />
                       <path
-                        d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                        d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+                      />
                     </svg>
 
                     <a
                       class="transition-all duration-300 hover:text-white"
-                      href="#">
+                      href="#"
+                    >
                       Infinite@example.com
                     </a>
                   </li>
@@ -1179,11 +1405,13 @@
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      class="h-6 w-6">
+                      class="h-6 w-6"
+                    >
                       <path
                         fill-rule="evenodd"
                         d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
-                        clip-rule="evenodd" />
+                        clip-rule="evenodd"
+                      />
                     </svg>
                     <span>(+54) 2284-123456789</span>
                   </li>
@@ -1191,21 +1419,25 @@
                 <div class="flex items-center gap-5 pt-5">
                   <a
                     class="transition-all duration-300 hover:text-white"
-                    href="#">
+                    href="#"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
                       fill="currentColor"
                       class="h-6 w-6"
-                      viewBox="0 0 16 16">
+                      viewBox="0 0 16 16"
+                    >
                       <path
-                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                      />
                     </svg>
                   </a>
                   <a
                     class="transition-all duration-300 hover:text-white"
-                    href="#">
+                    href="#"
+                  >
                     <svg
                       class="h-6 w-6"
                       stroke="currentColor"
@@ -1214,23 +1446,28 @@
                       viewBox="0 0 512 512"
                       height="1em"
                       width="1em"
-                      xmlns="http://www.w3.org/2000/svg">
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path
-                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path>
+                        d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                      ></path>
                     </svg>
                   </a>
                   <a
                     class="transition-all duration-300 hover:text-white"
-                    href="#">
+                    href="#"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
                       height="16"
                       fill="currentColor"
                       class="h-6 w-6"
-                      viewBox="0 0 16 16">
+                      viewBox="0 0 16 16"
+                    >
                       <path
-                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                      />
                     </svg>
                   </a>
                 </div>
@@ -1238,7 +1475,8 @@
             </li>
           </ul>
           <div
-            class="flex flex-col items-center gap-2 border-t border-slate-400 py-5 text-xs">
+            class="flex flex-col items-center gap-2 border-t border-slate-400 py-5 text-xs"
+          >
             <span class="text-white">
               Copyright ©
               <span class="current-year"></span>
@@ -1260,10 +1498,12 @@
 
     <div class="modal-menu modal-container resize-close modal-overlay">
       <div
-        class="modal-content modal-left flex h-full w-[288px] min-w-[250px] flex-col bg-[#f5f7fe]">
+        class="modal-content modal-left flex h-full w-[288px] min-w-[250px] flex-col bg-[#f5f7fe]"
+      >
         <div class="w-full">
           <button
-            class="close-modal absolute right-5 top-5 p-[3px] text-default-600">
+            class="close-modal absolute right-5 top-5 p-[3px] text-default-600"
+          >
             <svg
               viewBox="0 0 24 24"
               width="24"
@@ -1273,7 +1513,8 @@
               fill="none"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="h-6 w-6">
+              class="h-6 w-6"
+            >
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
@@ -1288,17 +1529,20 @@
             <li>
               <a
                 href="index.html"
-                class="block py-3 font-bold text-default-600">
+                class="block py-3 font-bold text-default-600"
+              >
                 Home
               </a>
             </li>
             <li>
               <a
                 href="wishlist.html"
-                class="flex items-center justify-between py-3 font-bold text-default-600">
+                class="flex items-center justify-between py-3 font-bold text-default-600"
+              >
                 Wishlist
                 <span
-                  class="flex h-5 w-5 items-center justify-center rounded-full bg-primary-500 text-xs text-white">
+                  class="flex h-5 w-5 items-center justify-center rounded-full bg-primary-500 text-xs text-white"
+                >
                   0
                 </span>
               </a>
@@ -1307,7 +1551,8 @@
               <div
                 class="sub-metismenu has-arrow cursor-pointer py-3 font-bold text-default-600"
                 aria-expanded="false"
-                role="menu">
+                role="menu"
+              >
                 Electronics
               </div>
               <div class="metismenu-content">
@@ -1320,7 +1565,8 @@
             <li>
               <a
                 href="about.html"
-                class="block py-3 font-bold text-default-600">
+                class="block py-3 font-bold text-default-600"
+              >
                 About
               </a>
             </li>
@@ -1333,7 +1579,8 @@
               <div
                 class="sub-metismenu has-arrow cursor-pointer py-3 font-bold text-default-600"
                 aria-expanded="false"
-                role="menu">
+                role="menu"
+              >
                 Pages
               </div>
               <div class="metismenu-content">
@@ -1386,7 +1633,8 @@
             <li>
               <a
                 href="contact.html"
-                class="block py-3 font-bold text-default-600">
+                class="block py-3 font-bold text-default-600"
+              >
                 Contact
               </a>
             </li>
@@ -1394,7 +1642,8 @@
           <div class="mt-5 border-t-2 pt-6">
             <a
               class="block w-full rounded-md bg-primary-500 p-3 text-center text-white transition-all duration-300 hover:bg-primary-600"
-              href="sign-in.html">
+              href="sign-in.html"
+            >
               Sign in
             </a>
           </div>
@@ -1404,23 +1653,27 @@
 
     <div class="modal-search modal-container resize-close modal-overlay">
       <div
-        class="modal-content modal-top m-5 flex h-fit w-full items-center gap-2 rounded-lg bg-[#f5f7fe] p-4">
+        class="modal-content modal-top m-5 flex h-fit w-full items-center gap-2 rounded-lg bg-[#f5f7fe] p-4"
+      >
         <form class="flex w-full">
           <div class="relative w-full">
             <input
               type="search"
               id="search-mob"
               class="peer block w-full appearance-none rounded-l-lg border border-r-0 border-primary-500 bg-white px-2 pb-2 pt-4 text-sm focus:outline-none focus:ring-0"
-              placeholder=" " />
+              placeholder=" "
+            />
             <label
               for="search-mob"
-              class="z-1 pointer-events-none absolute left-2.5 top-[13px] origin-[0] -translate-y-3 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-3 peer-focus:scale-75 peer-focus:text-primary-500">
+              class="z-1 pointer-events-none absolute left-2.5 top-[13px] origin-[0] -translate-y-3 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-3 peer-focus:scale-75 peer-focus:text-primary-500"
+            >
               Search
             </label>
           </div>
           <button
             class="rounded-r-lg bg-primary-500 p-[9px] text-white"
-            type="submit">
+            type="submit"
+          >
             <svg
               viewBox="0 0 24 24"
               width="24"
@@ -1430,7 +1683,8 @@
               fill="none"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="h-6 w-6">
+              class="h-6 w-6"
+            >
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
@@ -1446,7 +1700,8 @@
             fill="none"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="h-6 w-6">
+            class="h-6 w-6"
+          >
             <line x1="18" y1="6" x2="6" y2="18"></line>
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
@@ -1456,13 +1711,15 @@
 
     <div class="modal-cart modal-container modal-overlay">
       <div
-        class="modal-content modal-right flex h-full w-[400px] min-w-[250px] flex-col bg-[#f5f7fe]">
+        class="modal-content modal-right flex h-full w-[400px] min-w-[250px] flex-col bg-[#f5f7fe]"
+      >
         <div class="w-full">
           <div class="border-b-2 p-5">
             <h3 class="text-lg font-bold text-default-600">Shopping Cart</h3>
           </div>
           <button
-            class="close-modal absolute right-5 top-5 p-[3px] text-default-600">
+            class="close-modal absolute right-5 top-5 p-[3px] text-default-600"
+          >
             <svg
               viewBox="0 0 24 24"
               width="24"
@@ -1472,7 +1729,8 @@
               fill="none"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="h-6 w-6">
+              class="h-6 w-6"
+            >
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
@@ -1486,16 +1744,20 @@
               height="16"
               fill="currentColor"
               class="h-20 w-20"
-              viewBox="0 0 16 16">
+              viewBox="0 0 16 16"
+            >
               <path
-                d="M7.354 5.646a.5.5 0 1 0-.708.708L7.793 7.5 6.646 8.646a.5.5 0 1 0 .708.708L8.5 8.207l1.146 1.147a.5.5 0 0 0 .708-.708L9.207 7.5l1.147-1.146a.5.5 0 0 0-.708-.708L8.5 6.793 7.354 5.646z" />
+                d="M7.354 5.646a.5.5 0 1 0-.708.708L7.793 7.5 6.646 8.646a.5.5 0 1 0 .708.708L8.5 8.207l1.146 1.147a.5.5 0 0 0 .708-.708L9.207 7.5l1.147-1.146a.5.5 0 0 0-.708-.708L8.5 6.793 7.354 5.646z"
+              />
               <path
-                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+              />
             </svg>
             <span class="my-5">Your shopping cart is empty!</span>
             <a
               class="block rounded-md bg-primary-500 px-4 py-3 text-center font-bold text-white transition-all duration-300 hover:bg-primary-600"
-              href="#">
+              href="#"
+            >
               Continue Shopping
             </a>
           </div>
@@ -1504,7 +1766,8 @@
     </div>
 
     <div
-      class="scroll-up invisible fixed bottom-10 right-[50px] z-30 cursor-pointer select-none rounded-xl bg-black/50 p-2 text-white opacity-0 shadow-lg transition-all duration-300 hover:bg-primary-500">
+      class="scroll-up invisible fixed bottom-10 right-[50px] z-30 cursor-pointer select-none rounded-xl bg-black/50 p-2 text-white opacity-0 shadow-lg transition-all duration-300 hover:bg-primary-500"
+    >
       <svg
         viewBox="0 0 24 24"
         width="24"
@@ -1513,14 +1776,16 @@
         stroke-width="2"
         fill="none"
         stroke-linecap="round"
-        stroke-linejoin="round">
+        stroke-linejoin="round"
+      >
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </div>
 
     <script src="lib/metisMenu/metismenujs.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/Register.js"></script>
   </body>
 
-<!-- Mirrored from infinite.andevfrontend.site/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2024 09:49:41 GMT -->
+  <!-- Mirrored from infinite.andevfrontend.site/sign-up.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2024 09:49:41 GMT -->
 </html>
