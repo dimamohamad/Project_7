@@ -13,6 +13,7 @@ namespace Project_7.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly MyDbContext _db;
+
         public ProductsController(MyDbContext db)
         {
             _db = db;
@@ -21,9 +22,7 @@ namespace Project_7.Controllers
         [HttpGet("productsWithRatings")]
         public IActionResult GetProductWithRating()
         {
-            var products = _db.Products.
-                Include(p => p.Reviews).
-                Select(p =>
+            var products = _db.Products.Include(p => p.Reviews).Select(p =>
                 new ProductWithRatingDto
                 {
                     ReviewCount = p.Reviews.Count,
@@ -67,11 +66,13 @@ namespace Project_7.Controllers
             {
                 return BadRequest();
             }
+
             var products = _db.Products.Where(p => p.ProductId == id).FirstOrDefault();
             if (products != null)
             {
                 return Ok(products);
             }
+
             return NotFound();
         }
 
@@ -84,6 +85,7 @@ namespace Project_7.Controllers
                 return BadRequest();
 
             }
+
             var product = _db.Products.Find(id);
             if (product != null)
             {
@@ -91,6 +93,7 @@ namespace Project_7.Controllers
                 _db.SaveChanges();
                 return NoContent();
             }
+
             return NotFound();
 
 
@@ -104,8 +107,13 @@ namespace Project_7.Controllers
                 return BadRequest();
 
             }
+
             var category = _db.Categories.Find(id);
-            if (category == null) { return NotFound(); }
+            if (category == null)
+            {
+                return NotFound();
+            }
+
             var products = _db.Products.Where(p => p.CategoryId == id).ToList();
 
             if (products != null)
@@ -113,6 +121,7 @@ namespace Project_7.Controllers
                 return Ok(products);
 
             }
+
             return NotFound();
         }
 
@@ -128,6 +137,7 @@ namespace Project_7.Controllers
                 return BadRequest();
 
             }
+
             var products = new Product
             {
 
@@ -153,6 +163,7 @@ namespace Project_7.Controllers
 
 
         }
+
         [HttpPut("/Api/Products/UpdateOnproduct/{id}")]
 
         public IActionResult Update([FromForm] ProductRequestDTO response, int id)
@@ -162,6 +173,7 @@ namespace Project_7.Controllers
             {
                 return BadRequest();
             }
+
             var product = _db.Products.FirstOrDefault(p => p.ProductId == id);
             if (product != null)
             {
@@ -186,6 +198,7 @@ namespace Project_7.Controllers
                 _db.SaveChanges();
                 return Ok(product);
             }
+
             return NotFound();
 
         }
@@ -225,38 +238,7 @@ namespace Project_7.Controllers
 
             return Ok(products);
         }
+
+
     }
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
