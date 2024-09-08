@@ -81,15 +81,22 @@ namespace Project_7.Controllers
         [HttpPut("updateCartItem/{id:int}")]
         public IActionResult UpdateCartItem(int id, UpdateCartItemDto update)
         {
-
-            var user = GetUser();
             var cartItem = db.CartItems.Find(id);
-            var product = db.Products.Find(cartItem.ProductId);
-            //var cart = 
             if (cartItem == null)
                 return NotFound();
+
+            var product = db.Products.Find(cartItem.ProductId);
+            var cart = db.Carts.Find(cartItem.ProductId);
+            var discount = 0m;
+            var voucher = db.Vouchers.Find(cart.VoucherId);
+            if (voucher != null)
+            {
+                discount = voucher.DiscountPercentage;
+            }
+
+
             cartItem.Quantity = update.Quantity;
-            
+            cartItem.Price = cartItem.Quantity * (product?.Price ?? 0 - discount * product?.Price ?? 0);
             db.CartItems.Update(cartItem);
             db.SaveChanges();
             return Ok(DisplayCartItemDto.createFromCartItem(cartItem));
@@ -131,7 +138,7 @@ namespace Project_7.Controllers
             };
 
             db.Orders.Add(order);
-
+            db.SaveChanges();
             // Add the cart Items to the order
             foreach (var cartItem in cartItems)
             {
