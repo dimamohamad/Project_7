@@ -1,6 +1,7 @@
 ﻿using Azure.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Project_7.DTOs;
 using Project_7.Models;
 using static Project_7.Shared.ImageSaver;
@@ -163,38 +164,53 @@ namespace Project_7.Controllers
 
 
 
+        [HttpGet("GetLatestProducts")]
+        public IActionResult GetLatestProducts()
+        {
+            var products = _db.Products
+                .OrderByDescending(p => p.CreatedAt)  
+                .Take(9)  
+                .ToList();
 
+            if (products == null || products.Count == 0)
+            {
+                return NotFound("No products found.");
+            }
 
-
-
-
+            return Ok(products);
+        }
     }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
