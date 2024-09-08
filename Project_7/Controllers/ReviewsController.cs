@@ -7,6 +7,7 @@ using Project_7.DTOs;
 using Project_7.DTOs.ProductDtos;
 using Project_7.DTOs.ReviewDtos;
 using Project_7.Models;
+using Project_7.TokenReaderNS;
 using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace Project_7.Controllers
@@ -18,29 +19,28 @@ namespace Project_7.Controllers
 
 
         private readonly MyDbContext _db;
-        public ReviewsController(MyDbContext db)
+        private readonly IConfiguration _config;
+        public ReviewsController(MyDbContext db, IConfiguration config)
         {
             _db = db;
+            _config = config;
         }
 
 
-        [HttpGet("/Api/Reviews/GetAllReviews")]
+        [HttpGet("GetAllReviews")]
         public IActionResult Get()
         {
             var reviews = _db.Reviews.ToList();
             if (reviews != null)
             {
-
-
                 return Ok(reviews);
-
             }
 
             return NotFound();
 
         }
 
-        [HttpDelete("/Api/Reviews/DeleteReviews/{id}")]
+        [HttpDelete("DeleteReviews/{id}")]
         public IActionResult DeleteReview(int id)
         {
             if (id <= 0)
@@ -50,37 +50,13 @@ namespace Project_7.Controllers
 
             var reviews = _db.Reviews.FirstOrDefault(p => p.ReviewId == id);
 
-            if (reviews != null)
-            {
-
-                _db.Reviews.Remove(reviews);
-                _db.SaveChanges();
-                return NoContent();
-
-            }
-
-            return NotFound();
-        }
-
-
-        [HttpPost("/Api/Reviews/AddReview")]
-        public IActionResult AddReview([FromBody] ReviewRequestDTO request)
-        {
-
-            var review = new Review
-            {
-                ProductId = request.ProductId,
-                Rating = request.Rating,
-                Comment = request.Comment,
-
-            };
-
-            _db.Reviews.Add(review);
+            if (reviews == null) return NotFound();
+            _db.Reviews.Remove(reviews);
             _db.SaveChanges();
-            return Ok(review);
-
+            return NoContent();
         }
-        [HttpPut("/Api/Reviews/EditReviews/{id}")]
+
+        [HttpPut("EditReviews/{id}")]
         public IActionResult Update([FromBody] ReviewRequestDTO response, int id)
         {
 
@@ -101,16 +77,18 @@ namespace Project_7.Controllers
             if (product == null)
                 return NotFound();
 
-            var productReviews = _db.Reviews.Include(r => r.User).Where(r => r.ProductId == id).ToList();
+            var productReviews = _db.Reviews.
+                Include(r => r.User).
+                Where(r => r.ProductId == id).ToList();
             var reviewsComments = productReviews.Select(review => new ReviewDto
-                {
-                    Rating = review.Rating,
-                    Comment = review.Comment,
-                    CreatedAt = review.CreatedAt,
-                    UserName = review.User.UserName,
-                    UserImage = review.User.UserImage,
-                    ReviewId = review.ReviewId
-                })
+            {
+                Rating = review.Rating,
+                Comment = review.Comment,
+                CreatedAt = review.CreatedAt,
+                UserName = review.User.UserName,
+                UserImage = review.User.UserImage,
+                ReviewId = review.ReviewId
+            })
                 .ToList();
             var reviewCount = productReviews.Count();
             var ratingSum = productReviews.Sum(r => r.Rating);
@@ -128,8 +106,8 @@ namespace Project_7.Controllers
 
             return Ok(reviews);
         }
+
         [Authorize]
-        // POST: api/Reviews
         [HttpPost("AddReview")]
         public IActionResult AddReview([FromBody] ReviewRequestDTO createReviewDto)
         {
@@ -138,14 +116,10 @@ namespace Project_7.Controllers
                 return BadRequest(ModelState);
             }
 
-            // افتراض أن هناك مستخدم قام بتسجيل الدخول
-            var userName = User.Identity.Name;  // احصل على اسم المستخدم المسجل دخوله
-            var userImage = "default_user_image_url"; // ضع رابط صورة المستخدم أو اجلبها من قاعدة البيانات
-
+            var user = GetUser();
             var review = new Review
             {
-                UserName = userName,
-                UserImage = userImage,
+                UserId = user.UserId,
                 Rating = createReviewDto.Rating,
                 Comment = createReviewDto.Comment,
                 CreatedAt = DateTime.Now,
@@ -155,33 +129,16 @@ namespace Project_7.Controllers
             _db.Reviews.Add(review);
             _db.SaveChanges();
 
-            return Ok(review);  // إعادة التعليق المضاف
+            return Ok(review);
         }
 
-        // GET: api/Reviews/GetReviewsByProductId/5
-        [HttpGet("GetReviewsByProductId/{productId}")]
-        public async Task<IActionResult> GetReviewsByProductId(int productId)
-        {
-            var reviews = await _db.Reviews
-                .Where(r => r.ProductId == productId)
-                .OrderByDescending(r => r.CreatedAt)
-                .ToListAsync();
-
-            if (reviews == null || !reviews.Any())
-            {
-                return NotFound("No reviews found for this product.");
-            }
-
-            return Ok(reviews);
-        }
 
         private User? GetUser()
         {
-            var tokenReader = new TokenReader(config);
+            var tokenReader = new TokenReader(_config);
             var token = Request.Headers["Authorization"].ToString().Split(' ')[1];
             var principal = tokenReader.ValidateToken(token);
-            return db.Users.FirstOrDefault(u => u.UserName == principal.Identity.Name);
-
+            return _db.Users.FirstOrDefault(u => u.UserName == principal.Identity.Name);
         }
     }
 }

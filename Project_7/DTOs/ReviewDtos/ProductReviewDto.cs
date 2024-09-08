@@ -18,7 +18,7 @@ namespace Project_7.DTOs.ReviewDtos
     {
         public int ReviewId { get; set; }
 
-        public string UserName { get; set; }
+        public string? UserName { get; set; }
 
         public string UserImage { get; set; }
 
