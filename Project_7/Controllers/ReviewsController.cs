@@ -100,10 +100,7 @@ namespace Project_7.Controllers
                 return NotFound();
 
             var productReviews = _db.Reviews.Include(r => r.User).Where(r => r.ProductId == id).ToList();
-            var reviewsComments = new List<ReviewDto>();
-            foreach (var review in productReviews)
-            {
-                reviewsComments.Add(new ReviewDto
+            var reviewsComments = productReviews.Select(review => new ReviewDto
                 {
                     Rating = review.Rating,
                     Comment = review.Comment,
@@ -111,8 +108,8 @@ namespace Project_7.Controllers
                     UserName = review.User.UserName,
                     UserImage = review.User.UserImage,
                     ReviewId = review.ReviewId
-                });
-            }
+                })
+                .ToList();
             var reviewCount = productReviews.Count();
             var ratingSum = productReviews.Sum(r => r.Rating);
             var reviews = new ProductReviewDto
