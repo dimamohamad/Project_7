@@ -960,3 +960,8 @@ function storeCategoryId(categoryId) {
   window.location.href = "shop-grid.html";
 }
 GetCategories();
+
+function clearLocalStorage() {
+  localStorage.clear();
+  window.location.href = "shop-grid.html";
+}

@@ -47,8 +47,7 @@ namespace Project_7.Controllers
         [HttpGet("/Api/Products/GetAllProducts")]
         public IActionResult GetAll()
         {
-            var products = _db.Products.
-                Select(p => ProductDisplayDto.
+            var products = _db.Products.Where(p => p.CategoryId != null).Select(p => ProductDisplayDto.
                     CreateDtoFromProduct(p)).
                 ToList();
 
