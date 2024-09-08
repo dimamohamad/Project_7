@@ -3,9 +3,9 @@ using System.Net;
 
 namespace Project_7.Shared
 {
-    public class EmailSender
+    public static class EmailSender
     {
-        public void SendEmail(string toAddress, string subject, string body)
+        public static void SendEmail(string toAddress, string subject, string body)
         {
             try
             {

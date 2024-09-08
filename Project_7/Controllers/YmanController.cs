@@ -66,7 +66,6 @@ namespace Project_7.Controllers
         }
     }
 
-
     public class TestDto()
     {
         public IFormFile Image { get; set; }
