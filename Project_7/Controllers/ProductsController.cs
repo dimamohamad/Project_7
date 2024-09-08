@@ -1,6 +1,4 @@
-﻿using Azure.Core;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project_7.DTOs.ProductDtos;
 using Project_7.Models;
@@ -179,12 +177,12 @@ namespace Project_7.Controllers
             {
 
                 product.CategoryId = response.CategoryId;
-                product.ProductImage1 = SaveImage(response.ProductImage1);
-                product.ProductImage2 = SaveImage(response.ProductImage2);
-                product.ProductImage3 = SaveImage(response.ProductImage3);
-                product.ProductImage4 = SaveImage(response.ProductImage4);
-                product.ProductImage5 = SaveImage(response.ProductImage5);
-                product.ProductImage6 = SaveImage(response.ProductImage6);
+                product.ProductImage1 = response.ProductImage1 == null ? null : SaveImage(response.ProductImage1);
+                product.ProductImage2 = response.ProductImage2 == null ? null : SaveImage(response.ProductImage2);
+                product.ProductImage3 = response.ProductImage3 == null ? null : SaveImage(response.ProductImage3);
+                product.ProductImage4 = response.ProductImage4 == null ? null : SaveImage(response.ProductImage4);
+                product.ProductImage5 = response.ProductImage5 == null ? null : SaveImage(response.ProductImage5);
+                product.ProductImage6 = response.ProductImage6 == null ? null : SaveImage(response.ProductImage6);
                 product.ProductName = response.ProductName;
                 product.Description = response.Description;
                 product.Visiblity = response.Visiblity;
