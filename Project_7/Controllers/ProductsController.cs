@@ -104,8 +104,8 @@ namespace Project_7.Controllers
                 return BadRequest();
 
             }
-            var category = _db.Categories.Find(id);
-            if (category == null) { return NotFound(); }
+            //var category = _db.Categories.Find(id);
+            //if (category == null) { return NotFound(); }
             var products = _db.Products.Where(p => p.CategoryId == id).ToList();
 
             if (products != null)
