@@ -47,7 +47,11 @@ namespace Project_7.Controllers
         [HttpGet("/Api/Products/GetAllProducts")]
         public IActionResult GetAll()
         {
-            var products = _db.Products.ToList();
+            var products = _db.Products.
+                Select(p => ProductDisplayDto.
+                    CreateDtoFromProduct(p)).
+                ToList();
+
             if (products != null)
             {
                 return Ok(products);
@@ -65,7 +69,7 @@ namespace Project_7.Controllers
                 return BadRequest();
             }
 
-            var products = _db.Products.Where(p => p.ProductId == id).FirstOrDefault();
+            var products = _db.Products.FirstOrDefault(p => p.ProductId == id);
             if (products != null)
             {
                 return Ok(products);
@@ -112,7 +116,11 @@ namespace Project_7.Controllers
                 return NotFound();
             }
 
-            var products = _db.Products.Where(p => p.CategoryId == id).ToList();
+            var products = _db.Products.
+                Where(p => p.CategoryId == id).
+                Select(p => ProductDisplayDto.
+                    CreateDtoFromProduct(p)).
+                ToList();
 
             if (products != null)
             {
