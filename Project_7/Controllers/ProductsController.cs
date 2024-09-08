@@ -41,7 +41,7 @@ namespace Project_7.Controllers
                     ProductName = p.ProductName,
                     StockQuantity = p.StockQuantity,
                     Visiblity = p.Visiblity
-                });
+                }).OrderByDescending(p => p.Rating).Take(4);
             return Ok(products);
         }
 
