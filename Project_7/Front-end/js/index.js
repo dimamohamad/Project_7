@@ -38,7 +38,8 @@ async function GetCategories() {
              <li>
                     <a
                       class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                      href="shop-mixed.html"
+                      href="shop-grid.html"
+                      onclick="storeCategoryId(${element.categoryId})"
                     >
                        ${element.categoryName}
                     </a>
@@ -46,5 +47,9 @@ async function GetCategories() {
             
     `;
   });
+}
+function storeCategoryId(categoryId) {
+  localStorage.setItem("CategoryId", categoryId);
+  window.location.href("shop-grid.html");
 }
 GetCategories();
