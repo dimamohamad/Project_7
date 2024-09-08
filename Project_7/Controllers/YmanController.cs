@@ -5,12 +5,15 @@ using static Project_7.Shared.ImageSaver;
 using Project_7.TokenReaderNS;
 using System.Net;
 using System.Net.Mail;
+using Microsoft.EntityFrameworkCore;
+using Project_7.DTOs.ProductDtos;
+using Project_7.Models;
 
 namespace Project_7.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class YmanController(IConfiguration config) : ControllerBase
+    public class YmanController(MyDbContext db, IConfiguration config) : ControllerBase
     {
         [HttpGet("SendEmail")]
         public IActionResult SendEmail()
@@ -64,14 +67,37 @@ namespace Project_7.Controllers
             var principal = tokenReader.ValidateToken(x);
             return Ok(principal.Identity.Name);
         }
+
+        [HttpGet("productsWithRatings")]
+        public IActionResult GetProductWithRating()
+        {
+            var products = db.Products.Include(p => p.Reviews).Select(p => new
+                ProductWithRatingDto
+            {
+                Rating = (double)p.Reviews.Sum(r => r.Rating) / (double)p.Reviews.Count,
+                CategoryId = p.CategoryId,
+                Description = p.Description,
+                DiscountPercentage = p.DiscountPercentage,
+                Price = p.Price,
+                ProductId = p.ProductId,
+                ProductImage1 = p.ProductImage1,
+                ProductImage2 = p.ProductImage2,
+                ProductImage3 = p.ProductImage3,
+                ProductImage4 = p.ProductImage4,
+                ProductImage5 = p.ProductImage5,
+                ProductImage6 = p.ProductImage6,
+                ProductName = p.ProductName,
+                StockQuantity = p.StockQuantity,
+                Visiblity = p.Visiblity
+            });
+            return Ok(products);
+        }
     }
 
     public class TestDto()
     {
         public IFormFile Image { get; set; }
     }
-
-
 
 
 }

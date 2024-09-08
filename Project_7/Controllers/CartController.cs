@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Project_7.DTOs.CartDtos;
 using Project_7.Models;
 using Project_7.Services;
@@ -7,23 +8,23 @@ using Project_7.TokenReaderNS;
 
 namespace Project_7.Controllers
 {
-    [Authorize]  // This should be uncommented after conferencing the authentication 
     [Route("api/[controller]")]
     [ApiController]
     public class CartController(MyDbContext db, IConfiguration config, PayPalPaymentService payPalService) : ControllerBase
     {
         private readonly string? _redirectUrl = config["PayPal:RedirectUrl"];
-
+        [Authorize]
         [HttpGet("getCartItems")]
         public IActionResult GetCartItems()
         {
             var user = GetUser();
             if (user == null) return BadRequest("There were a problem while trying to get the user info");
-            var cartItems = GetAllCartItems(user);
-            return Ok(cartItems);
+            var (cartItems, _) = GetAllCartItems(user);
+            var cartItemsD = cartItems.Select(cartItem => DisplayCartItemDto.createFromCartItem(cartItem)).ToList();
+            return Ok(cartItemsD);
         }
 
-        private List<CartItem> GetAllCartItems(User user)
+        private (List<CartItem>, Cart) GetAllCartItems(User user)
         {
             var cart = db.Carts.FirstOrDefault(c => c.UserId == user.UserId);
             if (cart == null)
@@ -37,9 +38,9 @@ namespace Project_7.Controllers
                 db.Carts.Add(cart);
                 db.SaveChanges();
             }
-            return db.CartItems.Where(cItem => cItem.CartId == cart.CartId).ToList();
+            return (db.CartItems.Where(cItem => cItem.CartId == cart.CartId).ToList(), cart);
         }
-
+        [Authorize]
         [HttpPost("addToCart")]
         public IActionResult AddToCart(CartItemDto cartItem)
         {
@@ -60,11 +61,11 @@ namespace Project_7.Controllers
             }
 
             var updatedCartItem = cartItem.CreateCartItem(db, cart);
-            return Ok(updatedCartItem);
+            return Ok(DisplayCartItemDto.createFromCartItem(updatedCartItem));
         }
 
-
-        [HttpDelete("addToCart/{id:int}")]
+        [Authorize]
+        [HttpDelete("deleteFromCart/{id:int}")]
         public IActionResult DeleteCartItem(int id)
         {
 
@@ -76,7 +77,8 @@ namespace Project_7.Controllers
             db.SaveChanges();
             return NoContent();
         }
-        [HttpPut("addToCart/{id:int}")]
+        [Authorize]
+        [HttpPut("updateCartItem/{id:int}")]
         public IActionResult UpdateCartItem(int id, UpdateCartItemDto update)
         {
 
@@ -85,27 +87,75 @@ namespace Project_7.Controllers
             if (cartItem == null)
                 return NotFound();
             cartItem.Quantity = update.Quantity;
+            db.CartItems.Update(cartItem);
             db.SaveChanges();
-            return NoContent();
+            return Ok(DisplayCartItemDto.createFromCartItem(cartItem));
         }
 
-
-        [HttpPost("create")]
+        [Authorize]
+        [HttpPost("checkout")]
         public IActionResult CreatePayment()
         {
             if (string.IsNullOrEmpty(_redirectUrl))
                 throw new Exception("The redirect link for the paypal should be set correctly on the sitting app.");
 
-            var payment = payPalService.CreatePayment(_redirectUrl ?? " ", 20m, null);
+            var user = GetUser();
+            var (cartItems, cart) = GetAllCartItems(user);
+            var totalPrice = cartItems.Sum(c => c.Price);
+            var payment = payPalService.CreatePayment(_redirectUrl ?? " ", totalPrice, null);
             var approvalUrl = payment.links.FirstOrDefault(l => l.rel.Equals("approval_url", StringComparison.OrdinalIgnoreCase))?.href;
 
             return Ok(new { approvalUrl });
         }
 
         [HttpGet("success")]
-        public IActionResult ExecutePayment(string paymentId, string PayerID)
+        public IActionResult ExecutePayment(string paymentId, string PayerID, string token)
         {
+
+            var user = GetUser();
+            var (cartItems, cart) = GetAllCartItems(user);
+            var totalAmount = cartItems.Sum(c => c.Price);
+
+            // Create new order
+            var order = new Order
+            {
+                UserId = user.UserId,
+                Address = user.Address,
+                OrderDate = DateTime.Now,
+                ShippingStatus = "pending",
+                CreatedAt = DateTime.Now,
+                VoucherId = cart.VoucherId,
+                TotalAmount = totalAmount
+            };
+
+            db.Orders.Add(order);
+
+            // Add the cart Items to the order
+            foreach (var cartItem in cartItems)
+            {
+                var orderItem = new OrderItem
+                {
+                    OrderId = order.OrderId,
+                    Quantity = cartItem.Quantity,
+                    TotalPrice = cartItem.Price
+                };
+                db.OrderItems.Add(orderItem);
+                db.CartItems.Remove(cartItem);
+            }
+            db.Carts.Remove(cart);
+            db.SaveChanges();
+
             var executedPayment = payPalService.ExecutePayment(paymentId, PayerID);
+            var payment = new Payment
+            {
+                Status = executedPayment.state,
+                OrderId = order.OrderId,
+                Amount = order.TotalAmount,
+                PaymentMethod = "Paypal",
+                PaymentDate = DateTime.Now,
+                TransactionId = executedPayment.id
+            };
+
             return Ok(executedPayment);
         }
 
@@ -118,9 +168,10 @@ namespace Project_7.Controllers
         private User? GetUser()
         {
             var tokenReader = new TokenReader(config);
-            var x = Request.Headers["Authorization"].ToString().Split(' ')[1];
-            var principal = tokenReader.ValidateToken(x);
+            var token = Request.Headers["Authorization"].ToString().Split(' ')[1];
+            var principal = tokenReader.ValidateToken(token);
             return db.Users.FirstOrDefault(u => u.UserName == principal.Identity.Name);
+
         }
     }
 }
