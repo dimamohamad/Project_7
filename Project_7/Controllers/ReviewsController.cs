@@ -99,7 +99,7 @@ namespace Project_7.Controllers
             if (product == null)
                 return NotFound();
 
-            var productReviews = _db.Reviews.Where(r => r.ProductId == id).ToList();
+            var productReviews = _db.Reviews.Include(r => r.User).Where(r => r.ProductId == id).ToList();
             var reviewsComments = new List<ReviewDto>();
             foreach (var review in productReviews)
             {
@@ -107,7 +107,10 @@ namespace Project_7.Controllers
                 {
                     Rating = review.Rating,
                     Comment = review.Comment,
-                    
+                    CreatedAt = review.CreatedAt,
+                    UserName = review.User.UserName,
+                    UserImage = review.User.UserImage,
+                    ReviewId = review.ReviewId
                 });
             }
             var reviewCount = productReviews.Count();
@@ -124,7 +127,7 @@ namespace Project_7.Controllers
                 Reviews = reviewsComments
             };
 
-            return Ok();
+            return Ok(reviews);
         }
 
 
