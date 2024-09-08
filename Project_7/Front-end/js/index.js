@@ -65,9 +65,7 @@ async function GetLatestProducts() {
             <img class="h-full w-full object-contain" src="https://localhost:44339/${product.productImage1}" alt="img"/>
           </a>
           <div class="mt-2 flex gap-1 px-5">
-            <a href="#" class="h-4 w-4 rounded-full border border-slate-400 bg-red-400"></a>
-            <a href="#" class="h-4 w-4 rounded-full border border-slate-400 bg-blue-400"></a>
-            <a href="#" class="h-4 w-4 rounded-full border border-slate-400 bg-gray-500"></a>
+          ///////////////////
           </div>
           <div class="mt-2 px-5">
             <div class="border-t border-slate-300">
@@ -81,9 +79,10 @@ async function GetLatestProducts() {
             </div>
           </div>
           
-          <a href="#" class="mx-5 mb-5 mt-auto w-fit rounded-md bg-primary-500 px-3 py-2 uppercase text-white transition-all duration-300 hover:bg-primary-600">
-            View details
-          </a>
+                  <button   class="mx-5 mb-5 mt-auto w-fit rounded-md bg-primary-500 px-3 py-2 uppercase text-white transition-all duration-300 hover:bg-primary-600"
+" onclick="storeproductId(${product.productId})">   View details</button>
+
+
 
           <div class="absolute right-4 top-4 z-[2] flex flex-col gap-2">
             <button class="btn-wishlist hover:text-primary-500">
@@ -105,5 +104,8 @@ async function GetLatestProducts() {
       </div>`;
   });
 }
-
+function storeproductId(productId) {
+  localStorage.setItem("productId", productId);
+  window.location.href = "/productDetails/productDetails.html";
+}
 GetLatestProducts();

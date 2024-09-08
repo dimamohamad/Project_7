@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project_7.DTOs;
 using Project_7.Models;
+using static Project_7.Shared.EmailSender;
 
 namespace Project_7.Controllers
 {
@@ -40,6 +41,7 @@ namespace Project_7.Controllers
 
             _db.ContactUs.Add(contactUs);
             _db.SaveChanges();
+            SendEmail(ContactRequestDTO.Email, "Confirmation", "Thank you for contacting us. We will get back to you soon.");
 
             return Ok(new { message = "Contact form submitted successfully" });
         }
