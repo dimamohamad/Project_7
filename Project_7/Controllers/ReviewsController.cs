@@ -99,7 +99,7 @@ namespace Project_7.Controllers
             if (product == null)
                 return NotFound();
 
-            var productReviews = _db.Reviews.Include(p=> ).Where(r => r.ProductId == id).ToList();
+            var productReviews = _db.Reviews.Where(r => r.ProductId == id).ToList();
             var reviewsComments = new List<ReviewDto>();
             foreach (var review in productReviews)
             {
