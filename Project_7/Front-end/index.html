@@ -50,9 +50,9 @@
             </svg>
           </div>
           <a href="index.html" class="mr-auto flex items-center gap-2 lg:mr-0">
-            <img class="h-7" src="img/logo.png" alt="logo" />
+            <img class="h-7" src="../images/phone-store-logo-design-template-57d55d352f1fd851a6eecf7d1fbaef6e_screen-removebg-preview.png" alt="logo" />
             <span class="text-2xl font-semibold text-primary-500">
-              Infinite
+              Smart Tech
             </span>
           </a>
           <form class="hidden w-[590px] lg:flex">
@@ -110,6 +110,8 @@
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
             </div>
+
+            
             <a
               class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
               href="sign-in.html"
@@ -131,30 +133,28 @@
               <span class="font-semibold">Sign In</span>
             </a>
             <a
-              href="wishlist.html"
-              class="relative hidden cursor-pointer select-none text-default-600 hover:text-primary-500 lg:block"
+            class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
+            href="sign-up.html"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6"
             >
-              <svg
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-6 w-6"
-              >
-                <path
-                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
-                ></path>
-              </svg>
-              <span
-                class="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary-500 text-xs text-white"
-              >
-                0
-              </span>
-            </a>
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span class="font-semibold">Sign UP</span>
+          </a>
+
+
+
             <div
               class="relative cursor-pointer select-none text-default-600 hover:text-primary-500"
               data-target=".modal-cart"
@@ -233,8 +233,9 @@
               <a
                 class="relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
                 href="shop-grid.html"
+                onclick="clearLocalStorage()"
               >
-                Shop
+               Shop
               </a>
             </li>
             <li>
@@ -245,185 +246,7 @@
                 About Us
               </a>
             </li>
-            <li class="group relative">
-              <span
-                class="relative block cursor-pointer py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
-              >
-                Pages
-              </span>
-              <ul
-                class="invisible absolute -left-5 top-14 w-52 rounded border bg-[#f5f7fe] opacity-0 shadow-[0_2px_10px_rgba(131,125,125,.12)] transition-all duration-300 group-hover:visible group-hover:top-11 group-hover:opacity-100"
-              >
-                <li class="group/item">
-                  <span
-                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                  >
-                    Main Pages
-                  </span>
-                  <div
-                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100"
-                  >
-                    <ul
-                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]"
-                    >
-                      <li>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="checkout.html"
-                        >
-                          Checkout
-                        </a>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="product-details.html"
-                        >
-                          Product Details
-                        </a>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="shopping-cart.html"
-                        >
-                          Shopping Cart
-                        </a>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="wishlist.html"
-                        >
-                          Wishlist
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="group/item">
-                  <span
-                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                  >
-                    Account Pages
-                  </span>
-                  <div
-                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100"
-                  >
-                    <ul
-                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]"
-                    >
-                      <li>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="profile.html"
-                        >
-                          Profile
-                        </a>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="sign-in.html"
-                        >
-                          Sign In
-                        </a>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="sign-up.html"
-                        >
-                          Sign Up
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="group/item">
-                  <span
-                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                  >
-                    Recover Password
-                  </span>
-                  <div
-                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100"
-                  >
-                    <ul
-                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]"
-                    >
-                      <li>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="recover-password.html"
-                        >
-                          Step 1
-                        </a>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="how-to-recover-password.html"
-                        >
-                          Step 2
-                        </a>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="mail-confirmation.html"
-                        >
-                          Step 3 (Mail)
-                        </a>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="code-phone-password.html"
-                        >
-                          Step 3 (Phone)
-                        </a>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="reset-password.html"
-                        >
-                          Step 4
-                        </a>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="password-changed.html"
-                        >
-                          Step 5
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="group/item">
-                  <span
-                    class="block cursor-pointer px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                  >
-                    Change Password
-                  </span>
-                  <div
-                    class="invisible absolute left-full top-0 h-full w-0 whitespace-nowrap opacity-0 duration-300 group-hover/item:visible group-hover/item:w-full group-hover/item:opacity-100"
-                  >
-                    <ul
-                      class="rounded border bg-[#f5f7fe] shadow-[0_2px_10px_rgba(131,125,125,.12)]"
-                    >
-                      <li>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="current-password.html"
-                        >
-                          Step 1
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="new-password.html"
-                        >
-                          Step 2
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                          href="password-changed-successfully.html"
-                        >
-                          Step 3
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </li>
+           
             <li>
               <a
                 class="relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
@@ -2354,7 +2177,7 @@
             <span class="my-5">Your shopping cart is empty!</span>
             <a
               class="block rounded-md bg-primary-500 px-4 py-3 text-center font-bold text-white transition-all duration-300 hover:bg-primary-600"
-              href="#"
+              href="shopping-cart.html"
             >
               Continue Shopping
             </a>

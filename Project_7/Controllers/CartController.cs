@@ -84,9 +84,12 @@ namespace Project_7.Controllers
 
             var user = GetUser();
             var cartItem = db.CartItems.Find(id);
+            var product = db.Products.Find(cartItem.ProductId);
+            //var cart = 
             if (cartItem == null)
                 return NotFound();
             cartItem.Quantity = update.Quantity;
+            
             db.CartItems.Update(cartItem);
             db.SaveChanges();
             return Ok(DisplayCartItemDto.createFromCartItem(cartItem));
@@ -102,17 +105,16 @@ namespace Project_7.Controllers
             var user = GetUser();
             var (cartItems, cart) = GetAllCartItems(user);
             var totalPrice = cartItems.Sum(c => c.Price);
-            var payment = payPalService.CreatePayment(_redirectUrl ?? " ", totalPrice, null);
+            var payment = payPalService.CreatePayment(_redirectUrl ?? " ", totalPrice, null, user.UserId);
             var approvalUrl = payment.links.FirstOrDefault(l => l.rel.Equals("approval_url", StringComparison.OrdinalIgnoreCase))?.href;
 
             return Ok(new { approvalUrl });
         }
 
         [HttpGet("success")]
-        public IActionResult ExecutePayment(string paymentId, string PayerID, string token)
+        public IActionResult ExecutePayment(string paymentId, string PayerID, string token, int userId)
         {
-
-            var user = GetUser();
+            var user = db.Users.Find(userId);
             var (cartItems, cart) = GetAllCartItems(user);
             var totalAmount = cartItems.Sum(c => c.Price);
 

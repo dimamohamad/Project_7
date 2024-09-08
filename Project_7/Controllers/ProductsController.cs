@@ -1,6 +1,4 @@
-﻿using Azure.Core;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project_7.DTOs.ProductDtos;
 using Project_7.Models;
@@ -13,6 +11,7 @@ namespace Project_7.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly MyDbContext _db;
+
         public ProductsController(MyDbContext db)
         {
             _db = db;
@@ -21,9 +20,7 @@ namespace Project_7.Controllers
         [HttpGet("productsWithRatings")]
         public IActionResult GetProductWithRating()
         {
-            var products = _db.Products.
-                Include(p => p.Reviews).
-                Select(p =>
+            var products = _db.Products.Include(p => p.Reviews).Select(p =>
                 new ProductWithRatingDto
                 {
                     ReviewCount = p.Reviews.Count,
@@ -50,7 +47,10 @@ namespace Project_7.Controllers
         [HttpGet("/Api/Products/GetAllProducts")]
         public IActionResult GetAll()
         {
-            var products = _db.Products.ToList();
+            var products = _db.Products.Where(p => p.CategoryId != null).Select(p => ProductDisplayDto.
+                    CreateDtoFromProduct(p)).
+                ToList();
+
             if (products != null)
             {
                 return Ok(products);
@@ -67,11 +67,13 @@ namespace Project_7.Controllers
             {
                 return BadRequest();
             }
-            var products = _db.Products.Where(p => p.ProductId == id).FirstOrDefault();
+
+            var products = _db.Products.FirstOrDefault(p => p.ProductId == id);
             if (products != null)
             {
                 return Ok(products);
             }
+
             return NotFound();
         }
 
@@ -84,6 +86,7 @@ namespace Project_7.Controllers
                 return BadRequest();
 
             }
+
             var product = _db.Products.Find(id);
             if (product != null)
             {
@@ -91,6 +94,7 @@ namespace Project_7.Controllers
                 _db.SaveChanges();
                 return NoContent();
             }
+
             return NotFound();
 
 
@@ -104,15 +108,25 @@ namespace Project_7.Controllers
                 return BadRequest();
 
             }
+
             var category = _db.Categories.Find(id);
-            if (category == null) { return NotFound(); }
-            var products = _db.Products.Where(p => p.CategoryId == id).ToList();
+            if (category == null)
+            {
+                return NotFound();
+            }
+
+            var products = _db.Products.
+                Where(p => p.CategoryId == id).
+                Select(p => ProductDisplayDto.
+                    CreateDtoFromProduct(p)).
+                ToList();
 
             if (products != null)
             {
                 return Ok(products);
 
             }
+
             return NotFound();
         }
 
@@ -128,6 +142,7 @@ namespace Project_7.Controllers
                 return BadRequest();
 
             }
+
             var products = new Product
             {
 
@@ -153,6 +168,7 @@ namespace Project_7.Controllers
 
 
         }
+
         [HttpPut("/Api/Products/UpdateOnproduct/{id}")]
 
         public IActionResult Update([FromForm] ProductRequestDTO response, int id)
@@ -162,17 +178,18 @@ namespace Project_7.Controllers
             {
                 return BadRequest();
             }
+
             var product = _db.Products.FirstOrDefault(p => p.ProductId == id);
             if (product != null)
             {
 
                 product.CategoryId = response.CategoryId;
-                product.ProductImage1 = SaveImage(response.ProductImage1);
-                product.ProductImage2 = SaveImage(response.ProductImage2);
-                product.ProductImage3 = SaveImage(response.ProductImage3);
-                product.ProductImage4 = SaveImage(response.ProductImage4);
-                product.ProductImage5 = SaveImage(response.ProductImage5);
-                product.ProductImage6 = SaveImage(response.ProductImage6);
+                product.ProductImage1 = response.ProductImage1 == null ? null : SaveImage(response.ProductImage1);
+                product.ProductImage2 = response.ProductImage2 == null ? null : SaveImage(response.ProductImage2);
+                product.ProductImage3 = response.ProductImage3 == null ? null : SaveImage(response.ProductImage3);
+                product.ProductImage4 = response.ProductImage4 == null ? null : SaveImage(response.ProductImage4);
+                product.ProductImage5 = response.ProductImage5 == null ? null : SaveImage(response.ProductImage5);
+                product.ProductImage6 = response.ProductImage6 == null ? null : SaveImage(response.ProductImage6);
                 product.ProductName = response.ProductName;
                 product.Description = response.Description;
                 product.Visiblity = response.Visiblity;
@@ -186,6 +203,7 @@ namespace Project_7.Controllers
                 _db.SaveChanges();
                 return Ok(product);
             }
+
             return NotFound();
 
         }
@@ -225,38 +243,7 @@ namespace Project_7.Controllers
 
             return Ok(products);
         }
+
+
     }
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
