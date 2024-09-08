@@ -1,4 +1,5 @@
 ﻿using Azure.Core;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +7,7 @@ using Project_7.DTOs;
 using Project_7.DTOs.ProductDtos;
 using Project_7.DTOs.ReviewDtos;
 using Project_7.Models;
+using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace Project_7.Controllers
 {
@@ -126,7 +128,60 @@ namespace Project_7.Controllers
 
             return Ok(reviews);
         }
+        [Authorize]
+        // POST: api/Reviews
+        [HttpPost("AddReview")]
+        public IActionResult AddReview([FromBody] ReviewRequestDTO createReviewDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
+            // افتراض أن هناك مستخدم قام بتسجيل الدخول
+            var userName = User.Identity.Name;  // احصل على اسم المستخدم المسجل دخوله
+            var userImage = "default_user_image_url"; // ضع رابط صورة المستخدم أو اجلبها من قاعدة البيانات
 
+            var review = new Review
+            {
+                UserName = userName,
+                UserImage = userImage,
+                Rating = createReviewDto.Rating,
+                Comment = createReviewDto.Comment,
+                CreatedAt = DateTime.Now,
+                ProductId = createReviewDto.ProductId
+            };
+
+            _db.Reviews.Add(review);
+            _db.SaveChanges();
+
+            return Ok(review);  // إعادة التعليق المضاف
+        }
+
+        // GET: api/Reviews/GetReviewsByProductId/5
+        [HttpGet("GetReviewsByProductId/{productId}")]
+        public async Task<IActionResult> GetReviewsByProductId(int productId)
+        {
+            var reviews = await _db.Reviews
+                .Where(r => r.ProductId == productId)
+                .OrderByDescending(r => r.CreatedAt)
+                .ToListAsync();
+
+            if (reviews == null || !reviews.Any())
+            {
+                return NotFound("No reviews found for this product.");
+            }
+
+            return Ok(reviews);
+        }
+
+        private User? GetUser()
+        {
+            var tokenReader = new TokenReader(config);
+            var token = Request.Headers["Authorization"].ToString().Split(' ')[1];
+            var principal = tokenReader.ValidateToken(token);
+            return db.Users.FirstOrDefault(u => u.UserName == principal.Identity.Name);
+
+        }
     }
 }
