@@ -41,6 +41,25 @@ namespace Project_7.Controllers
             _db.SaveChanges();
             return Ok(data);
         }
+        [HttpPost("LoginAdmin")]
+        public IActionResult Login([FromForm] AdminLoginDTO admin)
+        {
+            var data = _db.Admins.FirstOrDefault(x => x.Email == admin.Email);
+            if (data == null || !PasswordHash.verifyPassword(admin.Password, data.PasswordHash, data.PasswordSalt))
+            {
+                return Unauthorized();
+            }
+
+            var token = _tokenGenerator.GenerateToken(data.AdminName);
+
+            var response = new
+            {
+                Token = token,
+                User = data
+            };
+
+            return Ok(response);
+        }
 
 
     }
