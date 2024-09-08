@@ -1,9 +1,35 @@
-const n = localStorage.getItem("categoryid");
+
+
+async function getCategoryName() {
+  const dropDown = document.getElementById("dropDownListCategory");
+  let url = "https://localhost:44339/API/Categories/GetAllCategories";
+  let request = await fetch(url);
+  let data = await request.json();
+
+  data.forEach((select) => {
+    dropDown.innerHTML += `
+    
+   <li value="${select.categoryId}"><a onclick=setCatid(${select.categoryId}) href="#">${select.categoryName}</a></li>
+  `;
+  });
+}
+
+
+
+function setCatid(categoryId){
+localStorage.setItem("categoryId",categoryId);
+
+}
+getCategoryName();
 debugger;
+const n = localStorage.getItem("categoryId");
 var url;
-
+if (n) {
+    url =`https://localhost:44339/Api/Products/GetProductsByCategoryId/${n}`;
+}
+else {
     url='https://localhost:44339/Api/Products/GetAllProducts';
-
+}
 async function GetProducts() {
 
 
@@ -67,3 +93,7 @@ function UpdateProducts(id) {
     alert("Category has been deleted successfully");
   }
 GetProducts();
+
+
+
+
