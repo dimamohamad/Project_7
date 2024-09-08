@@ -11,6 +11,8 @@ namespace Project_7.DTOs.ProductDtos
 
         public double Rating { get; set; }
 
+        public int ReviewCount { get; set; }
+
         public string? ProductImage1 { get; set; }
 
         public string? ProductImage2 { get; set; }

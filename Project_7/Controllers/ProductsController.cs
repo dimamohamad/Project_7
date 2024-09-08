@@ -17,6 +17,7 @@ namespace Project_7.Controllers
         {
             _db = db;
         }
+
         [HttpGet("productsWithRatings")]
         public IActionResult GetProductWithRating()
         {
@@ -25,6 +26,7 @@ namespace Project_7.Controllers
                 Select(p =>
                 new ProductWithRatingDto
                 {
+                    ReviewCount = p.Reviews.Count,
                     Rating = p.Reviews.Count > 0 ? (double)p.Reviews.Sum(r => r.Rating) / (double)p.Reviews.Count : 0,
                     CategoryId = p.CategoryId,
                     Description = p.Description,
@@ -40,7 +42,7 @@ namespace Project_7.Controllers
                     ProductName = p.ProductName,
                     StockQuantity = p.StockQuantity,
                     Visiblity = p.Visiblity
-                });
+                }).OrderByDescending(p => p.Rating).Take(4);
             return Ok(products);
         }
 
@@ -195,7 +197,25 @@ namespace Project_7.Controllers
         {
             var products = _db.Products
                 .OrderByDescending(p => p.CreatedAt)
-                .Take(9)
+                .Take(9).Select(p => new ProductWithRatingDto
+                {
+                    ReviewCount = p.Reviews.Count,
+                    Rating = p.Reviews.Count > 0 ? (double)p.Reviews.Sum(r => r.Rating) / (double)p.Reviews.Count : 0,
+                    CategoryId = p.CategoryId,
+                    Description = p.Description,
+                    DiscountPercentage = p.DiscountPercentage,
+                    Price = p.Price,
+                    ProductId = p.ProductId,
+                    ProductImage1 = p.ProductImage1,
+                    ProductImage2 = p.ProductImage2,
+                    ProductImage3 = p.ProductImage3,
+                    ProductImage4 = p.ProductImage4,
+                    ProductImage5 = p.ProductImage5,
+                    ProductImage6 = p.ProductImage6,
+                    ProductName = p.ProductName,
+                    StockQuantity = p.StockQuantity,
+                    Visiblity = p.Visiblity
+                })
                 .ToList();
 
             if (products == null || products.Count == 0)
