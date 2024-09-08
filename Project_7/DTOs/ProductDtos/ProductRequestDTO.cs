@@ -1,4 +1,4 @@
-﻿namespace Project_7.DTOs
+﻿namespace Project_7.DTOs.ProductDtos
 {
     public class ProductRequestDTO
     {
