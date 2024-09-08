@@ -19,7 +19,7 @@ namespace Project_7.Services
             return new APIContext(oauthToken);
         }
 
-        public Payment CreatePayment(string redirectUrl, decimal total, string? message)
+        public Payment CreatePayment(string redirectUrl, decimal total, string? message, int userId)
         {
             var apiContext = GetAPIContext();
 
@@ -43,7 +43,7 @@ namespace Project_7.Services
                 redirect_urls = new RedirectUrls
                 {
                     cancel_url = $"{redirectUrl}/cancel",
-                    return_url = $"{redirectUrl}/success"
+                    return_url = $"{redirectUrl}/success?userId={userId}"
                 }
             };
 
