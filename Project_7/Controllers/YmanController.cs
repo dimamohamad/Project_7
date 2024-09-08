@@ -63,26 +63,12 @@ namespace Project_7.Controllers
             var x = Request.Headers["Authorization"].ToString().Split(' ')[1];
             var principal = tokenReader.ValidateToken(x);
             return Ok(principal.Identity.Name);
-            if (principal != null)
-            {
-                var username = principal.FindFirst(ClaimTypes.Name)?.Value; // Extract the username
-                Console.WriteLine($"Username: {username}");
-            }
-            else
-            {
-                Console.WriteLine("Invalid token.");
-            }
-            return Ok();
         }
-
-
     }
-
 
     public class TestDto()
     {
         public IFormFile Image { get; set; }
-
     }
 
 
