@@ -38,13 +38,15 @@ namespace Project_7.DTOs.CartDtos
                 {
                     CartId = cart.CartId,
                     ProductId = ProductId,
-                    Price = price - price * discount
+                    Price = (price - price * discount) * Quantity,
+                    Quantity = Quantity
                 };
                 db.CartItems.Add(cartItem);
             }
             else
             {
                 cartItem.Quantity += Quantity;
+                cartItem.Price = (price - price * discount) * cartItem.Quantity;
                 db.CartItems.Update(cartItem);
             }
             db.SaveChanges();
