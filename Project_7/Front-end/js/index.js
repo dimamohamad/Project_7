@@ -109,3 +109,37 @@ function storeproductId(productId) {
   window.location.href = "/productDetails/productDetails.html";
 }
 GetLatestProducts();
+
+////////////////////// Most Review
+async function GetProductsMostReview() {
+  const urlll = "https://localhost:44339/api/Products/GetLatestProducts";
+  var response = await fetch(urlll);
+  var data = await response.json();
+
+  var MostRevieww = document.getElementById("MostReview");
+
+  data.forEach((productMostReview) => {
+    MostRevieww.innerHTML += `
+      <div class="swiper-slide grid grid-cols-6 gap-5">
+          <div class="relative col-span-6 flex rounded-lg bg-white p-4 shadow">
+              <a href="#">
+                  <figure class="h-[80px] w-[80px] min-w-[80px] xl:h-[130px] xl:w-[130px] xl:min-w-[130px]">
+                      <img class="h-full w-full object-contain" src="${productMostReview.productImage1}" alt="(image not found)" />
+                  </figure>
+              </a>
+              <div class="relative border-l-2 pl-4">
+                  <div class="rater" data-rater="5"></div>
+                  <a href="#" class="my-3 line-clamp-2 text-default-600 transition-all duration-300 hover:text-primary-500">
+                      ${productMostReview.productName}
+                  </a>
+                  <span class="mb-2 inline-block text-base font-bold text-primary-500">
+                      $${productMostReview.price}
+                  </span>
+              </div>
+          </div>
+      </div>
+      `;
+  });
+}
+
+GetProductsMostReview();
