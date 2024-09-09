@@ -509,7 +509,7 @@ async function AddReview() {
   const url2 = "https://localhost:44339/api/Reviews/AddReview";
   let comment = document.getElementById("comment");
   var data = {
-    userId: 1,
+    userId: localStorage.getItem("userId"),
     comment: comment.value,
     productId: localStorage.getItem("productId"),
     rating: document.getElementById("rating-value").value,
