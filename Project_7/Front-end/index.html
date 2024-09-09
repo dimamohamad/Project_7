@@ -86,6 +86,82 @@
         animation: slideInFromLeft 1s ease-out forwards;
         animation-delay: 0s; /* تأخير الحركة */
       }
+
+      /* التأثير الأساسي للصور */
+      @keyframes slideInFromRigh {
+        from {
+          transform: translateX(150%); /* بداية الحركة من اليمين */
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0); /* النهاية في موضعها الطبيعي */
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInFromTo {
+        from {
+          transform: translateY(-150%); /* بداية الحركة من الأعلى */
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0); /* النهاية في موضعها الطبيعي */
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInFromLef {
+        from {
+          transform: translateX(-150%); /* بداية الحركة من اليسار */
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0); /* النهاية في موضعها الطبيعي */
+          opacity: 1;
+        }
+      }
+
+      /* تطبيق التأثير على الصور */
+      .overlayy-image {
+        position: absolute;
+        top: 252px;
+        left: 820px;
+        width: 331px;
+        height: auto;
+        animation: slideInFromRigh 1s ease-out forwards;
+        animation-delay: 0s;
+      }
+
+      .overlaa-image {
+        position: absolute;
+        top: 10px;
+        left: 456px;
+        width: 352px;
+        height: auto;
+        animation: slideInFromTo 1s ease-out forwards;
+        animation-delay: 0s;
+      }
+      .overll-image {
+        position: absolute;
+        top: 300px;
+        left: 100px;
+        width: 317px;
+        height: auto;
+        animation: slideInFromLef 1s ease-out forwards;
+        animation-delay: 0s; /* تأخير الحركة */
+      }
+
+      @media (max-width: 425px) {
+        .nav-main a {
+          font-size: 0.5rem; /* Adjust to your preferred size */
+        }
+
+        .font-semibold {
+          font-weight: 100; /* Adjust to your preferred weight */
+          font-size: 1px; /* Adjust to your preferred size */
+          box-sizing: content-box; /* Ensure box-sizing is content-box or reset it */
+        }
+      }
     </style>
   </head>
   <body
@@ -228,46 +304,6 @@
                 <span class="font-semibold">Sign Up</span>
               </a>
             </span>
-            <!-- <a
-              class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
-              href="sign-in.html"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-6 w-6"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              <span class="font-semibold">Sign In</span>
-            </a>
-            <a
-              class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
-              href="sign-up.html"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-6 w-6"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              <span class="font-semibold">Sign UP</span>
-            </a> -->
 
             <div
               class="relative cursor-pointer select-none text-default-600 hover:text-primary-500"
@@ -401,10 +437,25 @@
               </div>
             </div>
             <div class="swiper-slide">
-              <div class="block">
+              <div class="relative-container">
                 <img
-                  src="../images/HD-wallpaper-xiaomi-android-mobile-phone-2019.jpg"
+                  src="../images/B.G-01.jpg"
                   style="width: 100%; height: 500px"
+                  alt=""
+                />
+                <img
+                  src="../images/Accessory-01111.jpg"
+                  class="overlayy-image"
+                  alt=""
+                />
+                <img
+                  src="../images/iPhone-Symbol.jpg"
+                  class="overlaa-image"
+                  alt=""
+                />
+                <img
+                  src="../images/ios-usb-c-cable-adapter.jpg"
+                  class="overll-image"
                   alt=""
                 />
               </div>
