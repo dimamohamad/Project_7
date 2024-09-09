@@ -277,7 +277,7 @@ async function openPaymentWindow() {
         paymentWindow.close();
         // Clear the interval to stop checking
         clearInterval(checkInterval);
-        window.location = "index.html";
+        window.location.href = "index.html";
       }
     } catch (e) {
       // Ignore any cross-origin access errors
@@ -286,7 +286,7 @@ async function openPaymentWindow() {
     // Close the interval if the window is closed manually
     if (paymentWindow && paymentWindow.closed) {
       clearInterval(checkInterval);
-      console.log("Payment window closed manually.");
+      window.location.href = "index.html";
     }
   }, 1000); // Check every second (1000 milliseconds)
 }
