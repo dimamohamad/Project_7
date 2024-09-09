@@ -152,7 +152,6 @@ namespace Project_7.Controllers
                 db.CartItems.Remove(cartItem);
             }
             db.Carts.Remove(cart);
-            db.SaveChanges();
 
             var executedPayment = payPalService.ExecutePayment(paymentId, PayerID);
             var payment = new Payment
@@ -164,7 +163,8 @@ namespace Project_7.Controllers
                 PaymentDate = DateTime.Now,
                 TransactionId = executedPayment.id
             };
-
+            db.Payments.Add(payment);
+            db.SaveChanges();
             return Ok(executedPayment);
         }
 
