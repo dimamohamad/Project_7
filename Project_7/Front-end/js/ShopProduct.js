@@ -1,5 +1,4 @@
 const n = localStorage.getItem("CategoryId");
-debugger;
 var url;
 if (n) {
   url = `https://localhost:44339/Api/Products/GetProductsByCategoryId/${n}`;
@@ -954,9 +953,7 @@ function storeCategoryId(categoryId) {
   window.location.href = "shop-grid.html";
 }
 GetCategories();
-debugger;
 function clearLocalStorage() {
-  debugger;
   localStorage.clear();
   window.location.href = "shop-grid.html";
 }
@@ -993,7 +990,6 @@ fiterCategory();
 document
   .getElementById("priceFilter")
   .addEventListener("change", async function () {
-    debugger;
     const sortOrder = document.getElementById("priceFilter").value;
     var CategoryId = localStorage.getItem("CategoryId");
     if (CategoryId == null) {

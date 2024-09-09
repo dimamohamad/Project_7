@@ -1,7 +1,5 @@
 const url = "https://localhost:44339/API/Categories/GetAllCategories";
-debugger;
 async function GetAllCategories() {
-  debugger;
   var response = await fetch(url);
   var result = await response.json();
   var container = document.getElementById("categoryContainer");
@@ -28,9 +26,7 @@ async function GetAllCategories() {
 }
 GetAllCategories();
 
-debugger;
 async function GetCategories() {
-  debugger;
   var response = await fetch(url);
   var result = await response.json();
   var container = document.getElementById("dropDownCategory");
