@@ -343,7 +343,6 @@ async function showProductDetail() {
 }
 
 async function Add() {
-  // debugger;
   var quantity = document.getElementById("quantity");
   const url = "https://localhost:44358/api/CartItem";
   var data = {

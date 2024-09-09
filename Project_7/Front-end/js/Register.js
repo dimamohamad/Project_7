@@ -1,6 +1,5 @@
 async function Register() {
   event.preventDefault();
-  debugger;
   let url = "https://localhost:44339/api/Users/RegisterUsers";
 
   const formData = new FormData(document.getElementById("Register"));
