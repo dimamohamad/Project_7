@@ -3,11 +3,11 @@ async function showProductDetail() {
   var url = `https://localhost:44339/Api/Products/GetProductsById/${x}`;
 
   var response = await fetch(url);
-  console.log(response);
+  // console.log(response);
 
   var result = await response.json();
-  console.log(result);
-  console.log(x);
+  // console.log(result);
+  // console.log(x);
   var container = document.getElementById("ProductDetailssection");
 
   container.innerHTML = `   
@@ -361,21 +361,6 @@ async function showProductDetail() {
             </a>
           </div>
           <div class="my-4">
-            <span class="mr-1 font-bold text-default-600">Tags:</span>
-            <a
-              class="mr-1 transition-all duration-300 hover:text-primary-500"
-              href="#"
-            >
-              Audio,
-            </a>
-            <a
-              class="transition-all duration-300 hover:text-primary-500"
-              href="#"
-            >
-              Virtual Assistants
-            </a>
-          </div>
-          <div class="my-4">
             <span class="font-bold text-default-600">Share:</span>
             <div class="mt-2 flex items-center gap-2">
               <a
@@ -457,75 +442,233 @@ async function showProductDetail() {
             </div>
           </div>
           <div class="my-4">
-            <button
-              class="my-2 flex w-full items-center justify-between gap-4 rounded-lg bg-white px-6 py-2 shadow-[0_2px_10px_rgba(131,125,125,.12)]"
-              data-target=".modal-shipping-cost"
-            >
-              <svg
-                class="pointer-events-none h-10 w-10 min-w-[40px]"
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 640 512"
-                height="200px"
-                width="200px"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H112C85.5 0 64 21.5 64 48v48H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h272c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H40c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h208c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H8c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8h208c4.4 0 8 3.6 8 8v16c0 4.4-3.6 8-8 8H64v128c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"
-                ></path>
-              </svg>
-              <span class="pointer-events-none">Calculate shipping cost</span>
-              <svg
-                class="pointer-events-none h-7 w-7 min-w-[28px] text-primary-500"
-                stroke="currentColor"
-                fill="none"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                height="200px"
-                width="200px"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
-            <button
-              class="my-2 flex w-full items-center justify-between gap-4 rounded-lg bg-white px-6 py-2 shadow-[0_2px_10px_rgba(131,125,125,.12)]"
-              data-target=".modal-size-chart"
-            >
-              <svg
-                class="pointer-events-none h-10 w-10 min-w-[40px]"
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 640 512"
-                height="200px"
-                width="200px"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M635.7 167.2L556.1 31.7c-8.8-15-28.3-20.1-43.5-11.5l-69 39.1L503.3 161c2.2 3.8.9 8.5-2.9 10.7l-13.8 7.8c-3.8 2.2-8.7.9-10.9-2.9L416 75l-55.2 31.3 27.9 47.4c2.2 3.8.9 8.5-2.9 10.7l-13.8 7.8c-3.8 2.2-8.7.9-10.9-2.9L333.2 122 278 153.3 337.8 255c2.2 3.7.9 8.5-2.9 10.7l-13.8 7.8c-3.8 2.2-8.7.9-10.9-2.9l-59.7-101.7-55.2 31.3 27.9 47.4c2.2 3.8.9 8.5-2.9 10.7l-13.8 7.8c-3.8 2.2-8.7.9-10.9-2.9l-27.9-47.5-55.2 31.3 59.7 101.7c2.2 3.7.9 8.5-2.9 10.7l-13.8 7.8c-3.8 2.2-8.7.9-10.9-2.9L84.9 262.9l-69 39.1C.7 310.7-4.6 329.8 4.2 344.8l79.6 135.6c8.8 15 28.3 20.1 43.5 11.5L624.1 210c15.2-8.6 20.4-27.8 11.6-42.8z"
-                ></path>
-              </svg>
-              <span class="pointer-events-none">Size chart</span>
-              <svg
-                class="pointer-events-none h-7 w-7 min-w-[28px] text-primary-500"
-                stroke="currentColor"
-                fill="none"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                height="200px"
-                width="200px"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <polyline points="9 18 15 12 9 6"></polyline>
-              </svg>
-            </button>
           </div>
         </div>`;
 }
 showProductDetail();
+
+/////////Add All Reviews need here
+
+async function GetReviews() {
+  //review section
+  const n = localStorage.getItem("productId");
+  const url = `https://localhost:44339/api/Reviews/SingleProductReviews/${n}`;
+  var response = await fetch(url);
+  var result = await response.json();
+  console.log(result);
+  var container = document.getElementById("reviewSection");
+  container.innerHTML += `
+       <div class="mb-8 flex items-center justify-between border-b-[3px] pb-2">
+        <h2
+          class="relative text-2xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
+        >
+          Reviews (${result.reviewsCount})
+        </h2>
+       </div>
+       <div class="mb-10 grid grid-cols-3 gap-6">
+        <div class="order-1 col-span-3 lg:order-2 lg:col-span-1">
+          <h2 class="mb-4 text-xl font-semibold text-default-600">
+            Customer reviews
+          </h2>
+          <div
+            class="my-5 flex flex-col items-center justify-center gap-5 sm:flex-row"
+          >
+            <div class="flex flex-col items-center">
+              <span class="w-max text-2xl"
+                >${result.overAllRating} / 5,0
+                
+                <!-- over all rating -->
+              </span>
+              <div class="rater my-2" data-rater="5"></div>
+              <span class="flex items-center gap-1">
+                <i class="bi bi-chat-quote flex"></i>
+                ${result.reviewsCount} Reviews
+                <!-- review count -->
+              </span>
+            </div>
+            <div class="w-full max-w-[600px]">
+              <div class="my-2 flex items-center gap-2">
+                <span>5</span>
+                <div
+                  class="relative h-5 w-full overflow-hidden rounded bg-primary-500/50"
+                >
+                  <div
+                    class="absolute left-0 top-0 h-full w-[85%] rounded bg-primary-500 text-center text-white"
+                  >
+                    <!--five star pecentage 85% -->
+                    ${result.fiveStarReviewsPercentage}
+                  </div>
+                </div>
+              </div>
+              <div class="my-2 flex items-center gap-2">
+                <span>4</span>
+                <div
+                  class="relative h-5 w-full overflow-hidden rounded bg-primary-500/50"
+                >
+                  <div
+                    class="absolute left-0 top-0 h-full w-[65%] rounded bg-primary-500 text-center text-white"
+                  >
+                    <!-- 4 star pecentage 65% -->
+                    ${result.fourStarReviewsPercentage}
+                  </div>
+                </div>
+              </div>
+              <div class="my-2 flex items-center gap-2">
+                <span>3</span>
+                <div
+                  class="relative h-5 w-full overflow-hidden rounded bg-primary-500/50"
+                >
+                  <div
+                    class="absolute left-0 top-0 h-full w-[30%] rounded bg-primary-500 text-center text-white"
+                  >
+                    <!--three star pecentage 30% -->
+                    ${result.threeStarReviewsPercentage}
+                  </div>
+                </div>
+              </div>
+              <div class="my-2 flex items-center gap-2">
+                <span>2</span>
+                <div
+                  class="relative h-5 w-full overflow-hidden rounded bg-primary-500/50"
+                >
+                  <div
+                    class="absolute left-0 top-0 h-full w-[45%] rounded bg-primary-500 text-center text-white"
+                  >
+                    <!-- two star pecentage 45% -->
+                    ${result.twoStarReviewsPercentage}
+                  </div>
+                </div>
+              </div>
+              <div class="my-2 flex items-center gap-2">
+                <span>1</span>
+                <div
+                  class="relative h-5 w-full overflow-hidden rounded bg-primary-500/50"
+                >
+                  <div
+                    class="absolute left-0 top-0 h-full w-[25%] rounded bg-primary-500 text-center text-white"
+                  >
+                    <!-- one star pecentage 25% -->
+                    ${result.oneStarReviewsPercentage}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        `;
+}
+
+async function loadReviews() {
+  //
+  const n = localStorage.getItem("productId");
+  const url = `https://localhost:44339/api/Reviews/SingleProductReviews/${n}`;
+  const response = await fetch(url);
+  const result = await response.json();
+  console.log(result);
+  // Get the review section container
+  var container = document.getElementById("reviewRate");
+  // Loop through each review and create HTML
+  result.reviews.forEach((review) => {
+    container.innerHTML += `
+                <div class="order-2 col-span-3 lg:order-1 lg:col-span-2">
+                    <div class="mb-10">
+                        <div class="mt-5 flex gap-5">
+                            <figure
+                                class="hidden h-14 w-14 min-w-[56px] overflow-hidden rounded-full shadow-md sm:block"
+                            >
+                                <img
+                                    class="h-full w-full object-cover"
+                                    src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg"
+                                    alt="profile_logo"
+                                />
+                            </figure>
+                            <div>
+                                <div class="flex items-center gap-1">
+                                    <a class="font-bold text-primary-500" href="#">
+                                        ${
+                                          review.userName
+                                        } <!-- assuming review contains a userName field -->
+                                    </a>
+                                    &#183;
+                                    <span class="text-xs text-default-300">
+                                        ${new Date(
+                                          review.createdAt
+                                        ).toLocaleString()} <!-- Formatting date -->
+                                    </span>
+                                </div>
+                                <div class="rater my-2" data-rater="${
+                                  review.rating
+                                }"></div>
+                                <p class="my-2">
+                                    ${review.comment}
+                                </p>
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="flex cursor-pointer items-center gap-1 text-sm text-default-600 transition-all duration-300 hover:text-primary-500"
+                                    >
+                                    </div>
+                                    <div
+                                        class="flex cursor-pointer items-center gap-1 text-sm text-default-600 transition-all duration-300 hover:text-primary-500"
+                                    >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+  });
+}
+
+// foreach--------------------------------------------------------
+async function loadReviews1() {
+  const n = localStorage.getItem("productId");
+  const url = `https://localhost:44339/api/Reviews/SingleProductReviews/${n}`;
+  var response = await fetch(url);
+  var result = await response.json();
+  console.log(result);
+  var container = document.getElementById("userReview");
+  container.innerHTML += `
+        <div class="order-2 col-span-3 lg:order-1 lg:col-span-2">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="flex cursor-pointer items-center gap-1 text-sm text-default-600 transition-all duration-300 hover:text-primary-500"
+                  ></div>
+                  <div
+                    class="flex cursor-pointer items-center gap-1 text-sm text-default-600 transition-all duration-300 hover:text-primary-500"
+                  ></div>
+                </div>
+              </div>
+            </div>`;
+}
+
+async function AddReview() {
+  const url2 = "https://localhost:44339/api/Reviews/AddReview";
+  let comment = document.getElementById("comment");
+  var data = {
+    userId: 1,
+    comment: comment.value,
+    productId: localStorage.getItem("productId"),
+    rating: document.getElementById("rating-value").value,
+  };
+  var resquest = await fetch(url2, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  alert("the comment added successfully");
+  location.reload();
+}
+let form = document.getElementById("createCommentForm");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  AddReview();
+});
+GetReviews();
+// Call the function to load reviews when the page loads
+loadReviews();
+loadReviews1();
+GetReviews1();

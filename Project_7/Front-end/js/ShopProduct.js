@@ -14,6 +14,8 @@ async function GetProducts() {
   var container = document.getElementById("showAllProductContainer");
 
   result.forEach((product) => {
+    console.log(product);
+
     container.innerHTML += `    
                 <div class="col-span-6 sm:col-span-3 lg:col-span-2">
               <div
@@ -25,15 +27,7 @@ async function GetProducts() {
                     alt="img" />
                 </a>
                 <div class="mt-2 flex gap-1 px-5">
-                  <a
-                    href="#"
-                    class="h-4 w-4 rounded-full border border-slate-400 bg-red-400"></a>
-                  <a
-                    href="#"
-                    class="h-4 w-4 rounded-full border border-slate-400 bg-blue-400"></a>
-                  <a
-                    href="#"
-                    class="h-4 w-4 rounded-full border border-slate-400 bg-gray-500"></a>
+                  ${product.rating}
                 </div>
                 <div class="mt-2 px-5">
                   <div class="border-t border-slate-300">
@@ -951,7 +945,6 @@ async function GetCategories() {
                        ${element.categoryName}
                     </a>
                   </li>
-
     `;
   });
 }
