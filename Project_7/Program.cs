@@ -16,6 +16,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+// Add services to the container and use Newtonsoft.Json
+builder.Services.AddControllers()
+    .AddNewtonsoftJson(options =>
+    {
+        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+    });
+
 // AddPayPal
 builder.Services.AddScoped<PayPalPaymentService>();
 
@@ -43,6 +50,7 @@ Log.Logger = new LoggerConfiguration().
     .CreateLogger();
 
 builder.Services.AddSerilog();
+
 /////////////////
 
 // Register TokenGenerator as a singleton or transient service

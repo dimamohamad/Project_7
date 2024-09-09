@@ -12,12 +12,14 @@ async function getCategoryName() {
    <li value="${select.categoryId}"><a onclick=setCatid(${select.categoryId}) href="#">${select.categoryName}</a></li>
   `;
   });
+  
 }
 
 
 
 function setCatid(categoryId){
 localStorage.setItem("categoryId",categoryId);
+
 
 }
 getCategoryName();

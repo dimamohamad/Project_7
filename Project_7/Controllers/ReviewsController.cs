@@ -112,7 +112,6 @@ namespace Project_7.Controllers
             return Ok(reviews);
         }
 
-        [Authorize]
         [HttpPost("AddReview")]
         public IActionResult AddReview([FromBody] ReviewRequestDTO createReviewDto)
         {
@@ -121,10 +120,9 @@ namespace Project_7.Controllers
                 return BadRequest(ModelState);
             }
 
-            var user = GetUser();
             var review = new Review
             {
-                UserId = user.UserId,
+                UserId = createReviewDto.UserId,
                 Rating = createReviewDto.Rating,
                 Comment = createReviewDto.Comment,
                 CreatedAt = DateTime.Now,
