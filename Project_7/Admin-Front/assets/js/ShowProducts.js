@@ -1,5 +1,3 @@
-
-
 async function getCategoryName() {
   const dropDown = document.getElementById("dropDownListCategory");
   let url = "https://localhost:44339/API/Categories/GetAllCategories";
@@ -12,41 +10,32 @@ async function getCategoryName() {
    <li value="${select.categoryId}"><a onclick=setCatid(${select.categoryId}) href="#">${select.categoryName}</a></li>
   `;
   });
-  
 }
 
-
-
-function setCatid(categoryId){
-localStorage.setItem("categoryId",categoryId);
-
-
+function setCatid(categoryId) {
+  localStorage.setItem("categoryId", categoryId);
 }
 getCategoryName();
 debugger;
 const n = localStorage.getItem("categoryId");
 var url;
 if (n) {
-    url =`https://localhost:44339/Api/Products/GetProductsByCategoryId/${n}`;
-}
-else {
-    url='https://localhost:44339/Api/Products/GetAllProducts';
+  url = `https://localhost:44339/Api/Products/GetProductsByCategoryId/${n}`;
+} else {
+  url = "https://localhost:44339/Api/Products/GetAllProducts";
 }
 async function GetProducts() {
+  var response = await fetch(url);
 
+  var result = await response.json();
 
-    var response = await fetch(url);
+  var container = document.getElementById("ShowAllProructTable");
 
-    var result = await response.json();
-
-    var container = document.getElementById('ShowAllProructTable');
-
-    result.forEach((product) => {
-        container.innerHTML +=
-            `    
+  result.forEach((product) => {
+    container.innerHTML += `    
      <tr class="position-static">
                       <td class="fs-9 align-middle">
-                        <div class="form-check mb-0 fs-8"><input class="form-check-input" type="checkbox" data-bulk-select-row='{"product":"Fitbit Sense Advanced Smartwatch with Tools for Heart Health, Stress Management & Skin Temperature Trends, Carbon/Graphite, One Size (S & L Bands...","productImage":"/products/1.png","price":"$39","category":"Plants","tags":["Health","Exercise","Discipline","Lifestyle","Fitness"],"star":false,"vendor":"Blue Olive Plant sellers. Inc","publishedOn":"Nov 12, 10:45 PM"}' /></div>
+                       ${product.productId}
                       </td>
                       <td class="align-middle white-space-nowrap py-0"><a class="d-block border border-translucent rounded-2" href="../landing/product-details.html"><img src="https://localhost:44339/${product.productImage1}" alt="" width="53" /></a></td>
                       <td class="product align-middle ps-4">${product.productName}</td>
@@ -70,32 +59,20 @@ async function GetProducts() {
                       </td>
                     </tr>
     `;
-    });
-
-
-
-
-
+  });
 }
 
-
 function UpdateProducts(id) {
-    localStorage.setItem("productId", id);
-    window.location.href = "UpdateProducts.html";
-  }
-  
+  localStorage.setItem("productId", id);
+  window.location.href = "UpdateProducts.html";
+}
 
+async function DeleteCategory(productid) {
+  var url = `https://localhost:44339/Api/Products/DeleteProduct/${productid}`;
 
-  async function DeleteCategory(productid) {
-    var url = `https://localhost:44339/Api/Products/DeleteProduct/${productid}`;
-  
-    let request = await fetch(url, {
-      method: "DELETE",
-    });
-    alert("Category has been deleted successfully");
-  }
+  let request = await fetch(url, {
+    method: "DELETE",
+  });
+  alert("Category has been deleted successfully");
+}
 GetProducts();
-
-
-
-
