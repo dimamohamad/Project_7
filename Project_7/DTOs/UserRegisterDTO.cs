@@ -11,4 +11,8 @@
         public string Email { get; set; } = null!;
         public string? Passwword { get; set; }
     }
+    public class UserEmailDTO
+    {
+        public string? Email { get; set; }
+    }
 }

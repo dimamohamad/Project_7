@@ -444,6 +444,7 @@ async function showProductDetail() {
           <div class="my-4">
           </div>
         </div>`;
+        
 }
 showProductDetail();
 

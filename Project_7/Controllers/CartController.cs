@@ -38,7 +38,7 @@ namespace Project_7.Controllers
                 db.Carts.Add(cart);
                 db.SaveChanges();
             }
-            return (db.CartItems.Where(cItem => cItem.CartId == cart.CartId).ToList(), cart);
+            return (db.CartItems.Include(cItem => cItem.Product).Where(cItem => cItem.CartId == cart.CartId).ToList(), cart);
         }
         [Authorize]
         [HttpPost("addToCart")]
@@ -65,6 +65,39 @@ namespace Project_7.Controllers
         }
 
         [Authorize]
+        [HttpPost("AddVoucher")]
+        public IActionResult AddVoucher(string voucherCode)
+        {
+            var voucher = db.Vouchers.FirstOrDefault(v => v.VoucherCode.Equals(voucherCode));
+            if (voucher == null)
+                return NotFound();
+            var now = DateTime.Now;
+            if (voucher.StartDate.ToDateTime(new TimeOnly(0, 0)) > now ||
+                voucher.EndDate.ToDateTime(new TimeOnly(0, 0)) < now)
+                return Gone("VoucherExpired");
+            var discount = voucher.DiscountPercentage;
+            var user = GetUser();
+            var (cartItems, cart) = GetAllCartItems(user);
+            cart.VoucherId = voucher.VoucherId;
+            db.Carts.Update(cart);
+            cartItems = ApplyDiscountToCartItems(cartItems, discount);
+            db.SaveChanges();
+            return Ok(cartItems);
+        }
+
+        private List<CartItem> ApplyDiscountToCartItems(List<CartItem> cartItems, decimal discount)
+        {
+            foreach (var cartItem in cartItems)
+            {
+                var prdPrice = cartItem.Product?.Price ?? 0m;
+                var prdPriceWithDiscount = prdPrice - prdPrice * cartItem.Product?.DiscountPercentage ?? 0m;
+                cartItem.Price = prdPriceWithDiscount - prdPriceWithDiscount * discount;
+            }
+            db.CartItems.UpdateRange(cartItems);
+            return cartItems;
+        }
+
+        [Authorize]
         [HttpDelete("deleteFromCart/{id:int}")]
         public IActionResult DeleteCartItem(int id)
         {
@@ -81,15 +114,23 @@ namespace Project_7.Controllers
         [HttpPut("updateCartItem/{id:int}")]
         public IActionResult UpdateCartItem(int id, UpdateCartItemDto update)
         {
-
-            var user = GetUser();
             var cartItem = db.CartItems.Find(id);
-            var product = db.Products.Find(cartItem.ProductId);
-            //var cart = 
             if (cartItem == null)
                 return NotFound();
+
+            var product = db.Products.Find(cartItem.ProductId);
+            var cart = db.Carts.Find(cartItem.ProductId);
+            var voucherDiscount = 0m;
+            var voucher = db.Vouchers.Find(cart.VoucherId);
+            if (voucher != null)
+            {
+                voucherDiscount = voucher.DiscountPercentage;
+            }
+
+            var productPrice = (product?.Price ?? 0m) - (product?.Price ?? 0m) * (product?.DiscountPercentage ?? 0m);
+
             cartItem.Quantity = update.Quantity;
-            
+            cartItem.Price = cartItem.Quantity * (productPrice - voucherDiscount * productPrice);
             db.CartItems.Update(cartItem);
             db.SaveChanges();
             return Ok(DisplayCartItemDto.createFromCartItem(cartItem));
@@ -131,7 +172,7 @@ namespace Project_7.Controllers
             };
 
             db.Orders.Add(order);
-
+            db.SaveChanges();
             // Add the cart Items to the order
             foreach (var cartItem in cartItems)
             {
@@ -145,7 +186,6 @@ namespace Project_7.Controllers
                 db.CartItems.Remove(cartItem);
             }
             db.Carts.Remove(cart);
-            db.SaveChanges();
 
             var executedPayment = payPalService.ExecutePayment(paymentId, PayerID);
             var payment = new Payment
@@ -155,10 +195,12 @@ namespace Project_7.Controllers
                 Amount = order.TotalAmount,
                 PaymentMethod = "Paypal",
                 PaymentDate = DateTime.Now,
-                TransactionId = executedPayment.id
+                TransactionId = executedPayment.id,
+                PaymentGateway = "Paypal"
             };
-
-            return Ok(executedPayment);
+            db.Payments.Add(payment);
+            db.SaveChanges();
+            return Ok("Payment has been completed, You can close this window now.");
         }
 
         [HttpGet("cancel")]
@@ -174,6 +216,11 @@ namespace Project_7.Controllers
             var principal = tokenReader.ValidateToken(token);
             return db.Users.FirstOrDefault(u => u.UserName == principal.Identity.Name);
 
+        }
+        // Custom helper method for 410 Gone
+        private IActionResult Gone(object value)
+        {
+            return StatusCode(StatusCodes.Status410Gone, value);
         }
     }
 }

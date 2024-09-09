@@ -3,24 +3,28 @@ async function getAllMessages() {
   const response = await fetch(url);
   const result = await response.json();
 
-  const tableBody = document.getElementById("messagesTableBody");
+  const tableBody = document.getElementById("showMessageContact");
   tableBody.innerHTML = "";
 
-  result.forEach((card, index) => {
-    tableBody.innerHTML += `
-        <tr>
-          <td>${index + 1}</td>
-          <td>${card.name}</td>
-          <td>${card.email}</td>
-          <td>${card.message}</td>
-          <td>${new Date(card.submittedAt).toLocaleString()}</td>
-          <td>
-            <button class="btn btn-danger" onclick="deleteMessage(${
-              card.messageId
-            })">Delete</button>
+  result.forEach((message) => {
+    tableBody.innerHTML += ` 
+
+   <tr class="position-static">
+                      
+                      <td class="tags align-middle review pb-2 ps-3" style="min-width:225px;">${message.name}</td>
+
+                      <td class="tags align-middle review pb-2 ps-3" style="min-width:225px;">${message.email}</td>
+                      <td class="tags align-middle review pb-2 ps-3" style="min-width:225px;">${message.message}</td>
+                      <td class="tags align-middle review pb-2 ps-3" style="min-width:225px;">${message.submittedAt}</td>
+
+                      <td>
+            <button class="btn btn-danger" onclick="deleteMessage(${message.messageId})">Delete</button>
           </td>
-        </tr>
-      `;
+                     
+                    </tr>
+
+
+        `;
   });
 }
 
