@@ -63,10 +63,6 @@ function saveChanges() {
     .catch((error) => console.error("Error updating user data:", error));
 }
 
-function changePassword() {
-  alert("Change password functionality is not implemented.");
-}
-
 function deleteAccount() {
   const userId = localStorage.getItem("userId");
   if (!userId) {

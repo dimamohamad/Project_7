@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Project_7.DTOs;
 using Project_7.Models;
+using static Project_7.Shared.EmailSender;
+
 
 namespace Project_7.Controllers
 {
@@ -11,11 +13,13 @@ namespace Project_7.Controllers
     {
         private readonly MyDbContext _db;
         private readonly TokenGenerator _tokenGenerator;
+        private readonly EmailService _emailService;
 
-        public UsersController(MyDbContext db, TokenGenerator tokenGenerator)
+        public UsersController(MyDbContext db, TokenGenerator tokenGenerator, EmailService emailService)
         {
             _db = db;
             _tokenGenerator = tokenGenerator;
+            _emailService = emailService;
         }
 
         [HttpGet("ShowAllUsers")]
@@ -105,7 +109,7 @@ namespace Project_7.Controllers
             return Ok(user);
         }
         [HttpPut ("ChangePassword/{id:int}")]
-        public IActionResult ChangePassword(int id, [FromForm]ChangePasswordDTO user)
+        public IActionResult ChangePassword(int id, [FromBody]ChangePasswordDTO user)
         {
             byte[] hash;
             byte[] salt;
@@ -134,6 +138,36 @@ namespace Project_7.Controllers
             }
 
             return Ok(user);
+        }
+        [HttpPost("send")]
+        public async Task<IActionResult> SendEmail([FromForm] EmailRequest request)
+        {
+            // Generate OTP
+            var otp = OtpGenerator.GenerateOtp();
+            var user = _db.Users.Where(x => x.Email == request.ToEmail).FirstOrDefault();
+            user.Passwword = otp;
+            _db.SaveChanges();
+
+            // Create email body including the OTP
+            var emailBody = $"<p>Hello,</p><p>Your OTP code is: <strong>{otp}</strong></p><p>Thank you.</p>";
+            var Subject = "send OTP";
+            // Send email with OTP
+            //await _emailService.SendEmailAsync(request.ToEmail, Subject, emailBody);
+            Shared.EmailSender.SendEmail(request.ToEmail, Subject, emailBody);
+
+            return Ok(new { message = "Email sent successfully.", otp, user.UserId }); // Optionally return the OTP for testing
+        }
+        [HttpPost("GetOTP/{id}")]
+        public IActionResult GetOTP([FromForm] OTPDTO request, int id)
+        {
+            var user = _db.Users.Find(id);
+            if (user.Passwword == request.OTP)
+            {
+
+                return Ok();
+
+            }
+            return BadRequest();
         }
 
     }
