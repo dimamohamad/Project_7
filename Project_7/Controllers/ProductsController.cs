@@ -47,26 +47,8 @@ namespace Project_7.Controllers
         [HttpGet("/Api/Products/GetAllProducts")]
         public IActionResult GetAll()
         {
-            var products = _db.Products.Include(p => p.Reviews).Select(p =>
-                new ProductWithRatingDto
-                {
-                    ReviewCount = p.Reviews.Count,
-                    Rating = p.Reviews.Count > 0 ? (double)p.Reviews.Sum(r => r.Rating) / (double)p.Reviews.Count : 0,
-                    CategoryId = p.CategoryId,
-                    Description = p.Description,
-                    DiscountPercentage = p.DiscountPercentage,
-                    Price = p.Price,
-                    ProductId = p.ProductId,
-                    ProductImage1 = p.ProductImage1,
-                    ProductImage2 = p.ProductImage2,
-                    ProductImage3 = p.ProductImage3,
-                    ProductImage4 = p.ProductImage4,
-                    ProductImage5 = p.ProductImage5,
-                    ProductImage6 = p.ProductImage6,
-                    ProductName = p.ProductName,
-                    StockQuantity = p.StockQuantity,
-                    Visiblity = p.Visiblity
-                }).Where(p => p.CategoryId != null).
+            var products = _db.Products.Where(p => p.CategoryId != null).Select(p => ProductDisplayDto.
+                    CreateDtoFromProduct(p)).
                 ToList();
 
             if (products != null)
@@ -132,27 +114,12 @@ namespace Project_7.Controllers
             {
                 return NotFound();
             }
-            var products = _db.Products.Include(p => p.Reviews).Select(p =>
-               new ProductWithRatingDto
-               {
-                   ReviewCount = p.Reviews.Count,
-                   Rating = p.Reviews.Count > 0 ? (double)p.Reviews.Sum(r => r.Rating) / (double)p.Reviews.Count : 0,
-                   CategoryId = p.CategoryId,
-                   Description = p.Description,
-                   DiscountPercentage = p.DiscountPercentage,
-                   Price = p.Price,
-                   ProductId = p.ProductId,
-                   ProductImage1 = p.ProductImage1,
-                   ProductImage2 = p.ProductImage2,
-                   ProductImage3 = p.ProductImage3,
-                   ProductImage4 = p.ProductImage4,
-                   ProductImage5 = p.ProductImage5,
-                   ProductImage6 = p.ProductImage6,
-                   ProductName = p.ProductName,
-                   StockQuantity = p.StockQuantity,
-                   Visiblity = p.Visiblity
-               }).Where(p => p.CategoryId != null).
-               ToList();
+
+            var products = _db.Products.
+                Where(p => p.CategoryId == id).
+                Select(p => ProductDisplayDto.
+                    CreateDtoFromProduct(p)).
+                ToList();
 
             if (products != null)
             {

@@ -27,7 +27,8 @@ async function GetProducts() {
                     alt="img" />
                 </a>
                 <div class="mt-2 flex gap-1 px-5">
-                  ${product.rating}
+                <b> ${product.productName}</b>
+                  
                 </div>
                 <div class="mt-2 px-5">
                   <div class="border-t border-slate-300">
@@ -35,7 +36,7 @@ async function GetProducts() {
                     <a
                       href="#"
                       class="my-2 line-clamp-2 text-default-600 transition-all duration-300 hover:text-primary-500">
-                      ${product.productName}
+                      ${product.stockQuantity} items in stock1
                     </a>
                     <span
                       class="mb-2 inline-block text-base font-bold text-primary-500">
@@ -953,15 +954,13 @@ function storeCategoryId(categoryId) {
   window.location.href = "shop-grid.html";
 }
 GetCategories();
-
+debugger;
 function clearLocalStorage() {
+  debugger;
   localStorage.clear();
   window.location.href = "shop-grid.html";
 }
-
-
-
-async function fiterCategory(){
+async function fiterCategory() {
   const dropDown = document.getElementById("CategoryFIlter");
   let url = "https://localhost:44339/API/Categories/GetAllCategories";
   let request = await fetch(url);
@@ -981,19 +980,11 @@ async function fiterCategory(){
 
   `;
   });
-
-
-
-
-
 }
 
-
-function setCatid(categoryId){
-  localStorage.setItem("CategoryId",categoryId);
+function setCatid(categoryId) {
+  localStorage.setItem("CategoryId", categoryId);
   window.location.reload();
-  }
-  
-
+}
 
 fiterCategory();
