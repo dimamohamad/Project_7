@@ -67,3 +67,34 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("signUp").style.display = "flex";
   }
 });
+
+// function loginUser(username, password) {
+//   // إرسال بيانات تسجيل الدخول للـ API
+//   fetch("https://localhost:44339/api/Users/LoginUsers", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({
+//       username: username,
+//       password: password,
+//     }),
+//   })
+//     .then((response) => response.json())
+//     .then((data) => {
+//       if (data.success) {
+//         // حفظ الـ Token والـ userId في الـ localStorage
+//         localStorage.setItem("Token", data.Token);
+//         localStorage.setItem("userId", data.userId);
+
+//         // توجيه المستخدم إلى الصفحة الرئيسية أو أي صفحة أخرى
+//         window.location.href = "index.html";
+//       } else {
+//         // التعامل مع خطأ في تسجيل الدخول
+//         alert("Login failed. Please check your credentials.");
+//       }
+//     })
+//     .catch((error) => {
+//       console.error("Error:", error);
+//     });
+// }
