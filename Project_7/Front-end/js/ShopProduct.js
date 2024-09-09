@@ -954,7 +954,7 @@ function storeCategoryId(categoryId) {
 }
 GetCategories();
 function clearLocalStorage() {
-  localStorage.clear();
+  localStorage.removeItem("CategoryId");
   window.location.href = "shop-grid.html";
 }
 async function fiterCategory() {
