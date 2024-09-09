@@ -965,3 +965,42 @@ function clearLocalStorage() {
   localStorage.clear();
   window.location.href = "shop-grid.html";
 }
+
+
+
+async function fiterCategory(){
+  const dropDown = document.getElementById("CategoryFIlter");
+  let url = "https://localhost:44339/API/Categories/GetAllCategories";
+  let request = await fetch(url);
+  let data = await request.json();
+
+  data.forEach((select) => {
+    dropDown.innerHTML += `
+    <li class="py-2" value="${select.categoryId}">
+  <a 
+    class="transition-all duration-300 hover:text-primary-500"
+    href="#" 
+    onclick="setCatid(${select.categoryId})"
+  >
+    ${select.categoryName}
+  </a>
+</li>
+
+  `;
+  });
+
+
+
+
+
+}
+
+
+function setCatid(categoryId){
+  localStorage.setItem("CategoryId",categoryId);
+  
+  }
+  
+
+
+fiterCategory();
