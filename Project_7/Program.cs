@@ -49,6 +49,7 @@ Log.Logger = new LoggerConfiguration().
     .CreateLogger();
 
 builder.Services.AddSerilog();
+
 /////////////////
 
 // Register TokenGenerator as a singleton or transient service

@@ -14,9 +14,13 @@ namespace Project_7.Controllers
     {
 
         private readonly MyDbContext _db;
-        public CategoriesController(MyDbContext db)
+        private readonly ILogger<CategoriesController> _logger;
+
+
+        public CategoriesController(MyDbContext db, ILogger<CategoriesController> logger)
         {
             _db = db;
+            _logger = logger;
         }
 
 
@@ -24,6 +28,8 @@ namespace Project_7.Controllers
         [HttpGet("/API/Categories/GetAllCategories")]
         public IActionResult GetAll()
         {
+
+            _logger.LogInformation("you excuted the get Get All Gategories Api ");
 
             var categories = _db.Categories.ToList();
             if (categories != null)
