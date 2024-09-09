@@ -95,8 +95,7 @@ promoCodeForm.addEventListener("submit", async (e) => {
 });
 
 // Get all cart items
-async function getCartItems() 
-{
+async function getCartItems() {
   const response = await fetch(apiUrl, {
     method: "GET",
     headers: {
@@ -109,7 +108,9 @@ async function getCartItems()
   console.log(cart);
 
   let promoCodeInput = document.getElementById("code");
-  promoCodeInput.value = cart.voucher.voucherCode;
+  if (cart.voucher) {
+    promoCodeInput.value = cart.voucher.voucherCode;
+  }
 
   console.log("Data fetched successfully:", data);
   let cartItemsDiv = document.getElementById("cartItemsList");
@@ -238,3 +239,54 @@ async function getCartItems()
 }
 
 getCartItems();
+
+document
+  .getElementById("checkoutButton")
+  .addEventListener("click", openPaymentWindow);
+
+// Function to open the payment link and close the window when it navigates to a specific page
+async function openPaymentWindow() {
+  let response = await fetch("https://localhost:44339/api/Cart/checkout", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
+
+  let data = await response.json();
+  console.log(data);
+
+  // Open the payment window
+  let paymentWindow = window.open(
+    data.approvalUrl,
+    "PaymentWindow",
+    "width=800,height=600"
+  );
+
+  // Set an interval to periodically check the URL of the payment window
+  let checkInterval = setInterval(function () {
+    try {
+      // Check if the window is still open and the URL contains the target string
+      console.log("tec");
+      if (
+        paymentWindow &&
+        paymentWindow.location.href.includes("api/Cart/success")
+      ) {
+        // Close the payment window
+        paymentWindow.close();
+        // Clear the interval to stop checking
+        clearInterval(checkInterval);
+        window.location = "index.html";
+      }
+    } catch (e) {
+      // Ignore any cross-origin access errors
+    }
+
+    // Close the interval if the window is closed manually
+    if (paymentWindow && paymentWindow.closed) {
+      clearInterval(checkInterval);
+      console.log("Payment window closed manually.");
+    }
+  }, 1000); // Check every second (1000 milliseconds)
+}
