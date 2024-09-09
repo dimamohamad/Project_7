@@ -104,10 +104,6 @@
                     <div class="d-flex align-items-center"><span class="nav-link-text">Show  products</span></div>
                   </a><!-- more inner pages-->
                 </li>
-                <li class="nav-item"><a class="nav-link active" href="contactUs.html">
-                    <div class="d-flex align-items-center"><span class="nav-link-text">Contact Us</span></div>
-                  </a><!-- more inner pages-->
-                </li>
                         </ul>
                       </div>
                     </div>
@@ -11696,85 +11692,244 @@
                 navbarVertical.setAttribute("data-navbar-appearance", "darker");
             }
         </script>
-        <div class="content">
-            <nav class="mb-3" aria-label="breadcrumb">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="#!">Page 1</a></li>
-                    <li class="breadcrumb-item"><a href="#!">Page 2</a></li>
-                    <li class="breadcrumb-item active">Default</li>
-                </ol>
-            </nav>
-            <form id="userForm" class="mb-9">
-                <div class="row g-3 flex-between-end mb-5">
-                    <div class="col-auto">
-                        <h2 class="mb-2">Update User</h2>
-                    </div>
-                </div>
-                <div class="row g-5">
-                    <div class="col-12 col-xl-8">
-                        <h4 class="mb-3">Firs tName</h4>
-                        <input name="firstName" class="form-control mb-5" type="text"
-                            placeholder="Write title here..." />
-                        <h4 class="mb-3">Last Name</h4>
-                        <input name="lastName" class="form-control mb-5" type="text"
-                            placeholder="Write title here..." />
-                        <div class="mb-6">
-                            <h4 class="mb-3">User Name</h4>
-                            <input name="userName" class="form-control mb-5" type="text"
-                                placeholder="Write userName here..." />
-                        </div>
-                        <h4 class="mb-3">Email</h4>
-                        <input name="email" class="form-control mb-5" type="email" placeholder="Write title here..." />
-                        <h4 class="mb-3">Password</h4>
-                        <input name="password" class="form-control mb-5" type="password" placeholder="Write title here..." />
-                        
-                        <div class="mb-6">
-                            <h4 class="mb-3">User Image</h4>
-                            <input name="userImage" class="form-control mb-5" type="file"
-                                placeholder="choose your image" />
-                           
-                            
-                               
-                                <div class="mb-6">
-                                    <h4 class="mb-3">Phone Number</h4>
-                                    <input name="phoneNumber" class="form-control mb-5" type="number"
-                                        placeholder="Write description here..." />
-                                </div>
-                                <div class="mb-6">
-                                    <h4 class="mb-3">Address</h4>
-                                    <input name="address" class="form-control mb-5" type="number"
-                                        placeholder="Write description here..." />
-                                </div>
-                            <button class="btn btn-outline-primary" type="submit" style="width: 300px; font-size: large"
-                                onclick="edit()">
-                                Add
-                            </button>
+      
+          
+           <style>
+              
+             
+               
+               /* Chat box */
+               #chat-box {
+                   flex: 1;
+                   overflow-y: auto;
+                   background-color: #ffffff;
+                   padding: 20px;
+                   border-radius: 8px;
+                   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                   margin-bottom: 20px;
+               }
+       
+               /* Chat message styles */
+               .message {
+                   margin-bottom: 15px;
+                   display: flex;
+                   align-items: flex-start;
+               }
+       
+               .message.admin {
+                   flex-direction: row-reverse;
+               }
+       
+               .message .avatar {
+                   width: 40px;
+                   height: 40px;
+                   border-radius: 50%;
+                   background-color: #4d95b6;
+                   color: white;
+                   display: flex;
+                   align-items: center;
+                   justify-content: center;
+                   font-weight: bold;
+                   margin: 0 10px;
+                   flex-shrink: 0;
+               }
+       
+               .message .content {
+                   max-width: 70%;
+                   background-color: #e0e0e0;
+                   padding: 10px 15px;
+                   border-radius: 20px;
+                   position: relative;
+               }
+       
+               .message.admin .content {
+                   background-color: #59bee7;
+                   color: white;
+               }
+       
+               .message .timestamp {
+                   font-size: 12px;
+                   color: #888;
+                   margin-top: 5px;
+               }
+       
+               /* Input area */
+               .input-area {
+                   display: flex;
+                   gap: 10px;
+               }
+       
+               .input-area input[type="text"] {
+                   flex: 1;
+                   padding: 10px 15px;
+                   border: 1px solid #ccc;
+                   border-radius: 20px;
+                   font-size: 16px;
+               }
+               .content {
+                min-height: 10vh;}
 
-                        </div>
-                        <div class="col-12 col-xl-4">
-                            <div class="row g-2">
-                                <div class="col-12 col-xl-12">
-                                    <div class="card mb-3"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </form>
-            <footer class="footer position-absolute">
-                <div class="row g-0 justify-content-between align-items-center h-100">
-                    <div class="col-12 col-sm-auto text-center">
-                        <p class="mb-0 mt-2 mt-sm-0 text-body">
-                            Thank you for creating with Phoenix<span class="d-none d-sm-inline-block"></span><span
-                                class="d-none d-sm-inline-block mx-1">|</span><br class="d-sm-none" />2024 &copy;<a
-                                class="mx-1" href="https://themewagon.com/">Themewagon</a>
-                        </p>
-                    </div>
-                    <div class="col-12 col-sm-auto text-center">
-                        <p class="mb-0 text-body-tertiary text-opacity-85">v1.18.0</p>
-                    </div>
-                </div>
-            </footer>
-        </div>
+               .input-area input#user {
+                   max-width: 200px;
+               }
+       
+               .input-area input#message {
+                   flex: 2;
+               }
+       
+               .input-area button {
+                   padding: 10px 20px;
+                   background-color: #009dff;
+                   color: white;
+                   border: none;
+                   border-radius: 20px;
+                   font-size: 16px;
+                   cursor: pointer;
+                   transition: background-color 0.3s ease;
+               }
+       
+               .input-area button:hover {
+                   background-color: #00e1fa;
+               }
+       
+             
+       
+               /* Scrollbar styling */
+               #chat-box::-webkit-scrollbar {
+                   width: 8px;
+               }
+       
+               #chat-box::-webkit-scrollbar-thumb {
+                   background-color: #ccc;
+                   border-radius: 4px;
+               }
+       
+               #chat-box::-webkit-scrollbar-thumb:hover {
+                   background-color: #b3b3b3;
+               }
+       
+               /* Responsive design */
+               @media (max-width: 600px) {
+                   .input-area {
+                       flex-direction: column;
+                   }
+       
+                   .input-area input[type="text"], .input-area button {
+                       width: 100%;
+                   }
+       
+                   .message .content {
+                       max-width: 80%;
+                   }
+               }
+           </style>
+      
+         
+       
+           <!-- Main Chat Container -->
+           <div class="chat-container" style="margin-top:200px ; margin-left: 300px; margin-right: 100px;">
+               <div id="chat-box"></div>
+               <div class="input-area">
+                   <input type="text" id="user" placeholder="Enter your name" value="Admin" readonly>
+                   <input type="text" id="message" placeholder="Enter your message" >
+                   <button id="send-btn">Send</button>
+               </div>
+           </div>
+       
+
+
+           <script>
+               const apiUrl = "https://localhost:44375/api/Chat"; // Update with your actual API URL
+       
+               // Function to fetch and display chat messages
+               async function fetchMessages() {
+                   try {
+                       const response = await fetch(apiUrl);
+                       if (!response.ok) {
+                           throw new Error('Network response was not ok');
+                       }
+                       const messages = await response.json();
+                       const chatBox = document.getElementById('chat-box');
+                       chatBox.innerHTML = ''; // Clear chat box
+       
+                       messages.forEach(message => {
+                           const messageElement = document.createElement('div');
+                           messageElement.classList.add('message');
+                           
+                           // Assuming 'admin' is a special user
+                           if (message.user.toLowerCase() === 'admin') {
+                               messageElement.classList.add('admin');
+                           }
+       
+                           // Avatar
+                           const avatar = document.createElement('div');
+                           avatar.classList.add('avatar');
+                           avatar.textContent = message.user.charAt(0).toUpperCase();
+                           messageElement.appendChild(avatar);
+       
+                           // Content
+                           const content = document.createElement('div');
+                           content.classList.add('content');
+                           content.innerHTML = `<strong>${message.user}</strong>: ${message.content}<div class="timestamp">${new Date(message.timestamp).toLocaleTimeString()}</div>`;
+                           messageElement.appendChild(content);
+       
+                           chatBox.appendChild(messageElement);
+                       });
+       
+                       // Scroll to the bottom
+                       chatBox.scrollTop = chatBox.scrollHeight;
+                   } catch (error) {
+                       console.error('Error fetching messages:', error);
+                   }
+               }
+       
+               // Function to send a new message
+               async function sendMessage() {
+                   const user = document.getElementById('user').value.trim();
+                   const content = document.getElementById('message').value.trim();
+       
+                   if (user && content) {
+                       try {
+                           const response = await fetch(apiUrl, {
+                               method: "POST",
+                               headers: {
+                                   "Content-Type": "application/json"
+                               },
+                               body: JSON.stringify({ user, content })
+                           });
+       
+                           if (!response.ok) {
+                               throw new Error('Network response was not ok');
+                           }
+       
+                           document.getElementById('message').value = ''; // Clear input
+                           fetchMessages(); // Refresh chat
+                       } catch (error) {
+                           console.error('Error sending message:', error);
+                       }
+                   } else {
+                       alert("Please enter your name and message.");
+                   }
+               }
+       
+               // Polling to fetch new messages every 2 seconds
+               setInterval(fetchMessages, 2000);
+       
+               // Initial fetch
+               fetchMessages();
+       
+               // Event listener for the send button
+               document.getElementById('send-btn').addEventListener('click', sendMessage);
+       
+               // Optional: Send message on Enter key press
+               document.getElementById('message').addEventListener('keypress', function(event) {
+                   if (event.key === 'Enter') {
+                       sendMessage();
+                   }
+               });
+           </script>
+       
+       
         <div class="modal fade" id="searchBoxModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="true"
             data-phoenix-modal="data-phoenix-modal" style="--phoenix-backdrop-opacity: 1">
             <div class="modal-dialog">
@@ -12325,7 +12480,7 @@
     <script src="../../../vendors/choices/choices.min.js"></script>
     <script src="../../../vendors/flatpickr/flatpickr.min.js"></script>
     <script src="../../../assets/js/phoenix.js"></script>
-    <script src="../../../assets/js/updateUser.js"></script>
+    <script src="../../../assets/js/addUser.js"></script>
 </body>
 
 <!-- Mirrored from prium.github.io/phoenix/v1.18.0/apps/e-commerce/admin/add-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Sep 2024 18:07:20 GMT -->
