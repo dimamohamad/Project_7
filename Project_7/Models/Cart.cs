@@ -17,8 +17,6 @@ public partial class Cart
 
     public virtual ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
 
-    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
-
     public virtual User? User { get; set; }
 
     public virtual Voucher? Voucher { get; set; }

@@ -8,4 +8,11 @@
 
         public string? Password { get; set; }
     }
+    public class AdminLoginDTO
+    {
+        public string Email { get; set; } = null!;
+
+        public string? Password { get; set; }
+
+    }
 }

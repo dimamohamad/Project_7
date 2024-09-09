@@ -21,8 +21,7 @@ namespace Project_7.DTOs.CartDtos
             // Make sure the product has a price.
             if (product.Price == null)
                 throw new ArgumentException("The Product Must have a Price!!");
-            var price = product.Price ?? 0;
-
+            var productPrice = (product.Price ?? 0) - (product.Price ?? 0) * (product.DiscountPercentage ?? 0);
             var cartItem = db.CartItems.FirstOrDefault(cItem => cItem.CartId == cart.CartId && cItem.ProductId == ProductId);
 
             // Apply the discount if there is a voucher on the cart
@@ -38,13 +37,15 @@ namespace Project_7.DTOs.CartDtos
                 {
                     CartId = cart.CartId,
                     ProductId = ProductId,
-                    Price = price - price * discount
+                    Price = (productPrice - productPrice * discount) * Quantity,
+                    Quantity = Quantity
                 };
                 db.CartItems.Add(cartItem);
             }
             else
             {
                 cartItem.Quantity += Quantity;
+                cartItem.Price = (productPrice - productPrice * discount) * cartItem.Quantity;
                 db.CartItems.Update(cartItem);
             }
             db.SaveChanges();

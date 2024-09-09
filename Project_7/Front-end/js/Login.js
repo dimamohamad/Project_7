@@ -1,4 +1,4 @@
-// debugger;
+debugger;
 let loginForm = document.getElementById("LoginForm");
 let url = "https://localhost:44339/api/Users/LoginUsers";
 loginForm.addEventListener("submit", async (event) => {
