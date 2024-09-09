@@ -48,7 +48,7 @@ This project was made possible through the collaboration of the following team m
 - **Yaman** - Developer
 - **Raneem** - Developer
 - **Ahmad Yacoub** - Developer
-- - **Leen AlDabos** - Developer
+-  **Leen AlDabos** - Developer
 
 We worked together to ensure the project was delivered successfully, with each team member contributing to different aspects of the project, from backend API development to frontend integration and design.
 
