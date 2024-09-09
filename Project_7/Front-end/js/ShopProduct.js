@@ -998,7 +998,7 @@ async function fiterCategory(){
 
 function setCatid(categoryId){
   localStorage.setItem("CategoryId",categoryId);
-  
+  window.location.reload();
   }
   
 

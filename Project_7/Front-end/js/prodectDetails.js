@@ -527,5 +527,6 @@ async function showProductDetail() {
             </button>
           </div>
         </div>`;
+        
 }
 showProductDetail();
