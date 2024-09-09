@@ -243,7 +243,66 @@ namespace Project_7.Controllers
 
             return Ok(products);
         }
+        //[HttpGet("ByDiscountedPriceRange")]
+        //public IActionResult GetProductsByDiscountedPriceRange(decimal minPrice, decimal maxPrice)
+        //{
+        //    //var products = _db.Products
+        //    //    .Where(p => (p.PriceWithDiscount != null && p.PriceWithDiscount >= minPrice && p.PriceWithDiscount <= maxPrice) ||
+        //    //                (p.PriceWithDiscount == null && p.Price >= minPrice && p.Price <= maxPrice))
+        //    //    .ToList();
+        //    //return Ok(products);
+        //}
+        [HttpGet("filterByPrice")]
+        public IActionResult GetProductsByPrice(string sortOrder ,int? CategoryId)
+        {
+            if (string.IsNullOrEmpty(sortOrder))
+            {
+                return BadRequest("Sort order is required.");
+            }
 
+            IQueryable<Product> products = _db.Products;
+
+            if (sortOrder.ToLower() == "asc")
+            {
+                products = products.Where(x => x.CategoryId == CategoryId).OrderBy(p => p.Price);
+            }
+            else if (sortOrder.ToLower() == "desc")
+            {
+                products = products.Where(x => x.CategoryId == CategoryId).OrderByDescending(p => p.Price);
+            }
+            else
+            {
+                return BadRequest("Invalid sort order. Use 'asc' for ascending or 'desc' for descending.");
+            }
+
+            return Ok(products.ToList());
+        }
+
+        [HttpGet("filterByPriceWithoutCategoryId")]
+        public IActionResult GetfilterByPriceWithoutCategoryId(string sortOrder)
+        {
+            if (string.IsNullOrEmpty(sortOrder))
+            {
+                return BadRequest("Sort order is required.");
+            }
+
+            IQueryable<Product> products = _db.Products;
+
+            if (sortOrder.ToLower() == "asc")
+            {
+                products = products.OrderBy(p => p.Price);
+            }
+            else if (sortOrder.ToLower() == "desc")
+            {
+                products = products.OrderByDescending(p => p.Price);
+            }
+            else
+            {
+                return BadRequest("Invalid sort order. Use 'asc' for ascending or 'desc' for descending.");
+            }
+
+            return Ok(products.ToList());
+        }
 
     }
 }
