@@ -19,22 +19,34 @@ async function showProductDetail() {
           >
             <div class="swiper-wrapper">
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage1}" alt="" />
+                <img src="https://localhost:44339/${
+                  result.productImage1
+                }" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage2}" alt="" />
+                <img src="https://localhost:44339/${
+                  result.productImage2
+                }" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage3}" alt="" />
+                <img src="https://localhost:44339/${
+                  result.productImage3
+                }" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage4}" alt="" />
+                <img src="https://localhost:44339/${
+                  result.productImage4
+                }" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage5}" alt="" />
+                <img src="https://localhost:44339/${
+                  result.productImage5
+                }" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage6}" alt="" />
+                <img src="https://localhost:44339/${
+                  result.productImage6
+                }" alt="" />
               </figure>
             </div>
             <div
@@ -79,22 +91,34 @@ async function showProductDetail() {
           >
             <div class="swiper-wrapper">
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage1}" alt="" />
+                <img src="https://localhost:44339/${
+                  result.productImage1
+                }" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage2}" alt="" />
+                <img src="https://localhost:44339/${
+                  result.productImage2
+                }" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage3}" alt="" />
+                <img src="https://localhost:44339/${
+                  result.productImage3
+                }" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage4}" alt="" />
+                <img src="https://localhost:44339/${
+                  result.productImage4
+                }" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage5}" alt="" />
+                <img src="https://localhost:44339/${
+                  result.productImage5
+                }" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage6}" alt="" />
+                <img src="https://localhost:44339/${
+                  result.productImage6
+                }" alt="" />
               </figure>
             </div>
           </div>
@@ -111,7 +135,9 @@ async function showProductDetail() {
              ${result.productName}
           </h2>
           <div class="my-2 flex items-center gap-2">
-            <span class="text-xl font-bold text-primary-500"> ${result.price}</span>
+            <span class="text-xl font-bold text-primary-500"> ${
+              result.price
+            }</span>
   
           </div>
           <div class="mb-5 border-b-2 pb-5">
@@ -168,6 +194,9 @@ async function showProductDetail() {
                 <button
                   class="flex items-center gap-2 rounded-lg bg-primary-500 px-5 font-semibold uppercase text-white transition-all duration-300 hover:bg-primary-600"
                   type="submit"
+                  onclick="addProduct(${
+                    (result.productId, result.productName, result.productImage1)
+                  })"
                 >
                   <svg
                     class="h-4 w-4"
@@ -211,7 +240,9 @@ async function showProductDetail() {
           </div>
           <div class="my-4 flex items-center gap-2">
             <span class="font-bold text-default-600">Available:</span>
-            <span class="text-xs text-green-400">${result.stockQuantity} items in Stock</span>
+            <span class="text-xs text-green-400">${
+              result.stockQuantity
+            } items in Stock</span>
           </div>
           <div class="my-4">
             
@@ -249,6 +280,10 @@ async function showProductDetail() {
         </div>`;
 }
 showProductDetail();
+
+function addProduct(productId, productName, productImage) {
+  console.log({ productId, productName, productImage });
+}
 
 /////////Add All Reviews need here
 
