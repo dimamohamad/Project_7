@@ -231,14 +231,51 @@ async function showProductDetail() {
 showProductDetail();
 
 function addProduct(productId, productName, productImage) {
-  console.log({ productId, productName, productImage });
   if (token) {
     addProductToCart(
       productId,
       document.getElementById("quantityDateInput").value
     );
   } else {
+    addProductToLocalStorage(productId, productName, productImage);
   }
+}
+
+async function addProductToLocalStorage(productId, productName, productImage) {
+  let offlineCart = localStorage.getItem("offlineCart");
+
+  // If offlineCart is null or undefined, initialize as an empty array
+  if (!offlineCart) {
+    offlineCart = "[]";
+  }
+
+  // Parse the offlineCart to an array
+  offlineCart = JSON.parse(offlineCart);
+
+  // Get the quantity value from the input element
+  let quantityInput = document.getElementById("quantityDateInput");
+  let quantity = quantityInput ? parseInt(quantityInput.value) : 1; // Default to 1 if no input
+
+  // Check if the product already exists in the offlineCart
+  let existingProduct = offlineCart.find(
+    (item) => item.productId === productId
+  );
+
+  if (existingProduct) {
+    // If the product exists, update the quantity
+    existingProduct.quantity += quantity;
+  } else {
+    // If the product doesn't exist, add a new item
+    offlineCart.push({
+      productId: productId,
+      productName: productName,
+      productImage: productImage,
+      quantity: quantity,
+    });
+  }
+
+  // Store the updated array in localStorage
+  localStorage.setItem("offlineCart", JSON.stringify(offlineCart));
 }
 
 async function addProductToCart(productId, quantity) {
@@ -248,7 +285,7 @@ async function addProductToCart(productId, quantity) {
     quantity: quantity,
   };
   console.log(data);
-  
+
   let response = await fetch(url, {
     method: "POST",
     headers: {
@@ -496,4 +533,3 @@ GetReviews();
 // Call the function to load reviews when the page loads
 loadReviews();
 loadReviews1();
-GetReviews1();
