@@ -10,9 +10,9 @@ namespace Project_7.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class OrdersController(MyDbContext db, IConfiguration config) : ControllerBase
     {
+        [Authorize]
         [HttpGet("orders")]
         public IActionResult GetOrders()
         {
@@ -32,5 +32,16 @@ namespace Project_7.Controllers
             return db.Users.FirstOrDefault(u => u.UserName == principal.Identity.Name);
 
         }
+
+        [HttpGet("allOrders")]
+        public IActionResult GetAllOrders()
+        {
+            var orders = db.Orders.Include(o => o.OrderItems).
+                Include(o => o.Payments).
+                Include(o => o.User).
+                ToList();
+            return Ok(orders);
+        }
+
     }
 }
