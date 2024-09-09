@@ -1,172 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Mirrored from infinite.andevfrontend.site/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2024 09:48:59 GMT -->
-  <head>
+  
+<!-- Mirrored from infinite.andevfrontend.site/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2024 09:49:41 GMT -->
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="lib/rater-js/rater-js.css" />
-    <link rel="stylesheet" href="lib/swiper/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="../cdn.jsdelivr.net/npm/bootstrap-icons%401.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="lib/iziToast/iziToast.min.css" />
     <link rel="stylesheet" href="lib/metisMenu/metismenujs.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <title>Infinite</title>
-    <style>
-      #CategoryHedarText {
-        margin-left: 100px;
-        margin-right: 100px;
-      }
-
-      .relative-container {
-        position: relative;
-        width: 100%;
-        height: 500px;
-      }
-
-      /* التأثير الأساسي للصور */
-      @keyframes slideInFromRight {
-        from {
-          transform: translateX(150%); /* بداية الحركة من اليمين */
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0); /* النهاية في موضعها الطبيعي */
-          opacity: 1;
-        }
-      }
-
-      @keyframes slideInFromTop {
-        from {
-          transform: translateY(-150%); /* بداية الحركة من الأعلى */
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0); /* النهاية في موضعها الطبيعي */
-          opacity: 1;
-        }
-      }
-
-      @keyframes slideInFromLeft {
-        from {
-          transform: translateX(-150%); /* بداية الحركة من اليسار */
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0); /* النهاية في موضعها الطبيعي */
-          opacity: 1;
-        }
-      }
-
-      /* تطبيق التأثير على الصور */
-      .overlay-image {
-        position: absolute;
-        top: 278px;
-        left: 710px;
-        width: 438px;
-        height: auto;
-        animation: slideInFromRight 1s ease-out forwards;
-        animation-delay: 0s; /* تأخير الحركة */
-      }
-
-      .overla-image {
-        position: absolute;
-        top: 60px;
-        left: 400px;
-        width: 450px;
-        height: auto;
-        animation: slideInFromTop 1s ease-out forwards;
-        animation-delay: 0s; /* تأخير الحركة */
-      }
-
-      .overl-image {
-        position: absolute;
-        top: 300px;
-        left: 100px;
-        width: 317px;
-        height: auto;
-        animation: slideInFromLeft 1s ease-out forwards;
-        animation-delay: 0s; /* تأخير الحركة */
-      }
-
-      /* التأثير الأساسي للصور */
-      @keyframes slideInFromRigh {
-        from {
-          transform: translateX(150%); /* بداية الحركة من اليمين */
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0); /* النهاية في موضعها الطبيعي */
-          opacity: 1;
-        }
-      }
-
-      @keyframes slideInFromTo {
-        from {
-          transform: translateY(-150%); /* بداية الحركة من الأعلى */
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0); /* النهاية في موضعها الطبيعي */
-          opacity: 1;
-        }
-      }
-
-      @keyframes slideInFromLef {
-        from {
-          transform: translateX(-150%); /* بداية الحركة من اليسار */
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0); /* النهاية في موضعها الطبيعي */
-          opacity: 1;
-        }
-      }
-
-      /* تطبيق التأثير على الصور */
-      .overlayy-image {
-        position: absolute;
-        top: 252px;
-        left: 820px;
-        width: 331px;
-        height: auto;
-        animation: slideInFromRigh 1s ease-out forwards;
-        animation-delay: 0s;
-      }
-
-      .overlaa-image {
-        position: absolute;
-        top: 10px;
-        left: 456px;
-        width: 352px;
-        height: auto;
-        animation: slideInFromTo 1s ease-out forwards;
-        animation-delay: 0s;
-      }
-      .overll-image {
-        position: absolute;
-        top: 300px;
-        left: 100px;
-        width: 317px;
-        height: auto;
-        animation: slideInFromLef 1s ease-out forwards;
-        animation-delay: 0s; /* تأخير الحركة */
-      }
-
-      @media (max-width: 425px) {
-        .nav-main a {
-          font-size: 0.5rem; /* Adjust to your preferred size */
-        }
-
-        .font-semibold {
-          font-weight: 100; /* Adjust to your preferred weight */
-          font-size: 1px; /* Adjust to your preferred size */
-          box-sizing: content-box; /* Ensure box-sizing is content-box or reset it */
-        }
-      }
-    </style>
   </head>
-  <body
-    class="bg-[#f5f7fe] font-montserrat font-medium text-default-500 lg:text-sm"
-  >
+  <body class="bg-[#f5f7fe] font-montserrat font-medium text-default-500 lg:text-sm">
     <div class="header sticky top-0 -z-[1]"></div>
 
     <header
@@ -195,11 +44,7 @@
             </svg>
           </div>
           <a href="index.html" class="mr-auto flex items-center gap-2 lg:mr-0">
-            <img
-              class="h-7"
-              src="../images/phone-store-logo-design-template-57d55d352f1fd851a6eecf7d1fbaef6e_screen-removebg-preview.png"
-              alt="logo"
-            />
+            <img class="h-7" src="../images/phone-store-logo-design-template-57d55d352f1fd851a6eecf7d1fbaef6e_screen-removebg-preview.png" alt="logo" />
             <span class="text-2xl font-semibold text-primary-500">
               Smart Tech
             </span>
@@ -259,51 +104,50 @@
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
             </div>
-            <span style="display: flex; flex-direction: row" id="batool">
-              <a
-                class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
-                href="sign-in.html"
-                id="signIn"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-6 w-6"
-                >
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                <span class="font-semibold">Sign In</span>
-              </a>
 
-              <a
-                class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
-                href="sign-up.html"
-                id="signUp"
+            
+            <a
+              class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
+              href="sign-in.html"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-6 w-6"
               >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-6 w-6"
-                >
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                <span class="font-semibold">Sign Up</span>
-              </a>
-            </span>
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span class="font-semibold">Sign In</span>
+            </a>
+            <a
+            class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
+            href="sign-up.html"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span class="font-semibold">Sign UP</span>
+          </a>
+
+
 
             <div
               class="relative cursor-pointer select-none text-default-600 hover:text-primary-500"
@@ -373,8 +217,8 @@
           <ul class="flex gap-10 font-semibold">
             <li>
               <a
-                class="active relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
-                href="index.html"
+              class="relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
+              href="index.html"
               >
                 Home
               </a>
@@ -383,9 +227,8 @@
               <a
                 class="relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
                 href="shop-grid.html"
-                onclick="clearLocalStorage()"
               >
-                Shop
+               Shop
               </a>
             </li>
             <li>
@@ -396,11 +239,11 @@
                 About Us
               </a>
             </li>
-
+           
             <li>
               <a
-                class="relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
-                href="contact.html"
+              class="active relative block py-3 transition-all duration-300 after:absolute after:-bottom-[5px] after:-top-[2px] after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
+              href="contact.html"
               >
                 Contact Us
               </a>
@@ -410,444 +253,307 @@
       </div>
     </header>
 
-    <div class="my-5 overflow-hidden">
-      <div class="container mx-auto px-4 sm:px-8 xl:px-4">
-        <div
-          class="swiper swiper-hero group relative flex items-center rounded-lg"
+    <nav
+      class="container mx-auto my-10 flex flex-wrap items-center gap-2 px-4 sm:px-8 xl:px-4"
+    >
+      <div class="flex items-center gap-2">
+        <a href="index-2.html">
+          <svg
+            class="h-5 w-5 text-primary-500"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 576 512"
+            height="200px"
+            width="200px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"
+            ></path>
+          </svg>
+        </a>
+        <svg
+          stroke="currentColor"
+          fill="none"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-4 w-4 text-slate-500"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="relative-container">
-                <img
-                  src="../images/B.G-01.jpg"
-                  style="width: 100%; height: 500px"
-                  alt=""
-                />
-                <img
-                  src="../images/The Phone-01.jpg"
-                  class="overlay-image"
-                  alt=""
-                />
-                <img src="../images/Text-01.jpg" class="overla-image" alt="" />
-                <img
-                  src="../images/Accessory-01.jpg"
-                  class="overl-image"
-                  alt=""
-                />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="relative-container">
-                <img
-                  src="../images/B.G-01.jpg"
-                  style="width: 100%; height: 500px"
-                  alt=""
-                />
-                <img
-                  src="../images/Accessory-01111.jpg"
-                  class="overlayy-image"
-                  alt=""
-                />
-                <img
-                  src="../images/iPhone-Symbol.jpg"
-                  class="overlaa-image"
-                  alt=""
-                />
-                <img
-                  src="../images/ios-usb-c-cable-adapter.jpg"
-                  class="overll-image"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-          <div
-            class="button-prev absolute -left-[999px] z-[1] hidden select-none rounded-xl bg-primary-500 px-4 py-2 text-white transition-all duration-300 hover:bg-primary-600 group-hover:left-3 sm:block"
-          >
-            &#10094;
-          </div>
-          <div
-            class="button-next absolute -right-[999px] z-[1] hidden select-none rounded-xl bg-primary-500 px-4 py-2 text-white transition-all duration-300 hover:bg-primary-600 group-hover:right-3 sm:block"
-          >
-            &#10095;
-          </div>
-        </div>
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
       </div>
+      <div class="flex items-center gap-2">
+        <a class="pointer-events-none text-slate-400" href="#">Contact</a>
+      </div>
+    </nav>
+
+    <section class="container mx-auto my-10 px-4 sm:px-8 xl:px-4">
+    
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Main chat container */
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        /* Chat box */
+        #chat-box {
+            flex: 1;
+            overflow-y: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Chat message styles */
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .message.admin {
+            flex-direction: row-reverse;
+        }
+
+        .message .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #4d95b6;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 10px;
+            flex-shrink: 0;
+        }
+
+        .message .content {
+            max-width: 70%;
+            background-color: #e0e0e0;
+            padding: 10px 15px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .message.admin .content {
+            background-color: #59bee7;
+            color: white;
+        }
+
+        .message .timestamp {
+            font-size: 12px;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        /* Input area */
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-area input[type="text"] {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 16px;
+        }
+
+        .input-area input#user {
+            max-width: 200px;
+        }
+
+        .input-area input#message {
+            flex: 2;
+        }
+
+        .input-area button {
+            padding: 10px 20px;
+            background-color: #009dff;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .input-area button:hover {
+            background-color: #00e1fa;
+        }
+
+      
+
+        /* Scrollbar styling */
+        #chat-box::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #chat-box::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 4px;
+        }
+
+        #chat-box::-webkit-scrollbar-thumb:hover {
+            background-color: #b3b3b3;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .input-area {
+                flex-direction: column;
+            }
+
+            .input-area input[type="text"], .input-area button {
+                width: 100%;
+            }
+
+            .message .content {
+                max-width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+  
+
+    <!-- Main Chat Container -->
+    <div class="chat-container">
+        <div id="chat-box"></div>
+        <div class="input-area">
+            <input type="text" id="user" placeholder="Enter your name" value="Admin" readonly>
+            <input type="text" id="message" placeholder="Enter your message" >
+            <button id="send-btn">Send</button>
+        </div>
     </div>
 
-    <div
-      class="mb-8 flex items-center justify-between border-b-[3px] pb-2"
-      id="CategoryHedarText"
-    >
-      <h2
-        class="relative text-2xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
-      >
-        Category
-      </h2>
-    </div>
-    <div
-      class="relative w-full overflow-hidden after:absolute after:inset-0 after:z-[2] after:h-full after:w-full after:bg-black/50"
-    >
-      <div
-        class="container absolute inset-0 z-[4] mx-auto my-10 px-4 sm:px-8 xl:px-4"
-      >
-        <div class="flex h-full items-center">
-          <div
-            class="swiper swiper-categories group relative flex w-full items-center"
-          >
-            <div
-              class="swiper-wrapper select-none py-12"
-              id="categoryContainer"
-            ></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </div>
-      <img
-        class="parallax h-full max-h-[410px] w-full object-cover"
-        src="img/banner/banner-5.png"
-        alt="img"
-      />
-    </div>
-    <section class="container mx-auto px-4 sm:px-8 xl:px-4">
-      <div class="swiper swiper-cards relative my-10 overflow-hidden">
-        <div class="mb-8 flex items-center justify-between border-b-[3px] pb-2">
-          <h2
-            class="relative text-2xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
-          >
-            New Products
-          </h2>
-          <div class="flex items-center gap-1">
-            <div
-              class="button-prev select-none rounded-md bg-default-400 px-[10px] py-1 text-white transition-all duration-300 hover:bg-primary-500"
-            >
-              &#10094;
-            </div>
-            <div
-              class="button-next select-none rounded-md bg-default-400 px-[10px] py-1 text-white transition-all duration-300 hover:bg-primary-500"
-            >
-              &#10095;
-            </div>
-          </div>
-        </div>
+   
 
-        <div class="swiper-wrapper" id="LatestProducts"></div>
+    <script>
+        const apiUrl = "https://localhost:44375/api/Chat"; // Update with your actual API URL
 
-        <section class="container mx-auto my-10 px-4 sm:px-8 xl:px-4">
-          <div class="swiper swiper-gridcard relative my-10 overflow-hidden">
-            <div
-              class="mb-8 flex items-center justify-between border-b-[3px] pb-2"
-            >
-              <h2
-                class="relative text-2xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
-              >
-                Most Review
-              </h2>
+        // Function to fetch and display chat messages
+        async function fetchMessages() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const messages = await response.json();
+                const chatBox = document.getElementById('chat-box');
+                chatBox.innerHTML = ''; // Clear chat box
 
-              <div class="flex items-center gap-1">
-                <div
-                  class="button-prev select-none rounded-md bg-default-400 px-[10px] py-1 text-white transition-all duration-300 hover:bg-primary-500"
-                >
-                  &#10094;
-                </div>
-                <div
-                  class="button-next select-none rounded-md bg-default-400 px-[10px] py-1 text-white transition-all duration-300 hover:bg-primary-500"
-                >
-                  &#10095;
-                </div>
-              </div>
-            </div>
+                messages.forEach(message => {
+                    const messageElement = document.createElement('div');
+                    messageElement.classList.add('message');
+                    
+                    // Assuming 'admin' is a special user
+                    if (message.user.toLowerCase() === 'admin') {
+                        messageElement.classList.add('admin');
+                    }
 
-            <div class="swiper-wrapper" id="MostReview"></div>
-          </div>
-        </section>
+                    // Avatar
+                    const avatar = document.createElement('div');
+                    avatar.classList.add('avatar');
+                    avatar.textContent = message.user.charAt(0).toUpperCase();
+                    messageElement.appendChild(avatar);
 
-        <section class="container mx-auto my-10 px-4 sm:px-8 xl:px-4">
-          <div
-            class="mb-8 flex items-center justify-between border-b-[3px] pb-2"
-          >
-            <h2
-              class="relative text-2xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
-            >
-              Testimonials
-            </h2>
-          </div>
-          <div
-            class="swiper swiper-testimonials group relative flex items-center rounded-lg pb-10"
-          >
-            <div class="swiper-wrapper">
-              <div class="swiper-slide h-auto">
-                <div class="h-full rounded-xl bg-white p-10">
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 16 16"
-                    class="text-5xl text-primary-400/50"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
-                    ></path>
-                  </svg>
-                  <em class="my-4 flex">
-                    "Excellent selection of smartphones and accessories. The
-                    website is user-friendly, and I had a great experience
-                    finding the perfect tech gadgets for my needs. Highly
-                    recommend!"
-                  </em>
-                  <figure class="mt-auto flex gap-4">
-                    <div class="h-[50px] w-[50px] overflow-hidden rounded-full">
-                      <img src="img/client/client1.jpg" alt="Client 1" />
-                    </div>
-                    <div>
-                      <h3 class="font-semibold">Emma Davis</h3>
-                      <span class="text-primary-500">Tech Enthusiast</span>
-                      <div class="rater my-2" data-rater="5"></div>
-                    </div>
-                  </figure>
-                </div>
-              </div>
-              <div class="swiper-slide h-auto">
-                <div class="h-full rounded-xl bg-white p-10">
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 16 16"
-                    class="text-5xl text-primary-400/50"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
-                    ></path>
-                  </svg>
-                  <em class="my-4 flex">
-                    "I've been buying from this store for years, and the quality
-                    of products and customer service never disappoints. Great
-                    place for all your tech needs!"
-                  </em>
-                  <figure class="mt-auto flex gap-4">
-                    <div class="h-[50px] w-[50px] overflow-hidden rounded-full">
-                      <img src="img/client/client2.jpg" alt="Client 2" />
-                    </div>
-                    <div>
-                      <h3 class="font-semibold">John Brown</h3>
-                      <span class="text-primary-500">Business Owner</span>
-                      <div class="rater my-2" data-rater="5"></div>
-                    </div>
-                  </figure>
-                </div>
-              </div>
-              <div class="swiper-slide h-auto">
-                <div class="h-full rounded-xl bg-white p-10">
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 16 16"
-                    class="text-5xl text-primary-400/50"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
-                    ></path>
-                  </svg>
-                  <em class="my-4 flex">
-                    "Shopping at this tech store has always been a pleasure.
-                    Fast delivery, excellent products, and friendly customer
-                    service. Highly recommended!"
-                  </em>
-                  <figure class="mt-auto flex gap-4">
-                    <div class="h-[50px] w-[50px] overflow-hidden rounded-full">
-                      <img src="img/client/client3.jpg" alt="Client 3" />
-                    </div>
-                    <div>
-                      <h3 class="font-semibold">Sophie Williams</h3>
-                      <span class="text-primary-500">Freelancer</span>
-                      <div class="rater my-2" data-rater="5"></div>
-                    </div>
-                  </figure>
-                </div>
-              </div>
-            </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-            <!-- Add Navigation -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-          </div>
-        </section>
+                    // Content
+                    const content = document.createElement('div');
+                    content.classList.add('content');
+                    content.innerHTML = `<strong>${message.user}</strong>: ${message.content}<div class="timestamp">${new Date(message.timestamp).toLocaleTimeString()}</div>`;
+                    messageElement.appendChild(content);
 
-        <section class="container mx-auto my-10 px-4 sm:px-8 xl:px-4">
-          <div
-            class="mb-8 flex items-center justify-between border-b-[3px] pb-2"
-          >
-            <h2
-              class="relative text-2xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
-            >
-              Our Brands
-            </h2>
-          </div>
-          <div class="swiper swiper-brands group relative flex items-center">
-            <div class="swiper-wrapper flex select-none items-center">
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/amd-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/asrock-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/asus-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/corsair-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/genius-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/gigabyte-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/hp-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/intel-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/kingston-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/lenovo-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/logitech-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/msi-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/nvidia-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/philips-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/redragon-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img
-                    class="object-contain grayscale filter transition-all duration-300 hover:filter-none"
-                    src="img/brands/samsung-logo.png"
-                    alt="logo"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+                    chatBox.appendChild(messageElement);
+                });
+
+                // Scroll to the bottom
+                chatBox.scrollTop = chatBox.scrollHeight;
+            } catch (error) {
+                console.error('Error fetching messages:', error);
+            }
+        }
+
+        // Function to send a new message
+        async function sendMessage() {
+            const user = document.getElementById('user').value.trim();
+            const content = document.getElementById('message').value.trim();
+
+            if (user && content) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ user, content })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    document.getElementById('message').value = ''; // Clear input
+                    fetchMessages(); // Refresh chat
+                } catch (error) {
+                    console.error('Error sending message:', error);
+                }
+            } else {
+                alert("Please enter your name and message.");
+            }
+        }
+
+        // Polling to fetch new messages every 2 seconds
+        setInterval(fetchMessages, 2000);
+
+        // Initial fetch
+        fetchMessages();
+
+        // Event listener for the send button
+        document.getElementById('send-btn').addEventListener('click', sendMessage);
+
+        // Optional: Send message on Enter key press
+        document.getElementById('message').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+
+
     </section>
-    <footer class="bg-primary-500 text-default-200">
+
+  
+    <footer class="bg-primary-500 text-default-200"> 
       <div
         class="mx-auto px-4 sm:px-8 xl:px-4"
         style="max-width: 100% !important"
@@ -1293,14 +999,273 @@
       </div>
     </footer>
 
-    <script src="lib/simpleParallax/simpleParallax.min.js"></script>
-    <script src="lib/rater-js/rater-js.js"></script>
-    <script src="lib/swiper/swiper-bundle.min.js"></script>
+    <div class="modal-menu modal-container resize-close modal-overlay">
+      <div
+        class="modal-content modal-left flex h-full w-[288px] min-w-[250px] flex-col bg-[#f5f7fe]"
+      >
+        <div class="w-full">
+          <button class="close-modal absolute right-5 top-5 p-[3px] text-default-600">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <a href="#" class="mr-auto flex items-center gap-2 p-5 lg:mr-0">
+          <img class="h-7" src="img/logo.png" alt="logo" />
+          <span class="text-2xl font-semibold text-primary-500">Infinite</span>
+        </a>
+        <div class="overflow-y-auto p-5">
+          <ul class="metismenu">
+            <li>
+              <a href="index.html" class="block py-3 font-bold text-default-600">Home</a>
+            </li>
+            <li>
+              <a
+                href="wishlist.html"
+                class="flex items-center justify-between py-3 font-bold text-default-600"
+              >
+                Wishlist
+                <span
+                  class="flex h-5 w-5 items-center justify-center rounded-full bg-primary-500 text-xs text-white"
+                >
+                  0
+                </span>
+              </a>
+            </li>
+            <li class="transition-all duration-300">
+              <div
+                class="sub-metismenu has-arrow cursor-pointer py-3 font-bold text-default-600"
+                aria-expanded="false"
+                role="menu"
+              >
+                Electronics
+              </div>
+              <div class="metismenu-content">
+                <a href="#" class="block p-2">Laptops</a>
+                <a href="#" class="block p-2">Desktops</a>
+                <a href="#" class="block p-2">Monitors</a>
+                <a href="#" class="block p-2">Computer Accessories</a>
+              </div>
+            </li>
+            <li>
+              <a href="about.html" class="block py-3 font-bold text-default-600">About</a>
+            </li>
+            <li>
+              <a href="blog.html" class="block py-3 font-bold text-default-600">Blog</a>
+            </li>
+            <li class="transition-all duration-300">
+              <div
+                class="sub-metismenu has-arrow cursor-pointer py-3 font-bold text-default-600"
+                aria-expanded="false"
+                role="menu"
+              >
+                Pages
+              </div>
+              <div class="metismenu-content">
+                <a href="blog-details.html" class="block p-2">Blog Details</a>
+                <a href="checkout.html" class="block p-2">Checkout</a>
+                <a href="product-details.html" class="block p-2">Product Details</a>
+                <a href="shop-grid.html" class="block p-2">Shop Grid</a>
+                <a href="shop-list.html" class="block p-2">Shop List</a>
+                <a href="shop-mixed.html" class="block p-2">Shop Mixed</a>
+                <a href="shopping-cart.html" class="block p-2">Shopping Cart</a>
+                <a href="profile.html" class="block p-2">Profile</a>
+                <a href="sign-in.html" class="block p-2">Sign In</a>
+                <a href="sign-up.html" class="block p-2">Sign Up</a>
+                <a href="pin.html" class="block p-2">PIN</a>
+                <a href="recover-password.html" class="block p-2">Recover Password</a>
+                <a href="how-to-recover-password.html" class="block p-2">
+                  How to Recover
+                </a>
+                <a href="mail-confirmation.html" class="block p-2">Mail Confirmation</a>
+                <a href="code-phone-password.html" class="block p-2">Code Phone</a>
+                <a href="reset-password.html" class="block p-2">Reset Password</a>
+                <a href="password-changed.html" class="block p-2">Password Changed</a>
+                <a href="current-password.html" class="block p-2">Current Password</a>
+                <a href="new-password.html" class="block p-2">New Password</a>
+                <a href="password-changed-successfully.html" class="block p-2">
+                  Password Changed 2
+                </a>
+                <a href="current-pin.html" class="block p-2">Curent PIN</a>
+                <a href="new-pin.html" class="block p-2">New PIN</a>
+                <a href="pin-changed-successfully.html" class="block p-2">PIN Changed</a>
+                <a href="error404.html" class="block p-2">Error 404</a>
+              </div>
+            </li>
+            <li>
+              <a href="contact.html" class="block py-3 font-bold text-default-600">
+                Contact
+              </a>
+            </li>
+          </ul>
+          <div class="mt-5 border-t-2 pt-6">
+            <a
+              class="block w-full rounded-md bg-primary-500 p-3 text-center text-white transition-all duration-300 hover:bg-primary-600"
+              href="sign-in.html"
+            >
+              Sign in
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-search modal-container resize-close modal-overlay">
+      <div
+        class="modal-content modal-top m-5 flex h-fit w-full items-center gap-2 rounded-lg bg-[#f5f7fe] p-4"
+      >
+        <form class="flex w-full">
+          <div class="relative w-full">
+            <input
+              type="search"
+              id="search-mob"
+              class="peer block w-full appearance-none rounded-l-lg border border-r-0 border-primary-500 bg-white px-2 pb-2 pt-4 text-sm focus:outline-none focus:ring-0"
+              placeholder=" "
+            />
+            <label
+              for="search-mob"
+              class="z-1 pointer-events-none absolute left-2.5 top-[13px] origin-[0] -translate-y-3 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-3 peer-focus:scale-75 peer-focus:text-primary-500"
+            >
+              Search
+            </label>
+          </div>
+          <button class="rounded-r-lg bg-primary-500 p-[9px] text-white" type="submit">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6"
+            >
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </form>
+        <button class="close-modal text-default-600">
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-6 w-6"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="modal-cart modal-container modal-overlay">
+      <div
+        class="modal-content modal-right flex h-full w-[400px] min-w-[250px] flex-col bg-[#f5f7fe]"
+      >
+        <div class="w-full">
+          <div class="border-b-2 p-5">
+            <h3 class="text-lg font-bold text-default-600">Shopping Cart</h3>
+          </div>
+          <button class="close-modal absolute right-5 top-5 p-[3px] text-default-600">
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="h-full overflow-auto">
+          <div class="flex flex-col items-center p-10">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="h-20 w-20"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M7.354 5.646a.5.5 0 1 0-.708.708L7.793 7.5 6.646 8.646a.5.5 0 1 0 .708.708L8.5 8.207l1.146 1.147a.5.5 0 0 0 .708-.708L9.207 7.5l1.147-1.146a.5.5 0 0 0-.708-.708L8.5 6.793 7.354 5.646z"
+              />
+              <path
+                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+              />
+            </svg>
+            <span class="my-5">Your shopping cart is empty!</span>
+            <a
+              class="block rounded-md bg-primary-500 px-4 py-3 text-center font-bold text-white transition-all duration-300 hover:bg-primary-600"
+              href="shopping-cart.html"
+            >
+              Continue Shopping
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="scroll-up invisible fixed bottom-10 right-[50px] z-30 cursor-pointer select-none rounded-xl bg-black/50 p-2 text-white opacity-0 shadow-lg transition-all duration-300 hover:bg-primary-500"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+        stroke="currentColor"
+        stroke-width="2"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </div>
+
+    <script src="js/contact.js"></script>
+    <script src="../cdn.jsdelivr.net/npm/%40emailjs/browser%403/dist/email.min.js"></script>
+    <script>
+      emailjs.init("oEwg6h16GWQDjT-5A");
+    </script>
+    <script src="lib/iziToast/iziToast.min.js"></script>
     <script src="lib/metisMenu/metismenujs.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/ChangeNav.js"></script>
   </body>
 
-  <!-- Mirrored from infinite.andevfrontend.site/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2024 09:49:34 GMT -->
+<!-- Mirrored from infinite.andevfrontend.site/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2024 09:49:43 GMT -->
 </html>
+
+
+
+
+
+
+
+
+
+
