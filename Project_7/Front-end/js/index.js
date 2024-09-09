@@ -145,7 +145,7 @@ async function GetProductsMostReview() {
           <div class="relative col-span-6 flex rounded-lg bg-white p-4 shadow">
               <a href="#">
                   <figure class="h-[80px] w-[80px] min-w-[80px] xl:h-[130px] xl:w-[130px] xl:min-w-[130px]">
-                      <img class="h-full w-full object-contain" src="${
+                      <img class="h-full w-full object-contain" src="https://localhost:44339/${
                         productMostReview.productImage1
                       }" alt="(image not found)" />
                   </figure>
