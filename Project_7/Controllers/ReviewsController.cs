@@ -96,11 +96,16 @@ namespace Project_7.Controllers
             {
                 ReviewsCount = reviewCount,
                 OverAllRating = reviewCount == 0 ? 0 : (double)ratingSum! / (double)reviewCount,
-                FiveStarReviewsPercentage = productReviews.Any(r => r.Rating == 5) ? productReviews.Count(r => r.Rating == 5) / (double)reviewCount : 0,
-                FourStarReviewsPercentage = productReviews.Any(r => r.Rating == 4) ? productReviews.Count(r => r.Rating == 4) / (double)reviewCount : 0,
-                ThreeStarReviewsPercentage = productReviews.Any(r => r.Rating == 3) ? productReviews.Count(r => r.Rating == 3) / (double)reviewCount : 0,
-                TwoStarReviewsPercentage = productReviews.Any(r => r.Rating == 2) ? productReviews.Count(r => r.Rating == 2) / (double)reviewCount : 0,
-                OneStarReviewsPercentage = productReviews.Any(r => r.Rating == 1) ? productReviews.Count(r => r.Rating == 1) / (double)reviewCount : 0,
+                FiveStarReviewsPercentage = productReviews.Any(r => r.Rating == 5) ?
+                    productReviews.Count(r => r.Rating == 5) / (double)reviewCount : 0,
+                FourStarReviewsPercentage = productReviews.Any(r => r.Rating == 4) ?
+                    productReviews.Count(r => r.Rating == 4) / (double)reviewCount : 0,
+                ThreeStarReviewsPercentage = productReviews.Any(r => r.Rating == 3) ?
+                    productReviews.Count(r => r.Rating == 3) / (double)reviewCount : 0,
+                TwoStarReviewsPercentage = productReviews.Any(r => r.Rating == 2) ?
+                    productReviews.Count(r => r.Rating == 2) / (double)reviewCount : 0,
+                OneStarReviewsPercentage = productReviews.Any(r => r.Rating == 1) ?
+                    productReviews.Count(r => r.Rating == 1) / (double)reviewCount : 0,
                 Reviews = reviewsComments
             };
 
