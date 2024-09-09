@@ -309,7 +309,7 @@
               <h2
                 class="relative text-xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
               >
-               Filter By Category
+                Filter By Category
               </h2>
             </div>
 
@@ -1545,20 +1545,7 @@
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const token = localStorage.getItem("Token");
-        const userId = localStorage.getItem("userId");
 
-        if (token && userId) {
-          // السماح بالوصول إلى الصفحة أو تعديل المحتوى بناءً على وجود الـ Token
-          console.log("User is logged in with Token:", token);
-        } else {
-          // توجيه المستخدم إلى صفحة تسجيل الدخول إذا لم يكن مسجلاً الدخول
-          window.location.href = "shop-grid.html";
-        }
-      });
-    </script>
     <script src="lib/rater-js/rater-js.js"></script>
     <script src="lib/nouiSlider/nouislider.min.js"></script>
     <script src="lib/swiper/swiper-bundle.min.js"></script>
