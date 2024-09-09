@@ -8,7 +8,8 @@ async function GetAllCategories() {
   result.forEach((element) => {
     container.innerHTML += `
             <div class="swiper-slide text-center">
-                <a class="inline-block font-semibold text-white" href="#">
+                <a class="inline-block font-semibold text-white" href="shop-grid.html"
+                      onclick="storeCategoryId(${element.categoryId})>
                   <figure
                     class="mb-2 h-[300px] w-[300px] overflow-hidden rounded-full bg-white p-2 sm:h-36 sm:w-36"
                   >
