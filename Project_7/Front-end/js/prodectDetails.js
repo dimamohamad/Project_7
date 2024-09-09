@@ -1,16 +1,15 @@
+let token = localStorage.getItem("Token");
+
 async function showProductDetail() {
   const x = localStorage.getItem("productId");
-  var url = `https://localhost:44339/Api/Products/GetProductsById/${x}`;
+  let url = `https://localhost:44339/Api/Products/GetProductsById/${x}`;
 
-  var response = await fetch(url);
-  // console.log(response);
+  let response = await fetch(url);
 
-  var result = await response.json();
-  // console.log(result);
-  // console.log(x);
+  let result = await response.json();
   var container = document.getElementById("ProductDetailssection");
 
-  container.innerHTML = `   
+  container.innerHTML = `
    <div
           class="col-span-6 flex max-h-[500px] w-full flex-col gap-4 lg:col-span-3 lg:flex-row"
         >
@@ -19,34 +18,22 @@ async function showProductDetail() {
           >
             <div class="swiper-wrapper">
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${
-                  result.productImage1
-                }" alt="" />
+                <img src="https://localhost:44339/${result.productImage1}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${
-                  result.productImage2
-                }" alt="" />
+                <img src="https://localhost:44339/${result.productImage2}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${
-                  result.productImage3
-                }" alt="" />
+                <img src="https://localhost:44339/${result.productImage3}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${
-                  result.productImage4
-                }" alt="" />
+                <img src="https://localhost:44339/${result.productImage4}" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${
-                  result.productImage5
-                }" alt="" />
+                <img src="https://localhost:44339/${result.productImage5}" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${
-                  result.productImage6
-                }" alt="" />
+                <img src="https://localhost:44339/${result.productImage6}" alt="" />
               </figure>
             </div>
             <div
@@ -91,34 +78,22 @@ async function showProductDetail() {
           >
             <div class="swiper-wrapper">
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${
-                  result.productImage1
-                }" alt="" />
+                <img src="https://localhost:44339/${result.productImage1}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${
-                  result.productImage2
-                }" alt="" />
+                <img src="https://localhost:44339/${result.productImage2}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${
-                  result.productImage3
-                }" alt="" />
+                <img src="https://localhost:44339/${result.productImage3}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${
-                  result.productImage4
-                }" alt="" />
+                <img src="https://localhost:44339/${result.productImage4}" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${
-                  result.productImage5
-                }" alt="" />
+                <img src="https://localhost:44339/${result.productImage5}" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${
-                  result.productImage6
-                }" alt="" />
+                <img src="https://localhost:44339/${result.productImage6}" alt="" />
               </figure>
             </div>
           </div>
@@ -135,9 +110,7 @@ async function showProductDetail() {
              ${result.productName}
           </h2>
           <div class="my-2 flex items-center gap-2">
-            <span class="text-xl font-bold text-primary-500"> ${
-              result.price
-            }</span>
+            <span class="text-xl font-bold text-primary-500"> ${result.price}</span>
   
           </div>
           <div class="mb-5 border-b-2 pb-5">
@@ -145,14 +118,14 @@ async function showProductDetail() {
              ${result.description}
             </p>
           </div>
-          <form>
+          <form id="addToCartForm" onsubmit="preventDefault(event)">
             
            
             <div class="my-4">
               <span class="font-bold text-default-600">Quantity:</span>
               <div class="mt-2 flex gap-3">
                 <div class="counter flex w-28 rounded border bg-white">
-                  <button class="decrement p-2" type="button">
+                  <button class="decrement p-2" type="button" onclick="reduceQuantity()">
                     <svg
                       class="pointer-events-none h-3 w-3"
                       stroke="currentColor"
@@ -172,9 +145,10 @@ async function showProductDetail() {
                     class="counter-value w-full border-none text-center focus:border-none focus:ring-0"
                     type="number"
                     name="quantity"
-                    value="0"
+                    value="1"
+                    id="quantityDateInput"
                   />
-                  <button class="increment p-2" type="button">
+                  <button class="increment p-2" type="button" onclick="addQuantity()">
                     <svg
                       class="pointer-events-none h-3 w-3"
                       stroke="currentColor"
@@ -194,9 +168,7 @@ async function showProductDetail() {
                 <button
                   class="flex items-center gap-2 rounded-lg bg-primary-500 px-5 font-semibold uppercase text-white transition-all duration-300 hover:bg-primary-600"
                   type="submit"
-                  onclick="addProduct(${
-                    (result.productId, result.productName, result.productImage1)
-                  })"
+                  onclick="addProduct(${result.productId}, '${result.productName}', '${result.productImage1}')"
                 >
                   <svg
                     class="h-4 w-4"
@@ -218,31 +190,11 @@ async function showProductDetail() {
             </div>
           </form>
           <div class="my-4 mb-5 border-b-2 pb-5">
-            <button
-              class="btn-wishlist flex items-center gap-2 transition-all duration-300 hover:text-primary-500"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="pointer-events-none h-6 w-6 fill-none"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-                ></path>
-              </svg>
-              <span class="pointer-events-none">Add to wishlist</span>
-            </button>
+          
           </div>
           <div class="my-4 flex items-center gap-2">
             <span class="font-bold text-default-600">Available:</span>
-            <span class="text-xs text-green-400">${
-              result.stockQuantity
-            } items in Stock</span>
+            <span class="text-xs text-green-400">${result.stockQuantity} items in Stock</span>
           </div>
           <div class="my-4">
             
@@ -269,10 +221,7 @@ async function showProductDetail() {
                     d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
                   ></path>
                 </svg>
-              </a>
-             
-             
-             
+              </a>             
             </div>
           </div>
           <div class="my-4">
@@ -283,9 +232,42 @@ showProductDetail();
 
 function addProduct(productId, productName, productImage) {
   console.log({ productId, productName, productImage });
+  if (token) {
+    addProductToCart(
+      productId,
+      document.getElementById("quantityDateInput").value
+    );
+  } else {
+  }
 }
 
-/////////Add All Reviews need here
+async function addProductToCart(productId, quantity) {
+  let url = "https://localhost:44339/api/Cart/addToCart";
+  let data = {
+    productId: productId,
+    quantity: quantity,
+  };
+  console.log(data);
+  
+  let response = await fetch(url, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  if (response.ok) {
+    alert("Product added to cart successfully");
+    location.reload();
+  } else {
+    alert("Something went wrong");
+  }
+}
+
+function preventDefault(event) {
+  event.preventDefault();
+}
 
 async function GetReviews() {
   //review section
@@ -293,7 +275,6 @@ async function GetReviews() {
   const url = `https://localhost:44339/api/Reviews/SingleProductReviews/${n}`;
   var response = await fetch(url);
   var result = await response.json();
-  console.log(result);
   var container = document.getElementById("reviewSection");
   container.innerHTML += `
        <div class="mb-8 flex items-center justify-between border-b-[3px] pb-2">
@@ -397,13 +378,20 @@ async function GetReviews() {
         `;
 }
 
+function addQuantity() {
+  document.getElementById("quantityDateInput").value++;
+}
+
+function reduceQuantity() {
+  let quantity = document.getElementById("quantityDateInput");
+  quantity.value = Math.max(quantity.value - 1, 1);
+}
+
 async function loadReviews() {
-  //
   const n = localStorage.getItem("productId");
   const url = `https://localhost:44339/api/Reviews/SingleProductReviews/${n}`;
   const response = await fetch(url);
   const result = await response.json();
-  console.log(result);
   // Get the review section container
   var container = document.getElementById("reviewRate");
   // Loop through each review and create HTML
@@ -465,7 +453,6 @@ async function loadReviews1() {
   const url = `https://localhost:44339/api/Reviews/SingleProductReviews/${n}`;
   var response = await fetch(url);
   var result = await response.json();
-  console.log(result);
   var container = document.getElementById("userReview");
   container.innerHTML += `
         <div class="order-2 col-span-3 lg:order-1 lg:col-span-2">

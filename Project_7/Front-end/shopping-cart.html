@@ -364,7 +364,7 @@
             <button
               class="mt-4 w-full rounded-lg bg-primary-500 px-4 py-2 text-center font-semibold text-white transition-all duration-300 hover:bg-primary-600"
               id=""
-              >
+            >
               Checkout
             </button>
           </div>
@@ -1041,7 +1041,6 @@
           <button
             class="close-modal absolute right-5 top-5 p-[3px] text-default-600"
           >
-          
             <svg
               viewBox="0 0 24 24"
               width="24"
@@ -1060,7 +1059,6 @@
         </div>
         <div class="h-full overflow-auto">
           <div class="flex flex-col items-center p-10">
-           
             <a
               class="block rounded-md bg-primary-500 px-4 py-3 text-center font-bold text-white transition-all duration-300 hover:bg-primary-600"
               href="#"
@@ -1097,16 +1095,15 @@
         var container = document.getElementById("dropDownCategory");
         result.forEach((element) => {
           container.innerHTML += `
-               <li>
-                      <a
-                        class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
-                        href="shop-grid.html"
-                        onclick="storeCategoryId(${element.categoryId})"
-                      >
-                         ${element.categoryName}
-                      </a>
-                    </li>
-              
+              <li>
+                <a
+                  class="block px-6 py-2 transition-all duration-300 hover:text-primary-500"
+                  href="shop-grid.html"
+                  onclick="storeCategoryId(${element.categoryId})"
+                >
+                   ${element.categoryName}
+                </a>
+              </li>
       `;
         });
       }

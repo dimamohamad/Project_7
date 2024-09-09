@@ -62,7 +62,6 @@ if (googleLogin) {
         Passwword: uid, // using uid as password
         Image: photoURL,
       };
-      debugger;
       // Send user data to the API
       const response = await fetch(
         "https://localhost:44339/api/Users/RegisterUsers",
