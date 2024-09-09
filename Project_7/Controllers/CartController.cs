@@ -38,7 +38,7 @@ namespace Project_7.Controllers
                 db.Carts.Add(cart);
                 db.SaveChanges();
             }
-            return (db.CartItems.Where(cItem => cItem.CartId == cart.CartId).ToList(), cart);
+            return (db.CartItems.Include(cItem => cItem.Product).Where(cItem => cItem.CartId == cart.CartId).ToList(), cart);
         }
         [Authorize]
         [HttpPost("addToCart")]
@@ -62,6 +62,39 @@ namespace Project_7.Controllers
 
             var updatedCartItem = cartItem.CreateCartItem(db, cart);
             return Ok(DisplayCartItemDto.createFromCartItem(updatedCartItem));
+        }
+
+        [Authorize]
+        [HttpPost("AddVoucher")]
+        public IActionResult AddVoucher(string voucherCode)
+        {
+            var voucher = db.Vouchers.FirstOrDefault(v => v.VoucherCode.Equals(voucherCode));
+            if (voucher == null)
+                return NotFound();
+            var now = DateTime.Now;
+            if (voucher.StartDate.ToDateTime(new TimeOnly(0, 0)) > now ||
+                voucher.EndDate.ToDateTime(new TimeOnly(0, 0)) < now)
+                return Gone("VoucherExpired");
+            var discount = voucher.DiscountPercentage;
+            var user = GetUser();
+            var (cartItems, cart) = GetAllCartItems(user);
+            cart.VoucherId = voucher.VoucherId;
+            db.Carts.Update(cart);
+            cartItems = ApplyDiscountToCartItems(cartItems, discount);
+            db.SaveChanges();
+            return Ok(cartItems);
+        }
+
+        private List<CartItem> ApplyDiscountToCartItems(List<CartItem> cartItems, decimal discount)
+        {
+            foreach (var cartItem in cartItems)
+            {
+                var prdPrice = cartItem.Product?.Price ?? 0m;
+                var prdPriceWithDiscount = prdPrice - prdPrice * cartItem.Product?.DiscountPercentage ?? 0m;
+                cartItem.Price = prdPriceWithDiscount - prdPriceWithDiscount * discount;
+            }
+            db.CartItems.UpdateRange(cartItems);
+            return cartItems;
         }
 
         [Authorize]
@@ -183,6 +216,11 @@ namespace Project_7.Controllers
             var principal = tokenReader.ValidateToken(token);
             return db.Users.FirstOrDefault(u => u.UserName == principal.Identity.Name);
 
+        }
+        // Custom helper method for 410 Gone
+        private IActionResult Gone(object value)
+        {
+            return StatusCode(StatusCodes.Status410Gone, value);
         }
     }
 }
