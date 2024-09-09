@@ -12,7 +12,7 @@ async function GetAllCategories() {
 
    <tr class="position-static">
                       <td class="fs-9 align-middle">
-                        <div class="form-check mb-0 fs-8"><input class="form-check-input" type="checkbox" data-bulk-select-row='{"product":"Fitbit Sense Advanced Smartwatch with Tools for Heart Health, Stress Management & Skin Temperature Trends, Carbon/Graphite, One Size (S & L Bands...","productImage":"/products/1.png","price":"$39","category":"Plants","tags":["Health","Exercise","Discipline","Lifestyle","Fitness"],"star":false,"vendor":"Blue Olive Plant sellers. Inc","publishedOn":"Nov 12, 10:45 PM"}' /></div>
+                        ${category.categoryId}
                       </td>
                       <td class="align-middle white-space-nowrap py-0"><a class="d-block border border-translucent rounded-2" href="../landing/product-details.html"><img src="https://localhost:44339/${category.categoryImage}" alt="" width="53" /></a></td>
                       <td class="product align-middle ps-4"><a class="fw-semibold line-clamp-3 mb-0" href="../landing/product-details.html">${category.categoryName}</a></td>
@@ -29,8 +29,6 @@ async function GetAllCategories() {
                         </div>
                       </td>
                     </tr>
-
-
         `;
   });
 
