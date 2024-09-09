@@ -87,16 +87,17 @@ namespace Project_7.Controllers
 
             var product = db.Products.Find(cartItem.ProductId);
             var cart = db.Carts.Find(cartItem.ProductId);
-            var discount = 0m;
+            var voucherDiscount = 0m;
             var voucher = db.Vouchers.Find(cart.VoucherId);
             if (voucher != null)
             {
-                discount = voucher.DiscountPercentage;
+                voucherDiscount = voucher.DiscountPercentage;
             }
 
+            var productPrice = (product?.Price ?? 0m) - (product?.Price ?? 0m) * (product?.DiscountPercentage ?? 0m);
 
             cartItem.Quantity = update.Quantity;
-            cartItem.Price = cartItem.Quantity * (product?.Price ?? 0 - discount * product?.Price ?? 0);
+            cartItem.Price = cartItem.Quantity * (productPrice - voucherDiscount * productPrice);
             db.CartItems.Update(cartItem);
             db.SaveChanges();
             return Ok(DisplayCartItemDto.createFromCartItem(cartItem));
@@ -161,11 +162,12 @@ namespace Project_7.Controllers
                 Amount = order.TotalAmount,
                 PaymentMethod = "Paypal",
                 PaymentDate = DateTime.Now,
-                TransactionId = executedPayment.id
+                TransactionId = executedPayment.id,
+                PaymentGateway = "Paypal"
             };
             db.Payments.Add(payment);
             db.SaveChanges();
-            return Ok(executedPayment);
+            return Ok("Payment has been completed, You can close this window now.");
         }
 
         [HttpGet("cancel")]
