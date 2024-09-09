@@ -19,14 +19,15 @@ namespace Project_7.Controllers
         {
             var user = GetUser();
             if (user == null) return BadRequest("There were a problem while trying to get the user info");
-            var (cartItems, _) = GetAllCartItems(user);
-            var cartItemsD = cartItems.Select(cartItem => DisplayCartItemDto.createFromCartItem(cartItem)).ToList();
-            return Ok(cartItemsD);
+            var (cartItems, cart) = GetAllCartItems(user);
+            var cartItemsD = cartItems.Select(DisplayCartItemDto.createFromCartItem).ToList();
+            return Ok(new { cartItems = cartItemsD, cart = cart });
         }
 
         private (List<CartItem>, Cart) GetAllCartItems(User user)
         {
-            var cart = db.Carts.FirstOrDefault(c => c.UserId == user.UserId);
+            var cart = db.Carts.Include(c => c.Voucher).
+                FirstOrDefault(c => c.UserId == user.UserId);
             if (cart == null)
             {
                 cart = new Cart
@@ -47,7 +48,7 @@ namespace Project_7.Controllers
             var user = GetUser();
             if (user == null) return BadRequest("There were a problem while trying to get the user info");
 
-            var cart = db.Carts.FirstOrDefault(c => c.UserId == user.UserId);
+            var cart = db.Carts.Include(c => c.Voucher).FirstOrDefault(c => c.UserId == user.UserId);
             if (cart == null)
             {
                 cart = new Cart
@@ -66,8 +67,9 @@ namespace Project_7.Controllers
 
         [Authorize]
         [HttpPost("AddVoucher")]
-        public IActionResult AddVoucher(string voucherCode)
+        public IActionResult AddVoucher([FromBody] AddVoucherDto voucherCodeDto)
         {
+            var voucherCode = voucherCodeDto.VoucherCode;
             var voucher = db.Vouchers.FirstOrDefault(v => v.VoucherCode.Equals(voucherCode));
             if (voucher == null)
                 return NotFound();
@@ -91,7 +93,8 @@ namespace Project_7.Controllers
             {
                 var prdPrice = cartItem.Product?.Price ?? 0m;
                 var prdPriceWithDiscount = prdPrice - prdPrice * cartItem.Product?.DiscountPercentage ?? 0m;
-                cartItem.Price = prdPriceWithDiscount - prdPriceWithDiscount * discount;
+                var singleProductPrice = prdPriceWithDiscount - prdPriceWithDiscount * discount;
+                cartItem.Price = singleProductPrice * cartItem.Quantity;
             }
             db.CartItems.UpdateRange(cartItems);
             return cartItems;
@@ -110,10 +113,13 @@ namespace Project_7.Controllers
             db.SaveChanges();
             return NoContent();
         }
+
         [Authorize]
         [HttpPut("updateCartItem/{id:int}")]
         public IActionResult UpdateCartItem(int id, UpdateCartItemDto update)
         {
+            if (update.Quantity < 1)
+                return BadRequest("The quantity must be at least 1");
             var cartItem = db.CartItems.Find(id);
             if (cartItem == null)
                 return NotFound();
@@ -121,7 +127,14 @@ namespace Project_7.Controllers
             var product = db.Products.Find(cartItem.ProductId);
             var cart = db.Carts.Find(cartItem.ProductId);
             var voucherDiscount = 0m;
-            var voucher = db.Vouchers.Find(cart.VoucherId);
+            Voucher? voucher = null;
+            try
+            { voucher = db.Vouchers.Find(cart?.VoucherId); }
+            catch (Exception e)
+            {
+                // ignored
+            }
+
             if (voucher != null)
             {
                 voucherDiscount = voucher.DiscountPercentage;

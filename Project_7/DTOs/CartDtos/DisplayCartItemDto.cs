@@ -1,4 +1,5 @@
-﻿using Project_7.Models;
+﻿using Project_7.DTOs.ProductDtos;
+using Project_7.Models;
 
 namespace Project_7.DTOs.CartDtos
 {
@@ -14,6 +15,8 @@ namespace Project_7.DTOs.CartDtos
 
         public int? ProductId { get; set; }
 
+        public ProductDtos.ProductDisplayDto Product { get; set; }
+
         public static DisplayCartItemDto createFromCartItem(CartItem cartItem)
         {
             return new DisplayCartItemDto
@@ -22,7 +25,8 @@ namespace Project_7.DTOs.CartDtos
                 Quantity = cartItem.Quantity,
                 Price = cartItem.Price,
                 CartId = cartItem.CartId,
-                CartItemId = cartItem.CartItemId
+                CartItemId = cartItem.CartItemId,
+                Product = ProductDisplayDto.CreateDtoFromProduct(cartItem.Product)
             };
         }
     }
