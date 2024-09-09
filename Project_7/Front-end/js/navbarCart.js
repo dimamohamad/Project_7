@@ -1,5 +1,3 @@
-console.log("Hello World");
-
 let cartItemsList = document.getElementById("cartItemsList");
 const cartItemsDiv = document.getElementById("cartItemsList");
 const token = localStorage.Token;
@@ -29,6 +27,7 @@ function getCartItemsFromLocalStorage() {
       );
     });
   }
+  document.getElementById("cartItemCount").innerText = cartItems.length;
 }
 
 // Get the cart items from the API
@@ -57,7 +56,7 @@ async function getCartItemsFromApi() {
       );
     });
   }
-
+  document.getElementById("cartItemCount").innerText = cartItems.length;
   return cartItems;
 }
 
