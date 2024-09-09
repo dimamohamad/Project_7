@@ -28,6 +28,5 @@ namespace Project_7.DTOs.ReviewDtos
 
         public DateTime? CreatedAt { get; set; }
 
-
     }
 }
