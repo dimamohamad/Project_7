@@ -2,7 +2,6 @@ document
   .getElementById("email-form")
   .addEventListener("submit", async function (event) {
     event.preventDefault();
-    debugger;
     const email = document.getElementById("your-email").value;
 
     try {

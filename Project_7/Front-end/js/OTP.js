@@ -43,7 +43,6 @@ async function verifyOtp() {
 
     console.log(otp);
     document.getElementById("passwordForm").style.display = "block";
-    debugger;
   }
 }
 

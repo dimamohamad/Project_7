@@ -835,7 +835,9 @@
                   />
                 </div>
                 <h3 class="my-2 text-lg font-bold text-default-600">raneem</h3>
-                <span class="font-semibold text-primary-500">full</span>
+                <span class="font-semibold text-primary-500"
+                  >Full Stack Developer</span
+                >
               </figure>
             </div>
             <div
@@ -850,7 +852,9 @@
                   />
                 </div>
                 <h3 class="my-2 text-lg font-bold text-default-600">yaman</h3>
-                <span class="font-semibold text-primary-500">full</span>
+                <span class="font-semibold text-primary-500"
+                  >Full Stack Developer</span
+                >
               </figure>
             </div>
             <div
@@ -865,7 +869,9 @@
                   />
                 </div>
                 <h3 class="my-2 text-lg font-bold text-default-600">ahmad</h3>
-                <span class="font-semibold text-primary-500">full</span>
+                <span class="font-semibold text-primary-500"
+                  >Full Stack Developer</span
+                >
               </figure>
             </div>
             <div
@@ -880,7 +886,9 @@
                   />
                 </div>
                 <h3 class="my-2 text-lg font-bold text-default-600">leen</h3>
-                <span class="font-semibold text-primary-500">full</span>
+                <span class="font-semibold text-primary-500"
+                  >Full Stack Developer</span
+                >
               </figure>
             </div>
           </div>
@@ -1732,28 +1740,16 @@
           </button>
         </div>
         <div class="h-full overflow-auto">
-          <div class="flex flex-col items-center p-10">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="h-20 w-20"
-              viewBox="0 0 16 16"
+          <div class="flex flex-col items-center p-10" id="cartItemsModalDiv">
+            <div id="cartItemsList"></div>
+            <span id="cartIsEmpty" class="my-5"
+              >Your shopping cart is empty!</span
             >
-              <path
-                d="M7.354 5.646a.5.5 0 1 0-.708.708L7.793 7.5 6.646 8.646a.5.5 0 1 0 .708.708L8.5 8.207l1.146 1.147a.5.5 0 0 0 .708-.708L9.207 7.5l1.147-1.146a.5.5 0 0 0-.708-.708L8.5 6.793 7.354 5.646z"
-              />
-              <path
-                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
-              />
-            </svg>
-            <span class="my-5">Your shopping cart is empty!</span>
             <a
               class="block rounded-md bg-primary-500 px-4 py-3 text-center font-bold text-white transition-all duration-300 hover:bg-primary-600"
               href="shopping-cart.html"
             >
-              Continue Shopping
+              Checkout
             </a>
           </div>
         </div>
@@ -1781,6 +1777,75 @@
     <script src="lib/swiper/swiper-bundle.min.js"></script>
     <script src="lib/metisMenu/metismenujs.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      let cartItemsList = document.getElementById("cartItemsList");
+      const token = localStorage.Token;
+      const url = "https://localhost:44339";
+      const apiUrl = url + "/api/Cart/getCartItems";
+      // If local storage has token take the cart from the fetch
+      if (token) {
+        getCartItems();
+      }
+      // else get the cart items from the local storage
+      else {
+      }
+      async function getCartItems() {
+        console.log("getCartItems");
+
+        const response = await fetch(apiUrl, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        const data = await response.json();
+
+        let cartItems = data.cartItems;
+        let cart = data.cart;
+        let totalPrice = cartItems
+          .reduce((acc, item) => acc + item.price, 0)
+          .toFixed(2);
+        if (cartItems.length !== 0) {
+          document.getElementById("cartIsEmpty").remove();
+          const cartItemsDiv = document.getElementById("cartItemsList");
+          cartItems.forEach((item) => {
+            cartItemsDiv.innerHTML += `<div
+              class="relative grid grid-cols-8 mb-4 gap-5 rounded-lg bg-white p-4 shadow-[0_2px_10px_rgba(131,125,125,.12)]"
+            >
+              <div class="col-span-8 sm:col-span-4 xl:col-span-3">
+                <b class="mb-4 block xl:hidden">Product</b>
+                <div class="flex gap-3">
+                  <figure
+                    class="h-[100px] w-[100px] min-w-[100px] overflow-hidden rounded-lg border"
+                  >
+                    <img
+                      class="h-full w-full object-contain"
+                      src="${url + "/" + item.product.productImage1}"
+                      alt="img"
+                    />
+                  </figure>
+                  <div>
+                    <div
+                      class="line-clamp-2 font-semibold text-default-600 transition-all duration-300 hover:text-primary-500"
+                      href="#"
+                    >
+                      ${item.product.productName}
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              
+              
+              </div>
+              
+            </div>`;
+          });
+        }
+
+        return cartItems;
+      }
+    </script>
   </body>
 
   <!-- Mirrored from infinite.andevfrontend.site/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2024 09:49:39 GMT -->
