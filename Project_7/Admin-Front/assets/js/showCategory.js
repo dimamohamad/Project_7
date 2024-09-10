@@ -53,5 +53,6 @@ async function DeleteCategory(categoryId) {
     method: "DELETE",
   });
   alert("Category has been deleted successfully");
+  window.location.reload;
 }
 GetAllCategories();
