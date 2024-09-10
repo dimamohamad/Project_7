@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project_7.DTOs;
+using Project_7.DTOs.UserDtos;
 using Project_7.Models;
 using Project_7.TokenReaderNS;
 using static Org.BouncyCastle.Math.EC.ECCurve;
@@ -189,12 +190,23 @@ namespace Project_7.Controllers
             return Ok(GetUser());
         }
 
+        [Authorize]
+        [HttpPost("EditAddress")]
+        public IActionResult EditAddress([FromBody] EditAddressDto newAddress)
+        {
+            var user = GetUser();
+            user.Address = newAddress.Address;
+            _db.Users.Update(user);
+            _db.SaveChanges();
+            return Ok();
+        }
+
         private User? GetUser()
         {
             var tokenReader = new TokenReader(_config);
             var token = Request.Headers["Authorization"].ToString().Split(' ')[1];
             var principal = tokenReader.ValidateToken(token);
-            return _db.Users.Include(u=>u.Orders).ThenInclude(u=> u.OrderItems).FirstOrDefault(u => u.UserName == principal.Identity.Name);
+            return _db.Users.Include(u => u.Orders).ThenInclude(u => u.OrderItems).FirstOrDefault(u => u.UserName == principal.Identity.Name);
 
         }
     }
