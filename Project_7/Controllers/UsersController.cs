@@ -196,11 +196,5 @@ namespace Project_7.Controllers
             return _db.Users.FirstOrDefault(u => u.UserName == principal.Identity.Name);
 
         }
-        // Custom helper method for 410 Gone
-        private IActionResult Gone(object value)
-        {
-            return StatusCode(StatusCodes.Status410Gone, value);
-        }
-
     }
 }
