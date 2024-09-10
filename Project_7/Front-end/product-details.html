@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="lib/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="lib/metisMenu/metismenujs.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="assets/star-rating.min.css" />
     <title>SmartTech</title>
   </head>
   <body
@@ -328,10 +329,10 @@
         <div id="userReview"></div>
         <div id="postReview">
         </div>
-        <h2 class="mb-4 text-xl font-semibold text-default-600">
-          Add a review
-        </h2>
         <form id="createCommentForm">
+          <h2 class="mb-4 text-xl font-semibold text-default-600">
+            Add a review
+          </h2>
           <div class="my-2 flex items-center gap-2">
             <span class="text-xs uppercase">Your Valoration:</span>
             <div id="rater"></div>
@@ -345,11 +346,11 @@
           <div class="my-4">
             <label for="rating-value">Rating</label>
            <select class="form-select" id="rating-value" aria-label="Default select example">
-             <option value="1">One</option>
-             <option value="2">Two</option>
-             <option value="3">Three</option>
-             <option value="4">four</option>
-             <option value="5" selected>Five</option>
+             <option value="1">Garbage</option>
+             <option value="2">Bad</option>
+             <option value="3">Good</option>
+             <option value="4">Great</option>
+             <option value="5" selected>Exceptional</option>
            </select>
           </div>
           <div
@@ -1269,6 +1270,15 @@
     <script src="lib/metisMenu/metismenujs.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/prodectDetails.js"></script>
+    <script src="assets/star-rating.min.js"></script>
+    <script>
+      if(!localStorage.Token){
+        document.getElementById("createCommentForm").remove();
+      }
+      else{
+        let stars = new StarRating("#rating-value");
+      }
+    </script>
   </body>
 
   <!-- Mirrored from infinite.andevfrontend.site/product-details.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2024 09:49:40 GMT -->
