@@ -1,5 +1,11 @@
 let token = localStorage.getItem("Token");
 
+if (!token) {
+  document.getElementById("createCommentForm").remove();
+} else {
+  new StarRating("#rating-value");
+}
+
 async function showProductDetail() {
   const x = localStorage.getItem("productId");
   let url = `https://localhost:44339/Api/Products/GetProductsById/${x}`;
@@ -349,10 +355,10 @@ async function GetReviews() {
                   class="relative h-5 w-full overflow-hidden rounded bg-primary-500/50"
                 >
                   <div
-                    class="absolute left-0 top-0 h-full w-[85%] rounded bg-primary-500 text-center text-white"
+                    class="absolute left-0 top-0 h-full rounded bg-primary-500 text-center text-white"
+                    style="width: ${result.fiveStarReviewsPercentage * 100}%"
                   >
-                    <!--five star pecentage 85% -->
-                    ${result.fiveStarReviewsPercentage}
+                    ${result.fiveStarReviewsPercentage * result.reviewsCount}
                   </div>
                 </div>
               </div>
@@ -362,10 +368,10 @@ async function GetReviews() {
                   class="relative h-5 w-full overflow-hidden rounded bg-primary-500/50"
                 >
                   <div
-                    class="absolute left-0 top-0 h-full w-[65%] rounded bg-primary-500 text-center text-white"
+                    class="absolute left-0 top-0 h-full rounded bg-primary-500 text-center text-white"
+                    style="width: ${result.fourStarReviewsPercentage * 100}%"
                   >
-                    <!-- 4 star pecentage 65% -->
-                    ${result.fourStarReviewsPercentage}
+                    ${result.fourStarReviewsPercentage * result.reviewsCount}
                   </div>
                 </div>
               </div>
@@ -376,9 +382,9 @@ async function GetReviews() {
                 >
                   <div
                     class="absolute left-0 top-0 h-full w-[30%] rounded bg-primary-500 text-center text-white"
+                    style="width: ${result.threeStarReviewsPercentage * 100}%"
                   >
-                    <!--three star pecentage 30% -->
-                    ${result.threeStarReviewsPercentage}
+                    ${result.threeStarReviewsPercentage * result.reviewsCount}
                   </div>
                 </div>
               </div>
@@ -389,9 +395,9 @@ async function GetReviews() {
                 >
                   <div
                     class="absolute left-0 top-0 h-full w-[45%] rounded bg-primary-500 text-center text-white"
+                    style="width: ${result.twoStarReviewsPercentage * 100}%"
                   >
-                    <!-- two star pecentage 45% -->
-                    ${result.twoStarReviewsPercentage}
+                    ${result.twoStarReviewsPercentage * result.reviewsCount}
                   </div>
                 </div>
               </div>
@@ -402,9 +408,10 @@ async function GetReviews() {
                 >
                   <div
                     class="absolute left-0 top-0 h-full w-[25%] rounded bg-primary-500 text-center text-white"
+                    style="width: ${result.oneStarReviewsPercentage * 100}%"
                   >
-                    <!-- one star pecentage 25% -->
-                    ${result.oneStarReviewsPercentage}
+                    
+                    ${result.oneStarReviewsPercentage * result.reviewsCount}
                   </div>
                 </div>
               </div>
