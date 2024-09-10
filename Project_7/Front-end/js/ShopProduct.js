@@ -1075,3 +1075,4 @@ function displayProducts(products) {
 
   productList.innerHTML = productHTML; // Update the DOM with new products
 }
+

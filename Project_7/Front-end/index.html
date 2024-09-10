@@ -357,6 +357,7 @@
                 ></path>
               </svg>
               <span
+              id="cartItemCount"
                 class="pointer-events-none absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary-500 text-xs text-white"
               >
                 0
@@ -877,6 +878,51 @@
         </section>
       </div>
     </section>
+    <div class="modal-cart modal-container modal-overlay">
+      <div
+        class="modal-content modal-right flex h-full w-[400px] min-w-[250px] flex-col bg-[#f5f7fe]"
+      >
+        <div class="w-full">
+          <div class="border-b-2 p-5">
+            <h3 class="text-lg font-bold text-default-600">Shopping Cart</h3>
+          </div>
+          <button
+            class="close-modal absolute right-5 top-5 p-[3px] text-default-600"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="h-full overflow-auto">
+          <div class="flex flex-col items-center p-10" id="cartItemsModalDiv">
+            <div id="cartItemsList">
+              <h1>This is cart</h1>
+            </div>
+            <span id="cartIsEmpty" class="my-5"
+              >Your shopping cart is empty!</span
+            >
+            <a
+              class="block rounded-md bg-primary-500 px-4 py-3 text-center font-bold text-white transition-all duration-300 hover:bg-primary-600"
+              href="shopping-cart.html"
+            >
+              Checkout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer class="bg-primary-500 text-default-200">
       <div
         class="mx-auto px-4 sm:px-8 xl:px-4"
@@ -1342,6 +1388,7 @@
         }
       });
     </script>
+    <script src="js/navbarCart.js"></script>
     <script src="lib/simpleParallax/simpleParallax.min.js"></script>
     <script src="lib/rater-js/rater-js.js"></script>
     <script src="lib/swiper/swiper-bundle.min.js"></script>

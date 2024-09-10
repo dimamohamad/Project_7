@@ -241,28 +241,28 @@ document
   .getElementById("checkoutButton")
   .addEventListener("click", openPaymentWindow);
 
-
-  // Function to open the payment link and close the window when it navigates to a specific page
+// Function to open the payment link and close the window when it navigates to a specific page
 async function openPaymentWindow() {
-  let userResponse = await fetch("https://localhost:44339/api/User/getCurentUserInfo", 
+  let userResponse = await fetch(
+    "https://localhost:44339/api/Users/getCurrentUserInfo",
     {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${localStorage.Token}`,
-        },
-    });
-    let userData = await userResponse.json();
-    if (userData.address === null) {
-      iziToast.error({
-        title: "Error",
-        message: "Please add your address into your profile before checkout",
-        position: "topCenter",
-        timeout: 3000,
-      });
-      return;
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.Token}`,
+      },
     }
-
+  );
+  let userData = await userResponse.json();
+  if (userData.address === null) {
+    iziToast.error({
+      title: "Error",
+      message: "Please add your address into your profile before checkout",
+      position: "topCenter",
+      timeout: 3000,
+    });
+    return;
+  }
 
   let response = await fetch("https://localhost:44339/api/Cart/checkout", {
     method: "POST",
