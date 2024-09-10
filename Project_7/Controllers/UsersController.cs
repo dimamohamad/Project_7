@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Project_7.DTOs;
 using Project_7.Models;
+using Project_7.TokenReaderNS;
+using static Org.BouncyCastle.Math.EC.ECCurve;
 using static Project_7.Shared.EmailSender;
 
 
@@ -14,12 +17,14 @@ namespace Project_7.Controllers
         private readonly MyDbContext _db;
         private readonly TokenGenerator _tokenGenerator;
         private readonly EmailService _emailService;
+        private readonly IConfiguration _config;
 
         public UsersController(MyDbContext db, TokenGenerator tokenGenerator, EmailService emailService, IConfiguration config)
         {
             _db = db;
             _tokenGenerator = tokenGenerator;
             _emailService = emailService;
+            _config = config;
         }
 
         [HttpGet("ShowAllUsers")]
@@ -64,8 +69,8 @@ namespace Project_7.Controllers
         [HttpPost("LoginUsers")]
         public IActionResult Login([FromForm] UserLoginDTO user)
         {
-            var data = _db.Users.FirstOrDefault(x => x.Email == user.Email );
-            if (data == null || !PasswordHash.verifyPassword(user.Password,data.PasswordHash,data.PasswordSalt))
+            var data = _db.Users.FirstOrDefault(x => x.Email == user.Email);
+            if (data == null || !PasswordHash.verifyPassword(user.Password, data.PasswordHash, data.PasswordSalt))
             {
                 return Unauthorized();
             }
@@ -114,8 +119,8 @@ namespace Project_7.Controllers
             _db.SaveChanges();
             return Ok(user);
         }
-        [HttpPut ("ChangePassword/{id:int}")]
-        public IActionResult ChangePassword(int id, [FromBody]ChangePasswordDTO user)
+        [HttpPut("ChangePassword/{id:int}")]
+        public IActionResult ChangePassword(int id, [FromBody] ChangePasswordDTO user)
         {
             byte[] hash;
             byte[] salt;
@@ -174,6 +179,27 @@ namespace Project_7.Controllers
 
             }
             return BadRequest();
+        }
+
+        [Authorize]
+        [HttpGet("getCurrentUserInfo")]
+        public IActionResult GetCurrentUser()
+        {
+            return Ok(GetUser());
+        }
+
+        private User? GetUser()
+        {
+            var tokenReader = new TokenReader(_config);
+            var token = Request.Headers["Authorization"].ToString().Split(' ')[1];
+            var principal = tokenReader.ValidateToken(token);
+            return _db.Users.FirstOrDefault(u => u.UserName == principal.Identity.Name);
+
+        }
+        // Custom helper method for 410 Gone
+        private IActionResult Gone(object value)
+        {
+            return StatusCode(StatusCodes.Status410Gone, value);
         }
 
     }
