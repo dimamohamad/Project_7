@@ -3,6 +3,8 @@ const cartItemsDiv = document.getElementById("cartItemsList");
 const TheToken = localStorage.Token;
 const urlForApi = "https://localhost:44339";
 const apiUrl = urlForApi + "/api/Cart/getCartItems";
+console.log("this is working");
+
 // If local storage has token take the cart from the fetch
 if (TheToken) {
   getCartItemsFromApi();

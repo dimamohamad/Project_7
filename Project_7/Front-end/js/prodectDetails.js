@@ -282,6 +282,7 @@ async function addProductToLocalStorage(productId, productName, productImage) {
 
   // Store the updated array in localStorage
   localStorage.setItem("offlineCart", JSON.stringify(offlineCart));
+  location.reload();
 }
 
 async function addProductToCart(productId, quantity) {
@@ -290,7 +291,6 @@ async function addProductToCart(productId, quantity) {
     productId: productId,
     quantity: quantity,
   };
-  console.log(data);
 
   let response = await fetch(url, {
     method: "POST",
