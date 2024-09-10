@@ -116,7 +116,7 @@ async function showProductDetail() {
              ${result.productName}
           </h2>
           <div class="my-2 flex items-center gap-2">
-            <span class="text-xl font-bold text-primary-500"> ${result.price}</span>
+            <span class="text-xl font-bold text-primary-500"> $${result.price}</span>
   
           </div>
           <div class="mb-5 border-b-2 pb-5">

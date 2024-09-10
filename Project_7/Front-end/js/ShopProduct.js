@@ -38,7 +38,7 @@ async function GetProducts() {
                     </a>
                     <span
                       class="mb-2 inline-block text-base font-bold text-primary-500">
-                      ${product.price}
+                     $${product.price}
                     </span>
                   </div>
                 </div>
