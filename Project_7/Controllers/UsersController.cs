@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Project_7.DTOs;
 using Project_7.Models;
 using Project_7.TokenReaderNS;
@@ -193,7 +194,7 @@ namespace Project_7.Controllers
             var tokenReader = new TokenReader(_config);
             var token = Request.Headers["Authorization"].ToString().Split(' ')[1];
             var principal = tokenReader.ValidateToken(token);
-            return _db.Users.FirstOrDefault(u => u.UserName == principal.Identity.Name);
+            return _db.Users.Include(u=>u.Orders).ThenInclude(u=> u.OrderItems).FirstOrDefault(u => u.UserName == principal.Identity.Name);
 
         }
     }

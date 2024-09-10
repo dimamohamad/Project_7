@@ -83,12 +83,16 @@ function deleteAccount() {
 }
 
 async function getAllOrders() {
-  let response = await fetch("https://localhost:44339/api/Orders/orders", {
-    headers: {
-      Authorization: `Bearer ${localStorage.Token}`,
-    },
-  });
+  let response = await fetch(
+    "https://localhost:44339/api/Users/getCurrentUserInfo",
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.Token}`,
+      },
+    }
+  );
   let data = await response.json();
+  console.log(data);
 }
 
 getAllOrders();
