@@ -22,11 +22,20 @@ loginForm.addEventListener("submit", async (event) => {
     );
     localStorage.removeItem("offlineCart");
   }
-  alert("Login Successful");
+   localStorage.messeges=JSON.stringify([{
+    title:"login successful",
+    message:"you have been logged successfully"
+
+   }])
     window.location.href = "index.html";
   } else {
     console.error("Login failed:", result);
-    alert("Please Enter a Valid Email or Password");
+    iziToast.error({
+      title: "Bad credintial",
+      message: "please make sure that you have entered a valid email and password",
+      position: "topCenter",
+      timeout: 3000,
+    });
   }
 });
 

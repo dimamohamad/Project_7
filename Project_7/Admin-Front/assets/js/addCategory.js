@@ -11,6 +11,12 @@ async function addCategory() {
   });
   var data = response;
 
-  alert("your category have been added successfully");
+ 
+  iziToast.success({
+    title: "Add category",
+    message: "Your category has been added successfully",
+    position: "topCenter",
+    timeout: 3000,
+  });
   window.location.href = "showCategory.html";
 }
