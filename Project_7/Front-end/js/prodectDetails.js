@@ -116,7 +116,7 @@ async function showProductDetail() {
              ${result.productName}
           </h2>
           <div class="my-2 flex items-center gap-2">
-            <span class="text-xl font-bold text-primary-500"> ${result.price}</span>
+            <span class="text-xl font-bold text-primary-500"> $${result.price}</span>
   
           </div>
           <div class="mb-5 border-b-2 pb-5">
@@ -282,6 +282,7 @@ async function addProductToLocalStorage(productId, productName, productImage) {
 
   // Store the updated array in localStorage
   localStorage.setItem("offlineCart", JSON.stringify(offlineCart));
+  location.reload();
 }
 
 async function addProductToCart(productId, quantity) {
@@ -290,7 +291,6 @@ async function addProductToCart(productId, quantity) {
     productId: productId,
     quantity: quantity,
   };
-  console.log(data);
 
   let response = await fetch(url, {
     method: "POST",

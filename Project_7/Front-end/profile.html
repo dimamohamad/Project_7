@@ -155,6 +155,7 @@
                 ></path>
               </svg>
               <span
+                id="cartItemCount"
                 class="pointer-events-none absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary-500 text-xs text-white"
               >
                 0
@@ -261,6 +262,7 @@
               Profile
             </li>
             <li
+              id="myOrdersTab"
               class="tab-item relative flex cursor-pointer items-center gap-2 py-4 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
             >
               <svg
@@ -280,6 +282,7 @@
               </svg>
               My Orders
             </li>
+
             <li
               class="tab-item relative flex cursor-pointer items-center gap-2 py-4 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:text-primary-500 hover:after:w-full"
             >
@@ -629,297 +632,7 @@
                 </li>
               </ul>
             </div>
-            <div class="mix-container flex flex-col gap-5">
-              <a
-                class="mix mix-all mix-processing relative block rounded-lg bg-white p-4 shadow"
-                href="javascript:void(0)"
-                data-target=".modal-order"
-              >
-                <div
-                  class="pointer-events-none flex flex-col gap-5 sm:flex-row"
-                >
-                  <div class="relative h-[80px] w-[80px] min-w-[80px]">
-                    <figure
-                      class="h-full w-full overflow-hidden rounded-lg border bg-white"
-                    >
-                      <img
-                        class="h-full w-full object-cover"
-                        src="img/products/product-2.jpg"
-                        alt="product"
-                      />
-                    </figure>
-                    <figure
-                      class="absolute -right-2 -top-2 h-[30px] w-[30px] min-w-[30px] overflow-hidden rounded-lg border bg-white"
-                    >
-                      <img
-                        class="h-full w-full object-cover"
-                        src="img/products/product-3.jpg"
-                        alt="product"
-                      />
-                    </figure>
-                  </div>
-                  <div class="flex flex-col justify-between">
-                    <h2
-                      class="line-clamp-2 break-all text-lg font-semibold text-default-600"
-                    >
-                      Amazon Echo Dot 5th Gen, Logitech G733 Wireless
-                      Headphones, Moto E6s Special Edition 64 GB 4 GB RAM
-                    </h2>
-                    <div class="my-2 flex items-center gap-1 text-xs">
-                      <svg
-                        class="h-4 w-4"
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 512 512"
-                        height="200px"
-                        width="200px"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          width="416"
-                          height="384"
-                          x="48"
-                          y="80"
-                          fill="none"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          rx="48"
-                        ></rect>
-                        <circle cx="296" cy="232" r="24"></circle>
-                        <circle cx="376" cy="232" r="24"></circle>
-                        <circle cx="296" cy="312" r="24"></circle>
-                        <circle cx="376" cy="312" r="24"></circle>
-                        <circle cx="136" cy="312" r="24"></circle>
-                        <circle cx="216" cy="312" r="24"></circle>
-                        <circle cx="136" cy="392" r="24"></circle>
-                        <circle cx="216" cy="392" r="24"></circle>
-                        <circle cx="296" cy="392" r="24"></circle>
-                        <path
-                          fill="none"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          d="M128 48v32m256-32v32"
-                        ></path>
-                        <path
-                          fill="none"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          d="M464 160H48"
-                        ></path>
-                      </svg>
-                      <span>14/11/2024</span>
-                    </div>
-                    <div class="flex flex-col">
-                      <span class="text-xs font-light">Transaction. ID</span>
-                      <span class="text-sm font-semibold text-default-600">
-                        #1196SD2F
-                      </span>
-                    </div>
-                  </div>
-                  <div class="mt-auto flex flex-col sm:ml-auto">
-                    <span class="whitespace-nowrap text-xs font-light">
-                      Total Payment
-                    </span>
-                    <span class="text-sm font-semibold text-default-600">
-                      $120.00
-                    </span>
-                  </div>
-                  <span
-                    class="absolute right-0 top-0 m-2 rounded-xl bg-yellow-200 px-2 py-px text-yellow-500"
-                  >
-                    Processing
-                  </span>
-                </div>
-              </a>
-              <a
-                class="mix mix-all mix-completed relative block rounded-lg bg-white p-4 shadow"
-                href="javascript:void(0)"
-                data-target=".modal-order"
-              >
-                <div
-                  class="pointer-events-none flex flex-col gap-5 sm:flex-row"
-                >
-                  <div class="relative h-[80px] w-[80px] min-w-[80px]">
-                    <figure
-                      class="h-full w-full overflow-hidden rounded-lg border bg-white"
-                    >
-                      <img
-                        class="h-full w-full object-cover"
-                        src="img/products/product-13.jpg"
-                        alt="product"
-                      />
-                    </figure>
-                  </div>
-                  <div class="flex flex-col justify-between">
-                    <h2
-                      class="line-clamp-2 break-all text-lg font-semibold text-default-600"
-                    >
-                      Oculus Meta Quest 2 128 Gb Virtual Reality Glasses
-                    </h2>
-                    <div class="my-2 flex items-center gap-1 text-xs">
-                      <svg
-                        class="h-4 w-4"
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 512 512"
-                        height="200px"
-                        width="200px"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          width="416"
-                          height="384"
-                          x="48"
-                          y="80"
-                          fill="none"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          rx="48"
-                        ></rect>
-                        <circle cx="296" cy="232" r="24"></circle>
-                        <circle cx="376" cy="232" r="24"></circle>
-                        <circle cx="296" cy="312" r="24"></circle>
-                        <circle cx="376" cy="312" r="24"></circle>
-                        <circle cx="136" cy="312" r="24"></circle>
-                        <circle cx="216" cy="312" r="24"></circle>
-                        <circle cx="136" cy="392" r="24"></circle>
-                        <circle cx="216" cy="392" r="24"></circle>
-                        <circle cx="296" cy="392" r="24"></circle>
-                        <path
-                          fill="none"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          d="M128 48v32m256-32v32"
-                        ></path>
-                        <path
-                          fill="none"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          d="M464 160H48"
-                        ></path>
-                      </svg>
-                      <span>14/11/2024</span>
-                    </div>
-                    <div class="flex flex-col">
-                      <span class="text-xs font-light">Transaction. ID</span>
-                      <span class="text-sm font-semibold text-default-600">
-                        #1196SD2F
-                      </span>
-                    </div>
-                  </div>
-                  <div class="mt-auto flex flex-col sm:ml-auto">
-                    <span class="whitespace-nowrap text-xs font-light">
-                      Total Payment
-                    </span>
-                    <span class="text-sm font-semibold text-default-600">
-                      $120.00
-                    </span>
-                  </div>
-                  <span
-                    class="absolute right-0 top-0 m-2 rounded-xl bg-green-200 px-2 py-px text-green-400"
-                  >
-                    Completed
-                  </span>
-                </div>
-              </a>
-              <a
-                class="mix mix-all mix-cancelled relative block rounded-lg bg-white p-4 shadow"
-                href="javascript:void(0)"
-                data-target=".modal-order"
-              >
-                <div
-                  class="pointer-events-none flex flex-col gap-5 sm:flex-row"
-                >
-                  <div class="relative h-[80px] w-[80px] min-w-[80px]">
-                    <figure
-                      class="h-full w-full overflow-hidden rounded-lg border bg-white"
-                    >
-                      <img
-                        class="h-full w-full object-cover"
-                        src="img/products/product-5.jpg"
-                        alt="product"
-                      />
-                    </figure>
-                  </div>
-                  <div class="flex flex-col justify-between">
-                    <h2
-                      class="line-clamp-2 break-all text-lg font-semibold text-default-600"
-                    >
-                      Microphone HyperX QuadCast Multipattern
-                    </h2>
-                    <div class="my-2 flex items-center gap-1 text-xs">
-                      <svg
-                        class="h-4 w-4"
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 512 512"
-                        height="200px"
-                        width="200px"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          width="416"
-                          height="384"
-                          x="48"
-                          y="80"
-                          fill="none"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          rx="48"
-                        ></rect>
-                        <circle cx="296" cy="232" r="24"></circle>
-                        <circle cx="376" cy="232" r="24"></circle>
-                        <circle cx="296" cy="312" r="24"></circle>
-                        <circle cx="376" cy="312" r="24"></circle>
-                        <circle cx="136" cy="312" r="24"></circle>
-                        <circle cx="216" cy="312" r="24"></circle>
-                        <circle cx="136" cy="392" r="24"></circle>
-                        <circle cx="216" cy="392" r="24"></circle>
-                        <circle cx="296" cy="392" r="24"></circle>
-                        <path
-                          fill="none"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          d="M128 48v32m256-32v32"
-                        ></path>
-                        <path
-                          fill="none"
-                          stroke-linejoin="round"
-                          stroke-width="32"
-                          d="M464 160H48"
-                        ></path>
-                      </svg>
-                      <span>14/11/2024</span>
-                    </div>
-                    <div class="flex flex-col">
-                      <span class="text-xs font-light">Transaction. ID</span>
-                      <span class="text-sm font-semibold text-default-600">
-                        #1196SD2F
-                      </span>
-                    </div>
-                  </div>
-                  <div class="mt-auto flex flex-col sm:ml-auto">
-                    <span class="whitespace-nowrap text-xs font-light">
-                      Total Payment
-                    </span>
-                    <span class="text-sm font-semibold text-default-600">
-                      $120.00
-                    </span>
-                  </div>
-                  <span
-                    class="absolute right-0 top-0 m-2 rounded-xl bg-red-200 px-2 py-px text-red-400"
-                  >
-                    Cancelled
-                  </span>
-                </div>
-              </a>
-            </div>
+            <div class="mix-container flex flex-col gap-5" id="OrderData"></div>
             <button
               class="mx-auto mt-8 block rounded-lg bg-primary-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-primary-600"
               type="submit"
@@ -931,88 +644,15 @@
             <h2 class="mb-5 text-xl font-bold text-default-600">
               Residential Information
             </h2>
-            <form>
+            <form id="EditAddressForm">
               <div class="grid grid-cols-8 gap-x-5 gap-y-7">
-                <div class="col-span-8 sm:col-span-4">
-                  <div
-                    class="flex items-center overflow-hidden rounded-lg bg-white shadow"
-                  >
-                    <figure
-                      class="ml-2 h-5 w-5 min-w-[20px] overflow-hidden rounded-full"
-                    >
-                      <img
-                        class="h-full w-full object-cover"
-                        src="img/profile/Flag_of_Argentina.png"
-                        alt=""
-                      />
-                    </figure>
-                    <div class="relative">
-                      <input
-                        type="text"
-                        id="input-countryresidence"
-                        class="peer block w-full appearance-none border-0 px-2.5 pb-2.5 pt-5 text-sm text-default-500 focus:outline-none focus:ring-0"
-                        placeholder=" "
-                        value="Argentina"
-                        required
-                      />
-                      <label
-                        for="input-countryresidence"
-                        class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
-                      >
-                        Country of Residence
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="relative col-span-8 sm:col-span-4">
-                  <input
-                    type="text"
-                    id="input-city"
-                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
-                    placeholder=" "
-                    value="Buenos Aires"
-                    required
-                  />
-                  <label
-                    for="input-city"
-                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
-                  >
-                    City
-                  </label>
-                </div>
-                <div class="col-span-8 sm:col-span-4">
-                  <select
-                    class="h-full w-full rounded-lg border-transparent shadow focus:border-transparent focus:ring-0"
-                    id="select-state"
-                  >
-                    <option value="-">State</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                  </select>
-                </div>
-                <div class="relative col-span-8 sm:col-span-4">
-                  <input
-                    type="number"
-                    id="input-zip"
-                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
-                    placeholder=" "
-                    value="7400"
-                    required
-                  />
-                  <label
-                    for="input-zip"
-                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
-                  >
-                    Zip
-                  </label>
-                </div>
                 <div class="relative col-span-8 sm:col-span-4">
                   <input
                     type="text"
                     id="input-address"
                     class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
                     placeholder=" "
-                    value="1234"
+                    value=""
                     required
                   />
                   <label
@@ -1022,29 +662,7 @@
                     Address
                   </label>
                 </div>
-                <div class="relative col-span-8 sm:col-span-4">
-                  <input
-                    type="text"
-                    id="input-apt"
-                    class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
-                    placeholder=" "
-                    required
-                  />
-                  <label
-                    for="input-apt"
-                    class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
-                  >
-                    Apt, Suite, etc (optional)
-                  </label>
-                </div>
-              </div>
-              <div class="mt-7 flex justify-end gap-6">
-                <button
-                  class="font-bold text-primary-500 transition-all duration-300 hover:text-primary-600"
-                  type="button"
-                >
-                  Cancel
-                </button>
+
                 <button
                   class="rounded-lg bg-primary-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-primary-600"
                   type="submit"
@@ -1199,7 +817,7 @@
             <h2 class="mb-5 text-xl font-bold text-default-600">Security</h2>
             <a
               class="flex w-full items-center gap-4 rounded-lg bg-white p-6 shadow-[0_2px_10px_rgba(131,125,125,.12)]"
-              href="current-password.html"
+              href="new-password.html"
             >
               <div class="flex items-center gap-4">
                 <svg
@@ -1969,28 +1587,16 @@
           </button>
         </div>
         <div class="h-full overflow-auto">
-          <div class="flex flex-col items-center p-10">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="h-20 w-20"
-              viewBox="0 0 16 16"
+          <div class="flex flex-col items-center p-10" id="cartItemsModalDiv">
+            <div id="cartItemsList"></div>
+            <span id="cartIsEmpty" class="my-5"
+              >Your shopping cart is empty!</span
             >
-              <path
-                d="M7.354 5.646a.5.5 0 1 0-.708.708L7.793 7.5 6.646 8.646a.5.5 0 1 0 .708.708L8.5 8.207l1.146 1.147a.5.5 0 0 0 .708-.708L9.207 7.5l1.147-1.146a.5.5 0 0 0-.708-.708L8.5 6.793 7.354 5.646z"
-              />
-              <path
-                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
-              />
-            </svg>
-            <span class="my-5">Your shopping cart is empty!</span>
             <a
               class="block rounded-md bg-primary-500 px-4 py-3 text-center font-bold text-white transition-all duration-300 hover:bg-primary-600"
-              href="#"
+              href="shopping-cart.html"
             >
-              Continue Shopping
+              Checkout
             </a>
           </div>
         </div>
@@ -2480,6 +2086,7 @@
     <script src="lib/metisMenu/metismenujs.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/Profile.js"></script>
+    <script src="js/navbarCart.js"></script>
   </body>
 
   <!-- Mirrored from infinite.andevfrontend.site/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2024 09:49:41 GMT -->

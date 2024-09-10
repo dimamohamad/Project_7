@@ -1,10 +1,12 @@
 let cartItemsList = document.getElementById("cartItemsList");
 const cartItemsDiv = document.getElementById("cartItemsList");
-const token = localStorage.Token;
-const url = "https://localhost:44339";
-const apiUrl = url + "/api/Cart/getCartItems";
+const TheToken = localStorage.Token;
+const urlForApi = "https://localhost:44339";
+const apiUrl = urlForApi + "/api/Cart/getCartItems";
+console.log("this is working");
+
 // If local storage has token take the cart from the fetch
-if (token) {
+if (TheToken) {
   getCartItemsFromApi();
 }
 // else get the cart items from the local storage
@@ -13,7 +15,7 @@ else {
 }
 
 // Get the cart items from local storage
-function getCartItemsFromLocalStorage() {
+async function getCartItemsFromLocalStorage() {
   let cartItems = localStorage.getItem("offlineCart");
   if (!cartItems) {
     cartItems = "[]";
@@ -32,11 +34,10 @@ function getCartItemsFromLocalStorage() {
 
 // Get the cart items from the API
 async function getCartItemsFromApi() {
-
   const response = await fetch(apiUrl, {
     method: "GET",
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${TheToken}`,
     },
   });
   const data = await response.json();
@@ -72,7 +73,7 @@ function createCartItemCard(productName, productImage1) {
                   >
                     <img
                       class="h-full w-full object-contain"
-                      src="${url + "/" + productImage1}"
+                      src="${urlForApi + "/" + productImage1}"
                       alt="img"
                     />
                   </figure>
