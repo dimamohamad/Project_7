@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -129,7 +128,7 @@ builder.Services.AddAuthorization(options =>
 });
 
 
-builder.Services.AddTransient<EmailService>(); 
+builder.Services.AddTransient<EmailService>();
 builder.Services.AddControllers();
 
 // Add configuration for SMTP settings

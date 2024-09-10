@@ -15,7 +15,7 @@ namespace Project_7.Controllers
         private readonly TokenGenerator _tokenGenerator;
         private readonly EmailService _emailService;
 
-        public UsersController(MyDbContext db, TokenGenerator tokenGenerator, EmailService emailService)
+        public UsersController(MyDbContext db, TokenGenerator tokenGenerator, EmailService emailService, IConfiguration config)
         {
             _db = db;
             _tokenGenerator = tokenGenerator;
