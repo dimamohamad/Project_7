@@ -24,7 +24,6 @@ async function changePassword(event) {
   if (response.ok) {
     // Handle success
     alert("Password changed successfully.");
-    console.log("Password changed successfully.");
   } else {
     // Handle error
     console.error("Error changing password:", response.statusText);

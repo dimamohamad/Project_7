@@ -60,7 +60,6 @@ async function GetLatestProducts() {
   var swiperWrapper = document.getElementById("LatestProducts");
 
   LatestProducts.forEach((product) => {
-    console.log(product);
 
     swiperWrapper.innerHTML += `
       <div class="swiper-slide h-auto">

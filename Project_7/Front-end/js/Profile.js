@@ -89,7 +89,6 @@ async function getAllOrders() {
     },
   });
   let data = await response.json();
-  console.log(data);
 }
 
 getAllOrders();

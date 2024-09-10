@@ -32,7 +32,6 @@ function getCartItemsFromLocalStorage() {
 
 // Get the cart items from the API
 async function getCartItemsFromApi() {
-  console.log("getCartItems");
 
   const response = await fetch(apiUrl, {
     method: "GET",

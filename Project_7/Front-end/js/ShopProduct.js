@@ -13,7 +13,6 @@ async function GetProducts() {
   var container = document.getElementById("showAllProductContainer");
 
   result.forEach((product) => {
-    console.log(product);
 
     container.innerHTML += `    
                 <div class="col-span-6 sm:col-span-3 lg:col-span-2">
@@ -1004,7 +1003,6 @@ document
     }
 
     const products = await response.json();
-    // console.log(products);
     displayProducts(products);
   });
 

@@ -23,7 +23,6 @@ async function Register() {
   const result = await response.json();
 
   if (response.ok) {
-    console.log("Register successful:", result);
     alert("Registration Successful");
     window.location.href = "sign-in.html";
   } else {

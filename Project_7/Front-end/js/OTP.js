@@ -41,7 +41,6 @@ async function verifyOtp() {
     const userId = user.userId;
     const otp = user.passwword;
 
-    console.log(otp);
     document.getElementById("passwordForm").style.display = "block";
   }
 }

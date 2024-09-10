@@ -10,7 +10,6 @@ async function removeCartItem(cartItemId) {
       Authorization: `Bearer ${token}`,
     },
   });
-  console.log(response);
 
   if (response.ok) {
     iziToast.success({
@@ -105,14 +104,12 @@ async function getCartItems() {
   const data = await response.json();
   let cartItems = data.cartItems;
   let cart = data.cart;
-  console.log(cart);
 
   let promoCodeInput = document.getElementById("code");
   if (cart.voucher) {
     promoCodeInput.value = cart.voucher.voucherCode;
   }
 
-  console.log("Data fetched successfully:", data);
   let cartItemsDiv = document.getElementById("cartItemsList");
   let totalPrice = cartItems
     .reduce((acc, item) => acc + item.price, 0)
@@ -255,7 +252,6 @@ async function openPaymentWindow() {
   });
 
   let data = await response.json();
-  console.log(data);
 
   // Open the payment window
   let paymentWindow = window.open(
@@ -268,7 +264,6 @@ async function openPaymentWindow() {
   let checkInterval = setInterval(function () {
     try {
       // Check if the window is still open and the URL contains the target string
-      console.log("tec");
       if (
         paymentWindow &&
         paymentWindow.location.href.includes("api/Cart/success")
