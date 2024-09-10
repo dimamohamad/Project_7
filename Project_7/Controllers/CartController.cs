@@ -193,7 +193,9 @@ namespace Project_7.Controllers
                 {
                     OrderId = order.OrderId,
                     Quantity = cartItem.Quantity,
-                    TotalPrice = cartItem.Price
+                    TotalPrice = cartItem.Price,
+                    ProductId = cartItem.ProductId
+
                 };
                 db.OrderItems.Add(orderItem);
                 db.CartItems.Remove(cartItem);
