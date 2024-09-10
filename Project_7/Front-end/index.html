@@ -150,7 +150,11 @@
         animation: slideInFromLef 1s ease-out forwards;
         animation-delay: 0s; /* تأخير الحركة */
       }
-
+      .py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    justify-content: space-around;
+}
       @media (max-width: 425px) {
         .nav-main a {
           font-size: 0.5rem; /* Adjust to your preferred size */
@@ -161,6 +165,7 @@
           font-size: 1px; /* Adjust to your preferred size */
           box-sizing: content-box; /* Ensure box-sizing is content-box or reset it */
         }
+
       }
     </style>
   </head>
@@ -520,10 +525,10 @@
     <div
       class="relative w-full overflow-hidden after:absolute after:inset-0 after:z-[2] after:h-full after:w-full after:bg-black/50"
     >
-      <div
-        class="container absolute inset-0 z-[4] mx-auto my-10 px-4 sm:px-8 xl:px-4"
-      >
-        <div class="flex h-full items-center">
+      <div style="text-align: center; "
+        class="  container absolute inset-0 z-[4] mx-auto my-10 px-4 sm:px-8 xl:px-4"
+      ><span style="text-align: center; font-size: 30px; color:white">Categories</span>
+        <div class="flex h-full items-center"> 
           <div
             class="swiper swiper-categories group relative flex w-full items-center"
           >
