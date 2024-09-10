@@ -28,7 +28,7 @@ function fetchUserData(id) {
       document.getElementById("email").value = data.email || "";
       document.getElementById("phonenum").value = data.phoneNumber || "";
       document.getElementById("profileImage").src =
-        `https://localhost:44339/UsersImage/${data.userImage}` ||
+        `https://localhost:44339/${data.userImage}` ||
         "https://via.placeholder.com/150";
     })
     .catch((error) => console.error("Error fetching user data:", error));
@@ -124,22 +124,14 @@ async function getAllOrders() {
                 >
                   <img
                     class="h-full w-full object-cover"
-                    src="${item.product.productImage1}"  <!-- product image -->
+                    src="https://localhost:44339/${item.product.productImage1}"  <!-- product image -->
                     alt="${
                       item.product.productName
                     }"  <!-- product name as alt -->
                   />
                 </figure>
                 <!-- Assuming you have a second product image in the DB -->
-                <figure
-                  class="absolute -right-2 -top-2 h-[30px] w-[30px] min-w-[30px] overflow-hidden rounded-lg border bg-white"
-                >
-                  <img
-                    class="h-full w-full object-cover"
-                    src="img/products/product-3.jpg"
-                    alt="Secondary product image"
-                  />
-                </figure>
+               
               </div>
               <div class="flex flex-col justify-between">
                 <h2
@@ -214,8 +206,7 @@ async function getAllOrders() {
               </div>
               <span
                 class="absolute right-0 top-0 m-2 rounded-xl bg-yellow-200 px-2 py-px text-yellow-500"
-              >
-                ${order.shippingStatus}  <!-- shipping status -->
+              >Shipping: ${order.shippingStatus}  <!-- shipping status -->
               </span>
             </div>
           </a>

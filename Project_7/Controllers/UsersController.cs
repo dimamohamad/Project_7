@@ -6,6 +6,7 @@ using Project_7.DTOs;
 using Project_7.DTOs.UserDtos;
 using Project_7.Models;
 using Project_7.TokenReaderNS;
+using static Project_7.Shared.ImageSaver;
 using static Org.BouncyCastle.Math.EC.ECCurve;
 using static Project_7.Shared.EmailSender;
 
@@ -90,16 +91,7 @@ namespace Project_7.Controllers
         [HttpPut("UpdateUser/{id:int}")]
         public IActionResult UpdateUser(int id, [FromForm] UpdateUserDTO user)
         {
-            var uploadedFolder = Path.Combine(Directory.GetCurrentDirectory(), "UsersImage");
-            if (!Directory.Exists(uploadedFolder))
-            {
-                Directory.CreateDirectory(uploadedFolder);
-            }
-            var fileImage = Path.Combine(uploadedFolder, user.UserImage.FileName);
-            using (var stream = new FileStream(fileImage, FileMode.Create))
-            {
-                user.UserImage.CopyToAsync(stream);
-            }
+           
             var data = _db.Users.Find(id);
 
             data.FirstName = user.FirstName;
@@ -107,7 +99,7 @@ namespace Project_7.Controllers
             data.UserName = user.UserName;
             data.Email = user.Email;
             data.PhoneNumber = user.PhoneNumber;
-            data.UserImage = user.UserImage.FileName;
+            data.UserImage = SaveImage(user.UserImage);
 
             _db.Users.Update(data);
             _db.SaveChanges();
