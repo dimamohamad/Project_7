@@ -198,7 +198,7 @@ namespace Project_7.Controllers
             user.Address = newAddress.Address;
             _db.Users.Update(user);
             _db.SaveChanges();
-            return Ok();
+            return Ok(newAddress);
         }
 
         private User? GetUser()
@@ -206,7 +206,13 @@ namespace Project_7.Controllers
             var tokenReader = new TokenReader(_config);
             var token = Request.Headers["Authorization"].ToString().Split(' ')[1];
             var principal = tokenReader.ValidateToken(token);
-            return _db.Users.Include(u => u.Orders).ThenInclude(u => u.OrderItems).FirstOrDefault(u => u.UserName == principal.Identity.Name);
+            return _db.Users.
+                Include(u => u.Orders).
+                ThenInclude(u=>u.Payments).
+                Include(u=>u.Orders).
+                ThenInclude(u => u.OrderItems).
+                ThenInclude(u=>u.Product).
+                FirstOrDefault(u => u.UserName == principal.Identity.Name);
 
         }
     }
