@@ -7,7 +7,7 @@ async function sendMessage() {
     body: formData,
   });
   var data = response;
-
+  console.log(response);
   if (response.ok) {
     alert("Message sent successfully");
     // form.reset();
