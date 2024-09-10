@@ -12,4 +12,5 @@ async function addCategory() {
   var data = response;
 
   alert("your category have been added successfully");
+  window.location.href = "showCategory.html";
 }

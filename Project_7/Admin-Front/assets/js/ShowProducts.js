@@ -74,5 +74,6 @@ async function DeleteCategory(productid) {
     method: "DELETE",
   });
   alert("Category has been deleted successfully");
+  window.location.reload();
 }
 GetProducts();
