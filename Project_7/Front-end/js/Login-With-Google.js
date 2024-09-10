@@ -82,8 +82,7 @@ if (googleLogin) {
       }
       const data = await response.json();
       localStorage.setItem("Token", data.token);
-      localStorage.setItem("User", data.user.userId);
-
+      localStorage.setItem("userId", data.user.userId);
 
       // Redirect to a new page
       window.location.href = "index.html";

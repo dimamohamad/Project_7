@@ -51,9 +51,15 @@ namespace Project_7.Controllers
                 PasswordHash = hash,
                 PasswordSalt = salt,
             };
+            var token = _tokenGenerator.GenerateToken(data.UserName);
+            var response = new
+            {
+                Token = token,
+                User = data
+            };
             _db.Users.Add(data);
             _db.SaveChanges();
-            return Ok(data);
+            return Ok(response);
         }
         [HttpPost("LoginUsers")]
         public IActionResult Login([FromForm] UserLoginDTO user)
@@ -149,7 +155,7 @@ namespace Project_7.Controllers
             _db.SaveChanges();
 
             // Create email body including the OTP
-            var emailBody = $"<p>Hello,</p><p>Your OTP code is: <strong>{otp}</strong></p><p>Thank you.</p>";
+            var emailBody = $"Hello Dear, Your SmartTech OTP code for resetting your password is: {otp} Thank you.";
             var Subject = "send OTP";
             // Send email with OTP
             //await _emailService.SendEmailAsync(request.ToEmail, Subject, emailBody);

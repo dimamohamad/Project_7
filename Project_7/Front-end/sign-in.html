@@ -110,47 +110,81 @@
               </svg>
             </div>
 
-            <a
-              class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
-              href="sign-in.html"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-6 w-6"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              <span class="font-semibold">Sign In</span>
-            </a>
-            <a
-              class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
-              href="sign-up.html"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-6 w-6"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              <span class="font-semibold">Sign UP</span>
-            </a>
+            <span style="display: flex; flex-direction: row" id="batool">
+              <div class="relative inline-block text-left">
+                <!-- Sign In Button -->
+                <a
+                  class="items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
+                  href="#"
+                  id="signIn"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-6 w-6"
+                  >
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <span class="font-semibold">Sign In</span>
+                </a>
 
+                <!-- Dropdown Menu -->
+                <div
+                  class="absolute right-0 z-10 mt-2 hidden w-32 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  id="dropdownMenu"
+                >
+                  <div
+                    class="py-1"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="signIn"
+                  >
+                    <a
+                      href="sign-in.html"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      role="menuitem"
+                    >
+                      User
+                    </a>
+                    <a
+                      href="../Admin-Front/apps/e-commerce/admin/sign-in.html"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      role="menuitem"
+                    >
+                      Admin
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <a
+                class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
+                href="sign-up.html"
+                id="signUp"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-6 w-6"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span class="font-semibold">Sign Up</span>
+              </a>
+            </span>
             <div
               class="relative cursor-pointer select-none text-default-600 hover:text-primary-500"
               data-target=".modal-cart"
@@ -1187,6 +1221,26 @@
         window.location.href = "shop-grid.html";
       }
       GetCategories();
+    </script>
+    <script>
+      // Toggle dropdown menu visibility
+      const signInButton = document.getElementById("signIn");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      signInButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      // Hide the dropdown menu when clicking outside of it
+      document.addEventListener("click", function (event) {
+        if (
+          !signInButton.contains(event.target) &&
+          !dropdownMenu.contains(event.target)
+        ) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
     </script>
     <script src="lib/metisMenu/metismenujs.min.js"></script>
     <script src="js/main.js"></script>

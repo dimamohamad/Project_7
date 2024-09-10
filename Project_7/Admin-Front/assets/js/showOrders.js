@@ -6,7 +6,7 @@ async function GetAllCategories() {
   var result = await response.json();
 
   var container = document.getElementById("showCategoryTable");
- 
+
   `
   {
     "orderId": 16,
@@ -148,17 +148,12 @@ async function GetAllCategories() {
                       <td class="align-middle white-space-nowrap py-0"><a class="d-block border border-translucent rounded-2" href="../landing/product-details.html"><img src="https://localhost:44339/${order.user.userImage}" alt="" width="53" /></a></td>
                       <td class="product align-middle ps-4"><a class="fw-semibold line-clamp-3 mb-0" href="../landing/product-details.html">${order.user.userName}</a></td>
                      
-                      <td class="tags align-middle review pb-2 ps-3" style="min-width:225px;">${order.totalAmount}</td>
+                      <td class="tags align-middle review pb-2 ps-3" style="min-width:225px;">$${order.totalAmount}</td>
                      
                      
-                      <td class="time align-middle white-space-nowrap text-body-tertiary text-opacity-85 ps-4">Nov 12, 10:45 PM${order.createdAt}</td>
-                      <td class="align-middle white-space-nowrap text-end pe-0 ps-4 btn-reveal-trigger">
-                        <div class="btn-reveal-trigger position-static"><button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10"></span></button>
-                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="UpdateCategory.html" onclick="UpdateCategory(${order.payments})">Update Category</a>
-                            <div class="dropdown-divider"></div><a onclick="DeleteCategory(${order.shippingStatus})" class="dropdown-item text-danger" href="#!">Remove</a>
-                          </div>
-                        </div>
-                      </td>
+                      <td class="time align-middle white-space-nowrap text-body-tertiary text-opacity-85 ps-4">${order.createdAt}</td>
+                      <td class="time align-middle white-space-nowrap text-body-tertiary text-opacity-85 ps-4">${order.shippingStatus}</td>
+
                     </tr>
         `;
   });
