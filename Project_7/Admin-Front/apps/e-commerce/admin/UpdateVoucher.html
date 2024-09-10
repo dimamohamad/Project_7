@@ -5,7 +5,7 @@
   data-navigation-type="default"
   data-navbar-horizontal-shape="default"
 >
-  <!-- Mirrored from prium.github.io/phoenix/v1.18.0/apps/e-commerce/admin/products.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Sep 2024 18:07:20 GMT -->
+  <!-- Mirrored from prium.github.io/phoenix/v1.18.0/apps/e-commerce/admin/add-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Sep 2024 18:07:14 GMT -->
   <!-- Added by HTTrack --><meta
     http-equiv="content-type"
     content="text/html;charset=utf-8"
@@ -57,6 +57,12 @@
     <!-- ===============================================-->
     <!--    Stylesheets-->
     <!-- ===============================================-->
+    <link href="../../../vendors/dropzone/dropzone.css" rel="stylesheet" />
+    <link href="../../../vendors/choices/choices.min.css" rel="stylesheet" />
+    <link
+      href="../../../vendors/flatpickr/flatpickr.min.css"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
@@ -225,7 +231,7 @@
                         <a class="nav-link active" href="chatadmin.html">
                           <div class="d-flex align-items-center">
                             <span class="nav-link-text">Chat</span>
-                          </div> </a
+                          </div></a
                         ><!-- more inner pages-->
                       </li>
                       <li class="nav-item">
@@ -616,661 +622,7 @@
                 ></label>
               </div>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link"
-                href="#"
-                style="min-width: 2.25rem"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                data-bs-auto-close="outside"
-                ><span class="d-block" style="height: 20px; width: 20px"
-                  ><span
-                    data-feather="bell"
-                    style="height: 20px; width: 20px"
-                  ></span></span
-              ></a>
-              <div
-                class="dropdown-menu dropdown-menu-end notification-dropdown-menu py-0 shadow border navbar-dropdown-caret"
-                id="navbarDropdownNotfication"
-                aria-labelledby="navbarDropdownNotfication"
-              >
-                <div class="card position-relative border-0">
-                  <div class="card-header p-2">
-                    <div class="d-flex justify-content-between">
-                      <h5 class="text-body-emphasis mb-0">Notifications</h5>
-                      <button
-                        class="btn btn-link p-0 fs-9 fw-normal"
-                        type="button"
-                      >
-                        Mark all as read
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-body p-0">
-                    <div class="scrollbar-overlay" style="height: 27rem">
-                      <div
-                        class="px-2 px-sm-3 py-3 notification-card position-relative read border-bottom"
-                      >
-                        <div
-                          class="d-flex align-items-center justify-content-between position-relative"
-                        >
-                          <div class="d-flex">
-                            <div class="avatar avatar-m status-online me-3">
-                              <img
-                                class="rounded-circle"
-                                src="../../../assets/img/team/40x40/30.webp"
-                                alt=""
-                              />
-                            </div>
-                            <div class="flex-1 me-sm-3">
-                              <h4 class="fs-9 text-body-emphasis">
-                                Jessie Samson
-                              </h4>
-                              <p
-                                class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"
-                              >
-                                <span class="me-1 fs-10">💬</span>Mentioned you
-                                in a comment.<span
-                                  class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"
-                                  >10m</span
-                                >
-                              </p>
-                              <p class="text-body-secondary fs-9 mb-0">
-                                <span class="me-1 fas fa-clock"></span
-                                ><span class="fw-bold">10:41 AM </span>August
-                                7,2021
-                              </p>
-                            </div>
-                          </div>
-                          <div class="dropdown notification-dropdown">
-                            <button
-                              class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none"
-                              type="button"
-                              data-bs-toggle="dropdown"
-                              data-boundary="window"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                              data-bs-reference="parent"
-                            >
-                              <span
-                                class="fas fa-ellipsis-h fs-10 text-body"
-                              ></span>
-                            </button>
-                            <div class="dropdown-menu py-2">
-                              <a class="dropdown-item" href="#!"
-                                >Mark as unread</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom"
-                      >
-                        <div
-                          class="d-flex align-items-center justify-content-between position-relative"
-                        >
-                          <div class="d-flex">
-                            <div class="avatar avatar-m status-online me-3">
-                              <div class="avatar-name rounded-circle">
-                                <span>J</span>
-                              </div>
-                            </div>
-                            <div class="flex-1 me-sm-3">
-                              <h4 class="fs-9 text-body-emphasis">
-                                Jane Foster
-                              </h4>
-                              <p
-                                class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"
-                              >
-                                <span class="me-1 fs-10">📅</span>Created an
-                                event.<span
-                                  class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"
-                                  >20m</span
-                                >
-                              </p>
-                              <p class="text-body-secondary fs-9 mb-0">
-                                <span class="me-1 fas fa-clock"></span
-                                ><span class="fw-bold">10:20 AM </span>August
-                                7,2021
-                              </p>
-                            </div>
-                          </div>
-                          <div class="dropdown notification-dropdown">
-                            <button
-                              class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none"
-                              type="button"
-                              data-bs-toggle="dropdown"
-                              data-boundary="window"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                              data-bs-reference="parent"
-                            >
-                              <span
-                                class="fas fa-ellipsis-h fs-10 text-body"
-                              ></span>
-                            </button>
-                            <div class="dropdown-menu py-2">
-                              <a class="dropdown-item" href="#!"
-                                >Mark as unread</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom"
-                      >
-                        <div
-                          class="d-flex align-items-center justify-content-between position-relative"
-                        >
-                          <div class="d-flex">
-                            <div class="avatar avatar-m status-online me-3">
-                              <img
-                                class="rounded-circle avatar-placeholder"
-                                src="../../../assets/img/team/40x40/avatar.webp"
-                                alt=""
-                              />
-                            </div>
-                            <div class="flex-1 me-sm-3">
-                              <h4 class="fs-9 text-body-emphasis">
-                                Jessie Samson
-                              </h4>
-                              <p
-                                class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"
-                              >
-                                <span class="me-1 fs-10">👍</span>Liked your
-                                comment.<span
-                                  class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"
-                                  >1h</span
-                                >
-                              </p>
-                              <p class="text-body-secondary fs-9 mb-0">
-                                <span class="me-1 fas fa-clock"></span
-                                ><span class="fw-bold">9:30 AM </span>August
-                                7,2021
-                              </p>
-                            </div>
-                          </div>
-                          <div class="dropdown notification-dropdown">
-                            <button
-                              class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none"
-                              type="button"
-                              data-bs-toggle="dropdown"
-                              data-boundary="window"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                              data-bs-reference="parent"
-                            >
-                              <span
-                                class="fas fa-ellipsis-h fs-10 text-body"
-                              ></span>
-                            </button>
-                            <div class="dropdown-menu py-2">
-                              <a class="dropdown-item" href="#!"
-                                >Mark as unread</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom"
-                      >
-                        <div
-                          class="d-flex align-items-center justify-content-between position-relative"
-                        >
-                          <div class="d-flex">
-                            <div class="avatar avatar-m status-online me-3">
-                              <img
-                                class="rounded-circle"
-                                src="../../../assets/img/team/40x40/57.webp"
-                                alt=""
-                              />
-                            </div>
-                            <div class="flex-1 me-sm-3">
-                              <h4 class="fs-9 text-body-emphasis">
-                                Kiera Anderson
-                              </h4>
-                              <p
-                                class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"
-                              >
-                                <span class="me-1 fs-10">💬</span>Mentioned you
-                                in a comment.<span
-                                  class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"
-                                ></span>
-                              </p>
-                              <p class="text-body-secondary fs-9 mb-0">
-                                <span class="me-1 fas fa-clock"></span
-                                ><span class="fw-bold">9:11 AM </span>August
-                                7,2021
-                              </p>
-                            </div>
-                          </div>
-                          <div class="dropdown notification-dropdown">
-                            <button
-                              class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none"
-                              type="button"
-                              data-bs-toggle="dropdown"
-                              data-boundary="window"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                              data-bs-reference="parent"
-                            >
-                              <span
-                                class="fas fa-ellipsis-h fs-10 text-body"
-                              ></span>
-                            </button>
-                            <div class="dropdown-menu py-2">
-                              <a class="dropdown-item" href="#!"
-                                >Mark as unread</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom"
-                      >
-                        <div
-                          class="d-flex align-items-center justify-content-between position-relative"
-                        >
-                          <div class="d-flex">
-                            <div class="avatar avatar-m status-online me-3">
-                              <img
-                                class="rounded-circle"
-                                src="../../../assets/img/team/40x40/59.webp"
-                                alt=""
-                              />
-                            </div>
-                            <div class="flex-1 me-sm-3">
-                              <h4 class="fs-9 text-body-emphasis">
-                                Herman Carter
-                              </h4>
-                              <p
-                                class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"
-                              >
-                                <span class="me-1 fs-10">👤</span>Tagged you in
-                                a comment.<span
-                                  class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"
-                                ></span>
-                              </p>
-                              <p class="text-body-secondary fs-9 mb-0">
-                                <span class="me-1 fas fa-clock"></span
-                                ><span class="fw-bold">10:58 PM </span>August
-                                7,2021
-                              </p>
-                            </div>
-                          </div>
-                          <div class="dropdown notification-dropdown">
-                            <button
-                              class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none"
-                              type="button"
-                              data-bs-toggle="dropdown"
-                              data-boundary="window"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                              data-bs-reference="parent"
-                            >
-                              <span
-                                class="fas fa-ellipsis-h fs-10 text-body"
-                              ></span>
-                            </button>
-                            <div class="dropdown-menu py-2">
-                              <a class="dropdown-item" href="#!"
-                                >Mark as unread</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="px-2 px-sm-3 py-3 notification-card position-relative read"
-                      >
-                        <div
-                          class="d-flex align-items-center justify-content-between position-relative"
-                        >
-                          <div class="d-flex">
-                            <div class="avatar avatar-m status-online me-3">
-                              <img
-                                class="rounded-circle"
-                                src="../../../assets/img/team/40x40/58.webp"
-                                alt=""
-                              />
-                            </div>
-                            <div class="flex-1 me-sm-3">
-                              <h4 class="fs-9 text-body-emphasis">
-                                Benjamin Button
-                              </h4>
-                              <p
-                                class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"
-                              >
-                                <span class="me-1 fs-10">👍</span>Liked your
-                                comment.<span
-                                  class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"
-                                ></span>
-                              </p>
-                              <p class="text-body-secondary fs-9 mb-0">
-                                <span class="me-1 fas fa-clock"></span
-                                ><span class="fw-bold">10:18 AM </span>August
-                                7,2021
-                              </p>
-                            </div>
-                          </div>
-                          <div class="dropdown notification-dropdown">
-                            <button
-                              class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none"
-                              type="button"
-                              data-bs-toggle="dropdown"
-                              data-boundary="window"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                              data-bs-reference="parent"
-                            >
-                              <span
-                                class="fas fa-ellipsis-h fs-10 text-body"
-                              ></span>
-                            </button>
-                            <div class="dropdown-menu py-2">
-                              <a class="dropdown-item" href="#!"
-                                >Mark as unread</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="card-footer p-0 border-top border-translucent border-0"
-                  >
-                    <div
-                      class="my-2 text-center fw-bold fs-10 text-body-tertiary text-opactity-85"
-                    >
-                      <a
-                        class="fw-bolder"
-                        href="../../../pages/notifications.html"
-                        >Notification history</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link"
-                id="navbarDropdownNindeDots"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                data-bs-auto-close="outside"
-                aria-expanded="false"
-                ><svg
-                  width="16"
-                  height="16"
-                  viewbox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
-                  <circle cx="2" cy="8" r="2" fill="currentColor"></circle>
-                  <circle cx="2" cy="14" r="2" fill="currentColor"></circle>
-                  <circle cx="8" cy="8" r="2" fill="currentColor"></circle>
-                  <circle cx="8" cy="14" r="2" fill="currentColor"></circle>
-                  <circle cx="14" cy="8" r="2" fill="currentColor"></circle>
-                  <circle cx="14" cy="14" r="2" fill="currentColor"></circle>
-                  <circle cx="8" cy="2" r="2" fill="currentColor"></circle>
-                  <circle
-                    cx="14"
-                    cy="2"
-                    r="2"
-                    fill="currentColor"
-                  ></circle></svg
-              ></a>
-              <div
-                class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-nine-dots shadow border"
-                aria-labelledby="navbarDropdownNindeDots"
-              >
-                <div class="card bg-body-emphasis position-relative border-0">
-                  <div
-                    class="card-body pt-3 px-3 pb-0 overflow-auto scrollbar"
-                    style="height: 20rem"
-                  >
-                    <div class="row text-center align-items-center gx-0 gy-0">
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/behance.webp"
-                            alt=""
-                            width="30"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            Behance
-                          </p>
-                        </a>
-                      </div>
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/google-cloud.webp"
-                            alt=""
-                            width="30"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            Cloud
-                          </p>
-                        </a>
-                      </div>
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/slack.webp"
-                            alt=""
-                            width="30"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            Slack
-                          </p>
-                        </a>
-                      </div>
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/gitlab.webp"
-                            alt=""
-                            width="30"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            Gitlab
-                          </p>
-                        </a>
-                      </div>
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/bitbucket.webp"
-                            alt=""
-                            width="30"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            BitBucket
-                          </p>
-                        </a>
-                      </div>
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/google-drive.webp"
-                            alt=""
-                            width="30"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            Drive
-                          </p>
-                        </a>
-                      </div>
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/trello.webp"
-                            alt=""
-                            width="30"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            Trello
-                          </p>
-                        </a>
-                      </div>
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/figma.webp"
-                            alt=""
-                            width="20"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            Figma
-                          </p>
-                        </a>
-                      </div>
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/twitter.webp"
-                            alt=""
-                            width="30"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            Twitter
-                          </p>
-                        </a>
-                      </div>
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/pinterest.webp"
-                            alt=""
-                            width="30"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            Pinterest
-                          </p>
-                        </a>
-                      </div>
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/ln.webp"
-                            alt=""
-                            width="30"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            Linkedin
-                          </p>
-                        </a>
-                      </div>
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/google-maps.webp"
-                            alt=""
-                            width="30"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            Maps
-                          </p>
-                        </a>
-                      </div>
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/google-photos.webp"
-                            alt=""
-                            width="30"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            Photos
-                          </p>
-                        </a>
-                      </div>
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/spotify.webp"
-                            alt=""
-                            width="30"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            Spotify
-                          </p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
+
             <li class="nav-item dropdown">
               <a
                 class="nav-link lh-1 pe-0"
@@ -1509,369 +861,7 @@
                 class="dropdown-menu dropdown-menu-end notification-dropdown-menu py-0 shadow border navbar-dropdown-caret"
                 id="navbarDropdownNotfication"
                 aria-labelledby="navbarDropdownNotfication"
-              >
-                <div class="card position-relative border-0">
-                  <div class="card-header p-2">
-                    <div class="d-flex justify-content-between">
-                      <h5 class="text-body-emphasis mb-0">Notifications</h5>
-                      <button
-                        class="btn btn-link p-0 fs-9 fw-normal"
-                        type="button"
-                      >
-                        Mark all as read
-                      </button>
-                    </div>
-                  </div>
-                  <div class="card-body p-0">
-                    <div class="scrollbar-overlay" style="height: 27rem">
-                      <div
-                        class="px-2 px-sm-3 py-3 notification-card position-relative read border-bottom"
-                      >
-                        <div
-                          class="d-flex align-items-center justify-content-between position-relative"
-                        >
-                          <div class="d-flex">
-                            <div class="avatar avatar-m status-online me-3">
-                              <img
-                                class="rounded-circle"
-                                src="../../../assets/img/team/40x40/30.webp"
-                                alt=""
-                              />
-                            </div>
-                            <div class="flex-1 me-sm-3">
-                              <h4 class="fs-9 text-body-emphasis">
-                                Jessie Samson
-                              </h4>
-                              <p
-                                class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"
-                              >
-                                <span class="me-1 fs-10">💬</span>Mentioned you
-                                in a comment.<span
-                                  class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"
-                                  >10m</span
-                                >
-                              </p>
-                              <p class="text-body-secondary fs-9 mb-0">
-                                <span class="me-1 fas fa-clock"></span
-                                ><span class="fw-bold">10:41 AM </span>August
-                                7,2021
-                              </p>
-                            </div>
-                          </div>
-                          <div class="dropdown notification-dropdown">
-                            <button
-                              class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none"
-                              type="button"
-                              data-bs-toggle="dropdown"
-                              data-boundary="window"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                              data-bs-reference="parent"
-                            >
-                              <span
-                                class="fas fa-ellipsis-h fs-10 text-body"
-                              ></span>
-                            </button>
-                            <div class="dropdown-menu py-2">
-                              <a class="dropdown-item" href="#!"
-                                >Mark as unread</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom"
-                      >
-                        <div
-                          class="d-flex align-items-center justify-content-between position-relative"
-                        >
-                          <div class="d-flex">
-                            <div class="avatar avatar-m status-online me-3">
-                              <div class="avatar-name rounded-circle">
-                                <span>J</span>
-                              </div>
-                            </div>
-                            <div class="flex-1 me-sm-3">
-                              <h4 class="fs-9 text-body-emphasis">
-                                Jane Foster
-                              </h4>
-                              <p
-                                class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"
-                              >
-                                <span class="me-1 fs-10">📅</span>Created an
-                                event.<span
-                                  class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"
-                                  >20m</span
-                                >
-                              </p>
-                              <p class="text-body-secondary fs-9 mb-0">
-                                <span class="me-1 fas fa-clock"></span
-                                ><span class="fw-bold">10:20 AM </span>August
-                                7,2021
-                              </p>
-                            </div>
-                          </div>
-                          <div class="dropdown notification-dropdown">
-                            <button
-                              class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none"
-                              type="button"
-                              data-bs-toggle="dropdown"
-                              data-boundary="window"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                              data-bs-reference="parent"
-                            >
-                              <span
-                                class="fas fa-ellipsis-h fs-10 text-body"
-                              ></span>
-                            </button>
-                            <div class="dropdown-menu py-2">
-                              <a class="dropdown-item" href="#!"
-                                >Mark as unread</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom"
-                      >
-                        <div
-                          class="d-flex align-items-center justify-content-between position-relative"
-                        >
-                          <div class="d-flex">
-                            <div class="avatar avatar-m status-online me-3">
-                              <img
-                                class="rounded-circle avatar-placeholder"
-                                src="../../../assets/img/team/40x40/avatar.webp"
-                                alt=""
-                              />
-                            </div>
-                            <div class="flex-1 me-sm-3">
-                              <h4 class="fs-9 text-body-emphasis">
-                                Jessie Samson
-                              </h4>
-                              <p
-                                class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"
-                              >
-                                <span class="me-1 fs-10">👍</span>Liked your
-                                comment.<span
-                                  class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"
-                                  >1h</span
-                                >
-                              </p>
-                              <p class="text-body-secondary fs-9 mb-0">
-                                <span class="me-1 fas fa-clock"></span
-                                ><span class="fw-bold">9:30 AM </span>August
-                                7,2021
-                              </p>
-                            </div>
-                          </div>
-                          <div class="dropdown notification-dropdown">
-                            <button
-                              class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none"
-                              type="button"
-                              data-bs-toggle="dropdown"
-                              data-boundary="window"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                              data-bs-reference="parent"
-                            >
-                              <span
-                                class="fas fa-ellipsis-h fs-10 text-body"
-                              ></span>
-                            </button>
-                            <div class="dropdown-menu py-2">
-                              <a class="dropdown-item" href="#!"
-                                >Mark as unread</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom"
-                      >
-                        <div
-                          class="d-flex align-items-center justify-content-between position-relative"
-                        >
-                          <div class="d-flex">
-                            <div class="avatar avatar-m status-online me-3">
-                              <img
-                                class="rounded-circle"
-                                src="../../../assets/img/team/40x40/57.webp"
-                                alt=""
-                              />
-                            </div>
-                            <div class="flex-1 me-sm-3">
-                              <h4 class="fs-9 text-body-emphasis">
-                                Kiera Anderson
-                              </h4>
-                              <p
-                                class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"
-                              >
-                                <span class="me-1 fs-10">💬</span>Mentioned you
-                                in a comment.<span
-                                  class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"
-                                ></span>
-                              </p>
-                              <p class="text-body-secondary fs-9 mb-0">
-                                <span class="me-1 fas fa-clock"></span
-                                ><span class="fw-bold">9:11 AM </span>August
-                                7,2021
-                              </p>
-                            </div>
-                          </div>
-                          <div class="dropdown notification-dropdown">
-                            <button
-                              class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none"
-                              type="button"
-                              data-bs-toggle="dropdown"
-                              data-boundary="window"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                              data-bs-reference="parent"
-                            >
-                              <span
-                                class="fas fa-ellipsis-h fs-10 text-body"
-                              ></span>
-                            </button>
-                            <div class="dropdown-menu py-2">
-                              <a class="dropdown-item" href="#!"
-                                >Mark as unread</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom"
-                      >
-                        <div
-                          class="d-flex align-items-center justify-content-between position-relative"
-                        >
-                          <div class="d-flex">
-                            <div class="avatar avatar-m status-online me-3">
-                              <img
-                                class="rounded-circle"
-                                src="../../../assets/img/team/40x40/59.webp"
-                                alt=""
-                              />
-                            </div>
-                            <div class="flex-1 me-sm-3">
-                              <h4 class="fs-9 text-body-emphasis">
-                                Herman Carter
-                              </h4>
-                              <p
-                                class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"
-                              >
-                                <span class="me-1 fs-10">👤</span>Tagged you in
-                                a comment.<span
-                                  class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"
-                                ></span>
-                              </p>
-                              <p class="text-body-secondary fs-9 mb-0">
-                                <span class="me-1 fas fa-clock"></span
-                                ><span class="fw-bold">10:58 PM </span>August
-                                7,2021
-                              </p>
-                            </div>
-                          </div>
-                          <div class="dropdown notification-dropdown">
-                            <button
-                              class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none"
-                              type="button"
-                              data-bs-toggle="dropdown"
-                              data-boundary="window"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                              data-bs-reference="parent"
-                            >
-                              <span
-                                class="fas fa-ellipsis-h fs-10 text-body"
-                              ></span>
-                            </button>
-                            <div class="dropdown-menu py-2">
-                              <a class="dropdown-item" href="#!"
-                                >Mark as unread</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="px-2 px-sm-3 py-3 notification-card position-relative read"
-                      >
-                        <div
-                          class="d-flex align-items-center justify-content-between position-relative"
-                        >
-                          <div class="d-flex">
-                            <div class="avatar avatar-m status-online me-3">
-                              <img
-                                class="rounded-circle"
-                                src="../../../assets/img/team/40x40/58.webp"
-                                alt=""
-                              />
-                            </div>
-                            <div class="flex-1 me-sm-3">
-                              <h4 class="fs-9 text-body-emphasis">
-                                Benjamin Button
-                              </h4>
-                              <p
-                                class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"
-                              >
-                                <span class="me-1 fs-10">👍</span>Liked your
-                                comment.<span
-                                  class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10"
-                                ></span>
-                              </p>
-                              <p class="text-body-secondary fs-9 mb-0">
-                                <span class="me-1 fas fa-clock"></span
-                                ><span class="fw-bold">10:18 AM </span>August
-                                7,2021
-                              </p>
-                            </div>
-                          </div>
-                          <div class="dropdown notification-dropdown">
-                            <button
-                              class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none"
-                              type="button"
-                              data-bs-toggle="dropdown"
-                              data-boundary="window"
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                              data-bs-reference="parent"
-                            >
-                              <span
-                                class="fas fa-ellipsis-h fs-10 text-body"
-                              ></span>
-                            </button>
-                            <div class="dropdown-menu py-2">
-                              <a class="dropdown-item" href="#!"
-                                >Mark as unread</a
-                              >
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="card-footer p-0 border-top border-translucent border-0"
-                  >
-                    <div
-                      class="my-2 text-center fw-bold fs-10 text-body-tertiary text-opactity-85"
-                    >
-                      <a
-                        class="fw-bolder"
-                        href="../../../pages/notifications.html"
-                        >Notification history</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ></div>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -2011,22 +1001,7 @@
                           </p>
                         </a>
                       </div>
-                      <div class="col-4">
-                        <a
-                          class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                          href="#!"
-                          ><img
-                            src="../../../assets/img/nav-icons/trello.webp"
-                            alt=""
-                            width="30"
-                          />
-                          <p
-                            class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                          >
-                            Trello
-                          </p>
-                        </a>
-                      </div>
+
                       <div class="col-4">
                         <a
                           class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
@@ -2433,14 +1408,17 @@
                       </a>
                       <ul class="dropdown-menu">
                         <li>
-                          <a class="dropdown-item" href="add-product.html">
+                          <a
+                            class="dropdown-item active"
+                            href="addCategory.html"
+                          >
                             <div class="dropdown-item-wrapper">
                               <span class="me-2 uil"></span>Add product
                             </div>
                           </a>
                         </li>
                         <li>
-                          <a class="dropdown-item active" href="products.html">
+                          <a class="dropdown-item" href="products.html">
                             <div class="dropdown-item-wrapper">
                               <span class="me-2 uil"></span>Products
                             </div>
@@ -4938,241 +3916,7 @@
             <div
               class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-nine-dots shadow border"
               aria-labelledby="navbarDropdownNindeDots"
-            >
-              <div class="card bg-body-emphasis position-relative border-0">
-                <div
-                  class="card-body pt-3 px-3 pb-0 overflow-auto scrollbar"
-                  style="height: 20rem"
-                >
-                  <div class="row text-center align-items-center gx-0 gy-0">
-                    <div class="col-4">
-                      <a
-                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                        href="#!"
-                        ><img
-                          src="../../../assets/img/nav-icons/behance.webp"
-                          alt=""
-                          width="30"
-                        />
-                        <p
-                          class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                        >
-                          Behance
-                        </p>
-                      </a>
-                    </div>
-                    <div class="col-4">
-                      <a
-                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                        href="#!"
-                        ><img
-                          src="../../../assets/img/nav-icons/google-cloud.webp"
-                          alt=""
-                          width="30"
-                        />
-                        <p
-                          class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                        >
-                          Cloud
-                        </p>
-                      </a>
-                    </div>
-                    <div class="col-4">
-                      <a
-                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                        href="#!"
-                        ><img
-                          src="../../../assets/img/nav-icons/slack.webp"
-                          alt=""
-                          width="30"
-                        />
-                        <p
-                          class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                        >
-                          Slack
-                        </p>
-                      </a>
-                    </div>
-                    <div class="col-4">
-                      <a
-                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                        href="#!"
-                        ><img
-                          src="../../../assets/img/nav-icons/gitlab.webp"
-                          alt=""
-                          width="30"
-                        />
-                        <p
-                          class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                        >
-                          Gitlab
-                        </p>
-                      </a>
-                    </div>
-                    <div class="col-4">
-                      <a
-                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                        href="#!"
-                        ><img
-                          src="../../../assets/img/nav-icons/bitbucket.webp"
-                          alt=""
-                          width="30"
-                        />
-                        <p
-                          class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                        >
-                          BitBucket
-                        </p>
-                      </a>
-                    </div>
-                    <div class="col-4">
-                      <a
-                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                        href="#!"
-                        ><img
-                          src="../../../assets/img/nav-icons/google-drive.webp"
-                          alt=""
-                          width="30"
-                        />
-                        <p
-                          class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                        >
-                          Drive
-                        </p>
-                      </a>
-                    </div>
-                    <div class="col-4">
-                      <a
-                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                        href="#!"
-                        ><img
-                          src="../../../assets/img/nav-icons/trello.webp"
-                          alt=""
-                          width="30"
-                        />
-                        <p
-                          class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                        >
-                          Trello
-                        </p>
-                      </a>
-                    </div>
-                    <div class="col-4">
-                      <a
-                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                        href="#!"
-                        ><img
-                          src="../../../assets/img/nav-icons/figma.webp"
-                          alt=""
-                          width="20"
-                        />
-                        <p
-                          class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                        >
-                          Figma
-                        </p>
-                      </a>
-                    </div>
-                    <div class="col-4">
-                      <a
-                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                        href="#!"
-                        ><img
-                          src="../../../assets/img/nav-icons/twitter.webp"
-                          alt=""
-                          width="30"
-                        />
-                        <p
-                          class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                        >
-                          Twitter
-                        </p>
-                      </a>
-                    </div>
-                    <div class="col-4">
-                      <a
-                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                        href="#!"
-                        ><img
-                          src="../../../assets/img/nav-icons/pinterest.webp"
-                          alt=""
-                          width="30"
-                        />
-                        <p
-                          class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                        >
-                          Pinterest
-                        </p>
-                      </a>
-                    </div>
-                    <div class="col-4">
-                      <a
-                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                        href="#!"
-                        ><img
-                          src="../../../assets/img/nav-icons/ln.webp"
-                          alt=""
-                          width="30"
-                        />
-                        <p
-                          class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                        >
-                          Linkedin
-                        </p>
-                      </a>
-                    </div>
-                    <div class="col-4">
-                      <a
-                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                        href="#!"
-                        ><img
-                          src="../../../assets/img/nav-icons/google-maps.webp"
-                          alt=""
-                          width="30"
-                        />
-                        <p
-                          class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                        >
-                          Maps
-                        </p>
-                      </a>
-                    </div>
-                    <div class="col-4">
-                      <a
-                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                        href="#!"
-                        ><img
-                          src="../../../assets/img/nav-icons/google-photos.webp"
-                          alt=""
-                          width="30"
-                        />
-                        <p
-                          class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                        >
-                          Photos
-                        </p>
-                      </a>
-                    </div>
-                    <div class="col-4">
-                      <a
-                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
-                        href="#!"
-                        ><img
-                          src="../../../assets/img/nav-icons/spotify.webp"
-                          alt=""
-                          width="30"
-                        />
-                        <p
-                          class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1"
-                        >
-                          Spotify
-                        </p>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ></div>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -5457,14 +4201,17 @@
                       </a>
                       <ul class="dropdown-menu">
                         <li>
-                          <a class="dropdown-item" href="add-product.html">
+                          <a
+                            class="dropdown-item active"
+                            href="addCategory.html"
+                          >
                             <div class="dropdown-item-wrapper">
                               <span class="me-2 uil"></span>Add product
                             </div>
                           </a>
                         </li>
                         <li>
-                          <a class="dropdown-item active" href="products.html">
+                          <a class="dropdown-item" href="products.html">
                             <div class="dropdown-item-wrapper">
                               <span class="me-2 uil"></span>Products
                             </div>
@@ -8495,14 +7242,17 @@
                       </a>
                       <ul class="dropdown-menu">
                         <li>
-                          <a class="dropdown-item" href="add-product.html">
+                          <a
+                            class="dropdown-item active"
+                            href="addCategory.html"
+                          >
                             <div class="dropdown-item-wrapper">
                               <span class="me-2 uil"></span>Add product
                             </div>
                           </a>
                         </li>
                         <li>
-                          <a class="dropdown-item active" href="products.html">
+                          <a class="dropdown-item" href="products.html">
                             <div class="dropdown-item-wrapper">
                               <span class="me-2 uil"></span>Products
                             </div>
@@ -11521,14 +10271,17 @@
                       </a>
                       <ul class="dropdown-menu">
                         <li>
-                          <a class="dropdown-item" href="add-product.html">
+                          <a
+                            class="dropdown-item active"
+                            href="addCategory.html"
+                          >
                             <div class="dropdown-item-wrapper">
                               <span class="me-2 uil"></span>Add product
                             </div>
                           </a>
                         </li>
                         <li>
-                          <a class="dropdown-item active" href="products.html">
+                          <a class="dropdown-item" href="products.html">
                             <div class="dropdown-item-wrapper">
                               <span class="me-2 uil"></span>Products
                             </div>
@@ -15687,17 +14440,17 @@
                         </a>
                         <ul class="dropdown-menu">
                           <li>
-                            <a class="dropdown-item" href="add-product.html">
+                            <a
+                              class="dropdown-item active"
+                              href="addCategory.html"
+                            >
                               <div class="dropdown-item-wrapper">
                                 <span class="me-2 uil"></span>Add product
                               </div>
                             </a>
                           </li>
                           <li>
-                            <a
-                              class="dropdown-item active"
-                              href="products.html"
-                            >
+                            <a class="dropdown-item" href="products.html">
                               <div class="dropdown-item-wrapper">
                                 <span class="me-2 uil"></span>Products
                               </div>
@@ -17906,107 +16659,65 @@
             <li class="breadcrumb-item active">Default</li>
           </ol>
         </nav>
-        <div class="mb-9">
-          <div class="row g-3 mb-4">
+        <form onsubmit="UpdateVoucher(event)" id="addForm" class="mb-9">
+          <div class="row g-3 flex-between-end mb-5">
             <div class="col-auto">
-              <h2 class="mb-0">Categoies</h2>
+              <h2 class="mb-2">Edit Voucher</h2>
             </div>
           </div>
-
-          <div
-            id="products"
-            data-list='{"valueNames":["product","price","category","tags","vendor","time"],"page":10,"pagination":true}'
-          >
-            <div class="mb-4">
-              <div class="d-flex flex-wrap gap-3">
-                <div class="scrollbar overflow-hidden-y"></div>
-                <div class="ms-xxl-auto">
-                  <a href="addCategory.html"
-                    ><button class="btn btn-primary" id="addBtn">
-                      <span class="fas fa-plus me-2"></span>Add Category
-                    </button></a
-                  >
-                </div>
+          <div class="row g-5">
+            <div class="col-12 col-xl-8">
+              <h4 class="mb-3">Edit Promocode</h4>
+              <input
+                id="voucherCode"
+                class="form-control mb-5"
+                type="text"
+                placeholder="Write title here..."
+              />
+              <div class="mb-6">
+                <h4 class="mb-3">discount Percentage</h4>
+                <input
+                  id="discountPercentage"
+                  class="form-control mb-5"
+                  type="text"
+                  placeholder="Write description here..."
+                />
               </div>
+              <div class="mb-6">
+                <h4 class="mb-3">Start date</h4>
+                <input
+                  id="startDate"
+                  class="form-control mb-5"
+                  type="date"
+                  placeholder="Write description here..."
+                />
+              </div>
+              <div class="mb-6">
+              <h4 class="mb-3">End date</h4>
+              <input
+                id="endDate"
+                class="form-control mb-5"
+                type="date"
+                placeholder="Write description here..."
+              />
+              <div class="mb-6">
+              <h4 class="mb-3">Is Active</h4>
+              <select id="isActive" class="form-control mb-5">
+                <option value="true">True</option>
+                <option value="false">False</option>
+              </select>
             </div>
-            <div
-              class="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis border-top border-bottom border-translucent position-relative top-1"
+            <button
+              class="btn btn-outline-primary"
+              type="submit"
+              style="width: 300px; font-size: large"
             >
-              <div class="table-responsive scrollbar mx-n1 px-1">
-                <table class="table fs-9 mb-0">
-                  <thead>
-                    <tr>
-                      <th
-                        class="white-space-nowrap fs-9 align-middle ps-0"
-                        style="max-width: 20px; width: 18px"
-                      >
-                        Category ID
-                      </th>
-                      <th
-                        class="sort white-space-nowrap align-middle fs-10"
-                        scope="col"
-                        style="width: 70px"
-                      ></th>
-                      <th
-                        class="sort white-space-nowrap align-middle ps-4"
-                        scope="col"
-                        style="width: 350px"
-                        data-sort="product"
-                      >
-                        Category NAME
-                      </th>
-                      <th
-                        class="sort align-middle ps-4"
-                        scope="col"
-                        data-sort="category"
-                        style="width: 150px"
-                      >
-                        Description
-                      </th>
-
-                      <th
-                        class="sort align-middle ps-4"
-                        scope="col"
-                        data-sort="time"
-                        style="width: 50px"
-                      >
-                        Created ON
-                      </th>
-                      <th
-                        class="sort text-end align-middle pe-0 ps-4"
-                        scope="col"
-                      >
-                        Action
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="list" id="showCategoryTable"></tbody>
-                </table>
-              </div>
-            </div>
+              Edit
+            </button>
           </div>
-        </div>
-        <footer class="footer position-absolute">
-          <div class="row g-0 justify-content-between align-items-center h-100">
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 mt-2 mt-sm-0 text-body">
-                Thank you for creating with Phoenix<span
-                  class="d-none d-sm-inline-block"
-                ></span
-                ><span class="d-none d-sm-inline-block mx-1">|</span
-                ><br class="d-sm-none" />2024 &copy;<a
-                  class="mx-1"
-                  href="https://themewagon.com/"
-                  >Themewagon</a
-                >
-              </p>
-            </div>
-            <div class="col-12 col-sm-auto text-center">
-              <p class="mb-0 text-body-tertiary text-opacity-85">v1.18.0</p>
-            </div>
-          </div>
-        </footer>
+        </form>
       </div>
+      <footer class="footer position-absolute"></footer>
       <div
         class="modal fade"
         id="searchBoxModal"
@@ -18328,7 +17039,47 @@
           </div>
         </div>
       </div>
-      <div class="support-chat-container"></div>
+      <div class="support-chat-container">
+        <div class="container-fluid support-chat">
+          <div class="card bg-body-emphasis">
+            <div
+              class="card-header d-flex flex-between-center px-4 py-3 border-bottom border-translucent"
+            >
+              <h5 class="mb-0 d-flex align-items-center gap-2">
+                Demo widget<span
+                  class="fa-solid fa-circle text-success fs-11"
+                ></span>
+              </h5>
+              <div class="btn-reveal-trigger">
+                <button
+                  class="btn btn-link p-0 dropdown-toggle dropdown-caret-none transition-none d-flex"
+                  type="button"
+                  id="support-chat-dropdown"
+                  data-bs-toggle="dropdown"
+                  data-boundary="window"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  data-bs-reference="parent"
+                >
+                  <span class="fas fa-ellipsis-h text-body"></span>
+                </button>
+                <div
+                  class="dropdown-menu dropdown-menu-end py-2"
+                  aria-labelledby="support-chat-dropdown"
+                >
+                  <a class="dropdown-item" href="#!">Request a callback</a
+                  ><a class="dropdown-item" href="#!">Search in chat</a
+                  ><a class="dropdown-item" href="#!">Show history</a
+                  ><a class="dropdown-item" href="#!">Report to Admin</a
+                  ><a class="dropdown-item btn-support-chat" href="#!"
+                    >Close Support</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <!-- ===============================================-->
     <!--    End of Main Content-->
@@ -18763,7 +17514,7 @@
       </div>
     </a>
 
-    <!-- =======================<table>========================-->
+    <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
     <script src="../../../vendors/popper/popper.min.js"></script>
@@ -18775,9 +17526,13 @@
     <script src="../../../vendors/list.js/list.min.js"></script>
     <script src="../../../vendors/feather-icons/feather.min.js"></script>
     <script src="../../../vendors/dayjs/dayjs.min.js"></script>
+    <script src="../../../vendors/tinymce/tinymce.min.js"></script>
+    <script src="../../../vendors/dropzone/dropzone-min.js"></script>
+    <script src="../../../vendors/choices/choices.min.js"></script>
+    <script src="../../../vendors/flatpickr/flatpickr.min.js"></script>
     <script src="../../../assets/js/phoenix.js"></script>
-    <script src="../../../assets/js/showCategory.js"></script>
+    <script src="../../../assets/js/showVoucher.js"></script>
   </body>
 
-  <!-- Mirrored from prium.github.io/phoenix/v1.18.0/apps/e-commerce/admin/products.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Sep 2024 18:07:29 GMT -->
+  <!-- Mirrored from prium.github.io/phoenix/v1.18.0/apps/e-commerce/admin/add-product.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Sep 2024 18:07:20 GMT -->
 </html>
