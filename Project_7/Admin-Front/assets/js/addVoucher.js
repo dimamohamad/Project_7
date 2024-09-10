@@ -20,6 +20,8 @@
 
 async function AddVoucher(event) {
     debugger;
+    console.log("Try to create a new voucher");
+    
     event.preventDefault();
     const url2 = "https://localhost:44339/api/Vouchers";
     let voucherCode = document.getElementById("voucherCode").value;
@@ -28,20 +30,18 @@ async function AddVoucher(event) {
     let endDate = document.getElementById("endDate").value;
     let isActive = document.getElementById("isActive").value;
     var data = {
-        voucherCode: voucherCode,
+      voucherCode: voucherCode,
       discountPercentage: discountPercentage,
       startDate: startDate,
       endDate:endDate,
       isActive:isActive,
     };
-    var resquest = await fetch(url2, {
+    var response = await fetch(url2, {
       method: "POST",
-      
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data)
     });
-    alert("the comment added successfully");
-    location.reload();
+    alert("the Voucher added successfully");
   }
