@@ -284,7 +284,6 @@ async function addProductToCart(productId, quantity) {
     productId: productId,
     quantity: quantity,
   };
-  console.log(data);
 
   let response = await fetch(url, {
     method: "POST",
@@ -331,7 +330,7 @@ async function GetReviews() {
           >
             <div class="flex flex-col items-center">
               <span class="w-max text-2xl"
-                >${result.overAllRating} / 5,0
+                >${result.overAllRating>0 ? result.overAllRating.toFixed(2) : 0} / 5,0
                 
                 <!-- over all rating -->
               </span>
@@ -349,10 +348,10 @@ async function GetReviews() {
                   class="relative h-5 w-full overflow-hidden rounded bg-primary-500/50"
                 >
                   <div
-                    class="absolute left-0 top-0 h-full w-[85%] rounded bg-primary-500 text-center text-white"
-                  >
-                    <!--five star pecentage 85% -->
-                    ${result.fiveStarReviewsPercentage}
+                    class="absolute left-0 top-0 h-full rounded bg-primary-500 text-center text-white"
+                    style="width:${result.fiveStarReviewsPercentage * 100}%"
+                    >
+                    ${result.fiveStarReviewsPercentage > 0 ? result.fiveStarReviewsPercentage.toFixed(2) : 0}
                   </div>
                 </div>
               </div>
@@ -362,10 +361,11 @@ async function GetReviews() {
                   class="relative h-5 w-full overflow-hidden rounded bg-primary-500/50"
                 >
                   <div
-                    class="absolute left-0 top-0 h-full w-[65%] rounded bg-primary-500 text-center text-white"
+                    class="absolute left-0 top-0 h-full rounded bg-primary-500 text-center text-white"
+                                        style="width:${result.fourStarReviewsPercentage * 100}%"
+
                   >
-                    <!-- 4 star pecentage 65% -->
-                    ${result.fourStarReviewsPercentage}
+                    ${result.fourStarReviewsPercentage >0 ? result.fourStarReviewsPercentage.toFixed(2) : 0}
                   </div>
                 </div>
               </div>
@@ -375,10 +375,10 @@ async function GetReviews() {
                   class="relative h-5 w-full overflow-hidden rounded bg-primary-500/50"
                 >
                   <div
-                    class="absolute left-0 top-0 h-full w-[30%] rounded bg-primary-500 text-center text-white"
+                    class="absolute left-0 top-0 h-full rounded bg-primary-500 text-center text-white"
+                    style="width:${result.threeStarReviewsPercentage * 100}%"
                   >
-                    <!--three star pecentage 30% -->
-                    ${result.threeStarReviewsPercentage}
+                    ${result.threeStarReviewsPercentage>0 ? result.threeStarReviewsPercentage.toFixed(2) : 0}
                   </div>
                 </div>
               </div>
@@ -388,10 +388,11 @@ async function GetReviews() {
                   class="relative h-5 w-full overflow-hidden rounded bg-primary-500/50"
                 >
                   <div
-                    class="absolute left-0 top-0 h-full w-[45%] rounded bg-primary-500 text-center text-white"
+                    class="absolute left-0 top-0 h-full rounded bg-primary-500 text-center text-white"
+                    style="width:${result.twoStarReviewsPercentage * 100}%"
                   >
                     <!-- two star pecentage 45% -->
-                    ${result.twoStarReviewsPercentage}
+                    ${result.twoStarReviewsPercentage>0 ? result.twoStarReviewsPercentage.toFixed(2) : 0}
                   </div>
                 </div>
               </div>
@@ -401,10 +402,11 @@ async function GetReviews() {
                   class="relative h-5 w-full overflow-hidden rounded bg-primary-500/50"
                 >
                   <div
-                    class="absolute left-0 top-0 h-full w-[25%] rounded bg-primary-500 text-center text-white"
+                    class="absolute left-0 top-0 h-full rounded bg-primary-500 text-center text-white"
+                    style="width:${result.oneStarReviewsPercentage * 100}%"
                   >
                     <!-- one star pecentage 25% -->
-                    ${result.oneStarReviewsPercentage}
+                    ${result.oneStarReviewsPercentage> 0? result.oneStarReviewsPercentage.toFixed(2) : 0}
                   </div>
                 </div>
               </div>
