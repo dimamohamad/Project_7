@@ -1,5 +1,5 @@
 const token = localStorage.Token;
-const url = "https://localhost:44339";
+const url = "https://localhost:44338";
 const apiUrl = url + "/api/Cart/getCartItems";
 
 async function removeCartItem(cartItemId) {
@@ -244,7 +244,7 @@ document
 // Function to open the payment link and close the window when it navigates to a specific page
 async function openPaymentWindow() {
   let userResponse = await fetch(
-    "https://localhost:44339/api/Users/getCurrentUserInfo",
+    "https://localhost:44338/api/Users/getCurrentUserInfo",
     {
       method: "GET",
       headers: {
@@ -264,7 +264,7 @@ async function openPaymentWindow() {
     return;
   }
 
-  let response = await fetch("https://localhost:44339/api/Cart/checkout", {
+  let response = await fetch("https://localhost:44338/api/Cart/checkout", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,

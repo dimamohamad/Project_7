@@ -1,9 +1,9 @@
 const n = localStorage.getItem("CategoryId");
 var url;
 if (n) {
-  url = `https://localhost:44339/Api/Products/GetProductsByCategoryId/${n}`;
+  url = `https://localhost:44338/Api/Products/GetProductsByCategoryId/${n}`;
 } else {
-  url = "https://localhost:44339/Api/Products/GetAllProducts";
+  url = "https://localhost:44338/Api/Products/GetAllProducts";
 }
 async function GetProducts() {
   var response = await fetch(url);
@@ -20,7 +20,7 @@ async function GetProducts() {
                 <a href="#" class="block h-[270px]">
                   <img
                     class="h-full w-full object-contain"
-                    src="https://localhost:44339/${product.productImage1}"
+                    src="https://localhost:44338/${product.productImage1}"
                     alt="img" />
                 </a>
                 <div class="mt-2 flex gap-1 px-5">
@@ -79,7 +79,7 @@ function getProductId(id) {
 
 async function showProductDetail() {
   const x = localStorage.getItem("productId");
-  var url = `https://localhost:44339/Api/Products/GetProductsById/${x}`;
+  var url = `https://localhost:44338/Api/Products/GetProductsById/${x}`;
 
   var response = await fetch(url);
 
@@ -175,37 +175,37 @@ async function showProductDetail() {
               <div class="swiper-wrapper">
                 <figure class="swiper-slide">
                   <img
-                    src="https://localhost:44339/${result.productImage1}"
+                    src="https://localhost:44338/${result.productImage1}"
                     alt=""
                   />
                 </figure>
                 <figure class="swiper-slide">
                   <img
-                    src="https://localhost:44339/${result.productImage2}"
+                    src="https://localhost:44338/${result.productImage2}"
                     alt=""
                   />
                 </figure>
                 <figure class="swiper-slide">
                   <img
-                    src="https://localhost:44339/${result.productImage3}"
+                    src="https://localhost:44338/${result.productImage3}"
                     alt=""
                   />
                 </figure>
                 <figure class="swiper-slide">
                   <img
-                    src="https://localhost:44339/${result.productImage4}"
+                    src="https://localhost:44338/${result.productImage4}"
                     alt=""
                   />
                 </figure>
                 <figure class="swiper-slide">
                   <img
-                    src="https://localhost:44339/${result.productImage5}"
+                    src="https://localhost:44338/${result.productImage5}"
                     alt=""
                   />
                 </figure>
                 <figure class="swiper-slide">
                   <img
-                    src="https://localhost:44339/${result.productImage6}"
+                    src="https://localhost:44338/${result.productImage6}"
                     alt=""
                   />
                 </figure>
@@ -909,7 +909,7 @@ GetProducts();
 
 async function GetCategories() {
   var response = await fetch(
-    "https://localhost:44339/API/Categories/GetAllCategories"
+    "https://localhost:44338/API/Categories/GetAllCategories"
   );
   var result = await response.json();
   var container = document.getElementById("dropDownCategory");
@@ -938,7 +938,7 @@ function clearLocalStorage() {
 }
 async function fiterCategory() {
   const dropDown = document.getElementById("CategoryFIlter");
-  let url = "https://localhost:44339/API/Categories/GetAllCategories";
+  let url = "https://localhost:44338/API/Categories/GetAllCategories";
   let request = await fetch(url);
   let data = await request.json();
 
@@ -972,9 +972,9 @@ document
     const sortOrder = document.getElementById("priceFilter").value;
     var CategoryId = localStorage.getItem("CategoryId");
     if (CategoryId == null) {
-      var apiUrl = `https://localhost:44339/api/Products/filterByPriceWithoutCategoryId?sortOrder=${sortOrder}`;
+      var apiUrl = `https://localhost:44338/api/Products/filterByPriceWithoutCategoryId?sortOrder=${sortOrder}`;
     } else {
-      var apiUrl = `https://localhost:44339/api/Products/filterByPrice?sortOrder=${sortOrder}&CategoryId=${CategoryId}`;
+      var apiUrl = `https://localhost:44338/api/Products/filterByPrice?sortOrder=${sortOrder}&CategoryId=${CategoryId}`;
     }
 
     const response = await fetch(apiUrl);
@@ -1000,7 +1000,7 @@ function displayProducts(products) {
     <a href="#" class="block h-[270px]">
       <img
         class="h-full w-full object-contain"
-        src="https://localhost:44339/${product.productImage1}"
+        src="https://localhost:44338/${product.productImage1}"
         alt="img" />
     </a>
     <div class="mt-2 flex gap-1 px-5">

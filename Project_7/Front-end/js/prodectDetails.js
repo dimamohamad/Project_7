@@ -8,7 +8,7 @@ if (!token) {
 
 async function showProductDetail() {
   const x = localStorage.getItem("productId");
-  let url = `https://localhost:44339/Api/Products/GetProductsById/${x}`;
+  let url = `https://localhost:44338/Api/Products/GetProductsById/${x}`;
 
   let response = await fetch(url);
 
@@ -24,22 +24,22 @@ async function showProductDetail() {
           >
             <div class="swiper-wrapper">
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage1}" alt="" />
+                <img src="https://localhost:44338/${result.productImage1}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage2}" alt="" />
+                <img src="https://localhost:44338/${result.productImage2}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage3}" alt="" />
+                <img src="https://localhost:44338/${result.productImage3}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage4}" alt="" />
+                <img src="https://localhost:44338/${result.productImage4}" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage5}" alt="" />
+                <img src="https://localhost:44338/${result.productImage5}" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage6}" alt="" />
+                <img src="https://localhost:44338/${result.productImage6}" alt="" />
               </figure>
             </div>
             <div
@@ -84,22 +84,22 @@ async function showProductDetail() {
           >
             <div class="swiper-wrapper">
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage1}" alt="" />
+                <img src="https://localhost:44338/${result.productImage1}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage2}" alt="" />
+                <img src="https://localhost:44338/${result.productImage2}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage3}" alt="" />
+                <img src="https://localhost:44338/${result.productImage3}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage4}" alt="" />
+                <img src="https://localhost:44338/${result.productImage4}" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage5}" alt="" />
+                <img src="https://localhost:44338/${result.productImage5}" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage6}" alt="" />
+                <img src="https://localhost:44338/${result.productImage6}" alt="" />
               </figure>
             </div>
           </div>
@@ -286,7 +286,7 @@ async function addProductToLocalStorage(productId, productName, productImage) {
 }
 
 async function addProductToCart(productId, quantity) {
-  let url = "https://localhost:44339/api/Cart/addToCart";
+  let url = "https://localhost:44338/api/Cart/addToCart";
   let data = {
     productId: productId,
     quantity: quantity,
@@ -315,7 +315,7 @@ function preventDefault(event) {
 async function GetReviews() {
   //review section
   const n = localStorage.getItem("productId");
-  const url = `https://localhost:44339/api/Reviews/SingleProductReviews/${n}`;
+  const url = `https://localhost:44338/api/Reviews/SingleProductReviews/${n}`;
   var response = await fetch(url);
   var result = await response.json();
   var container = document.getElementById("reviewSection");
@@ -433,7 +433,7 @@ function reduceQuantity() {
 
 async function loadReviews() {
   const n = localStorage.getItem("productId");
-  const url = `https://localhost:44339/api/Reviews/SingleProductReviews/${n}`;
+  const url = `https://localhost:44338/api/Reviews/SingleProductReviews/${n}`;
   const response = await fetch(url);
   const result = await response.json();
   // Get the review section container
@@ -494,7 +494,7 @@ async function loadReviews() {
 // foreach--------------------------------------------------------
 async function loadReviews1() {
   const n = localStorage.getItem("productId");
-  const url = `https://localhost:44339/api/Reviews/SingleProductReviews/${n}`;
+  const url = `https://localhost:44338/api/Reviews/SingleProductReviews/${n}`;
   var response = await fetch(url);
   var result = await response.json();
   var container = document.getElementById("userReview");
@@ -513,7 +513,7 @@ async function loadReviews1() {
 }
 
 async function AddReview() {
-  const url2 = "https://localhost:44339/api/Reviews/AddReview";
+  const url2 = "https://localhost:44338/api/Reviews/AddReview";
   let comment = document.getElementById("comment");
   var data = {
     userId: localStorage.getItem("userId"),

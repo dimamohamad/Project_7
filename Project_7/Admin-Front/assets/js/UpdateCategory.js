@@ -1,6 +1,6 @@
 const n = localStorage.getItem("CategoryId");
 debugger;
-var url =` https://localhost:44339/Api/Categories/UpdateCategory/${n}`;
+var url =` https://localhost:44338/Api/Categories/UpdateCategory/${n}`;
 var form = document.getElementById("updateCategoryForm");
 async function UpdateCategory() {
   var formData = new FormData(form);

@@ -1,4 +1,4 @@
-const url = "https://localhost:44339/api/Categories";
+const url = "https://localhost:44338/api/Categories";
 debugger;
 var form = document.getElementById("addCategoryForm");
 async function addCategory() {

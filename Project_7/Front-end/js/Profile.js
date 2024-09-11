@@ -19,7 +19,7 @@ function previewImage(event) {
 }
 
 function fetchUserData(id) {
-  fetch(`https://localhost:44339/api/Users/ShowUserByID/${id}`)
+  fetch(`https://localhost:44338/api/Users/ShowUserByID/${id}`)
     .then((response) => response.json())
     .then((data) => {
       document.getElementById("fname").value = data.firstName || "";
@@ -28,7 +28,7 @@ function fetchUserData(id) {
       document.getElementById("email").value = data.email || "";
       document.getElementById("phonenum").value = data.phoneNumber || "";
       document.getElementById("profileImage").src =
-        `https://localhost:44339/${data.userImage}` ||
+        `https://localhost:44338/${data.userImage}` ||
         "https://via.placeholder.com/150";
     })
     .catch((error) => console.error("Error fetching user data:", error));
@@ -52,7 +52,7 @@ function saveChanges() {
     formData.append("UserImage", fileInput.files[0]);
   }
 
-  fetch(`https://localhost:44339/api/Users/UpdateUser/${userId}`, {
+  fetch(`https://localhost:44338/api/Users/UpdateUser/${userId}`, {
     method: "PUT",
     body: formData,
   })
@@ -70,7 +70,7 @@ function deleteAccount() {
     return;
   }
 
-  fetch(`https://localhost:44339/api/Users/DeleteUser/${userId}`, {
+  fetch(`https://localhost:44338/api/Users/DeleteUser/${userId}`, {
     method: "DELETE",
   })
     .then((response) => response.json())
@@ -87,7 +87,7 @@ async function getAllOrders() {
   try {
     // Fetch user info including orders from API
     let response = await fetch(
-      "https://localhost:44339/api/Users/getCurrentUserInfo",
+      "https://localhost:44338/api/Users/getCurrentUserInfo",
       {
         headers: {
           Authorization: `Bearer ${localStorage.Token}`,
@@ -124,7 +124,7 @@ async function getAllOrders() {
                 >
                   <img
                     class="h-full w-full object-cover"
-                    src="https://localhost:44339/${item.product.productImage1}"  <!-- product image -->
+                    src="https://localhost:44338/${item.product.productImage1}"  <!-- product image -->
                     alt="${
                       item.product.productName
                     }"  <!-- product name as alt -->
@@ -241,7 +241,7 @@ addressForm.addEventListener("submit", async (e) => {
     address: document.getElementById("input-address").value,
   };
   let token = localStorage.Token;
-  let response = await fetch("https://localhost:44339/api/Users/EditAddress", {
+  let response = await fetch("https://localhost:44338/api/Users/EditAddress", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,

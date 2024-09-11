@@ -1,5 +1,5 @@
 async function getAllMessages() {
-  const url = "https://localhost:44339/api/Contact/GetMessages";
+  const url = "https://localhost:44338/api/Contact/GetMessages";
   const response = await fetch(url);
   const result = await response.json();
 
@@ -29,7 +29,7 @@ async function getAllMessages() {
 }
 
 async function deleteMessage(messageId) {
-  const url = `https://localhost:44339/api/Contact/DeleteMessage/${messageId}`;
+  const url = `https://localhost:44338/api/Contact/DeleteMessage/${messageId}`;
   const response = await fetch(url, {
     method: "DELETE",
   });
