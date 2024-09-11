@@ -48,10 +48,7 @@ async function GetProducts() {
                   View details
                 </a>
           
-                <span
-                  class="pointer-events-none absolute left-4 top-4 rounded-md bg-primary-500 px-2 text-white">
-                  New
-                </span>
+             
               </div>
             </div>
     `;
