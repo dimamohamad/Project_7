@@ -27,3 +27,20 @@ async function edit(){
    
     window.location.href = "showuser.html";
 }
+
+async function getcategory() {
+    let n = localStorage.getItem("userId");
+    var url = `https://localhost:44339/api/AddUser/GetUserByID${n}`;
+    let response = await fetch(url);
+    let result = await response.json();
+    document.getElementById("firstName").value = result.firstName;
+    document.getElementById("lastName").value = result.lastName;
+    document.getElementById("userName").value=result.userName;
+    document.getElementById("email").value = result.email;
+    document.getElementById("userImage").value = result.userImage;
+    document.getElementById("phoneNumber").value = result.phoneNumber;
+    document.getElementById("address").value = result.address;
+
+  
+  }
+  getcategory();

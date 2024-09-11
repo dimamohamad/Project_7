@@ -14,6 +14,7 @@ async function getCategoryName() {
 
 function setCatid(categoryId) {
   localStorage.setItem("categoryId", categoryId);
+  window.location.reload();
 }
 getCategoryName();
 debugger;
