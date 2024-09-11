@@ -1,3 +1,5 @@
+
+
 async function changePassword(event) {
   event.preventDefault(); // Prevent the form from submitting the default way
 

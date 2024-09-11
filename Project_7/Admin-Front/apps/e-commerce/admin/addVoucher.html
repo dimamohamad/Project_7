@@ -214,6 +214,27 @@
                         ><!-- more inner pages-->
                       </li>
                       <li class="nav-item">
+                        <a class="nav-link active" href="addVoucher.html">
+                          <div class="d-flex align-items-center">
+                            <span class="nav-link-text">Add Voucher</span>
+                          </div> </a
+                        ><!-- more inner pages-->
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="showVoucher.html">
+                          <div class="d-flex align-items-center">
+                            <span class="nav-link-text">Show Voucher</span>
+                          </div> </a
+                        ><!-- more inner pages-->
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="chatadmin.html">
+                          <div class="d-flex align-items-center">
+                            <span class="nav-link-text">Chat</span>
+                          </div></a
+                        ><!-- more inner pages-->
+                      </li>
+                      <li class="nav-item">
                         <a class="nav-link active" href="contactUs.html">
                           <div class="d-flex align-items-center">
                             <span class="nav-link-text">Contact Us</span>
@@ -16635,7 +16656,6 @@
           <div class="row g-3 flex-between-end mb-5">
             <div class="col-auto">
               <h2 class="mb-2">Add Voucher</h2>
-             
             </div>
           </div>
           <div class="row g-5">
@@ -16657,7 +16677,7 @@
                 />
               </div>
               <div class="mb-6">
-                <h4 class="mb-3">Start date </h4>
+                <h4 class="mb-3">Start date</h4>
                 <input
                   id="startDate"
                   class="form-control mb-5"
@@ -16665,37 +16685,33 @@
                   placeholder="Write description here..."
                 />
               </div>
-              <div class="mb-6"></div>
-                <h4 class="mb-3">End  date </h4>
-                <input
-                  id="endDate"
-                  class="form-control mb-5"
-                  type="date"
-                  placeholder="Write description here..."
-                />
-              </div>
-              <div class="mb-6"></div>
-                 <h4 class="mb-3">Is Active</h4>
-                      <select id="isActive" class="form-control mb-5">
-                          <option value="true">True</option>
-                             <option value="false">False</option>
-                              </select>
-                        </div>
-              
-             <button
-                               class="btn btn-outline-primary"
-                             type="submit"
-                         style="width: 300px; font-size: large"
-                    
-            >
-              Add
-            </button>
+              <div class="mb-6">
+              <h4 class="mb-3">End date</h4>
+              <input
+                id="endDate"
+                class="form-control mb-5"
+                type="date"
+                placeholder="Write description here..."
+              />
             </div>
-           
+            <div class="mb-6">
+            <h4 class="mb-3">Is Active</h4>
+            <select id="isActive" class="form-control mb-5">
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </select>
           </div>
+
+          <button
+            class="btn btn-outline-primary"
+            type="submit"
+            style="width: 300px; font-size: large"
+          >
+            Add
+          </button>
         </form>
-        <footer class="footer position-absolute"></footer>
       </div>
+      <footer class="footer position-absolute"></footer>
       <div
         class="modal fade"
         id="searchBoxModal"

@@ -1,3 +1,18 @@
+
+if (localStorage.messeges){
+let messeges =JSON.parse(localStorage.messeges);
+messeges.forEach(message=>{
+   iziToast.success({
+  title: message.title,
+  message: message.message,
+  position: "topCenter",
+  timeout: 3000,
+});
+
+})
+ localStorage.removeItem("messeges");
+}
+
 const url = "https://localhost:44339/API/Categories/GetAllCategories";
 async function GetAllCategories() {
   var response = await fetch(url);
@@ -168,3 +183,5 @@ GetProductsMostReview();
 function clearLocalStorage() {
     window.location.href = "shop-grid.html";
 }
+
+

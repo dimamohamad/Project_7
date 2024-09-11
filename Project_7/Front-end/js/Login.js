@@ -26,7 +26,12 @@ loginForm.addEventListener("submit", async (event) => {
     window.location.href = "index.html";
   } else {
     console.error("Login failed:", result);
-    alert("Please Enter a Valid Email or Password");
+    iziToast.error({
+      title: "Bad credintial",
+      message: "please make sure that you have entered a valid email and password",
+      position: "topCenter",
+      timeout: 3000,
+    });
   }
 });
 

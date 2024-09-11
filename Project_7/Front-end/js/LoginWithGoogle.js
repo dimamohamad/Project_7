@@ -82,7 +82,11 @@ if (googleLogin) {
       // Store token and user ID from the API
       localStorage.setItem("Token", data.token);
       localStorage.setItem("userId", data.user.userId);
-
+      localStorage.messeges=JSON.stringify([{
+        title:"login successful",
+        message:"you have been logged successfully"
+    
+       }])
 
       // Redirect to a new page (e.g., home page after login)
       window.location.href = "index.html";
