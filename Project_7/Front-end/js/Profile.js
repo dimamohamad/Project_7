@@ -19,7 +19,7 @@ function previewImage(event) {
 }
 
 function fetchUserData(id) {
-  fetch(`https://localhost:44339/api/Users/ShowUserByID/${id}`)
+  fetch(`https://localhost:44338/api/Users/ShowUserByID/${id}`)
     .then((response) => response.json())
     .then((data) => {
       document.getElementById("fname").value = data.firstName || "";
@@ -28,7 +28,7 @@ function fetchUserData(id) {
       document.getElementById("email").value = data.email || "";
       document.getElementById("phonenum").value = data.phoneNumber || "";
       document.getElementById("profileImage").src =
-        `https://localhost:44339/${data.userImage}` ||
+        `https://localhost:44338/${data.userImage}` ||
         "https://via.placeholder.com/150";
     })
     .catch((error) => console.error("Error fetching user data:", error));
@@ -52,7 +52,7 @@ function saveChanges() {
     formData.append("UserImage", fileInput.files[0]);
   }
 
-  fetch(`https://localhost:44339/api/Users/UpdateUser/${userId}`, {
+  fetch(`https://localhost:44338/api/Users/UpdateUser/${userId}`, {
     method: "PUT",
     body: formData,
   })
@@ -70,7 +70,7 @@ function deleteAccount() {
     return;
   }
 
-  fetch(`https://localhost:44339/api/Users/DeleteUser/${userId}`, {
+  fetch(`https://localhost:44338/api/Users/DeleteUser/${userId}`, {
     method: "DELETE",
   })
     .then((response) => response.json())
@@ -87,7 +87,7 @@ async function getAllOrders() {
   try {
     // Fetch user info including orders from API
     let response = await fetch(
-      "https://localhost:44339/api/Users/getCurrentUserInfo",
+      "https://localhost:44338/api/Users/getCurrentUserInfo",
       {
         headers: {
           Authorization: `Bearer ${localStorage.Token}`,
@@ -110,13 +110,13 @@ async function getAllOrders() {
     data.orders.forEach((order) => {
       order.orderItems.forEach((item) => {
         let orderHTML = `
-          <a
+          <div
             class="mix mix-all mix-processing relative block rounded-lg bg-white p-4 shadow"
             href="javascript:void(0)"
             data-target=".modal-order"
           >
             <div
-              class="pointer-events-none flex flex-col gap-5 sm:flex-row"
+              class=" flex flex-col gap-5 sm:flex-row"
             >
               <div class="relative h-[80px] w-[80px] min-w-[80px]">
                 <figure
@@ -124,7 +124,9 @@ async function getAllOrders() {
                 >
                   <img
                     class="h-full w-full object-cover"
-                    src="https://localhost:44339/${item.product.productImage1}"  <!-- product image -->
+                    src="https://localhost:44338/${
+                      item.product.productImage1
+                    }"  <!-- product image -->
                     alt="${
                       item.product.productName
                     }"  <!-- product name as alt -->
@@ -208,8 +210,14 @@ async function getAllOrders() {
                 class="absolute right-0 top-0 m-2 rounded-xl bg-yellow-200 px-2 py-px text-yellow-500"
               >Shipping: ${order.shippingStatus}  <!-- shipping status -->
               </span>
+              <button class="download-btn btn btn-primary" onclick="downloadOrder(${
+                item.orderId
+              })">
+                    <i class="fa fa-download"></i> Download
+                  </button>
             </div>
-          </a>
+          </div>
+          
         `;
 
         // Append the generated HTML to the order container
@@ -233,6 +241,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+async function downloadOrder(orderId) {
+  const url = `https://localhost:44338/api/Users/GenerateInvoice?orderId=${orderId}`;
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `invoice_${orderId}.pdf`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 /////////////////////////////////////////////
 let addressForm = document.getElementById("EditAddressForm");
 addressForm.addEventListener("submit", async (e) => {
@@ -241,7 +260,7 @@ addressForm.addEventListener("submit", async (e) => {
     address: document.getElementById("input-address").value,
   };
   let token = localStorage.Token;
-  let response = await fetch("https://localhost:44339/api/Users/EditAddress", {
+  let response = await fetch("https://localhost:44338/api/Users/EditAddress", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,

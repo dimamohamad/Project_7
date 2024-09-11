@@ -5,7 +5,7 @@ document
     const email = document.getElementById("your-email").value;
 
     try {
-      const response = await fetch("https://localhost:44339/api/Users/send", {
+      const response = await fetch("https://localhost:44338/api/Users/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,7 +34,7 @@ document
 
     try {
       const response = await fetch(
-        `https://localhost:44339/api/Users/GetUserByEmail/${email}`
+        `https://localhost:44338/api/Users/GetUserByEmail/${email}`
       );
       const user = await response.json();
 
@@ -65,13 +65,13 @@ document
 
     try {
       const userResponse = await fetch(
-        `https://localhost:44339/api/Users/GetUserByEmail/${email}`
+        `https://localhost:44338/api/Users/GetUserByEmail/${email}`
       );
       const user = await userResponse.json();
 
       if (user) {
         const response = await fetch(
-          `https://localhost:44339/api/Users/ChangePassword/${user.UserId}`,
+          `https://localhost:44338/api/Users/ChangePassword/${user.UserId}`,
           {
             method: "PUT",
             headers: {

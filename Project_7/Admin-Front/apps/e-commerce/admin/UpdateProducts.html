@@ -11735,58 +11735,61 @@
             <form id="UpdateProductForm" class="mb-9">
                 <div class="row g-3 flex-between-end mb-5">
                     <div class="col-auto">
-                        <h2 class="mb-2">Add Product</h2>
+                        <h2 class="mb-2">Update Product</h2>
                     </div>
                 </div>
                 <div class="row g-5">
                     <div class="col-12 col-xl-8">
-                        <h4 class="mb-3">Category ID</h4>
-                        <input name="CategoryId" class="form-control mb-5" type="text"
-                            placeholder="Write title here..." />
+                        <h4 class="mb-3">Category Name</h4>
+                        <div class="mb-3">
+                            <select name="categoryId" id="dropDownList" class="form-control mb-5 dropdown-toggle">
+                              <option value="">Select Category</option>
+                            </select>
+                          </div>
                         <h4 class="mb-3">Product Name</h4>
-                        <input name="productName" class="form-control mb-5" type="text"
+                        <input name="productName" id="productName" class="form-control mb-5" type="text"
                             placeholder="Write title here..." />
                         <div class="mb-6">
                             <h4 class="mb-3">Product Description</h4>
-                            <input name="Description" class="form-control mb-5" type="text"
+                            <input name="Description" id="Description" class="form-control mb-5" type="text"
                                 placeholder="Write description here..." />
                         </div>
                         <h4 class="mb-3">Product Price</h4>
                         <input name="Price" class="form-control mb-5" type="text" placeholder="Write title here..." />
                         <div class="mb-6">
                             <h4 class="mb-3">Display images1</h4>
-                            <input name="ProductImage1" class="form-control mb-5" type="file"
+                            <input name="ProductImage1" id="ProductImage1" class="form-control mb-5" type="file"
                                 placeholder="choose your image" />
                             <h4 class="mb-3">Display images2</h4>
-                            <input name="ProductImage2" class="form-control mb-5" type="file"
+                            <input name="ProductImage2" id="ProductImage2" class="form-control mb-5" type="file"
                                 placeholder="choose your image" />
                             <h4 class="mb-3">Display images3</h4>
-                            <input name="ProductImage3" class="form-control mb-5" type="file"
+                            <input name="ProductImage3" id="ProductImage3" class="form-control mb-5" type="file"
                                 placeholder="choose your image" />
                             <h4 class="mb-3">Display images4</h4>
-                            <input name="ProductImage4" class="form-control mb-5" type="file"
+                            <input name="ProductImage4" id="ProductImage4" class="form-control mb-5" type="file"
                                 placeholder="choose your image" />
                             <h4 class="mb-3">Display images5</h4>
-                            <input name="ProductImage5" class="form-control mb-5" type="file"
+                            <input name="ProductImage5" id="ProductImage5" class="form-control mb-5" type="file"
                                 placeholder="choose your image" />
                             <h4 class="mb-3">Display images6</h4>
-                            <input name="ProductImage6" class="form-control mb-5" type="file"
+                            <input name="ProductImage6" id="ProductImage6" class="form-control mb-5" type="file"
                                 placeholder="choose your image" />
                                 <div class="mb-6">
                                     <h4 class="mb-3">Visiblity</h4>
-                                    <select name="Visiblity" class="form-control mb-5">
+                                    <select name="Visiblity" id="Visiblity" class="form-control mb-5">
                                         <option value="true">True</option>
                                         <option value="false">False</option>
                                     </select>
                                 </div>
                                 <div class="mb-6">
                                     <h4 class="mb-3">StockQuantity</h4>
-                                    <input name="StockQuantity" class="form-control mb-5" type="number"
+                                    <input name="StockQuantity" id="StockQuantity" class="form-control mb-5" type="number"
                                         placeholder="Write description here..." />
                                 </div>
                                 <div class="mb-6">
                                     <h4 class="mb-3">DiscountPercentage</h4>
-                                    <input name="DiscountPercentage" class="form-control mb-5" type="text"
+                                    <input name="DiscountPercentage" id="DiscountPercentage" class="form-control mb-5" type="text"
                                         placeholder="Write description here..." />
                                 </div>
                             <button class="btn btn-outline-primary" type="submit" style="width: 300px; font-size: large"

@@ -4,7 +4,7 @@ async function changePassword(event) {
   event.preventDefault(); // Prevent the form from submitting the default way
 
   var id = localStorage.getItem("userId");
-  var url = `https://localhost:44339/api/Users/ChangePassword/${id}`;
+  var url = `https://localhost:44338/api/Users/ChangePassword/${id}`;
   var form = document.getElementById("ChangePasswordForm");
 
   // Create a FormData object from the form

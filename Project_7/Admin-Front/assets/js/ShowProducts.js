@@ -1,6 +1,6 @@
 async function getCategoryName() {
   const dropDown = document.getElementById("dropDownListCategory");
-  let url = "https://localhost:44339/API/Categories/GetAllCategories";
+  let url = "https://localhost:44338/API/Categories/GetAllCategories";
   let request = await fetch(url);
   let data = await request.json();
 
@@ -21,9 +21,9 @@ debugger;
 const n = localStorage.getItem("categoryId");
 var url;
 if (n) {
-  url = `https://localhost:44339/Api/Products/GetProductsByCategoryId/${n}`;
+  url = `https://localhost:44338/Api/Products/GetProductsByCategoryId/${n}`;
 } else {
-  url = "https://localhost:44339/Api/Products/GetAllProducts";
+  url = "https://localhost:44338/Api/Products/GetAllProducts";
 }
 async function GetProducts() {
   var response = await fetch(url);
@@ -38,7 +38,7 @@ async function GetProducts() {
                       <td class="fs-9 align-middle">
                        ${product.productId}
                       </td>
-                      <td class="align-middle white-space-nowrap py-0"><a class="d-block border border-translucent rounded-2" href="../landing/product-details.html"><img src="https://localhost:44339/${product.productImage1}" alt="" width="53" /></a></td>
+                      <td class="align-middle white-space-nowrap py-0"><a class="d-block border border-translucent rounded-2" href="../landing/product-details.html"><img src="https://localhost:44338/${product.productImage1}" alt="" width="53" /></a></td>
                       <td class="product align-middle ps-4">${product.productName}</td>
                       <td class="price align-middle white-space-nowrap text-end fw-bold text-body-tertiary ps-4">${product.price}</td>
                       <td class="category align-middle white-space-nowrap text-body-quaternary fs-9 ps-4 fw-semibold">${product.categoryId}</td>
@@ -69,7 +69,7 @@ function UpdateProducts(id) {
 }
 
 async function DeleteCategory(productid) {
-  var url = `https://localhost:44339/Api/Products/DeleteProduct/${productid}`;
+  var url = `https://localhost:44338/Api/Products/DeleteProduct/${productid}`;
 
   let request = await fetch(url, {
     method: "DELETE",

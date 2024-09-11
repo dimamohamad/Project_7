@@ -1,4 +1,4 @@
-const url = "https://localhost:44339/Api/Products/AddNewProduct";
+const url = "https://localhost:44338/Api/Products/AddNewProduct";
 debugger;
 var form = document.getElementById("addProductForm");
 async function addProduct() {

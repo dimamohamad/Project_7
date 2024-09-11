@@ -1,6 +1,6 @@
 const n = localStorage.getItem("userId");
 
-const url =`https://localhost:44339/api/AddUser/UpdateUser${n}`;
+const url =`https://localhost:44338/api/AddUser/UpdateUser${n}`;
 
 var form = document.getElementById('userForm');
 

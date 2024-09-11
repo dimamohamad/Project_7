@@ -4,7 +4,7 @@ function CartId() {
 }
 
 const n = localStorage.getItem("productId");
-var url = `https://localhost:44339/Api/Products/GetProductsById/${n}`;
+var url = `https://localhost:44338/Api/Products/GetProductsById/${n}`;
 
 async function showProductDetail() {
   var response = await fetch(url);
@@ -98,22 +98,22 @@ async function showProductDetail() {
             >
               <div class="swiper-wrapper">
                 <figure class="swiper-slide">
-                  <img src="https://localhost:44339/${product.productImage1}" alt="" />
+                  <img src="https://localhost:44338/${product.productImage1}" alt="" />
                 </figure>
                 <figure class="swiper-slide">
-                  <img src="https://localhost:44339/${product.productImage2}" alt="" />
+                  <img src="https://localhost:44338/${product.productImage2}" alt="" />
                 </figure>
                 <figure class="swiper-slide">
-                  <img src="https://localhost:44339/${product.productImage3}" alt="" />
+                  <img src="https://localhost:44338/${product.productImage3}" alt="" />
                 </figure>
                 <figure class="swiper-slide">
-                  <img src="https://localhost:44339/${product.productImage4}" alt="" />
+                  <img src="https://localhost:44338/${product.productImage4}" alt="" />
                 </figure>
                 <figure class="swiper-slide">
-                  <img src="https://localhost:44339/${product.productImage5}" alt="" />
+                  <img src="https://localhost:44338/${product.productImage5}" alt="" />
                 </figure>
                 <figure class="swiper-slide">
-                  <img src="https://localhost:44339/${product.productImage6}" alt="" />
+                  <img src="https://localhost:44338/${product.productImage6}" alt="" />
                 </figure>
               </div>
             </div>

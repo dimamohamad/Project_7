@@ -1,4 +1,4 @@
-// const url = "https://localhost:44339/api/Vouchers";
+// const url = "https://localhost:44338/api/Vouchers";
 // debugger;
 
 // var form = document.getElementById("addForm");
@@ -23,7 +23,7 @@ async function AddVoucher(event) {
     console.log("Try to create a new voucher");
     
     event.preventDefault();
-    const url2 = "https://localhost:44339/api/Vouchers";
+    const url2 = "https://localhost:44338/api/Vouchers";
     let voucherCode = document.getElementById("voucherCode").value;
     let discountPercentage = document.getElementById("discountPercentage").value;
     let startDate = document.getElementById("startDate").value;

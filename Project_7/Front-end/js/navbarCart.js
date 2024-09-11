@@ -1,7 +1,7 @@
 let cartItemsList = document.getElementById("cartItemsList");
 const cartItemsDiv = document.getElementById("cartItemsList");
 const TheToken = localStorage.Token;
-const urlForApi = "https://localhost:44339";
+const urlForApi = "https://localhost:44338";
 const apiUrl = urlForApi + "/api/Cart/getCartItems";
 console.log("this is working");
 
