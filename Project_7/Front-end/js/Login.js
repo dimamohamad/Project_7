@@ -17,12 +17,12 @@ loginForm.addEventListener("submit", async (event) => {
     let offlineCart = localStorage.offlineCart;
     if (offlineCart) {
       offlineCart = JSON.parse(offlineCart);
-      offlineCart.forEach((item) =>
-        addProductToCart(item.productId, item.quantity)
-    );
-    localStorage.removeItem("offlineCart");
-  }
-  alert("Login Successful");
+      for (let item of offlineCart) {
+        await addProductToCart(item.productId, item.quantity);
+      }
+      localStorage.removeItem("offlineCart");
+    }
+    alert("Login Successful");
     window.location.href = "index.html";
   } else {
     console.error("Login failed:", result);
@@ -37,7 +37,6 @@ async function addProductToCart(productId, quantity) {
     productId: productId,
     quantity: quantity,
   };
-  console.log(data);
 
   let response = await fetch(url, {
     method: "POST",
@@ -48,8 +47,13 @@ async function addProductToCart(productId, quantity) {
     body: JSON.stringify(data),
   });
   if (response.ok) {
-    alert("Product added to cart successfully");
-    location.reload();
+    iziToast.success({
+      title: "Product Added to Cart",
+      message: "Product Added to your profile Cart successfully",
+      position: "topCenter",
+      timeout: 3000,
+      close: false,
+    });
   } else {
     alert("Something went wrong");
   }
