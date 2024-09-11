@@ -91,15 +91,22 @@ namespace Project_7.Controllers
         [HttpPut("UpdateUser/{id:int}")]
         public IActionResult UpdateUser(int id, [FromForm] UpdateUserDTO user)
         {
-           
+
             var data = _db.Users.Find(id);
 
-            data.FirstName = user.FirstName;
-            data.LastName = user.LastName;
-            data.UserName = user.UserName;
-            data.Email = user.Email;
-            data.PhoneNumber = user.PhoneNumber;
-            data.UserImage = SaveImage(user.UserImage);
+            if (user.UserName != null)
+                data.FirstName = user.FirstName;
+            if (user.LastName != null)
+                data.LastName = user.LastName;
+            if (user.UserName != null)
+                data.UserName = user.UserName;
+            if (user.Email != null)
+                data.Email = user.Email;
+            if (user.PhoneNumber != null)
+                data.PhoneNumber = user.PhoneNumber;
+            if (user.UserImage != null)
+                data.UserImage = SaveImage(user.UserImage);
+
 
             _db.Users.Update(data);
             _db.SaveChanges();
@@ -200,10 +207,10 @@ namespace Project_7.Controllers
             var principal = tokenReader.ValidateToken(token);
             return _db.Users.
                 Include(u => u.Orders).
-                ThenInclude(u=>u.Payments).
-                Include(u=>u.Orders).
+                ThenInclude(u => u.Payments).
+                Include(u => u.Orders).
                 ThenInclude(u => u.OrderItems).
-                ThenInclude(u=>u.Product).
+                ThenInclude(u => u.Product).
                 FirstOrDefault(u => u.UserName == principal.Identity.Name);
 
         }
