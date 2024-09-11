@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Project_7.Models;
 using Project_7.TokenReaderNS;
 using static Org.BouncyCastle.Math.EC.ECCurve;
+using DinkToPdf;
+using DinkToPdf.Contracts;
 
 namespace Project_7.Controllers
 {

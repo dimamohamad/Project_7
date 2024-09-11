@@ -9,6 +9,8 @@ using Project_7.TokenReaderNS;
 using static Project_7.Shared.ImageSaver;
 using static Org.BouncyCastle.Math.EC.ECCurve;
 using static Project_7.Shared.EmailSender;
+using DinkToPdf.Contracts;
+using DinkToPdf;
 
 
 namespace Project_7.Controllers
@@ -21,13 +23,16 @@ namespace Project_7.Controllers
         private readonly TokenGenerator _tokenGenerator;
         private readonly EmailService _emailService;
         private readonly IConfiguration _config;
+        private readonly IConverter _converter;
 
-        public UsersController(MyDbContext db, TokenGenerator tokenGenerator, EmailService emailService, IConfiguration config)
+
+        public UsersController(MyDbContext db, TokenGenerator tokenGenerator, EmailService emailService, IConfiguration config, IConverter converter)
         {
             _db = db;
             _tokenGenerator = tokenGenerator;
             _emailService = emailService;
             _config = config;
+            _converter = converter;
         }
 
         [HttpGet("ShowAllUsers")]
@@ -214,5 +219,167 @@ namespace Project_7.Controllers
                 FirstOrDefault(u => u.UserName == principal.Identity.Name);
 
         }
+
+
+        [HttpGet("InvoiceByOrderID")]
+        public IActionResult InvoiceByOrderID(int id)
+        {
+            if (id <= 0) { return BadRequest(); }
+            var OrderInvoice = _db.OrderItems.Where(x => x.OrderId == id).ToList();
+            if (OrderInvoice == null) { return NotFound(); }
+
+            return Ok(OrderInvoice);
+        }
+
+
+        [HttpGet("GenerateInvoice")]
+        public IActionResult GenerateInvoice(int orderId)
+        {
+            var orderItems = _db.OrderItems
+                .Where(oi => oi.OrderId == orderId)
+                .Include(oi => oi.Product)
+                .ToList();
+
+            var pdfDocument = new HtmlToPdfDocument
+            {
+                GlobalSettings = {
+                DocumentTitle = $"Invoice for Order {orderId}",
+                PaperSize = PaperKind.A4,
+                Orientation = Orientation.Portrait
+            },
+                Objects = {
+                new ObjectSettings
+                {
+                    HtmlContent = GenerateInvoiceHtml(orderItems),
+                    WebSettings = { DefaultEncoding = "utf-8" }
+                }
+            }
+            };
+
+            var pdf = _converter.Convert(pdfDocument);
+
+            return File(pdf, "application/pdf", $"invoice_{orderId}.pdf");
+        }
+
+        private string GenerateInvoiceHtml(List<OrderItem> orderItems)
+        {
+            var html = @"
+    <html>
+    <head>
+        <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+        <style>
+            body {
+    font-family: 'Roboto', sans-serif;
+    color: #f0f0f0;
+    background-color: #1e1e1e;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    background-color: #2c2c2c;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    color: #f0f0f0;
+    font-weight: 700;
+}
+
+tr:nth-child(even) {
+    background-color: #2c2c2c;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #e0e0e0;
+}
+
+.total {
+    font-weight: 700;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='header'>
+                <h1>Smart Tech.</h1>
+                <h2>Invoice</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>";
+
+            foreach (var item in orderItems)
+            {
+                var productName = item.Product?.ProductName ?? "Unknown";
+                var price = item.Product?.Price ?? 0;
+
+                html += $@"
+                    <tr>
+                        <td>{productName}</td>
+                        <td>{item.Quantity}</td>
+                        <td>${price:F2}</td>
+                        <td>{item.TotalPrice}</td>
+                    </tr>";
+            }
+
+            var totalAmount = orderItems.Sum(oi => oi.Product.Price * oi.Quantity) ?? 0;
+
+            html += $@"
+                </tbody>
+            </table>
+        </div>
+    </body>
+    </html>";
+
+            return html;
+        }
+
     }
 }
