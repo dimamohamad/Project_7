@@ -1,4 +1,4 @@
-const url = "https://localhost:44339/api/AddUser/AddNewUser";
+const url = "https://localhost:44338/api/AddUser/AddNewUser";
 var form = document.getElementById("userForm");
 async function add() {
 

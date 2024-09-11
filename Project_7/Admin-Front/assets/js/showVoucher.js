@@ -1,4 +1,4 @@
-const url = "https://localhost:44339/api/Vouchers";
+const url = "https://localhost:44338/api/Vouchers";
 
 async function GetAllVouchers() {
   var response = await fetch(url);
@@ -49,7 +49,7 @@ function setIdVoucher(id) {
 }
 
 async function DeleteVoucher(VoucherId) {
-  var url = `https://localhost:44339/api/Vouchers/${VoucherId}`;
+  var url = `https://localhost:44338/api/Vouchers/${VoucherId}`;
 
   let request = await fetch(url, {
     method: "DELETE",
@@ -61,7 +61,7 @@ GetAllVouchers();
 
 async function UpdateVoucher() {
   const n = localStorage.getItem("Voucher");
-  var url = `https://localhost:44339/api/Vouchers/${n}`;
+  var url = `https://localhost:44338/api/Vouchers/${n}`;
   let voucherCode = document.getElementById("voucherCode").value;
   let discountPercentage = document.getElementById("discountPercentage").value;
   let startDate = document.getElementById("startDate").value;

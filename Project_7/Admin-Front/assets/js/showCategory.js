@@ -1,4 +1,4 @@
-const url = "https://localhost:44339/API/Categories/GetAllCategories";
+const url = "https://localhost:44338/API/Categories/GetAllCategories";
 
 async function GetAllCategories() {
   var response = await fetch(url);
@@ -14,7 +14,7 @@ async function GetAllCategories() {
                       <td class="fs-9 align-middle">
                         ${category.categoryId}
                       </td>
-                      <td class="align-middle white-space-nowrap py-0"><a class="d-block border border-translucent rounded-2" href="../landing/product-details.html"><img src="https://localhost:44339/${category.categoryImage}" alt="" width="53" /></a></td>
+                      <td class="align-middle white-space-nowrap py-0"><a class="d-block border border-translucent rounded-2" href="../landing/product-details.html"><img src="https://localhost:44338/${category.categoryImage}" alt="" width="53" /></a></td>
                       <td class="product align-middle ps-4"><a class="fw-semibold line-clamp-3 mb-0" href="../landing/product-details.html">${category.categoryName}</a></td>
                      
                       <td class="tags align-middle review pb-2 ps-3" style="min-width:225px;">${category.description}</td>
@@ -47,7 +47,7 @@ function UpdateCategory(id) {
 }
 
 async function DeleteCategory(categoryId) {
-  var url = `https://localhost:44339/Api/Categories/DeleteCategory/${categoryId}`;
+  var url = `https://localhost:44338/Api/Categories/DeleteCategory/${categoryId}`;
 
   let request = await fetch(url, {
     method: "DELETE",

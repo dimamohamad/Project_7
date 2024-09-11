@@ -1,5 +1,5 @@
 let loginForm = document.getElementById("LoginForm");
-let url = "https://localhost:44339/api/Users/LoginUsers";
+let url = "https://localhost:44338/api/Users/LoginUsers";
 loginForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   var formdata = new FormData(loginForm);
@@ -37,7 +37,7 @@ loginForm.addEventListener("submit", async (event) => {
 
 // document.getElementById("Login").addEventListener("submit", ValidateEmail);
 async function addProductToCart(productId, quantity) {
-  let url = "https://localhost:44339/api/Cart/addToCart";
+  let url = "https://localhost:44338/api/Cart/addToCart";
   let data = {
     productId: productId,
     quantity: quantity,
