@@ -13,7 +13,6 @@ async function GetProducts() {
   var container = document.getElementById("showAllProductContainer");
 
   result.forEach((product) => {
-
     container.innerHTML += `    
                 <div class="col-span-6 sm:col-span-3 lg:col-span-2">
               <div
@@ -48,23 +47,7 @@ async function GetProducts() {
                   class="mx-5 mb-5 mt-auto w-fit rounded-md bg-primary-500 px-3 py-2 uppercase text-white transition-all duration-300 hover:bg-primary-600">
                   View details
                 </a>
-                <div class="absolute right-4 top-4 z-[2] flex flex-col gap-2">
-                  <button class="btn-wishlist hover:text-primary-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="pointer-events-none h-6 w-6 fill-none">
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                    </svg>
-                  </button>
-                
-                </div>
+          
                 <span
                   class="pointer-events-none absolute left-4 top-4 rounded-md bg-primary-500 px-2 text-white">
                   New
@@ -1075,4 +1058,3 @@ function displayProducts(products) {
 
   productList.innerHTML = productHTML; // Update the DOM with new products
 }
-
