@@ -152,7 +152,7 @@ async function getCartItems() {
                     item.product.price
                   }</span>
                   <span class="font-bold text-primary-500">$
-                  ${item.price / item.quantity}</span>
+                  ${(item.price / item.quantity).toFixed(2)}</span>
                 </div>
               </div>
               <div class="col-span-8 sm:col-span-4 xl:col-span-2">
@@ -260,7 +260,8 @@ async function openPaymentWindow() {
       message: "Please add your address into your profile before checkout",
       position: "topCenter",
       timeout: 3000,
-    });
+    }).then(()=> window.location.href = "profile.html");
+
     return;
   }
 
