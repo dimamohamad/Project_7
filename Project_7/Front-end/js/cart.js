@@ -260,7 +260,8 @@ async function openPaymentWindow() {
       message: "Please add your address into your profile before checkout",
       position: "topCenter",
       timeout: 3000,
-    });
+    }).then(()=> window.location.href = "profile.html");
+
     return;
   }
 

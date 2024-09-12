@@ -11,6 +11,7 @@ using static Org.BouncyCastle.Math.EC.ECCurve;
 using static Project_7.Shared.EmailSender;
 using DinkToPdf.Contracts;
 using DinkToPdf;
+using System.Security.Principal;
 
 
 namespace Project_7.Controllers
@@ -99,17 +100,20 @@ namespace Project_7.Controllers
 
             var data = _db.Users.Find(id);
 
+            if (data == null)
+                return NotFound();
+
             if (user.UserName != null)
                 data.FirstName = user.FirstName;
             if (user.LastName != null)
                 data.LastName = user.LastName;
             if (user.UserName != null)
                 data.UserName = user.UserName;
-            if (user.Email != null)
+            if (user?.Email != null)
                 data.Email = user.Email;
-            if (user.PhoneNumber != null)
+            if (user?.PhoneNumber != null)
                 data.PhoneNumber = user.PhoneNumber;
-            if (user.UserImage != null)
+            if (user?.UserImage != null)
                 data.UserImage = SaveImage(user.UserImage);
 
 
@@ -132,6 +136,8 @@ namespace Project_7.Controllers
             byte[] salt;
             PasswordHash.Hasher(user.Passwword, out hash, out salt);
             var data = _db.Users.Find(id);
+            if (data == null)
+                return NotFound();
             data.Passwword = user.Passwword;
             data.PasswordHash = hash;
             data.PasswordSalt = salt;
@@ -161,28 +167,27 @@ namespace Project_7.Controllers
         {
             // Generate OTP
             var otp = OtpGenerator.GenerateOtp();
-            var user = _db.Users.Where(x => x.Email == request.ToEmail).FirstOrDefault();
+            var user = _db.Users.FirstOrDefault(x => x.Email == request.ToEmail);
+            if (user == null) return NotFound();
             user.Passwword = otp;
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
 
             // Create email body including the OTP
             var emailBody = $"Hello Dear, Your SmartTech OTP code for resetting your password is: {otp} Thank you.";
-            var Subject = "send OTP";
+            const string subject = "send OTP";
             // Send email with OTP
             //await _emailService.SendEmailAsync(request.ToEmail, Subject, emailBody);
-            Shared.EmailSender.SendEmail(request.ToEmail, Subject, emailBody);
+            Shared.EmailSender.SendEmail(request.ToEmail, subject, emailBody);
 
             return Ok(new { message = "Email sent successfully.", otp, user.UserId }); // Optionally return the OTP for testing
         }
         [HttpPost("GetOTP/{id}")]
-        public IActionResult GetOTP([FromForm] OTPDTO request, int id)
+        public IActionResult GetOtp([FromForm] OTPDTO request, int id)
         {
             var user = _db.Users.Find(id);
-            if (user.Passwword == request.OTP)
+            if (user?.Passwword == request.OTP)
             {
-
                 return Ok();
-
             }
             return BadRequest();
         }
@@ -199,6 +204,8 @@ namespace Project_7.Controllers
         public IActionResult EditAddress([FromBody] EditAddressDto newAddress)
         {
             var user = GetUser();
+            if (user == null)
+                return Forbid();
             user.Address = newAddress.Address;
             _db.Users.Update(user);
             _db.SaveChanges();
@@ -210,6 +217,8 @@ namespace Project_7.Controllers
             var tokenReader = new TokenReader(_config);
             var token = Request.Headers["Authorization"].ToString().Split(' ')[1];
             var principal = tokenReader.ValidateToken(token);
+            if (principal?.Identity == null)
+                return null;
             return _db.Users.
                 Include(u => u.Orders).
                 ThenInclude(u => u.Payments).
@@ -225,10 +234,9 @@ namespace Project_7.Controllers
         public IActionResult InvoiceByOrderID(int id)
         {
             if (id <= 0) { return BadRequest(); }
-            var OrderInvoice = _db.OrderItems.Where(x => x.OrderId == id).ToList();
-            if (OrderInvoice == null) { return NotFound(); }
+            var orderInvoice = _db.OrderItems.Where(x => x.OrderId == id).ToList();
 
-            return Ok(OrderInvoice);
+            return Ok(orderInvoice);
         }
 
 
@@ -261,122 +269,128 @@ namespace Project_7.Controllers
             return File(pdf, "application/pdf", $"invoice_{orderId}.pdf");
         }
 
-        private string GenerateInvoiceHtml(List<OrderItem> orderItems)
+        private static string GenerateInvoiceHtml(List<OrderItem> orderItems)
         {
-            var html = @"
-    <html>
-    <head>
-        <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
-        <style>
-            body {
-    font-family: 'Roboto', sans-serif;
-    color: #f0f0f0;
-    background-color: #1e1e1e;
-    margin: 0;
-    padding: 0;
-}
+            var html = """
+                       
+                           <html>
+                           <head>
+                               <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap' rel='stylesheet'>
+                               <style>
+                                   body {
+                           font-family: 'Roboto', sans-serif;
+                           color: #f0f0f0;
+                           background-color: #1e1e1e;
+                           margin: 0;
+                           padding: 0;
+                       }
 
-.container {
-    width: 80%;
-    margin: auto;
-    background-color: #2c2c2c;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-}
+                       .container {
+                           width: 80%;
+                           margin: auto;
+                           background-color: #2c2c2c;
+                           padding: 20px;
+                           box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                           border-radius: 8px;
+                       }
 
-.header {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #e0e0e0;
-}
+                       .header {
+                           text-align: center;
+                           margin-bottom: 20px;
+                           color: #e0e0e0;
+                       }
 
-.header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    font-weight: 700;
-}
+                       .header h1 {
+                           margin: 0;
+                           font-size: 2.5em;
+                           font-weight: 700;
+                       }
 
-.header h2 {
-    margin: 0;
-    font-size: 1.5em;
-    font-weight: 400;
-}
+                       .header h2 {
+                           margin: 0;
+                           font-size: 1.5em;
+                           font-weight: 400;
+                       }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
+                       table {
+                           width: 100%;
+                           border-collapse: collapse;
+                           margin: 20px 0;
+                       }
 
-th, td {
-    border: 1px solid #444;
-    padding: 12px;
-    text-align: center;
-}
+                       th, td {
+                           border: 1px solid #444;
+                           padding: 12px;
+                           text-align: center;
+                       }
 
-th {
-    background-color: #333;
-    color: #f0f0f0;
-    font-weight: 700;
-}
+                       th {
+                           background-color: #333;
+                           color: #f0f0f0;
+                           font-weight: 700;
+                       }
 
-tr:nth-child(even) {
-    background-color: #2c2c2c;
-}
+                       tr:nth-child(even) {
+                           background-color: #2c2c2c;
+                       }
 
-.footer {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 1.2em;
-    color: #e0e0e0;
-}
+                       .footer {
+                           margin-top: 20px;
+                           text-align: center;
+                           font-size: 1.2em;
+                           color: #e0e0e0;
+                       }
 
-.total {
-    font-weight: 700;
-}
-
-        </style>
-    </head>
-    <body>
-        <div class='container'>
-            <div class='header'>
-                <h1>Smart Tech.</h1>
-                <h2>Invoice</h2>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Product Name</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>";
+                       .total {
+                           font-weight: 700;
+                       }
+                       
+                               </style>
+                           </head>
+                           <body>
+                               <div class='container'>
+                                   <div class='header'>
+                                       <h1>Smart Tech.</h1>
+                                       <h2>Invoice</h2>
+                                   </div>
+                                   <table>
+                                       <thead>
+                                           <tr>
+                                               <th>Product Name</th>
+                                               <th>Quantity</th>
+                                               <th>Price</th>
+                                               <th>Total</th>
+                                           </tr>
+                                       </thead>
+                                       <tbody>
+                       """;
 
             foreach (var item in orderItems)
             {
                 var productName = item.Product?.ProductName ?? "Unknown";
                 var price = item.Product?.Price ?? 0;
 
-                html += $@"
-                    <tr>
-                        <td>{productName}</td>
-                        <td>{item.Quantity}</td>
-                        <td>${price:F2}</td>
-                        <td>{item.TotalPrice}</td>
-                    </tr>";
+                html += $"""
+                         
+                                             <tr>
+                                                 <td>{productName}</td>
+                                                 <td>{item.Quantity}</td>
+                                                 <td>${price:F2}</td>
+                                                 <td>{item.TotalPrice}</td>
+                                             </tr>
+                         """;
             }
 
             var totalAmount = orderItems.Sum(oi => oi.Product.Price * oi.Quantity) ?? 0;
 
-            html += $@"
-                </tbody>
-            </table>
-        </div>
-    </body>
-    </html>";
+            html += $"""
+                     
+                                     </tbody>
+                                 </table>
+                             </div>
+                         </body>
+                         </html>
+                     """;
 
             return html;
         }

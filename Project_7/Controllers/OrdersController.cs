@@ -45,5 +45,13 @@ namespace Project_7.Controllers
             return Ok(orders);
         }
 
+        [HttpGet("{id:int}")]
+        public IActionResult GetSingleOrder(int id)
+        {
+            var order = db.Orders.Include(o => o.OrderItems).ThenInclude(oItem => oItem.Product)
+                .FirstOrDefault(o => o.OrderId == id);
+            return Ok(order);
+        }
+
     }
 }
