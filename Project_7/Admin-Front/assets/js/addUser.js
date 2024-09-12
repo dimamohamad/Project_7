@@ -11,5 +11,5 @@ let response = await fetch(url, {
   var data = response;
 
   console.log(data);
-  alert(" added user  successfully");
+  alert(" the user added successfully");
 }

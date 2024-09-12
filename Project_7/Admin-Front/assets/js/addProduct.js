@@ -10,6 +10,6 @@ async function addProduct() {
     body: formData,
   });
   var data = response;
-
-  alert("your product have been added successfully");
+  alert("the Product added successfully")
+   window.location.href=("products.html");
 }

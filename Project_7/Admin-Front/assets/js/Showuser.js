@@ -39,7 +39,7 @@ async function Delete(id) {
     method: "DELETE",
   });
   
-  alert(" deleted user successfully");
+  alert("the user  deleted  successfully");
 }
 
 

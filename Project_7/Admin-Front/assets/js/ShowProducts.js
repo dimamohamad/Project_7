@@ -1,3 +1,5 @@
+
+
 async function getCategoryName() {
   const dropDown = document.getElementById("dropDownListCategory");
   let url = "https://localhost:44338/API/Categories/GetAllCategories";
@@ -53,7 +55,7 @@ async function GetProducts() {
                       <td class="time align-middle white-space-nowrap text-body-tertiary text-opacity-85 ps-4">${product.createdAt}</td>
                      <td class="align-middle white-space-nowrap text-end pe-0 ps-4 btn-reveal-trigger">
                         <div class="btn-reveal-trigger position-static"><button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs-10" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs-10"></span></button>
-                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="UpdateProducts.html" onclick="UpdateProducts(${product.productId})">Update Category</a>
+                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="UpdateProducts.html" onclick="UpdateProducts(${product.productId})">Update Product</a>
                             <div class="dropdown-divider"></div><a onclick="DeleteCategory(${product.productId})" class="dropdown-item text-danger" href="#!">Remove</a>
                           </div>
                         </div>
@@ -74,7 +76,7 @@ async function DeleteCategory(productid) {
   let request = await fetch(url, {
     method: "DELETE",
   });
-  alert("Category has been deleted successfully");
+  alert("the product has been deleted successfully");
   window.location.reload();
 }
 GetProducts();

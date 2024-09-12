@@ -1,4 +1,6 @@
 const url = "https://localhost:44338/api/Categories";
+
+
 debugger;
 var form = document.getElementById("addCategoryForm");
 async function addCategory() {
@@ -10,13 +12,7 @@ async function addCategory() {
     body: formData,
   });
   var data = response;
-
- 
-  iziToast.success({
-    title: "Add category",
-    message: "Your category has been added successfully",
-    position: "topCenter",
-    timeout: 3000,
-  });
+  
+ alert("the Category added successfully")
   window.location.href = "showCategory.html";
 }

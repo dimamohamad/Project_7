@@ -16,7 +16,7 @@ async function UpdateCategory() {
 
 async function getcategory() {
   let n = localStorage.getItem("CategoryId");
-  var url = `https://localhost:44339/Api/Categories/GetCategorysbyId/${n}`;
+  var url = `https://localhost:44338/Api/Categories/GetCategorysbyId/${n}`;
   let response = await fetch(url);
   let result = await response.json();
   document.getElementById("CategoryName").value = result.categoryName;

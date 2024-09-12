@@ -30,7 +30,7 @@ async function edit(){
 
 async function getcategory() {
     let n = localStorage.getItem("userId");
-    var url = `https://localhost:44339/api/AddUser/GetUserByID${n}`;
+    var url = `https://localhost:44338/api/AddUser/GetUserByID${n}`;
     let response = await fetch(url);
     let result = await response.json();
     document.getElementById("firstName").value = result.firstName;
