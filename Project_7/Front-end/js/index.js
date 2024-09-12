@@ -1,16 +1,14 @@
-
-if (localStorage.messeges){
-let messeges =JSON.parse(localStorage.messeges);
-messeges.forEach(message=>{
-   iziToast.success({
-  title: message.title,
-  message: message.message,
-  position: "topCenter",
-  timeout: 3000,
-});
-
-})
- localStorage.removeItem("messeges");
+if (localStorage.messeges) {
+  let messeges = JSON.parse(localStorage.messeges);
+  messeges.forEach((message) => {
+    iziToast.success({
+      title: message.title,
+      message: message.message,
+      position: "topCenter",
+      timeout: 3000,
+    });
+  });
+  localStorage.removeItem("messeges");
 }
 
 const url = "https://localhost:44338/API/Categories/GetAllCategories";
@@ -75,7 +73,6 @@ async function GetLatestProducts() {
   var swiperWrapper = document.getElementById("LatestProducts");
 
   LatestProducts.forEach((product) => {
-
     swiperWrapper.innerHTML += `
       <div class="swiper-slide h-auto">
         <div class="relative flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-lg hover:shadow-xl">
@@ -147,7 +144,7 @@ async function GetProductsMostReview() {
                   </figure>
               </a>
               <div class="relative border-l-2 pl-4"> 
-               <a href="#" class="my-3 line-clamp-2 text-default-600 transition-all duration-300 hover:text-primary-500">
+               <a href="product-details.html" class="my-3 line-clamp-2 text-default-600 transition-all duration-300 hover:text-primary-500">
                       ${productMostReview.productName}
                   </a
                   
@@ -181,7 +178,5 @@ async function GetProductsMostReview() {
 GetProductsMostReview();
 
 function clearLocalStorage() {
-    window.location.href = "shop-grid.html";
+  window.location.href = "shop-grid.html";
 }
-
-
