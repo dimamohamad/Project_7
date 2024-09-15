@@ -14,7 +14,7 @@ async function loginAdmin(event) {
     if (response.ok) {
       // Handle success
       alert("Login successful!");
-      window.location.href = "index.html"; // Correctly set the URL to navigate to
+      window.location.href = "showuser.html"; // Correctly set the URL to navigate to
     } else {
       // Handle error
       alert("Login failed. Please check your credentials.");
