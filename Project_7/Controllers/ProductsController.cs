@@ -45,15 +45,17 @@ namespace Project_7.Controllers
 
 
         [HttpGet("/Api/Products/GetAllProducts")]
-        public IActionResult GetAll()
+        public IActionResult GetAll([FromQuery] string? keyword)
         {
-            var products = _db.Products.Where(p => p.CategoryId != null).Select(p => ProductDisplayDto.
-                    CreateDtoFromProduct(p)).
-                ToList();
+            var products = _db.Products.Where(p => p.CategoryId != null).AsQueryable();
+            if (keyword != null) {
+                products = products.Where(p => p.ProductName.Contains(keyword)||p.Description.Contains(keyword));
+            }
 
             if (products != null)
             {
-                return Ok(products);
+                return Ok(products.Select(p => ProductDisplayDto.
+                    CreateDtoFromProduct(p)).ToList());
             }
 
             return NotFound();
