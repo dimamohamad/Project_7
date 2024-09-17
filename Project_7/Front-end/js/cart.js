@@ -315,15 +315,7 @@ async function openPaymentWindow() {
     // Close the interval if the window is closed manually
     if (paymentWindow && paymentWindow.closed) {
       clearInterval(checkInterval);
-      localStorage.setItem(
-        "user",
-        JSON.stringify({
-          uid,
-          displayName,
-          email,
-          photoURL,
-        })
-      );
+
       window.location.href = "index.html";
     }
   }, 1000);
