@@ -117,24 +117,88 @@
     <!--    Main Content-->
     <!-- ===============================================-->
     <main class="main" id="top">
-      <nav class="navbar navbar-vertical navbar-expand-lg" style="display:none;">
+      <nav
+        class="navbar navbar-vertical navbar-expand-lg"
+        style="display: none"
+      >
         <div class="collapse navbar-collapse" id="navbarVerticalCollapse">
           <!-- scrollbar removed-->
           <div class="navbar-vertical-content">
             <ul class="navbar-nav flex-column" id="navbarVerticalNav">
               <li class="nav-item">
                 <!-- parent pages-->
-                <div class="nav-item-wrapper"><a class="nav-link dropdown-indicator label-1" href="#nv-home" role="button" data-bs-toggle="collapse" aria-expanded="true" aria-controls="nv-home">
+                <div class="nav-item-wrapper">
+                  <a
+                    class="nav-link dropdown-indicator label-1"
+                    href="#nv-home"
+                    role="button"
+                    data-bs-toggle="collapse"
+                    aria-expanded="true"
+                    aria-controls="nv-home"
+                  >
                     <div class="d-flex align-items-center">
-                      <div class="dropdown-indicator-icon-wrapper"><span class="fas fa-caret-right dropdown-indicator-icon"></span></div><span class="nav-link-icon"><span data-feather="pie-chart"></span></span><span class="nav-link-text">Home</span><span class="fa-solid fa-circle text-info ms-1 new-page-indicator" style="font-size: 6px"></span>
+                      <div class="dropdown-indicator-icon-wrapper">
+                        <span
+                          class="fas fa-caret-right dropdown-indicator-icon"
+                        ></span>
+                      </div>
+                      <span class="nav-link-icon"
+                        ><span data-feather="pie-chart"></span></span
+                      ><span class="nav-link-text">Home</span
+                      ><span
+                        class="fa-solid fa-circle text-info ms-1 new-page-indicator"
+                        style="font-size: 6px"
+                      ></span>
                     </div>
                   </a>
                   <div class="parent-wrapper label-1">
-                    <ul class="nav collapse parent show" data-bs-parent="#navbarVerticalCollapse" id="nv-home">
+                    <ul
+                      class="nav collapse parent show"
+                      data-bs-parent="#navbarVerticalCollapse"
+                      id="nv-home"
+                    >
                       <li class="collapsed-nav-item-title d-none">Home</li>
-                      <li class="nav-item"><a class="nav-link active" href="adduser.html">
-                          <div class="d-flex align-items-center"><span class="nav-link-text">Add New User</span></div>
-                        </a><!-- more inner pages-->
+                      <li class="nav-item">
+                        <a class="nav-link active" href="adduser.html">
+                          <div class="d-flex align-items-center">
+                            <span class="nav-link-text">Add New User</span>
+                          </div> </a
+                        ><!-- more inner pages-->
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="showuser.html">
+                          <div class="d-flex align-items-center">
+                            <span class="nav-link-text">Show All Users</span>
+                          </div> </a
+                        ><!-- more inner pages-->
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="addCategory.html">
+                          <div class="d-flex align-items-center">
+                            <span class="nav-link-text">Add New Category</span>
+                          </div> </a
+                        ><!-- more inner pages-->
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="showCategory.html">
+                          <div class="d-flex align-items-center">
+                            <span class="nav-link-text">Show Categoies</span>
+                          </div> </a
+                        ><!-- more inner pages-->
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="addProduct.html">
+                          <div class="d-flex align-items-center">
+                            <span class="nav-link-text">Add product</span>
+                          </div> </a
+                        ><!-- more inner pages-->
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="products.html">
+                          <div class="d-flex align-items-center">
+                            <span class="nav-link-text">Show products</span>
+                          </div> </a
+                        ><!-- more inner pages-->
                       </li>
                       <li class="nav-item"><a class="nav-link active" href="showuser.html">
                         <div class="d-flex align-items-center"><span class="nav-link-text">Show All Users</span></div>
@@ -197,25 +261,25 @@
               </li>
               <li class="nav-item">
                 <!-- label-->
-               
+
                 <!-- parent pages-->
 
-
-
                 <!--******************************************************-->
-                
-                
-                
-               
               </li>
-             
-              
-             
             </ul>
-            
           </div>
         </div>
-        <div class="navbar-vertical-footer"><button class="btn navbar-vertical-toggle border-0 fw-semibold w-100 white-space-nowrap d-flex align-items-center"><span class="uil uil-left-arrow-to-left fs-8"></span><span class="uil uil-arrow-from-right fs-8"></span><span class="navbar-vertical-footer-text ms-2">Collapsed View</span></button></div>
+        <div class="navbar-vertical-footer">
+          <button
+            class="btn navbar-vertical-toggle border-0 fw-semibold w-100 white-space-nowrap d-flex align-items-center"
+          >
+            <span class="uil uil-left-arrow-to-left fs-8"></span
+            ><span class="uil uil-arrow-from-right fs-8"></span
+            ><span class="navbar-vertical-footer-text ms-2"
+              >Collapsed View</span
+            >
+          </button>
+        </div>
       </nav>
       <nav
         class="navbar navbar-top fixed-top navbar-expand"
@@ -17864,58 +17928,110 @@
         </nav>
         <div class="mb-9">
           <div class="row g-3 mb-4">
-            <div class="col-auto">
-            </div>
+            <div class="col-auto"></div>
           </div>
-         
-          
+
           <div
             id="products"
             data-list='{"valueNames":["product","price","category","tags","vendor","time"],"page":10,"pagination":true}'
           >
             <div class="mb-4">
               <div class="d-flex flex-wrap gap-3">
-             
-                 
-              
-              
-             
-            
-            <div
-              class="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis border-top border-bottom border-translucent position-relative top-1"
-            >
-            <div class="table-responsive scrollbar mx-n1 px-1">
-                <table class="table fs-9 mb-0">
-                  <thead>
-                    <tr>
-                      <th class="sort white-space-nowrap align-middle ps-4" scope="col" style="width: 350px" data-sort="name">
-                        Name
-                      </th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="category" style="width: 150px">
-                        Email
-                      </th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="text" style="width: 150px">
-                        Message
-                      </th>
-                      <th class="sort align-middle ps-4" scope="col" data-sort="time" style="width: 150px">
-                       Date and Time
-                      </th>
-                      <th class="sort text-end align-middle pe-0 ps-4" scope="col">
-                        Action
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody class="list" id="showMessageContact"></tbody>
-                </table>
-              </div>
-                
+                <div
+                  class="mx-n4 px-4 mx-lg-n6 px-lg-6 bg-body-emphasis border-top border-bottom border-translucent position-relative top-1"
+                >
+                  <div class="table-responsive scrollbar mx-n1 px-1">
+                    <table class="table fs-9 mb-0">
+                      <thead>
+                        <tr>
+                          <th
+                            class="sort white-space-nowrap align-middle ps-4"
+                            scope="col"
+                            style="width: 350px"
+                            data-sort="name"
+                          >
+                            Name
+                          </th>
+                          <th
+                            class="sort align-middle ps-4"
+                            scope="col"
+                            data-sort="category"
+                            style="width: 150px"
+                          >
+                            Email
+                          </th>
+                          <th
+                            class="sort align-middle ps-4"
+                            scope="col"
+                            data-sort="text"
+                            style="width: 150px"
+                          >
+                            Message
+                          </th>
+                          <th
+                            class="sort align-middle ps-4"
+                            scope="col"
+                            data-sort="time"
+                            style="width: 150px"
+                          >
+                            Date and Time
+                          </th>
+                          <th
+                            class="sort text-end align-middle pe-0 ps-4"
+                            scope="col"
+                          >
+                            Action
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="list" id="showMessageContact"></tbody>
+                    </table>
+                  </div>
+
+                  <!-- for popup-->
+                  <div
+                    id="messagePopup"
+                    class="popup"
+                    style="
+                      display: none;
+                      position: fixed;
+                      top: -47%;
+                      left: 55%;
+                      transform: translate(-50%, -50%);
+                      background: white;
+                      padding: 20px;
+                      box-shadow: 0px 4px 20px rgba(0, 0, 139, 0.7); /* تأثير ظل باللون الأزرق الغامق */
+                      z-index: 1000;
+                      width: 400px;
+                      border-radius: 10px;
+                      position: relative;
+                      max-height: 300px; /* أقصى ارتفاع للنافذة */
+                      overflow-y: auto; /* التمرير إذا كان المحتوى أطول من 300px */
+                    "
+                  >
+                    <!--clous popup-->
+                    <span
+                      onclick="closePopup()"
+                      style="
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        cursor: pointer;
+                        font-size: 20px;
+                        font-weight: bold;
+                      "
+                      >&times;</span
+                    >
+                    <div style="padding-top: 20px">
+                      <span id="popupMessage"></span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <footer class="footer position-absolute">
-          
-        </footer>
+        <footer class="footer position-absolute"></footer>
       </div>
       <div
         class="modal fade"
@@ -18238,7 +18354,6 @@
           </div>
         </div>
       </div>
-      
     </main>
     <!-- ===============================================-->
     <!--    End of Main Content-->
