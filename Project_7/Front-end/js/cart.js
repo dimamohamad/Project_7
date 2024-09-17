@@ -280,11 +280,11 @@ async function openPaymentWindow() {
   // Open the payment window
   let paymentWindow = window.open(
     data.approvalUrl,
-    "_blank" // This opens the URL in a new tab
+    "popup",
+    "width=600,height=400,scrollbars=yes" // This opens the URL in a new tab
   );
 
   let checkInterval = setInterval(function () {
-    console.log(paymentWindow);
     try {
       // Check if the window is still open and the URL contains the target string
       if (
@@ -315,7 +315,12 @@ async function openPaymentWindow() {
     // Close the interval if the window is closed manually
     if (paymentWindow && paymentWindow.closed) {
       clearInterval(checkInterval);
-
+      localStorage.messeges = JSON.stringify([
+        {
+          title: "Order Completed",
+          message: "Your order has been completed successfully",
+        },
+      ]);
       window.location.href = "index.html";
     }
   }, 1000);
