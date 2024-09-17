@@ -1,7 +1,7 @@
 
 
 
-async function UpdateVoucher() {
+async function UpdateVoucher(event) {
     const n = localStorage.getItem("Voucher");
     var url = `https://localhost:44338/api/Vouchers/${n}`;
     let voucherCode = document.getElementById("voucherCode").value;
@@ -16,13 +16,13 @@ async function UpdateVoucher() {
       endDate: endDate,
       isActive: isActive,
     };
-    event.preventDefault();
+    
     let response = await fetch(url, {
       method: "PUT",
-      body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
       },
+      body: JSON.stringify(data),
     });
     alert("Voucher Updated successfully ");
     window.location.href("showVoucher.html");
