@@ -215,7 +215,8 @@ namespace Project_7.Controllers
             };
             db.Payments.Add(payment);
             db.SaveChanges();
-            return Ok("Payment has been completed, You can close this window now.");
+            string script = "<script>window.close();</script>";
+            return Content(script, "text/html");
         }
 
         [HttpGet("cancel")]
