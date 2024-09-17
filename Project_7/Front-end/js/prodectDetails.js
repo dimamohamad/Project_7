@@ -1,8 +1,14 @@
 let token = localStorage.getItem("Token");
 
+if (!token) {
+  document.getElementById("createCommentForm").remove();
+} else {
+  new StarRating("#rating-value");
+}
+
 async function showProductDetail() {
   const x = localStorage.getItem("productId");
-  let url = `https://localhost:44339/Api/Products/GetProductsById/${x}`;
+  let url = `https://localhost:44338/Api/Products/GetProductsById/${x}`;
 
   let response = await fetch(url);
 
@@ -18,22 +24,22 @@ async function showProductDetail() {
           >
             <div class="swiper-wrapper">
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage1}" alt="" />
+                <img src="https://localhost:44338/${result.productImage1}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage2}" alt="" />
+                <img src="https://localhost:44338/${result.productImage2}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage3}" alt="" />
+                <img src="https://localhost:44338/${result.productImage3}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage4}" alt="" />
+                <img src="https://localhost:44338/${result.productImage4}" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage5}" alt="" />
+                <img src="https://localhost:44338/${result.productImage5}" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage6}" alt="" />
+                <img src="https://localhost:44338/${result.productImage6}" alt="" />
               </figure>
             </div>
             <div
@@ -78,22 +84,22 @@ async function showProductDetail() {
           >
             <div class="swiper-wrapper">
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage1}" alt="" />
+                <img src="https://localhost:44338/${result.productImage1}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage2}" alt="" />
+                <img src="https://localhost:44338/${result.productImage2}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage3}" alt="" />
+                <img src="https://localhost:44338/${result.productImage3}" alt="" />
               </figure>
               <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage4}" alt="" />
+                <img src="https://localhost:44338/${result.productImage4}" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage5}" alt="" />
+                <img src="https://localhost:44338/${result.productImage5}" alt="" />
               </figure>
                 <figure class="swiper-slide">
-                <img src="https://localhost:44339/${result.productImage6}" alt="" />
+                <img src="https://localhost:44338/${result.productImage6}" alt="" />
               </figure>
             </div>
           </div>
@@ -110,7 +116,7 @@ async function showProductDetail() {
              ${result.productName}
           </h2>
           <div class="my-2 flex items-center gap-2">
-            <span class="text-xl font-bold text-primary-500"> ${result.price}</span>
+            <span class="text-xl font-bold text-primary-500"> $${result.price}</span>
   
           </div>
           <div class="mb-5 border-b-2 pb-5">
@@ -276,15 +282,15 @@ async function addProductToLocalStorage(productId, productName, productImage) {
 
   // Store the updated array in localStorage
   localStorage.setItem("offlineCart", JSON.stringify(offlineCart));
+  location.reload();
 }
 
 async function addProductToCart(productId, quantity) {
-  let url = "https://localhost:44339/api/Cart/addToCart";
+  let url = "https://localhost:44338/api/Cart/addToCart";
   let data = {
     productId: productId,
     quantity: quantity,
   };
-  console.log(data);
 
   let response = await fetch(url, {
     method: "POST",
@@ -309,7 +315,7 @@ function preventDefault(event) {
 async function GetReviews() {
   //review section
   const n = localStorage.getItem("productId");
-  const url = `https://localhost:44339/api/Reviews/SingleProductReviews/${n}`;
+  const url = `https://localhost:44338/api/Reviews/SingleProductReviews/${n}`;
   var response = await fetch(url);
   var result = await response.json();
   var container = document.getElementById("reviewSection");
@@ -349,10 +355,10 @@ async function GetReviews() {
                   class="relative h-5 w-full overflow-hidden rounded bg-primary-500/50"
                 >
                   <div
-                    class="absolute left-0 top-0 h-full w-[85%] rounded bg-primary-500 text-center text-white"
+                    class="absolute left-0 top-0 h-full rounded bg-primary-500 text-center text-white"
+                    style="width: ${result.fiveStarReviewsPercentage * 100}%"
                   >
-                    <!--five star pecentage 85% -->
-                    ${result.fiveStarReviewsPercentage}
+                    ${result.fiveStarReviewsPercentage * result.reviewsCount}
                   </div>
                 </div>
               </div>
@@ -362,10 +368,10 @@ async function GetReviews() {
                   class="relative h-5 w-full overflow-hidden rounded bg-primary-500/50"
                 >
                   <div
-                    class="absolute left-0 top-0 h-full w-[65%] rounded bg-primary-500 text-center text-white"
+                    class="absolute left-0 top-0 h-full rounded bg-primary-500 text-center text-white"
+                    style="width: ${result.fourStarReviewsPercentage * 100}%"
                   >
-                    <!-- 4 star pecentage 65% -->
-                    ${result.fourStarReviewsPercentage}
+                    ${result.fourStarReviewsPercentage * result.reviewsCount}
                   </div>
                 </div>
               </div>
@@ -376,9 +382,9 @@ async function GetReviews() {
                 >
                   <div
                     class="absolute left-0 top-0 h-full w-[30%] rounded bg-primary-500 text-center text-white"
+                    style="width: ${result.threeStarReviewsPercentage * 100}%"
                   >
-                    <!--three star pecentage 30% -->
-                    ${result.threeStarReviewsPercentage}
+                    ${result.threeStarReviewsPercentage * result.reviewsCount}
                   </div>
                 </div>
               </div>
@@ -389,9 +395,9 @@ async function GetReviews() {
                 >
                   <div
                     class="absolute left-0 top-0 h-full w-[45%] rounded bg-primary-500 text-center text-white"
+                    style="width: ${result.twoStarReviewsPercentage * 100}%"
                   >
-                    <!-- two star pecentage 45% -->
-                    ${result.twoStarReviewsPercentage}
+                    ${result.twoStarReviewsPercentage * result.reviewsCount}
                   </div>
                 </div>
               </div>
@@ -402,9 +408,10 @@ async function GetReviews() {
                 >
                   <div
                     class="absolute left-0 top-0 h-full w-[25%] rounded bg-primary-500 text-center text-white"
+                    style="width: ${result.oneStarReviewsPercentage * 100}%"
                   >
-                    <!-- one star pecentage 25% -->
-                    ${result.oneStarReviewsPercentage}
+                    
+                    ${result.oneStarReviewsPercentage * result.reviewsCount}
                   </div>
                 </div>
               </div>
@@ -426,7 +433,7 @@ function reduceQuantity() {
 
 async function loadReviews() {
   const n = localStorage.getItem("productId");
-  const url = `https://localhost:44339/api/Reviews/SingleProductReviews/${n}`;
+  const url = `https://localhost:44338/api/Reviews/SingleProductReviews/${n}`;
   const response = await fetch(url);
   const result = await response.json();
   // Get the review section container
@@ -487,7 +494,7 @@ async function loadReviews() {
 // foreach--------------------------------------------------------
 async function loadReviews1() {
   const n = localStorage.getItem("productId");
-  const url = `https://localhost:44339/api/Reviews/SingleProductReviews/${n}`;
+  const url = `https://localhost:44338/api/Reviews/SingleProductReviews/${n}`;
   var response = await fetch(url);
   var result = await response.json();
   var container = document.getElementById("userReview");
@@ -506,7 +513,7 @@ async function loadReviews1() {
 }
 
 async function AddReview() {
-  const url2 = "https://localhost:44339/api/Reviews/AddReview";
+  const url2 = "https://localhost:44338/api/Reviews/AddReview";
   let comment = document.getElementById("comment");
   var data = {
     userId: localStorage.getItem("userId"),

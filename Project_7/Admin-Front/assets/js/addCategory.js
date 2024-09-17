@@ -1,4 +1,6 @@
-const url = "https://localhost:44339/api/Categories";
+const url = "https://localhost:44338/api/Categories";
+
+
 debugger;
 var form = document.getElementById("addCategoryForm");
 async function addCategory() {
@@ -10,6 +12,7 @@ async function addCategory() {
     body: formData,
   });
   var data = response;
-
-  alert("your category have been added successfully");
+  
+ alert("the Category added successfully")
+  window.location.href = "showCategory.html";
 }

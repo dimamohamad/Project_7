@@ -1,5 +1,5 @@
 const token = localStorage.Token;
-const url = "https://localhost:44339";
+const url = "https://localhost:44338";
 const apiUrl = url + "/api/Cart/getCartItems";
 
 async function removeCartItem(cartItemId) {
@@ -10,7 +10,6 @@ async function removeCartItem(cartItemId) {
       Authorization: `Bearer ${token}`,
     },
   });
-  console.log(response);
 
   if (response.ok) {
     iziToast.success({
@@ -86,7 +85,7 @@ promoCodeForm.addEventListener("submit", async (e) => {
     } else {
       iziToast.error({
         title: "Error",
-        message: "Something went wrong",
+        message: "Voucher is not valid",
         position: "topCenter",
         timeout: 3000,
       });
@@ -105,14 +104,12 @@ async function getCartItems() {
   const data = await response.json();
   let cartItems = data.cartItems;
   let cart = data.cart;
-  console.log(cart);
 
   let promoCodeInput = document.getElementById("code");
   if (cart.voucher) {
     promoCodeInput.value = cart.voucher.voucherCode;
   }
 
-  console.log("Data fetched successfully:", data);
   let cartItemsDiv = document.getElementById("cartItemsList");
   let totalPrice = cartItems
     .reduce((acc, item) => acc + item.price, 0)
@@ -155,7 +152,7 @@ async function getCartItems() {
                     item.product.price
                   }</span>
                   <span class="font-bold text-primary-500">$
-                  ${item.price / item.quantity}</span>
+                  ${(item.price / item.quantity).toFixed(2)}</span>
                 </div>
               </div>
               <div class="col-span-8 sm:col-span-4 xl:col-span-2">
@@ -246,7 +243,32 @@ document
 
 // Function to open the payment link and close the window when it navigates to a specific page
 async function openPaymentWindow() {
-  let response = await fetch("https://localhost:44339/api/Cart/checkout", {
+  let userResponse = await fetch(
+    "https://localhost:44338/api/Users/getCurrentUserInfo",
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.Token}`,
+      },
+    }
+  );
+  let userData = await userResponse.json();
+  if (userData.address === null) {
+    iziToast.error({
+      title: "Error",
+      message: "Please add your address into your profile before checkout",
+      position: "topCenter",
+      timeout: 2000,
+    });
+    setTimeout(function () {
+      window.location.href = "profile.html";
+    }, 2000);
+
+    return;
+  }
+
+  let response = await fetch("https://localhost:44338/api/Cart/checkout", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -255,29 +277,36 @@ async function openPaymentWindow() {
   });
 
   let data = await response.json();
-  console.log(data);
-
   // Open the payment window
   let paymentWindow = window.open(
     data.approvalUrl,
-    "PaymentWindow",
-    "width=800,height=600"
+    "popup",
+    "width=600,height=400,scrollbars=yes" // This opens the URL in a new tab
   );
 
-  // Set an interval to periodically check the URL of the payment window
   let checkInterval = setInterval(function () {
     try {
       // Check if the window is still open and the URL contains the target string
-      console.log("tec");
       if (
         paymentWindow &&
         paymentWindow.location.href.includes("api/Cart/success")
       ) {
-        // Close the payment window
-        paymentWindow.close();
-        // Clear the interval to stop checking
-        clearInterval(checkInterval);
-        window.location.href = "index.html";
+        const urlParams = new URLSearchParams(paymentWindow.location.search);
+        const userId = urlParams.get("userId");
+        const paymentId = urlParams.get("paymentId");
+        const token = urlParams.get("token");
+        const payerId = urlParams.get("PayerID");
+
+        // Ensure all query parameters are present and valid
+        if (userId && paymentId && token && payerId) {
+          // Close the payment window
+          paymentWindow.close();
+
+          // Clear the interval to stop checking
+          clearInterval(checkInterval);
+          // Redirect the current window
+          window.location.href = "index.html";
+        }
       }
     } catch (e) {
       // Ignore any cross-origin access errors
@@ -286,7 +315,13 @@ async function openPaymentWindow() {
     // Close the interval if the window is closed manually
     if (paymentWindow && paymentWindow.closed) {
       clearInterval(checkInterval);
+      localStorage.messeges = JSON.stringify([
+        {
+          title: "Order Completed",
+          message: "Your order has been completed successfully",
+        },
+      ]);
       window.location.href = "index.html";
     }
-  }, 1000); // Check every second (1000 milliseconds)
+  }, 1000);
 }

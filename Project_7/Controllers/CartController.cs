@@ -193,7 +193,9 @@ namespace Project_7.Controllers
                 {
                     OrderId = order.OrderId,
                     Quantity = cartItem.Quantity,
-                    TotalPrice = cartItem.Price
+                    TotalPrice = cartItem.Price,
+                    ProductId = cartItem.ProductId
+
                 };
                 db.OrderItems.Add(orderItem);
                 db.CartItems.Remove(cartItem);
@@ -213,7 +215,8 @@ namespace Project_7.Controllers
             };
             db.Payments.Add(payment);
             db.SaveChanges();
-            return Ok("Payment has been completed, You can close this window now.");
+            string script = "<script>window.close();</script>";
+            return Content(script, "text/html");
         }
 
         [HttpGet("cancel")]

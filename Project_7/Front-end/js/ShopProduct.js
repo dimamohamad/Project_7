@@ -1,9 +1,24 @@
+
+const currentPageUrl = window.location.href;
+const params = new URLSearchParams(window.location.search);
+const keyword = params.get('keyword');
+
+
+
+
+
 const n = localStorage.getItem("CategoryId");
 var url;
 if (n) {
-  url = `https://localhost:44339/Api/Products/GetProductsByCategoryId/${n}`;
+  url = `https://localhost:44338/Api/Products/GetProductsByCategoryId/${n}`;
 } else {
-  url = "https://localhost:44339/Api/Products/GetAllProducts";
+  url = "https://localhost:44338/Api/Products/GetAllProducts";
+  if(keyword){
+
+url+=`?keyword=${keyword}`;
+
+  }
+  
 }
 async function GetProducts() {
   var response = await fetch(url);
@@ -13,8 +28,6 @@ async function GetProducts() {
   var container = document.getElementById("showAllProductContainer");
 
   result.forEach((product) => {
-    console.log(product);
-
     container.innerHTML += `    
                 <div class="col-span-6 sm:col-span-3 lg:col-span-2">
               <div
@@ -22,7 +35,7 @@ async function GetProducts() {
                 <a href="#" class="block h-[270px]">
                   <img
                     class="h-full w-full object-contain"
-                    src="https://localhost:44339/${product.productImage1}"
+                    src="https://localhost:44338/${product.productImage1}"
                     alt="img" />
                 </a>
                 <div class="mt-2 flex gap-1 px-5">
@@ -39,7 +52,7 @@ async function GetProducts() {
                     </a>
                     <span
                       class="mb-2 inline-block text-base font-bold text-primary-500">
-                      ${product.price}
+                     $${product.price}
                     </span>
                   </div>
                 </div>
@@ -49,27 +62,8 @@ async function GetProducts() {
                   class="mx-5 mb-5 mt-auto w-fit rounded-md bg-primary-500 px-3 py-2 uppercase text-white transition-all duration-300 hover:bg-primary-600">
                   View details
                 </a>
-                <div class="absolute right-4 top-4 z-[2] flex flex-col gap-2">
-                  <button class="btn-wishlist hover:text-primary-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      class="pointer-events-none h-6 w-6 fill-none">
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                    </svg>
-                  </button>
-                
-                </div>
-                <span
-                  class="pointer-events-none absolute left-4 top-4 rounded-md bg-primary-500 px-2 text-white">
-                  New
-                </span>
+          
+             
               </div>
             </div>
     `;
@@ -100,7 +94,7 @@ function getProductId(id) {
 
 async function showProductDetail() {
   const x = localStorage.getItem("productId");
-  var url = `https://localhost:44339/Api/Products/GetProductsById/${x}`;
+  var url = `https://localhost:44338/Api/Products/GetProductsById/${x}`;
 
   var response = await fetch(url);
 
@@ -196,37 +190,37 @@ async function showProductDetail() {
               <div class="swiper-wrapper">
                 <figure class="swiper-slide">
                   <img
-                    src="https://localhost:44339/${result.productImage1}"
+                    src="https://localhost:44338/${result.productImage1}"
                     alt=""
                   />
                 </figure>
                 <figure class="swiper-slide">
                   <img
-                    src="https://localhost:44339/${result.productImage2}"
+                    src="https://localhost:44338/${result.productImage2}"
                     alt=""
                   />
                 </figure>
                 <figure class="swiper-slide">
                   <img
-                    src="https://localhost:44339/${result.productImage3}"
+                    src="https://localhost:44338/${result.productImage3}"
                     alt=""
                   />
                 </figure>
                 <figure class="swiper-slide">
                   <img
-                    src="https://localhost:44339/${result.productImage4}"
+                    src="https://localhost:44338/${result.productImage4}"
                     alt=""
                   />
                 </figure>
                 <figure class="swiper-slide">
                   <img
-                    src="https://localhost:44339/${result.productImage5}"
+                    src="https://localhost:44338/${result.productImage5}"
                     alt=""
                   />
                 </figure>
                 <figure class="swiper-slide">
                   <img
-                    src="https://localhost:44339/${result.productImage6}"
+                    src="https://localhost:44338/${result.productImage6}"
                     alt=""
                   />
                 </figure>
@@ -930,7 +924,7 @@ GetProducts();
 
 async function GetCategories() {
   var response = await fetch(
-    "https://localhost:44339/API/Categories/GetAllCategories"
+    "https://localhost:44338/API/Categories/GetAllCategories"
   );
   var result = await response.json();
   var container = document.getElementById("dropDownCategory");
@@ -959,7 +953,7 @@ function clearLocalStorage() {
 }
 async function fiterCategory() {
   const dropDown = document.getElementById("CategoryFIlter");
-  let url = "https://localhost:44339/API/Categories/GetAllCategories";
+  let url = "https://localhost:44338/API/Categories/GetAllCategories";
   let request = await fetch(url);
   let data = await request.json();
 
@@ -993,9 +987,9 @@ document
     const sortOrder = document.getElementById("priceFilter").value;
     var CategoryId = localStorage.getItem("CategoryId");
     if (CategoryId == null) {
-      var apiUrl = `https://localhost:44339/api/Products/filterByPriceWithoutCategoryId?sortOrder=${sortOrder}`;
+      var apiUrl = `https://localhost:44338/api/Products/filterByPriceWithoutCategoryId?sortOrder=${sortOrder}`;
     } else {
-      var apiUrl = `https://localhost:44339/api/Products/filterByPrice?sortOrder=${sortOrder}&CategoryId=${CategoryId}`;
+      var apiUrl = `https://localhost:44338/api/Products/filterByPrice?sortOrder=${sortOrder}&CategoryId=${CategoryId}`;
     }
 
     const response = await fetch(apiUrl);
@@ -1004,7 +998,6 @@ document
     }
 
     const products = await response.json();
-    // console.log(products);
     displayProducts(products);
   });
 
@@ -1022,7 +1015,7 @@ function displayProducts(products) {
     <a href="#" class="block h-[270px]">
       <img
         class="h-full w-full object-contain"
-        src="https://localhost:44339/${product.productImage1}"
+        src="https://localhost:44338/${product.productImage1}"
         alt="img" />
     </a>
     <div class="mt-2 flex gap-1 px-5">
@@ -1050,26 +1043,10 @@ function displayProducts(products) {
       View details
     </a>
     <div class="absolute right-4 top-4 z-[2] flex flex-col gap-2">
-      <button class="btn-wishlist hover:text-primary-500">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="pointer-events-none h-6 w-6 fill-none">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-        </svg>
-      </button>
+     
     
     </div>
-    <span
-      class="pointer-events-none absolute left-4 top-4 rounded-md bg-primary-500 px-2 text-white">
-      New
-    </span>
+   
   </div>
 </div>
 `;

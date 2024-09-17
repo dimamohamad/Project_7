@@ -11,7 +11,7 @@ namespace Project_7.DTOs.ReviewDtos
         public double FourStarReviewsPercentage { get; set; }
         public double FiveStarReviewsPercentage { get; set; }
         public double OverAllRating { get; set; }
-        public List<ReviewDto> Reviews { get; set; }
+        public List<ReviewDto>? Reviews { get; set; }
     }
 
     public class ReviewDto

@@ -1,4 +1,4 @@
-const url = "https://localhost:44339/api/AddUser/AddNewUser";
+const url = "https://localhost:44338/api/AddUser/AddNewUser";
 var form = document.getElementById("userForm");
 async function add() {
 
@@ -11,5 +11,5 @@ let response = await fetch(url, {
   var data = response;
 
   console.log(data);
-  alert(" added user  successfully");
+  alert(" the user added successfully");
 }

@@ -294,37 +294,6 @@
       <div class="mb-6 grid grid-cols-8 gap-7">
         <form class="col-span-8 lg:col-span-5">
           <div>
-            <div
-              class="mb-8 flex flex-wrap items-center justify-between gap-5 border-b-[3px] pb-2"
-            >
-              <h2
-                class="relative text-2xl font-bold text-default-600 after:absolute after:-bottom-[11px] after:left-0 after:h-[3px] after:w-full after:bg-primary-500 after:content-['']"
-              >
-                Delivery Address
-              </h2>
-              <button
-                class="relative flex items-center gap-1 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-primary-500 after:transition-all after:duration-300 after:content-[''] hover:after:w-full"
-                data-target=".modal-address"
-                type="button"
-              >
-                <svg
-                  class="h-5 w-5"
-                  stroke="currentColor"
-                  fill="currentColor"
-                  stroke-width="0"
-                  baseProfile="tiny"
-                  viewBox="0 0 24 24"
-                  height="200px"
-                  width="200px"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M22.262 10.468c-3.39-2.854-9.546-8.171-9.607-8.225l-.655-.563-.652.563c-.062.053-6.221 5.368-9.66 8.248-.438.394-.688.945-.688 1.509 0 1.104.896 2 2 2h1v6c0 1.104.896 2 2 2h12c1.104 0 2-.896 2-2v-6h1c1.104 0 2-.896 2-2 0-.598-.275-1.161-.738-1.532zm-8.262 9.532h-4v-5h4v5zm4-8l.002 8h-3.002v-6h-6v6h-3v-8h-3.001c2.765-2.312 7.315-6.227 9.001-7.68 1.686 1.453 6.234 5.367 9 7.681l-3-.001z"
-                  ></path>
-                </svg>
-                Saved addresses
-              </button>
-            </div>
             <fieldset class="grid grid-cols-2 gap-2">
               <div class="relative col-span-2 w-full">
                 <input
@@ -332,28 +301,13 @@
                   id="input-name"
                   class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
                   placeholder=" "
-                  required
+                  disabled
                 />
                 <label
                   for="input-name"
                   class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
                 >
                   Full Name
-                </label>
-              </div>
-              <div class="relative col-span-2 w-full">
-                <input
-                  type="text"
-                  id="input-surname"
-                  class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
-                  placeholder=" "
-                  required
-                />
-                <label
-                  for="input-surname"
-                  class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
-                >
-                  Surname
                 </label>
               </div>
             </fieldset>
@@ -364,7 +318,7 @@
                   id="input-address"
                   class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
                   placeholder=" "
-                  required
+                  disabled
                 />
                 <label
                   for="input-address"
@@ -373,62 +327,9 @@
                   Address
                 </label>
               </div>
-              <div class="relative col-span-2 w-full">
-                <input
-                  type="text"
-                  id="input-apt"
-                  class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
-                  placeholder=" "
-                  required
-                />
-                <label
-                  for="input-apt"
-                  class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
-                >
-                  Apt, Suite, etc (optional)
-                </label>
-              </div>
+              
             </fieldset>
-            <fieldset class="mt-6 grid grid-cols-2 gap-2">
-              <div class="relative col-span-2 w-full">
-                <input
-                  type="text"
-                  id="input-city"
-                  class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
-                  placeholder=" "
-                  required
-                />
-                <label
-                  for="input-city"
-                  class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
-                >
-                  City
-                </label>
-              </div>
-              <select
-                class="col-span-2 rounded-lg border-transparent shadow focus:border-transparent focus:ring-0 sm:col-span-1"
-                id="select-state"
-              >
-                <option value="-">State</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-              </select>
-              <div class="relative col-span-2 w-full sm:col-span-1">
-                <input
-                  type="text"
-                  id="input-zip"
-                  class="peer block w-full appearance-none rounded-lg border-0 bg-white px-2.5 pb-2.5 pt-5 text-sm text-default-500 shadow focus:outline-none focus:ring-0"
-                  placeholder=" "
-                  required
-                />
-                <label
-                  for="input-zip"
-                  class="z-1 pointer-events-none absolute left-2.5 top-4 origin-[0] -translate-y-4 scale-75 transform text-sm text-default-400 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:text-primary-500"
-                >
-                  Zip
-                </label>
-              </div>
-            </fieldset>
+            
           </div>
           <div class="mt-6">
             <div
@@ -1464,10 +1365,12 @@
                     ></path>
                   </svg>
                   <span class="text-start">
-                    <span class="text-base font-semibold text-default-600">
-                      Jhon Doe
+                    <span
+                      class="text-base font-semibold text-default-600"
+                      id="userName"
+                    >
                     </span>
-                    <span>
+                    <span id="userAddress">
                       1234 Corrientes Avenue
                       <br />
                       Floor 7, Apartment 42
@@ -1524,7 +1427,7 @@
     <script>
       async function GetCategories() {
         var response = await fetch(
-          "https://localhost:44339/API/Categories/GetAllCategories"
+          "https://localhost:44338/API/Categories/GetAllCategories"
         );
         var result = await response.json();
         var container = document.getElementById("dropDownCategory");
@@ -1539,7 +1442,6 @@
                          ${element.categoryName}
                       </a>
                     </li>
-              
       `;
         });
       }
@@ -1551,7 +1453,6 @@
     </script>
     <script src="lib/metisMenu/metismenujs.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
   </body>
-
-  <!-- Mirrored from infinite.andevfrontend.site/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Sep 2024 09:49:39 GMT -->
 </html>

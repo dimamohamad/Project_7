@@ -1,4 +1,4 @@
-const url = 'https://localhost:44339/api/AddUser/GetAllUsers';
+const url = 'https://localhost:44338/api/AddUser/GetAllUsers';
 
 async function adduser(){
     var response = await fetch(url);
@@ -12,7 +12,7 @@ async function adduser(){
 
     <tr>
       <th scope="row">${element.userId}</th>
-    <td><img src="https://localhost:44339/${element.userImage}" alt="User Image" width="50" height="50"></td>
+    <td><img src="https://localhost:44338/${element.userImage}" alt="User Image" width="50" height="50"></td>
       <td>${element.userName}</td>
        <td>${element.email}</td>
       <td>${element.phoneNumber}</td>
@@ -34,12 +34,12 @@ function Update(id) {
 
 async function Delete(id) {
     debugger;
-  var url =`https://localhost:44339/api/AddUser/DeleteUser${id}`;
+  var url =`https://localhost:44338/api/AddUser/DeleteUser${id}`;
  let response = await fetch(url, {
     method: "DELETE",
   });
   
-  alert(" deleted user successfully");
+  alert("the user  deleted  successfully");
 }
 
 

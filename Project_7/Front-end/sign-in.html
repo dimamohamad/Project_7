@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="lib/metisMenu/metismenujs.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/CustomStyle.css" />
+    <link rel="stylesheet" href="assets/iziToast.min.css" />
+    <script src="assets/iziToast.min.js"></script>
+
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -110,47 +114,81 @@
               </svg>
             </div>
 
-            <a
-              class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
-              href="sign-in.html"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-6 w-6"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              <span class="font-semibold">Sign In</span>
-            </a>
-            <a
-              class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
-              href="sign-up.html"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                stroke="currentColor"
-                stroke-width="2"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-6 w-6"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-              </svg>
-              <span class="font-semibold">Sign UP</span>
-            </a>
+            <span style="display: flex; flex-direction: row" id="batool">
+              <div class="relative inline-block text-left">
+                <!-- Sign In Button -->
+                <a
+                  class="items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
+                  href="#"
+                  id="signIn"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-6 w-6"
+                  >
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <span class="font-semibold">Sign In</span>
+                </a>
 
+                <!-- Dropdown Menu -->
+                <div
+                  class="absolute right-0 z-10 mt-2 hidden w-32 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  id="dropdownMenu"
+                >
+                  <div
+                    class="py-1"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="signIn"
+                  >
+                    <a
+                      href="sign-in.html"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      role="menuitem"
+                    >
+                      User
+                    </a>
+                    <a
+                      href="../Admin-Front/apps/e-commerce/admin/sign-in.html"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      role="menuitem"
+                    >
+                      Admin
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <a
+                class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
+                href="sign-up.html"
+                id="signUp"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-6 w-6"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span class="font-semibold">Sign Up</span>
+              </a>
+            </span>
             <div
               class="relative cursor-pointer select-none text-default-600 hover:text-primary-500"
               data-target=".modal-cart"
@@ -173,6 +211,7 @@
                 ></path>
               </svg>
               <span
+              id="cartItemCount"
                 class="pointer-events-none absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary-500 text-xs text-white"
               >
                 0
@@ -263,7 +302,7 @@
       <h2 class="mb-8 text-center text-2xl font-semibold text-default-600">
         Welcome to your personal account!
       </h2>
-      <form style="width: 23rem" id="LoginForm">
+      <form id="LoginForm">
         <div class="form-outline mb-4">
           <label class="form-label" for="input-email"> Email address </label>
           <input
@@ -776,7 +815,7 @@
                       class="transition-all duration-300 hover:text-white"
                       href="#"
                     >
-                    SmartTech@example.com
+                      SmartTech@example.com
                     </a>
                   </li>
                   <li class="flex items-center gap-2 pb-2">
@@ -1116,28 +1155,16 @@
           </button>
         </div>
         <div class="h-full overflow-auto">
-          <div class="flex flex-col items-center p-10">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="h-20 w-20"
-              viewBox="0 0 16 16"
+          <div class="flex flex-col items-center p-10" id="cartItemsModalDiv">
+            <div id="cartItemsList"></div>
+            <span id="cartIsEmpty" class="my-5"
+              >Your shopping cart is empty!</span
             >
-              <path
-                d="M7.354 5.646a.5.5 0 1 0-.708.708L7.793 7.5 6.646 8.646a.5.5 0 1 0 .708.708L8.5 8.207l1.146 1.147a.5.5 0 0 0 .708-.708L9.207 7.5l1.147-1.146a.5.5 0 0 0-.708-.708L8.5 6.793 7.354 5.646z"
-              />
-              <path
-                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
-              />
-            </svg>
-            <span class="my-5">Your shopping cart is empty!</span>
             <a
               class="block rounded-md bg-primary-500 px-4 py-3 text-center font-bold text-white transition-all duration-300 hover:bg-primary-600"
               href="shopping-cart.html"
             >
-              Continue Shopping
+              Checkout
             </a>
           </div>
         </div>
@@ -1160,10 +1187,11 @@
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </div>
+    <script src="js/navbarCart.js"></script>
     <script>
       async function GetCategories() {
         var response = await fetch(
-          "https://localhost:44339/API/Categories/GetAllCategories"
+          "https://localhost:44338/API/Categories/GetAllCategories"
         );
         var result = await response.json();
         var container = document.getElementById("dropDownCategory");
@@ -1187,6 +1215,26 @@
         window.location.href = "shop-grid.html";
       }
       GetCategories();
+    </script>
+    <script>
+      // Toggle dropdown menu visibility
+      const signInButton = document.getElementById("signIn");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      signInButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      // Hide the dropdown menu when clicking outside of it
+      document.addEventListener("click", function (event) {
+        if (
+          !signInButton.contains(event.target) &&
+          !dropdownMenu.contains(event.target)
+        ) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
     </script>
     <script src="lib/metisMenu/metismenujs.min.js"></script>
     <script src="js/main.js"></script>

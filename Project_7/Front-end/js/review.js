@@ -8,7 +8,7 @@ async function addReview(event) {
 
   try {
     const response = await fetch(
-      "https://localhost:44339/api/Reviews/AddReview",
+      "https://localhost:44338/api/Reviews/AddReview",
       {
         method: "POST",
         headers: {

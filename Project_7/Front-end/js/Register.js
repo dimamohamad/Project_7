@@ -1,6 +1,6 @@
 async function Register() {
   event.preventDefault();
-  let url = "https://localhost:44339/api/Users/RegisterUsers";
+  let url = "https://localhost:44338/api/Users/RegisterUsers";
 
   const formData = new FormData(document.getElementById("Register"));
 
@@ -23,7 +23,6 @@ async function Register() {
   const result = await response.json();
 
   if (response.ok) {
-    console.log("Register successful:", result);
     alert("Registration Successful");
     window.location.href = "sign-in.html";
   } else {

@@ -1,4 +1,4 @@
-const url = "https://localhost:44339/api/Contact/AddMessage";
+const url = "https://localhost:44338/api/Contact/AddMessage";
 var form = document.getElementById("contact-form");
 async function sendMessage() {
   var formData = new FormData(form);
@@ -7,7 +7,7 @@ async function sendMessage() {
     body: formData,
   });
   var data = response;
-
+  console.log(response);
   if (response.ok) {
     alert("Message sent successfully");
     // form.reset();
@@ -18,7 +18,7 @@ async function sendMessage() {
 
 async function GetCategories() {
   var response = await fetch(
-    "https://localhost:44339/API/Categories/GetAllCategories"
+    "https://localhost:44338/API/Categories/GetAllCategories"
   );
   var result = await response.json();
   var container = document.getElementById("dropDownCategory");

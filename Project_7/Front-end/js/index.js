@@ -1,4 +1,17 @@
-const url = "https://localhost:44339/API/Categories/GetAllCategories";
+if (localStorage.messeges) {
+  let messeges = JSON.parse(localStorage.messeges);
+  messeges.forEach((message) => {
+    iziToast.success({
+      title: message.title,
+      message: message.message,
+      position: "topCenter",
+      timeout: 3000,
+    });
+  });
+  localStorage.removeItem("messeges");
+}
+
+const url = "https://localhost:44338/API/Categories/GetAllCategories";
 async function GetAllCategories() {
   var response = await fetch(url);
   var result = await response.json();
@@ -13,7 +26,7 @@ async function GetAllCategories() {
                   >
                     <img
                       class="h-full w-full object-contain"
-                      src="https://localhost:44339/${element.categoryImage}"
+                      src="https://localhost:44338/${element.categoryImage}"
                       alt="img"
                     />
                   </figure>
@@ -53,20 +66,18 @@ GetCategories();
 
 //for new product section
 async function GetLatestProducts() {
-  const urll = "https://localhost:44339/api/Products/GetLatestProducts";
+  const urll = "https://localhost:44338/api/Products/GetLatestProducts";
   var response = await fetch(urll);
   var LatestProducts = await response.json();
 
   var swiperWrapper = document.getElementById("LatestProducts");
 
   LatestProducts.forEach((product) => {
-    console.log(product);
-
     swiperWrapper.innerHTML += `
       <div class="swiper-slide h-auto">
         <div class="relative flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-lg hover:shadow-xl">
           <a href="#" class="block h-[270px]">
-            <img class="h-full w-full object-contain" src="https://localhost:44339/${
+            <img class="h-full w-full object-contain" src="https://localhost:44338/${
               product.productImage1
             }" alt="img"/>
           </a>
@@ -115,7 +126,7 @@ GetLatestProducts();
 
 ////////////////////// Most Review
 async function GetProductsMostReview() {
-  const urlll = "https://localhost:44339/api/Products/productsWithRatings";
+  const urlll = "https://localhost:44338/api/Products/productsWithRatings";
   var response = await fetch(urlll);
   var data = await response.json();
 
@@ -127,13 +138,13 @@ async function GetProductsMostReview() {
           <div class="relative col-span-6 flex rounded-lg bg-white p-4 shadow">
               <a href="#">
                   <figure class="h-[80px] w-[80px] min-w-[80px] xl:h-[130px] xl:w-[130px] xl:min-w-[130px]">
-                      <img class="h-full w-full object-contain" src="https://localhost:44339/${
+                      <img class="h-full w-full object-contain" src="https://localhost:44338/${
                         productMostReview.productImage1
                       }" alt="(image not found)" />
                   </figure>
               </a>
               <div class="relative border-l-2 pl-4"> 
-               <a href="#" class="my-3 line-clamp-2 text-default-600 transition-all duration-300 hover:text-primary-500">
+               <a href="product-details.html" class="my-3 line-clamp-2 text-default-600 transition-all duration-300 hover:text-primary-500">
                       ${productMostReview.productName}
                   </a
                   
@@ -167,6 +178,5 @@ async function GetProductsMostReview() {
 GetProductsMostReview();
 
 function clearLocalStorage() {
-  localStorage.clear();
   window.location.href = "shop-grid.html";
 }

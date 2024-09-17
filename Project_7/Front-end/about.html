@@ -107,27 +107,58 @@
               </svg>
             </div>
             <span style="display: flex; flex-direction: row" id="batool">
-              <a
-                class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
-                href="sign-in.html"
-                id="signIn"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-6 w-6"
+              <div class="relative inline-block text-left">
+                <!-- Sign In Button -->
+                <a
+                  class="items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
+                  href="#"
+                  id="signIn"
                 >
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                <span class="font-semibold">Sign In</span>
-              </a>
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-6 w-6"
+                  >
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <span class="font-semibold">Sign In</span>
+                </a>
+
+                <!-- Dropdown Menu -->
+                <div
+                  class="absolute right-0 z-10 mt-2 hidden w-32 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  id="dropdownMenu"
+                >
+                  <div
+                    class="py-1"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="signIn"
+                  >
+                    <a
+                      href="sign-in.html"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      role="menuitem"
+                    >
+                      User
+                    </a>
+                    <a
+                      href="../Admin-Front/apps/e-commerce/admin/sign-in.html"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      role="menuitem"
+                    >
+                      Admin
+                    </a>
+                  </div>
+                </div>
+              </div>
 
               <a
                 class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
@@ -173,7 +204,7 @@
                 ></path>
               </svg>
               <span
-              id="cartItemCount"
+                id="cartItemCount"
                 class="pointer-events-none absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary-500 text-xs text-white"
               >
                 0
@@ -347,7 +378,7 @@
       <div class="tab-container tab-team grid grid-cols-3 gap-6">
         <div class="tab-content order-2 col-span-12 lg:order-1 lg:col-span-6">
           <div class="tab-content-item active">
-            <h3 class="my-2 text-lg font-bold text-default-600">Dema</h3>
+            <h3 class="my-2 text-lg font-bold text-default-600">Dima  Ahmad</h3>
             <span class="font-semibold text-primary-500">Scrum Master</span>
             <p class="my-6">
               As a Scrum Master, Dema ensures the Scrum team follows agile
@@ -419,7 +450,7 @@
             </div>
           </div>
           <div class="tab-content-item">
-            <h3 class="my-2 text-lg font-bold text-default-600">Noor shlool</h3>
+            <h3 class="my-2 text-lg font-bold text-default-600">Nour  shlool</h3>
             <span class="font-semibold text-primary-500">Product Owner</span>
             <p class="my-6">
               Noor Shlol serves as the Product Owner, responsible for defining
@@ -434,7 +465,7 @@
             <div class="my-5 flex items-center gap-4">
               <a
                 class="transition-all duration-300 hover:text-primary-500"
-                href="https://www.linkedin.com/in/nour-al-shloul-73997b220/"
+                href="https://www.linkedin.com/in/nour-al-shloul-73997b220/" 
               >
                 <svg
                   class="h-6 w-6"
@@ -569,7 +600,7 @@
             </div>
           </div>
           <div class="tab-content-item">
-            <h3 class="my-2 text-lg font-bold text-default-600">Yaman</h3>
+            <h3 class="my-2 text-lg font-bold text-default-600">Yaman Al-khashashneh</h3>
             <span class="font-semibold text-primary-500"
               >full stack Developer</span
             >
@@ -644,7 +675,7 @@
             </div>
           </div>
           <div class="tab-content-item">
-            <h3 class="my-2 text-lg font-bold text-default-600">Ahmad</h3>
+            <h3 class="my-2 text-lg font-bold text-default-600">Ahmad Yaqoub</h3>
             <span class="font-semibold text-primary-500"
               >Full Stack Developer</span
             >
@@ -719,7 +750,7 @@
             </div>
           </div>
           <div class="tab-content-item">
-            <h3 class="my-2 text-lg font-bold text-default-600">leen</h3>
+            <h3 class="my-2 text-lg font-bold text-default-600">leen Abu-Daboos</h3>
             <span class="font-semibold text-primary-500"
               >Full Stack Developer</span
             >
@@ -808,8 +839,8 @@
                     alt=""
                   />
                 </div>
-                <h3 class="my-2 text-lg font-bold text-default-600">Dema</h3>
-                <span class="font-semibold text-primary-500">scrum</span>
+                <h3 class="my-2 text-lg font-bold text-default-600">Dima Ahmad</h3>
+                <span class="font-semibold text-primary-500">Scrum Master</span>
               </figure>
             </div>
             <div
@@ -823,8 +854,8 @@
                     alt=""
                   />
                 </div>
-                <h3 class="my-2 text-lg font-bold text-default-600">Noor</h3>
-                <span class="font-semibold text-primary-500">product</span>
+                <h3 class="my-2 text-lg font-bold text-default-600">Nour Al-shloul</h3>
+                <span class="font-semibold text-primary-500">Product Owner</span>
               </figure>
             </div>
             <div
@@ -838,7 +869,7 @@
                     alt=""
                   />
                 </div>
-                <h3 class="my-2 text-lg font-bold text-default-600">Raneem</h3>
+                <h3 class="my-2 text-lg font-bold text-default-600">Raneem Al-halahleh</h3>
                 <span class="font-semibold text-primary-500"
                   >Full Stack Developer</span
                 >
@@ -855,7 +886,7 @@
                     alt=""
                   />
                 </div>
-                <h3 class="my-2 text-lg font-bold text-default-600">Yaman</h3>
+                <h3 class="my-2 text-lg font-bold text-default-600">Yaman Al-Khashashneh</h3>
                 <span class="font-semibold text-primary-500"
                   >Full Stack Developer</span
                 >
@@ -872,7 +903,7 @@
                     alt=""
                   />
                 </div>
-                <h3 class="my-2 text-lg font-bold text-default-600">Ahmad</h3>
+                <h3 class="my-2 text-lg font-bold text-default-600">Ahmad Yaqoub</h3>
                 <span class="font-semibold text-primary-500"
                   >Full Stack Developer</span
                 >
@@ -889,7 +920,7 @@
                     alt=""
                   />
                 </div>
-                <h3 class="my-2 text-lg font-bold text-default-600">Leen</h3>
+                <h3 class="my-2 text-lg font-bold text-default-600">Leen Abu-Daboos</h3>
                 <span class="font-semibold text-primary-500"
                   >Full Stack Developer</span
                 >
@@ -1776,6 +1807,26 @@
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>
     </div>
+    <script>
+      // Toggle dropdown menu visibility
+      const signInButton = document.getElementById("signIn");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      signInButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      // Hide the dropdown menu when clicking outside of it
+      document.addEventListener("click", function (event) {
+        if (
+          !signInButton.contains(event.target) &&
+          !dropdownMenu.contains(event.target)
+        ) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    </script>
     <script src="js/about.js"></script>
     <script src="lib/rater-js/rater-js.js"></script>
     <script src="lib/swiper/swiper-bundle.min.js"></script>

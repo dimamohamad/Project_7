@@ -4,7 +4,7 @@ document.getElementById("emailForm").addEventListener("submit", async (e) => {
   const email = document.getElementById("email").value;
 
   try {
-    const response = await fetch("https://localhost:44339/api/Users/send", {
+    const response = await fetch("https://localhost:44338/api/Users/send", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -31,7 +31,7 @@ async function verifyOtp() {
 
   // Fetch the user by email to get user ID
   const userResponse = await fetch(
-    `https://localhost:44339/api/Users/GetUserByEmail/${encodeURIComponent(
+    `https://localhost:44338/api/Users/GetUserByEmail/${encodeURIComponent(
       email
     )}`
   );
@@ -41,7 +41,6 @@ async function verifyOtp() {
     const userId = user.userId;
     const otp = user.passwword;
 
-    console.log(otp);
     document.getElementById("passwordForm").style.display = "block";
   }
 }
@@ -59,7 +58,7 @@ async function changePassword() {
 
   try {
     const userResponse = await fetch(
-      `https://localhost:44339/api/Users/GetUserByEmail/${encodeURIComponent(
+      `https://localhost:44338/api/Users/GetUserByEmail/${encodeURIComponent(
         email
       )}`,
       {
@@ -74,7 +73,7 @@ async function changePassword() {
       const userId = user.userId;
 
       const passwordResponse = await fetch(
-        `https://localhost:44339/api/Users/ChangePassword/${userId}`,
+        `https://localhost:44338/api/Users/ChangePassword/${userId}`,
         {
           method: "PUT",
           headers: {

@@ -29,12 +29,10 @@ const googleLogin = document.getElementById("google-login-btn");
 if (googleLogin) {
   googleLogin.addEventListener("click", async function () {
     try {
-      console.log("Button clicked, attempting login...");
       const result = await signInWithPopup(auth, provider);
 
       // The signed-in user info.
       const user = result.user;
-      console.log("User:", user);
 
       // Extract user details
       const { uid, displayName, email, photoURL } = user;
@@ -64,7 +62,7 @@ if (googleLogin) {
       };
       // Send user data to the API
       const response = await fetch(
-        "https://localhost:44339/api/Users/RegisterUsers",
+        "https://localhost:44338/api/Users/RegisterUsers",
         {
           method: "POST",
           headers: {
@@ -84,9 +82,7 @@ if (googleLogin) {
       }
       const data = await response.json();
       localStorage.setItem("Token", data.token);
-      localStorage.setItem("User", data.user.userId);
-      console.log("Login successful:", result);
-      console.log("API Response:", data);
+      localStorage.setItem("userId", data.user.userId);
 
       // Redirect to a new page
       window.location.href = "index.html";

@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -9,6 +8,8 @@ using Project_7.Services;
 using Serilog;
 using System.Text;
 using Project_7;
+using DinkToPdf.Contracts;
+using DinkToPdf;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -129,12 +130,14 @@ builder.Services.AddAuthorization(options =>
 });
 
 
-builder.Services.AddTransient<EmailService>(); 
+builder.Services.AddTransient<EmailService>();
 builder.Services.AddControllers();
 
 // Add configuration for SMTP settings
 builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
 
+builder.Services.AddSingleton<IConverter, SynchronizedConverter>(provider =>
+    new SynchronizedConverter(new PdfTools()));
 
 var app = builder.Build();
 

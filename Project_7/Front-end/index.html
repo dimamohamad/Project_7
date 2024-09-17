@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="lib/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="lib/metisMenu/metismenujs.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="assets/iziToast.min.css" />
+    <script src="assets/iziToast.min.js"></script>
+
     <title>SmartTech</title>
     <style>
       #CategoryHedarText {
@@ -150,7 +153,11 @@
         animation: slideInFromLef 1s ease-out forwards;
         animation-delay: 0s; /* تأخير الحركة */
       }
-
+      .py-12 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    justify-content: space-around;
+}
       @media (max-width: 425px) {
         .nav-main a {
           font-size: 0.5rem; /* Adjust to your preferred size */
@@ -161,6 +168,7 @@
           font-size: 1px; /* Adjust to your preferred size */
           box-sizing: content-box; /* Ensure box-sizing is content-box or reset it */
         }
+
       }
     </style>
   </head>
@@ -204,9 +212,10 @@
               Smart Tech
             </span>
           </a>
-          <form class="hidden w-[590px] lg:flex">
+          <form  class="hidden w-[590px] lg:flex" method="get" action="shop-grid.html">
             <div class="relative w-full">
               <input
+              name="keyword"
                 type="search"
                 id="search"
                 class="peer block w-full appearance-none rounded-l-lg border border-r-0 border-primary-500 bg-white px-2 pb-2 pt-4 text-sm focus:outline-none focus:ring-0"
@@ -260,28 +269,58 @@
               </svg>
             </div>
             <span style="display: flex; flex-direction: row" id="batool">
-              <a
-                class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
-                href="sign-in.html"
-                id="signIn"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="24"
-                  height="24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-6 w-6"
+              <div class="relative inline-block text-left">
+                <!-- Sign In Button -->
+                <a
+                  class="items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
+                  href="#"
+                  id="signIn"
                 >
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                <span class="font-semibold">Sign In</span>
-              </a>
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-6 w-6"
+                  >
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <span class="font-semibold">Sign In</span>
+                </a>
 
+                <!-- Dropdown Menu -->
+                <div
+                  class="absolute right-0 z-10 mt-2 hidden w-32 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  id="dropdownMenu"
+                >
+                  <div
+                    class="py-1"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby="signIn"
+                  >
+                    <a
+                      href="sign-in.html"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      role="menuitem"
+                    >
+                      User
+                    </a>
+                    <a
+                      href="../Admin-Front/apps/e-commerce/admin/sign-in.html"
+                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      role="menuitem"
+                    >
+                      Admin
+                    </a>
+                  </div>
+                </div>
+              </div>
               <a
                 class="hidden items-center justify-center gap-1 text-default-600 hover:text-primary-500 lg:flex"
                 href="sign-up.html"
@@ -327,6 +366,7 @@
                 ></path>
               </svg>
               <span
+              id="cartItemCount"
                 class="pointer-events-none absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-primary-500 text-xs text-white"
               >
                 0
@@ -489,10 +529,10 @@
     <div
       class="relative w-full overflow-hidden after:absolute after:inset-0 after:z-[2] after:h-full after:w-full after:bg-black/50"
     >
-      <div
-        class="container absolute inset-0 z-[4] mx-auto my-10 px-4 sm:px-8 xl:px-4"
-      >
-        <div class="flex h-full items-center">
+      <div style="text-align: center; "
+        class="  container absolute inset-0 z-[4] mx-auto my-10 px-4 sm:px-8 xl:px-4"
+      ><span style="text-align: center; font-size: 30px; color:white">Categories</span>
+        <div class="flex h-full items-center"> 
           <div
             class="swiper swiper-categories group relative flex w-full items-center"
           >
@@ -847,6 +887,51 @@
         </section>
       </div>
     </section>
+    <div class="modal-cart modal-container modal-overlay">
+      <div
+        class="modal-content modal-right flex h-full w-[400px] min-w-[250px] flex-col bg-[#f5f7fe]"
+      >
+        <div class="w-full">
+          <div class="border-b-2 p-5">
+            <h3 class="text-lg font-bold text-default-600">Shopping Cart</h3>
+          </div>
+          <button
+            class="close-modal absolute right-5 top-5 p-[3px] text-default-600"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="h-full overflow-auto">
+          <div class="flex flex-col items-center p-10" id="cartItemsModalDiv">
+            <div id="cartItemsList">
+              <h1>This is cart</h1>
+            </div>
+            <span id="cartIsEmpty" class="my-5"
+              >Your shopping cart is empty!</span
+            >
+            <a
+              class="block rounded-md bg-primary-500 px-4 py-3 text-center font-bold text-white transition-all duration-300 hover:bg-primary-600"
+              href="shopping-cart.html"
+            >
+              Checkout
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer class="bg-primary-500 text-default-200">
       <div
         class="mx-auto px-4 sm:px-8 xl:px-4"
@@ -1292,7 +1377,27 @@
         </div>
       </div>
     </footer>
+    <script>
+      // Toggle dropdown menu visibility
+      const signInButton = document.getElementById("signIn");
+      const dropdownMenu = document.getElementById("dropdownMenu");
 
+      signInButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        dropdownMenu.classList.toggle("hidden");
+      });
+
+      // Hide the dropdown menu when clicking outside of it
+      document.addEventListener("click", function (event) {
+        if (
+          !signInButton.contains(event.target) &&
+          !dropdownMenu.contains(event.target)
+        ) {
+          dropdownMenu.classList.add("hidden");
+        }
+      });
+    </script>
+    <script src="js/navbarCart.js"></script>
     <script src="lib/simpleParallax/simpleParallax.min.js"></script>
     <script src="lib/rater-js/rater-js.js"></script>
     <script src="lib/swiper/swiper-bundle.min.js"></script>
