@@ -259,8 +259,11 @@ async function openPaymentWindow() {
       title: "Error",
       message: "Please add your address into your profile before checkout",
       position: "topCenter",
-      timeout: 3000,
-    }).then(()=> window.location.href = "profile.html");
+      timeout: 2000,
+    });
+    setTimeout(function () {
+      window.location.href = "profile.html";
+    }, 2000);
 
     return;
   }
@@ -274,27 +277,36 @@ async function openPaymentWindow() {
   });
 
   let data = await response.json();
-
   // Open the payment window
   let paymentWindow = window.open(
     data.approvalUrl,
-    "PaymentWindow",
-    "width=800,height=600"
+    "_blank" // This opens the URL in a new tab
   );
 
-  // Set an interval to periodically check the URL of the payment window
   let checkInterval = setInterval(function () {
+    console.log(paymentWindow);
     try {
       // Check if the window is still open and the URL contains the target string
       if (
         paymentWindow &&
         paymentWindow.location.href.includes("api/Cart/success")
       ) {
-        // Close the payment window
-        paymentWindow.close();
-        // Clear the interval to stop checking
-        clearInterval(checkInterval);
-        window.location.href = "index.html";
+        const urlParams = new URLSearchParams(paymentWindow.location.search);
+        const userId = urlParams.get("userId");
+        const paymentId = urlParams.get("paymentId");
+        const token = urlParams.get("token");
+        const payerId = urlParams.get("PayerID");
+
+        // Ensure all query parameters are present and valid
+        if (userId && paymentId && token && payerId) {
+          // Close the payment window
+          paymentWindow.close();
+
+          // Clear the interval to stop checking
+          clearInterval(checkInterval);
+          // Redirect the current window
+          window.location.href = "index.html";
+        }
       }
     } catch (e) {
       // Ignore any cross-origin access errors
@@ -303,7 +315,16 @@ async function openPaymentWindow() {
     // Close the interval if the window is closed manually
     if (paymentWindow && paymentWindow.closed) {
       clearInterval(checkInterval);
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          uid,
+          displayName,
+          email,
+          photoURL,
+        })
+      );
       window.location.href = "index.html";
     }
-  }, 1000); // Check every second (1000 milliseconds)
+  }, 1000);
 }
