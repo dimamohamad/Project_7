@@ -1,4 +1,6 @@
-﻿namespace Project_7.Shared
+// For this to work properly you must ensure that you have configured the static files in your Program.cs.
+
+namespace Project_7.Shared
 {
     public static class ImageSaver
     {
